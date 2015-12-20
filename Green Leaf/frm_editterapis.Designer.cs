@@ -1,6 +1,6 @@
 ﻿namespace Green_Leaf
 {
-    partial class frm_tmbahterapis
+    partial class frm_editterapis
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.panel_isi = new System.Windows.Forms.Panel();
+            this.pict_fotoKTP = new System.Windows.Forms.PictureBox();
             this.btn_batal = new System.Windows.Forms.Button();
-            this.btn_tambah = new System.Windows.Forms.Button();
+            this.btn_simpan = new System.Windows.Forms.Button();
             this.rdo_statustdkaktif = new System.Windows.Forms.RadioButton();
             this.rdo_statusaktif = new System.Windows.Forms.RadioButton();
             this.btn_browsefoto = new System.Windows.Forms.Button();
@@ -45,20 +46,23 @@
             this.label_namaterapis = new System.Windows.Forms.Label();
             this.label_kodeterapis = new System.Windows.Forms.Label();
             this.panel_logo = new System.Windows.Forms.Panel();
-            this.pict_fotoKTP = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbo_kodeterapis = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel_isi.SuspendLayout();
-            this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict_fotoKTP)).BeginInit();
+            this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_isi
             // 
             this.panel_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_isi.Controls.Add(this.button1);
+            this.panel_isi.Controls.Add(this.cbo_kodeterapis);
             this.panel_isi.Controls.Add(this.pict_fotoKTP);
             this.panel_isi.Controls.Add(this.btn_batal);
-            this.panel_isi.Controls.Add(this.btn_tambah);
+            this.panel_isi.Controls.Add(this.btn_simpan);
             this.panel_isi.Controls.Add(this.rdo_statustdkaktif);
             this.panel_isi.Controls.Add(this.rdo_statusaktif);
             this.panel_isi.Controls.Add(this.btn_browsefoto);
@@ -75,7 +79,16 @@
             this.panel_isi.Location = new System.Drawing.Point(12, 112);
             this.panel_isi.Name = "panel_isi";
             this.panel_isi.Size = new System.Drawing.Size(888, 387);
-            this.panel_isi.TabIndex = 5;
+            this.panel_isi.TabIndex = 7;
+            // 
+            // pict_fotoKTP
+            // 
+            this.pict_fotoKTP.Location = new System.Drawing.Point(688, 167);
+            this.pict_fotoKTP.Name = "pict_fotoKTP";
+            this.pict_fotoKTP.Size = new System.Drawing.Size(184, 206);
+            this.pict_fotoKTP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pict_fotoKTP.TabIndex = 15;
+            this.pict_fotoKTP.TabStop = false;
             // 
             // btn_batal
             // 
@@ -88,16 +101,16 @@
             this.btn_batal.UseVisualStyleBackColor = true;
             this.btn_batal.Click += new System.EventHandler(this.btn_batal_Click);
             // 
-            // btn_tambah
+            // btn_simpan
             // 
-            this.btn_tambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_tambah.Location = new System.Drawing.Point(266, 306);
-            this.btn_tambah.Name = "btn_tambah";
-            this.btn_tambah.Size = new System.Drawing.Size(155, 67);
-            this.btn_tambah.TabIndex = 13;
-            this.btn_tambah.Text = "Tambah";
-            this.btn_tambah.UseVisualStyleBackColor = true;
-            this.btn_tambah.Click += new System.EventHandler(this.btn_tambah_Click);
+            this.btn_simpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_simpan.Location = new System.Drawing.Point(266, 306);
+            this.btn_simpan.Name = "btn_simpan";
+            this.btn_simpan.Size = new System.Drawing.Size(155, 67);
+            this.btn_simpan.TabIndex = 13;
+            this.btn_simpan.Text = "Simpan";
+            this.btn_simpan.UseVisualStyleBackColor = true;
+            this.btn_simpan.Click += new System.EventHandler(this.btn_simpan_Click);
             // 
             // rdo_statustdkaktif
             // 
@@ -242,16 +255,7 @@
             this.panel_logo.Location = new System.Drawing.Point(12, 12);
             this.panel_logo.Name = "panel_logo";
             this.panel_logo.Size = new System.Drawing.Size(888, 101);
-            this.panel_logo.TabIndex = 4;
-            // 
-            // pict_fotoKTP
-            // 
-            this.pict_fotoKTP.Location = new System.Drawing.Point(688, 167);
-            this.pict_fotoKTP.Name = "pict_fotoKTP";
-            this.pict_fotoKTP.Size = new System.Drawing.Size(184, 206);
-            this.pict_fotoKTP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pict_fotoKTP.TabIndex = 15;
-            this.pict_fotoKTP.TabStop = false;
+            this.panel_logo.TabIndex = 6;
             // 
             // pictureBox1
             // 
@@ -263,7 +267,29 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
-            // frm_tmbahterapis
+            // cbo_kodeterapis
+            // 
+            this.cbo_kodeterapis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_kodeterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_kodeterapis.FormattingEnabled = true;
+            this.cbo_kodeterapis.Location = new System.Drawing.Point(622, 22);
+            this.cbo_kodeterapis.Name = "cbo_kodeterapis";
+            this.cbo_kodeterapis.Size = new System.Drawing.Size(184, 47);
+            this.cbo_kodeterapis.TabIndex = 16;
+            this.cbo_kodeterapis.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(812, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(71, 50);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Ok";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // frm_editterapis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -272,17 +298,15 @@
             this.ControlBox = false;
             this.Controls.Add(this.panel_isi);
             this.Controls.Add(this.panel_logo);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "frm_tmbahterapis";
-            this.ShowIcon = false;
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Form Tambah Terapis";
-            this.Load += new System.EventHandler(this.frm_tmbahterapis_Load);
+            this.Name = "frm_editterapis";
+            this.Text = "Form Edit Terapis";
+            this.Load += new System.EventHandler(this.frm_editterapis_Load);
             this.panel_isi.ResumeLayout(false);
             this.panel_isi.PerformLayout();
-            this.panel_logo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pict_fotoKTP)).EndInit();
+            this.panel_logo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -291,8 +315,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel_isi;
+        private System.Windows.Forms.PictureBox pict_fotoKTP;
         private System.Windows.Forms.Button btn_batal;
-        private System.Windows.Forms.Button btn_tambah;
+        private System.Windows.Forms.Button btn_simpan;
         private System.Windows.Forms.RadioButton rdo_statustdkaktif;
         private System.Windows.Forms.RadioButton rdo_statusaktif;
         private System.Windows.Forms.Button btn_browsefoto;
@@ -307,7 +332,9 @@
         private System.Windows.Forms.Label label_namaterapis;
         private System.Windows.Forms.Label label_kodeterapis;
         private System.Windows.Forms.Panel panel_logo;
-        private System.Windows.Forms.PictureBox pict_fotoKTP;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbo_kodeterapis;
+
     }
 }
