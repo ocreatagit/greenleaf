@@ -38,7 +38,7 @@ namespace Green_Leaf
                 
                 // image file path
                 lokasi_gambar = open.FileName.Replace(@"\", @"\\");
-                //pictureBox1.Image = new Bitmap(lokasi_gambar);
+                pict_fotoKTP.Image = new Bitmap(lokasi_gambar);
             }
         }
 
@@ -47,6 +47,7 @@ namespace Green_Leaf
             DBConnect sql = new DBConnect();
             string query;
             bool kodeSama=false;
+
             #region(Select khusus kode terapis, disimpan ke dalam List lstkode)
             string connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -76,7 +77,7 @@ namespace Green_Leaf
             {
                 if (kode==txt_kodeterapis.Text)
                 {
-                    MessageBox.Show("Maaf Kode Terapis yang anda masukkan sudah terdaftar, silahkan ganti dengan Kode Terapis yang berbeda!");
+                    MessageBox.Show("Maaf, Kode Terapis yang anda masukkan sudah terdaftar, silahkan ganti dengan Kode Terapis yang berbeda!");
                     kodeSama = true;
                     break;
                 }
@@ -88,30 +89,52 @@ namespace Green_Leaf
 
             if (kodeSama == false)
             {
-                if (txt_kodeterapis.Text == "" || txt_namaterapis.Text == "" || lokasi_gambar == "")
+                if (txt_kodeterapis.Text == "")
                 {
-                    MessageBox.Show("Mohon lengkapi data terlebih dahulu!");
+                    MessageBox.Show("Mohon lengkapi data Kode Terapis terlebih dahulu!");
+                }
+                else if (txt_namaterapis.Text == "")
+                {
+                    MessageBox.Show("Mohon lengkapi data Nama Terapis terlebih dahulu!");
+                }
+                else if (lokasi_gambar == "")
+                {
+                    MessageBox.Show("Mohon pilih foto KTP terlebih dahulu!");
                 }
                 else
                 {
                     if (rdo_statusaktif.Checked == false && rdo_statustdkaktif.Checked == false)
                     {
-                        MessageBox.Show("Mohon lengkapi data terlebih dahulu!");
+                        MessageBox.Show("Mohon pilih Status terlebih dahulu!");
                     }
                     else if (rdo_statusaktif.Checked)
                     {
                         query = "INSERT INTO `terapis` (`kode_terapis`, `nama_terapis`, `lokasi_gambar`, `status_terapis`) VALUES ('" + txt_kodeterapis.Text + "', '" + txt_namaterapis.Text + "', '" + lokasi_gambar + "', 'Aktif');";
                         sql.Insert(query);
+                        MessageBox.Show("Terapis telah berhasil ditambahkan");
+                        txt_kodeterapis.Clear();
+                        txt_namaterapis.Clear();
+                        lokasi_gambar = "";
+                        rdo_statusaktif.Checked = false;
+                        rdo_statustdkaktif.Checked = false;
+                        pict_fotoKTP.Image = null;
+                        txt_kodeterapis.Focus();
                     }
                     else if (rdo_statustdkaktif.Checked)
                     {
                         query = "INSERT INTO `terapis` (`kode_terapis`, `nama_terapis`, `lokasi_gambar`, `status_terapis`) VALUES ('" + txt_kodeterapis.Text + "', '" + txt_namaterapis.Text + "', '" + lokasi_gambar + "', 'Tidak Aktif');";
                         sql.Insert(query);
+                        MessageBox.Show("Terapis telah berhasil ditambahkan");
+                        txt_kodeterapis.Clear();
+                        txt_namaterapis.Clear();
+                        lokasi_gambar = "";
+                        rdo_statusaktif.Checked = false;
+                        rdo_statustdkaktif.Checked = false;
+                        pict_fotoKTP.Image = null;
+                        txt_kodeterapis.Focus();
                     }
                 }
             }
-            
-            
         }
 
         private void btn_batal_Click(object sender, EventArgs e)

@@ -46,13 +46,16 @@
             this.label_kodeterapis = new System.Windows.Forms.Label();
             this.panel_logo = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.pict_fotoKTP = new System.Windows.Forms.PictureBox();
             this.panel_isi.SuspendLayout();
             this.panel_logo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pict_fotoKTP)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_isi
             // 
             this.panel_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_isi.Controls.Add(this.pict_fotoKTP);
             this.panel_isi.Controls.Add(this.btn_batal);
             this.panel_isi.Controls.Add(this.btn_tambah);
             this.panel_isi.Controls.Add(this.rdo_statustdkaktif);
@@ -76,9 +79,9 @@
             // btn_batal
             // 
             this.btn_batal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_batal.Location = new System.Drawing.Point(466, 323);
+            this.btn_batal.Location = new System.Drawing.Point(466, 306);
             this.btn_batal.Name = "btn_batal";
-            this.btn_batal.Size = new System.Drawing.Size(155, 50);
+            this.btn_batal.Size = new System.Drawing.Size(155, 67);
             this.btn_batal.TabIndex = 14;
             this.btn_batal.Text = "Batal";
             this.btn_batal.UseVisualStyleBackColor = true;
@@ -87,9 +90,9 @@
             // btn_tambah
             // 
             this.btn_tambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_tambah.Location = new System.Drawing.Point(266, 323);
+            this.btn_tambah.Location = new System.Drawing.Point(266, 306);
             this.btn_tambah.Name = "btn_tambah";
-            this.btn_tambah.Size = new System.Drawing.Size(155, 50);
+            this.btn_tambah.Size = new System.Drawing.Size(155, 67);
             this.btn_tambah.TabIndex = 13;
             this.btn_tambah.Text = "Tambah";
             this.btn_tambah.UseVisualStyleBackColor = true;
@@ -128,7 +131,7 @@
             this.btn_browsefoto.Name = "btn_browsefoto";
             this.btn_browsefoto.Size = new System.Drawing.Size(155, 50);
             this.btn_browsefoto.TabIndex = 10;
-            this.btn_browsefoto.Text = "Browse";
+            this.btn_browsefoto.Text = "Pilih";
             this.btn_browsefoto.UseVisualStyleBackColor = true;
             this.btn_browsefoto.Click += new System.EventHandler(this.btn_browsefoto_Click);
             // 
@@ -250,6 +253,15 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Logo";
             // 
+            // pict_fotoKTP
+            // 
+            this.pict_fotoKTP.Location = new System.Drawing.Point(688, 167);
+            this.pict_fotoKTP.Name = "pict_fotoKTP";
+            this.pict_fotoKTP.Size = new System.Drawing.Size(184, 206);
+            this.pict_fotoKTP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pict_fotoKTP.TabIndex = 15;
+            this.pict_fotoKTP.TabStop = false;
+            // 
             // frm_tmbahterapis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,6 +282,7 @@
             this.panel_isi.PerformLayout();
             this.panel_logo.ResumeLayout(false);
             this.panel_logo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pict_fotoKTP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,5 +307,6 @@
         private System.Windows.Forms.Label label_kodeterapis;
         private System.Windows.Forms.Panel panel_logo;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pict_fotoKTP;
     }
 }
