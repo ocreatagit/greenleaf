@@ -77,47 +77,54 @@ namespace Green_Leaf
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string kodeTerpilih = cbo_kodeterapis.SelectedItem.ToString();
-
-            string query;
-
-            #region(Select)
-            string connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection conn = new MySqlConnection(connStr);
-            List<string> lstKode = new List<string>();
-            try
+            if (cbo_kodeterapis.SelectedItem != null)
             {
-                conn.Open();
+                string kodeTerpilih = cbo_kodeterapis.SelectedItem.ToString();
 
-                query = "SELECT * FROM `terapis` WHERE `kode_terapis` LIKE '"+kodeTerpilih+"'";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
+                string query;
 
-                while (rdr.Read())
+                #region(Select)
+                string connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                MySqlConnection conn = new MySqlConnection(connStr);
+                List<string> lstKode = new List<string>();
+                try
                 {
-                    idTerapis = rdr.GetString(0);
-                    txt_kodeterapis.Text = rdr.GetString(1);
-                    kodeTerakhir = txt_kodeterapis.Text;
-                    txt_namaterapis.Text = rdr.GetString(2);
-                    pict_fotoKTP.Image = new Bitmap(rdr.GetString(3));
-                    lokasi_gambar = rdr.GetString(3);
-                    if (rdr.GetString(4)=="Aktif")
+                    conn.Open();
+
+                    query = "SELECT * FROM `terapis` WHERE `kode_terapis` LIKE '" + kodeTerpilih + "'";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+
+                    while (rdr.Read())
                     {
-                        rdo_statusaktif.Checked = true;
+                        idTerapis = rdr.GetString(0);
+                        txt_kodeterapis.Text = rdr.GetString(1);
+                        kodeTerakhir = txt_kodeterapis.Text;
+                        txt_namaterapis.Text = rdr.GetString(2);
+                        pict_fotoKTP.Image = new Bitmap(rdr.GetString(3));
+                        lokasi_gambar = rdr.GetString(3);
+                        if (rdr.GetString(4) == "Aktif")
+                        {
+                            rdo_statusaktif.Checked = true;
+                        }
+                        else if (rdr.GetString(4) == "Tidak Aktif")
+                        {
+                            rdo_statustdkaktif.Checked = true;
+                        }
                     }
-                    else if (rdr.GetString(4) == "Tidak Aktif")
-                    {
-                        rdo_statustdkaktif.Checked = true;
-                    }
+                    rdr.Close();
                 }
-                rdr.Close();
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                conn.Close();
+                #endregion
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine(ex.ToString());
+                MessageBox.Show("Mohon pilih Kode Terapis terlebih dahulu!");
             }
-            conn.Close();
-            #endregion
         }
 
         private void btn_simpan_Click(object sender, EventArgs e)
