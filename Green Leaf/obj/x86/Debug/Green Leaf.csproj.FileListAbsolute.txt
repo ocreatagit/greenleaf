@@ -20,3 +20,5 @@ C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\bin
 C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\bin\Debug\MySql.Data.dll
 C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Debug\Green_Leaf.frm_editterapis.resources
 C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Debug\Green_Leaf.frm_userlogin.resources
+C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Debug\Green_Leaf.frm_tambahpaket.resources
+C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Debug\Green_Leaf.frm_editpaket.resources

@@ -14,7 +14,7 @@ namespace Green_Leaf
 {
     public partial class frm_tmbahterapis : Form
     {
-        string lokasi_gambar = "";
+        string tbhtrps_lokasi_gambar = "";
 
         public frm_tmbahterapis()
         {
@@ -29,110 +29,110 @@ namespace Green_Leaf
         private void btn_browsefoto_Click(object sender, EventArgs e)
         {
             // open file dialog 
-            OpenFileDialog open = new OpenFileDialog();
+            OpenFileDialog tbhtrps_open = new OpenFileDialog();
             // image filters
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            if (open.ShowDialog() == DialogResult.OK)
+            tbhtrps_open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (tbhtrps_open.ShowDialog() == DialogResult.OK)
             {
                 // display image in picture box
                 
                 // image file path
-                lokasi_gambar = open.FileName.Replace(@"\", @"\\");
-                pict_fotoKTP.Image = new Bitmap(lokasi_gambar);
+                tbhtrps_lokasi_gambar = tbhtrps_open.FileName.Replace(@"\", @"\\");
+                pict_tbhtrps_fotoKTP.Image = new Bitmap(tbhtrps_lokasi_gambar);
             }
         }
 
         private void btn_tambah_Click(object sender, EventArgs e)
         {
-            DBConnect sql = new DBConnect();
+            DBConnect tbhtrps_sql = new DBConnect();
             
-            bool kodeSama=false;
+            bool tbhtrps_kodeSama=false;
 
             #region(Select khusus kode terapis, disimpan ke dalam List lstkode)
-            string query;
-            string connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection conn = new MySqlConnection(connStr);
-            List<string> lstKode = new List<string>();
+            string tbhtrps_query;
+            string tbhtrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+            MySqlConnection tbhtrps_conn = new MySqlConnection(tbhtrps_connStr);
+            List<string> tbhtrps_lstKode = new List<string>();
             try
             {
-                conn.Open();
+                tbhtrps_conn.Open();
 
-                query = "SELECT kode_terapis FROM `terapis`";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
+                tbhtrps_query = "SELECT kode_terapis FROM `terapis`";
+                MySqlCommand tbhtrps_cmd = new MySqlCommand(tbhtrps_query, tbhtrps_conn);
+                MySqlDataReader tbhtrps_rdr = tbhtrps_cmd.ExecuteReader();
 
-                while (rdr.Read())
+                while (tbhtrps_rdr.Read())
                 {
-                    lstKode.Add(rdr[0].ToString());
+                    tbhtrps_lstKode.Add(tbhtrps_rdr[0].ToString());
                 }
-                rdr.Close();
+                tbhtrps_rdr.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
-            conn.Close();
+            tbhtrps_conn.Close();
             #endregion
 
-            foreach (string kode in lstKode)
+            foreach (string tbhtrps_kode in tbhtrps_lstKode)
             {
-                if (kode==txt_kodeterapis.Text)
+                if (tbhtrps_kode==txt_tbhtrps_kodeterapis.Text)
                 {
                     MessageBox.Show("Maaf, Kode Terapis yang anda masukkan sudah terdaftar, silahkan ganti dengan Kode Terapis yang berbeda!");
-                    kodeSama = true;
+                    tbhtrps_kodeSama = true;
                     break;
                 }
                 else
                 {
-                    kodeSama = false;
+                    tbhtrps_kodeSama = false;
                 }
             }
 
-            if (kodeSama == false)
+            if (tbhtrps_kodeSama == false)
             {
-                if (txt_kodeterapis.Text == "")
+                if (txt_tbhtrps_kodeterapis.Text == "")
                 {
                     MessageBox.Show("Mohon lengkapi data Kode Terapis terlebih dahulu!");
                 }
-                else if (txt_namaterapis.Text == "")
+                else if (txt_tbhtrps_namaterapis.Text == "")
                 {
                     MessageBox.Show("Mohon lengkapi data Nama Terapis terlebih dahulu!");
                 }
-                else if (lokasi_gambar == "")
+                else if (tbhtrps_lokasi_gambar == "")
                 {
                     MessageBox.Show("Mohon pilih foto KTP terlebih dahulu!");
                 }
                 else
                 {
-                    if (rdo_statusaktif.Checked == false && rdo_statustdkaktif.Checked == false)
+                    if (rdo_tbhtrps_statusaktif.Checked == false && rdo_tbhtrps_statustdkaktif.Checked == false)
                     {
                         MessageBox.Show("Mohon pilih Status terlebih dahulu!");
                     }
-                    else if (rdo_statusaktif.Checked)
+                    else if (rdo_tbhtrps_statusaktif.Checked)
                     {
-                        query = "INSERT INTO `terapis` (`kode_terapis`, `nama_terapis`, `lokasi_gambar`, `status_terapis`) VALUES ('" + txt_kodeterapis.Text + "', '" + txt_namaterapis.Text + "', '" + lokasi_gambar + "', 'Aktif');";
-                        sql.Insert(query);
+                        tbhtrps_query = "INSERT INTO `terapis` (`kode_terapis`, `nama_terapis`, `lokasi_gambar`, `status_terapis`) VALUES ('" + txt_tbhtrps_kodeterapis.Text + "', '" + txt_tbhtrps_namaterapis.Text + "', '" + tbhtrps_lokasi_gambar + "', 'Aktif');";
+                        tbhtrps_sql.Insert(tbhtrps_query);
                         MessageBox.Show("Terapis telah berhasil ditambahkan");
-                        txt_kodeterapis.Clear();
-                        txt_namaterapis.Clear();
-                        lokasi_gambar = "";
-                        rdo_statusaktif.Checked = false;
-                        rdo_statustdkaktif.Checked = false;
-                        pict_fotoKTP.Image = null;
-                        txt_kodeterapis.Focus();
+                        txt_tbhtrps_kodeterapis.Clear();
+                        txt_tbhtrps_namaterapis.Clear();
+                        tbhtrps_lokasi_gambar = "";
+                        rdo_tbhtrps_statusaktif.Checked = false;
+                        rdo_tbhtrps_statustdkaktif.Checked = false;
+                        pict_tbhtrps_fotoKTP.Image = null;
+                        txt_tbhtrps_kodeterapis.Focus();
                     }
-                    else if (rdo_statustdkaktif.Checked)
+                    else if (rdo_tbhtrps_statustdkaktif.Checked)
                     {
-                        query = "INSERT INTO `terapis` (`kode_terapis`, `nama_terapis`, `lokasi_gambar`, `status_terapis`) VALUES ('" + txt_kodeterapis.Text + "', '" + txt_namaterapis.Text + "', '" + lokasi_gambar + "', 'Tidak Aktif');";
-                        sql.Insert(query);
+                        tbhtrps_query = "INSERT INTO `terapis` (`kode_terapis`, `nama_terapis`, `lokasi_gambar`, `status_terapis`) VALUES ('" + txt_tbhtrps_kodeterapis.Text + "', '" + txt_tbhtrps_namaterapis.Text + "', '" + tbhtrps_lokasi_gambar + "', 'Tidak Aktif');";
+                        tbhtrps_sql.Insert(tbhtrps_query);
                         MessageBox.Show("Terapis telah berhasil ditambahkan");
-                        txt_kodeterapis.Clear();
-                        txt_namaterapis.Clear();
-                        lokasi_gambar = "";
-                        rdo_statusaktif.Checked = false;
-                        rdo_statustdkaktif.Checked = false;
-                        pict_fotoKTP.Image = null;
-                        txt_kodeterapis.Focus();
+                        txt_tbhtrps_kodeterapis.Clear();
+                        txt_tbhtrps_namaterapis.Clear();
+                        tbhtrps_lokasi_gambar = "";
+                        rdo_tbhtrps_statusaktif.Checked = false;
+                        rdo_tbhtrps_statustdkaktif.Checked = false;
+                        pict_tbhtrps_fotoKTP.Image = null;
+                        txt_tbhtrps_kodeterapis.Focus();
                     }
                 }
             }

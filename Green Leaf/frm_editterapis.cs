@@ -14,9 +14,9 @@ namespace Green_Leaf
 {
     public partial class frm_editterapis : Form
     {
-        string lokasi_gambar;
-        string idTerapis;
-        string kodeTerakhir;
+        string edttrps_lokasi_gambar;
+        string edttrps_idTerapis;
+        string edttrps_kodeTerakhir;
 
         public frm_editterapis()
         {
@@ -32,93 +32,107 @@ namespace Green_Leaf
         private void btn_browsefoto_Click(object sender, EventArgs e)
         {
             // open file dialog 
-            OpenFileDialog open = new OpenFileDialog();
+            OpenFileDialog edttrps_open = new OpenFileDialog();
             // image filters
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            if (open.ShowDialog() == DialogResult.OK)
+            edttrps_open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (edttrps_open.ShowDialog() == DialogResult.OK)
             {
                 // display image in picture box
 
                 // image file path
-                lokasi_gambar = open.FileName.Replace(@"\", @"\\");
-                pict_fotoKTP.Image = new Bitmap(lokasi_gambar);
+                edttrps_lokasi_gambar = edttrps_open.FileName.Replace(@"\", @"\\");
+                pcb_edttrps_fotoKTP.Image = new Bitmap(edttrps_lokasi_gambar);
             }
         }
 
         private void frm_editterapis_Load(object sender, EventArgs e)
         {
-            string query;
+            btn_edttrp_simpan.Enabled = false;
+            txt_edttrps_kodeterapis.Enabled = false;
+            txt_edttrps_namaterapis.Enabled = false;
+            btn_edttrps_browsefoto.Enabled = false;
+            rdo_edttrps_statusaktif.Enabled = false;
+            rdo_edttrps_statustdkaktif.Enabled = false;
+
+            string edttrps_query;
 
             #region(Select)
-            string connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection conn = new MySqlConnection(connStr);
-            List<string> lstKode = new List<string>();
+            string edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+            MySqlConnection edttrps_conn = new MySqlConnection(edttrps_connStr);
+            List<string> edttrps_lstKode = new List<string>();
             try
             {
-                conn.Open();
+                edttrps_conn.Open();
 
-                query = "SELECT * FROM `terapis` order by id_terapis DESC";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
+                edttrps_query = "SELECT * FROM `terapis` order by id_terapis DESC";
+                MySqlCommand edttrps_cmd = new MySqlCommand(edttrps_query, edttrps_conn);
+                MySqlDataReader edttrps_rdr = edttrps_cmd.ExecuteReader();
 
-                while (rdr.Read())
+                while (edttrps_rdr.Read())
                 {
-                    cbo_kodeterapis.Items.Add(rdr.GetString(1));
+                    //cbo_kodeterapis.Items.Add(edttrps_rdr.GetString(1));
+                    lsb_edttrps_kodeterapis.Items.Add(edttrps_rdr.GetString(1));
                 }
-                rdr.Close();
+                edttrps_rdr.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
-            conn.Close();
+            edttrps_conn.Close();
             #endregion
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (cbo_kodeterapis.SelectedItem != null)
+            btn_edttrp_simpan.Enabled = true;
+            txt_edttrps_kodeterapis.Enabled = true;
+            txt_edttrps_namaterapis.Enabled = true;
+            btn_edttrps_browsefoto.Enabled = true;
+            rdo_edttrps_statusaktif.Enabled = true;
+            rdo_edttrps_statustdkaktif.Enabled = true;
+            if (lsb_edttrps_kodeterapis.SelectedItem != null)
             {
-                string kodeTerpilih = cbo_kodeterapis.SelectedItem.ToString();
+                string edttrps_kodeTerpilih = lsb_edttrps_kodeterapis.SelectedItem.ToString();
 
-                string query;
+                string edttrps_query;
 
                 #region(Select)
-                string connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                MySqlConnection conn = new MySqlConnection(connStr);
-                List<string> lstKode = new List<string>();
+                string edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                MySqlConnection edttrps_conn = new MySqlConnection(edttrps_connStr);
+                List<string> edttrps_lstKode = new List<string>();
                 try
                 {
-                    conn.Open();
+                    edttrps_conn.Open();
 
-                    query = "SELECT * FROM `terapis` WHERE `kode_terapis` LIKE '" + kodeTerpilih + "'";
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    edttrps_query = "SELECT * FROM `terapis` WHERE `kode_terapis` LIKE '" + edttrps_kodeTerpilih + "'";
+                    MySqlCommand edttrps_cmd = new MySqlCommand(edttrps_query, edttrps_conn);
+                    MySqlDataReader edttrps_rdr = edttrps_cmd.ExecuteReader();
 
-                    while (rdr.Read())
+                    while (edttrps_rdr.Read())
                     {
-                        idTerapis = rdr.GetString(0);
-                        txt_kodeterapis.Text = rdr.GetString(1);
-                        kodeTerakhir = txt_kodeterapis.Text;
-                        txt_namaterapis.Text = rdr.GetString(2);
-                        pict_fotoKTP.Image = new Bitmap(rdr.GetString(3));
-                        lokasi_gambar = rdr.GetString(3);
-                        if (rdr.GetString(4) == "Aktif")
+                        edttrps_idTerapis = edttrps_rdr.GetString(0);
+                        txt_edttrps_kodeterapis.Text = edttrps_rdr.GetString(1);
+                        edttrps_kodeTerakhir = txt_edttrps_kodeterapis.Text;
+                        txt_edttrps_namaterapis.Text = edttrps_rdr.GetString(2);
+                        pcb_edttrps_fotoKTP.Image = new Bitmap(edttrps_rdr.GetString(3));
+                        edttrps_lokasi_gambar = edttrps_rdr.GetString(3);
+                        if (edttrps_rdr.GetString(4) == "Aktif")
                         {
-                            rdo_statusaktif.Checked = true;
+                            rdo_edttrps_statusaktif.Checked = true;
                         }
-                        else if (rdr.GetString(4) == "Tidak Aktif")
+                        else if (edttrps_rdr.GetString(4) == "Tidak Aktif")
                         {
-                            rdo_statustdkaktif.Checked = true;
+                            rdo_edttrps_statustdkaktif.Checked = true;
                         }
                     }
-                    rdr.Close();
+                    edttrps_rdr.Close();
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
                 }
-                conn.Close();
+                edttrps_conn.Close();
                 #endregion
             }
             else
@@ -129,240 +143,241 @@ namespace Green_Leaf
 
         private void btn_simpan_Click(object sender, EventArgs e)
         {
-            string connStr;
-            MySqlConnection conn;
-            DBConnect sql = new DBConnect();
-            string query;
-            bool kodeSama = false;
-            lokasi_gambar = lokasi_gambar.Replace(@"\", @"\\");
-
-            if (txt_kodeterapis.Text == kodeTerakhir)
+            if (txt_edttrps_kodeterapis.Text == "")
             {
-                
-                if (txt_kodeterapis.Text == "")
-                {
-                    MessageBox.Show("Mohon lengkapi data Kode Terapis terlebih dahulu!");
-                }
-                else if (txt_namaterapis.Text == "")
-                {
-                    MessageBox.Show("Mohon lengkapi data Nama Terapis terlebih dahulu!");
-                }
-                else if (lokasi_gambar == "")
-                {
-                    MessageBox.Show("Mohon pilih foto KTP terlebih dahulu!");
-                }
-                else
-                {
-                    if (rdo_statusaktif.Checked == false && rdo_statustdkaktif.Checked == false)
-                    {
-                        MessageBox.Show("Mohon pilih Status terlebih dahulu!");
-                    }
-                    else if (rdo_statusaktif.Checked)
-                    {
-                        #region(Update)
-                        connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                        conn = new MySqlConnection(connStr);
-                        try
-                        {
-                            conn.Open();
-
-                            query = "UPDATE `terapis` SET `kode_terapis` = '" + kodeTerakhir + "', `nama_terapis` = '" + txt_namaterapis.Text + "', `lokasi_gambar` = '" + lokasi_gambar + "', `status_terapis` = 'Aktif' WHERE `terapis`.`id_terapis` = " + idTerapis + "";
-                            MySqlCommand cmd = new MySqlCommand(query, conn);
-                            cmd.ExecuteNonQuery();
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine(ex.ToString());
-                        }
-                        conn.Close();
-                        #endregion
-                        MessageBox.Show("Data terapis telah berhasil disimpan");
-                        txt_kodeterapis.Clear();
-                        txt_namaterapis.Clear();
-                        lokasi_gambar = "";
-                        rdo_statusaktif.Checked = false;
-                        rdo_statustdkaktif.Checked = false;
-                        pict_fotoKTP.Image = null;
-                        txt_kodeterapis.Focus();
-                    }
-                    else if (rdo_statustdkaktif.Checked)
-                    {
-                        #region(Update)
-                        connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                        conn = new MySqlConnection(connStr);
-                        try
-                        {
-                            conn.Open();
-
-                            query = "UPDATE `terapis` SET `kode_terapis` = '" + kodeTerakhir + "', `nama_terapis` = '" + txt_namaterapis.Text + "', `lokasi_gambar` = '" + lokasi_gambar + "', `status_terapis` = 'Tidak Aktif' WHERE `terapis`.`id_terapis` = " + idTerapis + "";
-                            MySqlCommand cmd = new MySqlCommand(query, conn);
-                            cmd.ExecuteNonQuery();
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine(ex.ToString());
-                        }
-                        conn.Close();
-                        #endregion
-                        MessageBox.Show("Data terapis telah berhasil disimpan");
-                        txt_kodeterapis.Clear();
-                        txt_namaterapis.Clear();
-                        lokasi_gambar = "";
-                        rdo_statusaktif.Checked = false;
-                        rdo_statustdkaktif.Checked = false;
-                        pict_fotoKTP.Image = null;
-                        txt_kodeterapis.Focus();
-                    }
-                }
+                MessageBox.Show("Mohon lengkapi data Kode Terapis terlebih dahulu!");
+            }
+            else if (txt_edttrps_namaterapis.Text == "")
+            {
+                MessageBox.Show("Mohon lengkapi data Nama Terapis terlebih dahulu!");
+            }
+            else if (edttrps_lokasi_gambar == "")
+            {
+                MessageBox.Show("Mohon pilih foto KTP terlebih dahulu!");
             }
             else
             {
+                string edttrps_connStr;
+                MySqlConnection edttrps_conn;
+                DBConnect edttrps_sql = new DBConnect();
+                string edttrps_query;
+                bool edttrps_kodeSama = false;
+                edttrps_lokasi_gambar = edttrps_lokasi_gambar.Replace(@"\", @"\\");
+
+                if (txt_edttrps_kodeterapis.Text == edttrps_kodeTerakhir)
+                {
+                        if (rdo_edttrps_statusaktif.Checked)
+                        {
+                            #region(Update)
+                            edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                            edttrps_conn = new MySqlConnection(edttrps_connStr);
+                            try
+                            {
+                                edttrps_conn.Open();
+
+                                edttrps_query = "UPDATE `terapis` SET `kode_terapis` = '" + edttrps_kodeTerakhir + "', `nama_terapis` = '" + txt_edttrps_namaterapis.Text + "', `lokasi_gambar` = '" + edttrps_lokasi_gambar + "', `status_terapis` = 'Aktif' WHERE `terapis`.`id_terapis` = " + edttrps_idTerapis + "";
+                                MySqlCommand cmd = new MySqlCommand(edttrps_query, edttrps_conn);
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.ToString());
+                            }
+                            edttrps_conn.Close();
+                            #endregion
+                            MessageBox.Show("Data terapis telah berhasil disimpan");
+                            txt_edttrps_kodeterapis.Clear();
+                            txt_edttrps_namaterapis.Clear();
+                            edttrps_lokasi_gambar = "";
+                            rdo_edttrps_statusaktif.Checked = false;
+                            rdo_edttrps_statustdkaktif.Checked = false;
+                            pcb_edttrps_fotoKTP.Image = null;
+                            txt_edttrps_kodeterapis.Focus();
+                            btn_edttrp_simpan.Enabled = false;
+                            txt_edttrps_kodeterapis.Enabled = false;
+                            txt_edttrps_namaterapis.Enabled = false;
+                            btn_edttrps_browsefoto.Enabled = false;
+                            rdo_edttrps_statusaktif.Enabled = false;
+                            rdo_edttrps_statustdkaktif.Enabled = false;
+                        }
+                        else if (rdo_edttrps_statustdkaktif.Checked)
+                        {
+                            #region(Update)
+                            edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                            edttrps_conn = new MySqlConnection(edttrps_connStr);
+                            try
+                            {
+                                edttrps_conn.Open();
+
+                                edttrps_query = "UPDATE `terapis` SET `kode_terapis` = '" + edttrps_kodeTerakhir + "', `nama_terapis` = '" + txt_edttrps_namaterapis.Text + "', `lokasi_gambar` = '" + edttrps_lokasi_gambar + "', `status_terapis` = 'Tidak Aktif' WHERE `terapis`.`id_terapis` = " + edttrps_idTerapis + "";
+                                MySqlCommand edttrps_cmd = new MySqlCommand(edttrps_query, edttrps_conn);
+                                edttrps_cmd.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.ToString());
+                            }
+                            edttrps_conn.Close();
+                            #endregion
+                            MessageBox.Show("Data terapis telah berhasil disimpan");
+                            txt_edttrps_kodeterapis.Clear();
+                            txt_edttrps_namaterapis.Clear();
+                            edttrps_lokasi_gambar = "";
+                            rdo_edttrps_statusaktif.Checked = false;
+                            rdo_edttrps_statustdkaktif.Checked = false;
+                            pcb_edttrps_fotoKTP.Image = null;
+                            txt_edttrps_kodeterapis.Focus();
+                            btn_edttrp_simpan.Enabled = false;
+                            txt_edttrps_kodeterapis.Enabled = false;
+                            txt_edttrps_namaterapis.Enabled = false;
+                            btn_edttrps_browsefoto.Enabled = false;
+                            rdo_edttrps_statusaktif.Enabled = false;
+                            rdo_edttrps_statustdkaktif.Enabled = false;
+                        }
+                }
+                else
+                {
+                    #region(Select)
+                    edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                    edttrps_conn = new MySqlConnection(edttrps_connStr);
+                    List<string> edttrps_lstKode = new List<string>();
+                    try
+                    {
+                        edttrps_conn.Open();
+
+                        edttrps_query = "SELECT kode_terapis FROM `terapis`";
+                        MySqlCommand edttrps_cmd = new MySqlCommand(edttrps_query, edttrps_conn);
+                        MySqlDataReader edttrps_rdr = edttrps_cmd.ExecuteReader();
+
+                        while (edttrps_rdr.Read())
+                        {
+                            edttrps_lstKode.Add(edttrps_rdr[0].ToString());
+                        }
+                        edttrps_rdr.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
+                    edttrps_conn.Close();
+                    #endregion
+
+                    foreach (string edttrps_kode in edttrps_lstKode)
+                    {
+                        if (edttrps_kode == txt_edttrps_kodeterapis.Text)
+                        {
+                            MessageBox.Show("Maaf, Kode Terapis yang anda masukkan sudah terdaftar, silahkan ganti dengan Kode Terapis yang berbeda!");
+                            edttrps_kodeSama = true;
+                            break;
+                        }
+                        else
+                        {
+                            edttrps_kodeSama = false;
+                        }
+                    }
+
+                    if (edttrps_kodeSama == false)
+                    {
+                        if (rdo_edttrps_statusaktif.Checked)
+                            {
+                                #region(Update)
+                                edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                                edttrps_conn = new MySqlConnection(edttrps_connStr);
+                                try
+                                {
+                                    edttrps_conn.Open();
+
+                                    edttrps_query = "UPDATE `terapis` SET `kode_terapis` = '" + txt_edttrps_kodeterapis.Text + "', `nama_terapis` = '" + txt_edttrps_namaterapis.Text + "', `lokasi_gambar` = '" + edttrps_lokasi_gambar + "', `status_terapis` = 'Aktif' WHERE `terapis`.`id_terapis` = " + edttrps_idTerapis + "";
+                                    MySqlCommand cmd = new MySqlCommand(edttrps_query, edttrps_conn);
+                                    cmd.ExecuteNonQuery();
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine(ex.ToString());
+                                }
+                                edttrps_conn.Close();
+                                #endregion
+                                MessageBox.Show("Data terapis telah berhasil disimpan");
+                                txt_edttrps_kodeterapis.Clear();
+                                txt_edttrps_namaterapis.Clear();
+                                edttrps_lokasi_gambar = "";
+                                rdo_edttrps_statusaktif.Checked = false;
+                                rdo_edttrps_statustdkaktif.Checked = false;
+                                pcb_edttrps_fotoKTP.Image = null;
+                                txt_edttrps_kodeterapis.Focus();
+                                btn_edttrp_simpan.Enabled = false;
+                                txt_edttrps_kodeterapis.Enabled = false;
+                                txt_edttrps_namaterapis.Enabled = false;
+                                btn_edttrps_browsefoto.Enabled = false;
+                                rdo_edttrps_statusaktif.Enabled = false;
+                                rdo_edttrps_statustdkaktif.Enabled = false;
+                            }
+                            else if (rdo_edttrps_statustdkaktif.Checked)
+                            {
+                                #region(Update)
+                                edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                                edttrps_conn = new MySqlConnection(edttrps_connStr);
+                                try
+                                {
+                                    edttrps_conn.Open();
+
+                                    edttrps_query = "UPDATE `terapis` SET `kode_terapis` = '" + txt_edttrps_kodeterapis.Text + "', `nama_terapis` = '" + txt_edttrps_namaterapis.Text + "', `lokasi_gambar` = '" + edttrps_lokasi_gambar + "', `status_terapis` = 'Tidak Aktif' WHERE `terapis`.`id_terapis` = " + edttrps_idTerapis + "";
+                                    MySqlCommand cmd = new MySqlCommand(edttrps_query, edttrps_conn);
+                                    cmd.ExecuteNonQuery();
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine(ex.ToString());
+                                }
+                                edttrps_conn.Close();
+                                #endregion
+                                MessageBox.Show("Data terapis telah berhasil disimpan");
+                                txt_edttrps_kodeterapis.Clear();
+                                txt_edttrps_namaterapis.Clear();
+                                edttrps_lokasi_gambar = "";
+                                rdo_edttrps_statusaktif.Checked = false;
+                                rdo_edttrps_statustdkaktif.Checked = false;
+                                pcb_edttrps_fotoKTP.Image = null;
+                                txt_edttrps_kodeterapis.Focus();
+                                btn_edttrp_simpan.Enabled = false;
+                                txt_edttrps_kodeterapis.Enabled = false;
+                                txt_edttrps_namaterapis.Enabled = false;
+                                btn_edttrps_browsefoto.Enabled = false;
+                                rdo_edttrps_statusaktif.Enabled = false;
+                                rdo_edttrps_statustdkaktif.Enabled = false;
+                            }
+                        }
+                }
+                //cbo_kodeterapis.Items.Clear();
+                lsb_edttrps_kodeterapis.Items.Clear();
                 #region(Select)
-                connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                conn = new MySqlConnection(connStr);
-                List<string> lstKode = new List<string>();
+                edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                edttrps_conn = new MySqlConnection(edttrps_connStr);
                 try
                 {
-                    conn.Open();
+                    edttrps_conn.Open();
 
-                    query = "SELECT kode_terapis FROM `terapis`";
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    edttrps_query = "SELECT * FROM `terapis` order by id_terapis DESC";
+                    MySqlCommand edttrps_cmd = new MySqlCommand(edttrps_query, edttrps_conn);
+                    MySqlDataReader edttrps_rdr = edttrps_cmd.ExecuteReader();
 
-                    while (rdr.Read())
+                    while (edttrps_rdr.Read())
                     {
-                        lstKode.Add(rdr[0].ToString());
+                        //cbo_kodeterapis.Items.Add(rdr.GetString(1));
+                        lsb_edttrps_kodeterapis.Items.Add(edttrps_rdr.GetString(1));
                     }
-                    rdr.Close();
+                    edttrps_rdr.Close();
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
                 }
-                conn.Close();
+                edttrps_conn.Close();
                 #endregion
-
-                foreach (string kode in lstKode)
-                {
-                    if (kode == txt_kodeterapis.Text)
-                    {
-                        MessageBox.Show("Maaf, Kode Terapis yang anda masukkan sudah terdaftar, silahkan ganti dengan Kode Terapis yang berbeda!");
-                        kodeSama = true;
-                        break;
-                    }
-                    else
-                    {
-                        kodeSama = false;
-                    }
-                }
-
-                if (kodeSama == false)
-                {
-                    if (txt_kodeterapis.Text == "")
-                    {
-                        MessageBox.Show("Mohon lengkapi data Kode Terapis terlebih dahulu!");
-                    }
-                    else if (txt_namaterapis.Text == "")
-                    {
-                        MessageBox.Show("Mohon lengkapi data Nama Terapis terlebih dahulu!");
-                    }
-                    else if (lokasi_gambar == "")
-                    {
-                        MessageBox.Show("Mohon pilih foto KTP terlebih dahulu!");
-                    }
-                    else
-                    {
-                        if (rdo_statusaktif.Checked == false && rdo_statustdkaktif.Checked == false)
-                        {
-                            MessageBox.Show("Mohon pilih Status terlebih dahulu!");
-                        }
-                        else if (rdo_statusaktif.Checked)
-                        {
-                            #region(Update)
-                            connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                            conn = new MySqlConnection(connStr);
-                            try
-                            {
-                                conn.Open();
-
-                                query = "UPDATE `terapis` SET `kode_terapis` = '" + txt_kodeterapis.Text + "', `nama_terapis` = '" + txt_namaterapis.Text + "', `lokasi_gambar` = '" + lokasi_gambar + "', `status_terapis` = 'Aktif' WHERE `terapis`.`id_terapis` = " + idTerapis + "";
-                                MySqlCommand cmd = new MySqlCommand(query, conn);
-                                cmd.ExecuteNonQuery();
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine(ex.ToString());
-                            }
-                            conn.Close();
-                            #endregion
-                            MessageBox.Show("Data terapis telah berhasil disimpan");
-                            txt_kodeterapis.Clear();
-                            txt_namaterapis.Clear();
-                            lokasi_gambar = "";
-                            rdo_statusaktif.Checked = false;
-                            rdo_statustdkaktif.Checked = false;
-                            pict_fotoKTP.Image = null;
-                            txt_kodeterapis.Focus();
-                        }
-                        else if (rdo_statustdkaktif.Checked)
-                        {
-                            #region(Update)
-                            connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                            conn = new MySqlConnection(connStr);
-                            try
-                            {
-                                conn.Open();
-
-                                query = "UPDATE `terapis` SET `kode_terapis` = '" + txt_kodeterapis.Text + "', `nama_terapis` = '" + txt_namaterapis.Text + "', `lokasi_gambar` = '" + lokasi_gambar + "', `status_terapis` = 'Tidak Aktif' WHERE `terapis`.`id_terapis` = " + idTerapis + "";
-                                MySqlCommand cmd = new MySqlCommand(query, conn);
-                                cmd.ExecuteNonQuery();
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine(ex.ToString());
-                            }
-                            conn.Close();
-                            #endregion
-                            MessageBox.Show("Data terapis telah berhasil disimpan");
-                            txt_kodeterapis.Clear();
-                            txt_namaterapis.Clear();
-                            lokasi_gambar = "";
-                            rdo_statusaktif.Checked = false;
-                            rdo_statustdkaktif.Checked = false;
-                            pict_fotoKTP.Image = null;
-                            txt_kodeterapis.Focus();
-                        }
-                    }
-                }
             }
-            cbo_kodeterapis.Items.Clear();
-            #region(Select)
-            connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            conn = new MySqlConnection(connStr);
-            try
-            {
-                conn.Open();
-
-                query = "SELECT * FROM `terapis` order by id_terapis DESC";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-
-                while (rdr.Read())
-                {
-                    cbo_kodeterapis.Items.Add(rdr.GetString(1));
-                }
-                rdr.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            conn.Close();
-            #endregion
+            
             
         }
-
-        
 
         private void btn_batal_Click(object sender, EventArgs e)
         {

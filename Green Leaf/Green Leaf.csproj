@@ -50,11 +50,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBConnect.cs" />
+    <Compile Include="frm_editpaket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_editpaket.Designer.cs">
+      <DependentUpon>frm_editpaket.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_editterapis.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_editterapis.Designer.cs">
       <DependentUpon>frm_editterapis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_tambahpaket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_tambahpaket.Designer.cs">
+      <DependentUpon>frm_tambahpaket.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_tmbahterapis.cs">
       <SubType>Form</SubType>
@@ -70,8 +82,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm_editpaket.resx">
+      <DependentUpon>frm_editpaket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_editterapis.resx">
       <DependentUpon>frm_editterapis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_tambahpaket.resx">
+      <DependentUpon>frm_tambahpaket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_tmbahterapis.resx">
       <DependentUpon>frm_tmbahterapis.cs</DependentUpon>

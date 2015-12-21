@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel_isi = new System.Windows.Forms.Panel();
-            this.btn_batal = new System.Windows.Forms.Button();
-            this.btn_tambah = new System.Windows.Forms.Button();
-            this.rdo_statustdkaktif = new System.Windows.Forms.RadioButton();
-            this.rdo_statusaktif = new System.Windows.Forms.RadioButton();
-            this.btn_browsefoto = new System.Windows.Forms.Button();
-            this.txt_namaterapis = new System.Windows.Forms.TextBox();
-            this.txt_kodeterapis = new System.Windows.Forms.TextBox();
+            this.btn_tbhtrps_batal = new System.Windows.Forms.Button();
+            this.btn_tbhtrps_tambah = new System.Windows.Forms.Button();
+            this.rdo_tbhtrps_statustdkaktif = new System.Windows.Forms.RadioButton();
+            this.rdo_tbhtrps_statusaktif = new System.Windows.Forms.RadioButton();
+            this.btn_tbhtrps_browsefoto = new System.Windows.Forms.Button();
+            this.txt_tbhtrps_namaterapis = new System.Windows.Forms.TextBox();
+            this.txt_tbhtrps_kodeterapis = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,25 +45,25 @@
             this.label_namaterapis = new System.Windows.Forms.Label();
             this.label_kodeterapis = new System.Windows.Forms.Label();
             this.panel_logo = new System.Windows.Forms.Panel();
-            this.pict_fotoKTP = new System.Windows.Forms.PictureBox();
+            this.pict_tbhtrps_fotoKTP = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_isi.SuspendLayout();
             this.panel_logo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pict_fotoKTP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pict_tbhtrps_fotoKTP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_isi
             // 
             this.panel_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_isi.Controls.Add(this.pict_fotoKTP);
-            this.panel_isi.Controls.Add(this.btn_batal);
-            this.panel_isi.Controls.Add(this.btn_tambah);
-            this.panel_isi.Controls.Add(this.rdo_statustdkaktif);
-            this.panel_isi.Controls.Add(this.rdo_statusaktif);
-            this.panel_isi.Controls.Add(this.btn_browsefoto);
-            this.panel_isi.Controls.Add(this.txt_namaterapis);
-            this.panel_isi.Controls.Add(this.txt_kodeterapis);
+            this.panel_isi.Controls.Add(this.pict_tbhtrps_fotoKTP);
+            this.panel_isi.Controls.Add(this.btn_tbhtrps_batal);
+            this.panel_isi.Controls.Add(this.btn_tbhtrps_tambah);
+            this.panel_isi.Controls.Add(this.rdo_tbhtrps_statustdkaktif);
+            this.panel_isi.Controls.Add(this.rdo_tbhtrps_statusaktif);
+            this.panel_isi.Controls.Add(this.btn_tbhtrps_browsefoto);
+            this.panel_isi.Controls.Add(this.txt_tbhtrps_namaterapis);
+            this.panel_isi.Controls.Add(this.txt_tbhtrps_kodeterapis);
             this.panel_isi.Controls.Add(this.label5);
             this.panel_isi.Controls.Add(this.label4);
             this.panel_isi.Controls.Add(this.label3);
@@ -77,83 +77,83 @@
             this.panel_isi.Size = new System.Drawing.Size(888, 387);
             this.panel_isi.TabIndex = 5;
             // 
-            // btn_batal
+            // btn_tbhtrps_batal
             // 
-            this.btn_batal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_batal.Location = new System.Drawing.Point(466, 306);
-            this.btn_batal.Name = "btn_batal";
-            this.btn_batal.Size = new System.Drawing.Size(155, 67);
-            this.btn_batal.TabIndex = 14;
-            this.btn_batal.Text = "Batal";
-            this.btn_batal.UseVisualStyleBackColor = true;
-            this.btn_batal.Click += new System.EventHandler(this.btn_batal_Click);
+            this.btn_tbhtrps_batal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tbhtrps_batal.Location = new System.Drawing.Point(466, 306);
+            this.btn_tbhtrps_batal.Name = "btn_tbhtrps_batal";
+            this.btn_tbhtrps_batal.Size = new System.Drawing.Size(155, 67);
+            this.btn_tbhtrps_batal.TabIndex = 14;
+            this.btn_tbhtrps_batal.Text = "Batal";
+            this.btn_tbhtrps_batal.UseVisualStyleBackColor = true;
+            this.btn_tbhtrps_batal.Click += new System.EventHandler(this.btn_batal_Click);
             // 
-            // btn_tambah
+            // btn_tbhtrps_tambah
             // 
-            this.btn_tambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_tambah.Location = new System.Drawing.Point(266, 306);
-            this.btn_tambah.Name = "btn_tambah";
-            this.btn_tambah.Size = new System.Drawing.Size(155, 67);
-            this.btn_tambah.TabIndex = 13;
-            this.btn_tambah.Text = "Tambah";
-            this.btn_tambah.UseVisualStyleBackColor = true;
-            this.btn_tambah.Click += new System.EventHandler(this.btn_tambah_Click);
+            this.btn_tbhtrps_tambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tbhtrps_tambah.Location = new System.Drawing.Point(266, 306);
+            this.btn_tbhtrps_tambah.Name = "btn_tbhtrps_tambah";
+            this.btn_tbhtrps_tambah.Size = new System.Drawing.Size(155, 67);
+            this.btn_tbhtrps_tambah.TabIndex = 13;
+            this.btn_tbhtrps_tambah.Text = "Tambah";
+            this.btn_tbhtrps_tambah.UseVisualStyleBackColor = true;
+            this.btn_tbhtrps_tambah.Click += new System.EventHandler(this.btn_tambah_Click);
             // 
-            // rdo_statustdkaktif
+            // rdo_tbhtrps_statustdkaktif
             // 
-            this.rdo_statustdkaktif.AutoSize = true;
-            this.rdo_statustdkaktif.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdo_statustdkaktif.Location = new System.Drawing.Point(484, 257);
-            this.rdo_statustdkaktif.Name = "rdo_statustdkaktif";
-            this.rdo_statustdkaktif.Size = new System.Drawing.Size(198, 43);
-            this.rdo_statustdkaktif.TabIndex = 12;
-            this.rdo_statustdkaktif.TabStop = true;
-            this.rdo_statustdkaktif.Text = "Tidak Aktif";
-            this.rdo_statustdkaktif.UseVisualStyleBackColor = true;
+            this.rdo_tbhtrps_statustdkaktif.AutoSize = true;
+            this.rdo_tbhtrps_statustdkaktif.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdo_tbhtrps_statustdkaktif.Location = new System.Drawing.Point(484, 257);
+            this.rdo_tbhtrps_statustdkaktif.Name = "rdo_tbhtrps_statustdkaktif";
+            this.rdo_tbhtrps_statustdkaktif.Size = new System.Drawing.Size(198, 43);
+            this.rdo_tbhtrps_statustdkaktif.TabIndex = 12;
+            this.rdo_tbhtrps_statustdkaktif.TabStop = true;
+            this.rdo_tbhtrps_statustdkaktif.Text = "Tidak Aktif";
+            this.rdo_tbhtrps_statustdkaktif.UseVisualStyleBackColor = true;
             // 
-            // rdo_statusaktif
+            // rdo_tbhtrps_statusaktif
             // 
-            this.rdo_statusaktif.AutoSize = true;
-            this.rdo_statusaktif.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.rdo_statusaktif.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.rdo_statusaktif.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdo_statusaktif.Location = new System.Drawing.Point(332, 257);
-            this.rdo_statusaktif.Name = "rdo_statusaktif";
-            this.rdo_statusaktif.Size = new System.Drawing.Size(104, 43);
-            this.rdo_statusaktif.TabIndex = 11;
-            this.rdo_statusaktif.TabStop = true;
-            this.rdo_statusaktif.Text = "Aktif";
-            this.rdo_statusaktif.UseVisualStyleBackColor = true;
+            this.rdo_tbhtrps_statusaktif.AutoSize = true;
+            this.rdo_tbhtrps_statusaktif.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.rdo_tbhtrps_statusaktif.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.rdo_tbhtrps_statusaktif.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdo_tbhtrps_statusaktif.Location = new System.Drawing.Point(332, 257);
+            this.rdo_tbhtrps_statusaktif.Name = "rdo_tbhtrps_statusaktif";
+            this.rdo_tbhtrps_statusaktif.Size = new System.Drawing.Size(104, 43);
+            this.rdo_tbhtrps_statusaktif.TabIndex = 11;
+            this.rdo_tbhtrps_statusaktif.TabStop = true;
+            this.rdo_tbhtrps_statusaktif.Text = "Aktif";
+            this.rdo_tbhtrps_statusaktif.UseVisualStyleBackColor = true;
             // 
-            // btn_browsefoto
+            // btn_tbhtrps_browsefoto
             // 
-            this.btn_browsefoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_browsefoto.Location = new System.Drawing.Point(332, 175);
-            this.btn_browsefoto.Name = "btn_browsefoto";
-            this.btn_browsefoto.Size = new System.Drawing.Size(155, 50);
-            this.btn_browsefoto.TabIndex = 10;
-            this.btn_browsefoto.Text = "Pilih";
-            this.btn_browsefoto.UseVisualStyleBackColor = true;
-            this.btn_browsefoto.Click += new System.EventHandler(this.btn_browsefoto_Click);
+            this.btn_tbhtrps_browsefoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tbhtrps_browsefoto.Location = new System.Drawing.Point(332, 175);
+            this.btn_tbhtrps_browsefoto.Name = "btn_tbhtrps_browsefoto";
+            this.btn_tbhtrps_browsefoto.Size = new System.Drawing.Size(155, 50);
+            this.btn_tbhtrps_browsefoto.TabIndex = 10;
+            this.btn_tbhtrps_browsefoto.Text = "Pilih";
+            this.btn_tbhtrps_browsefoto.UseVisualStyleBackColor = true;
+            this.btn_tbhtrps_browsefoto.Click += new System.EventHandler(this.btn_browsefoto_Click);
             // 
-            // txt_namaterapis
+            // txt_tbhtrps_namaterapis
             // 
-            this.txt_namaterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_namaterapis.Location = new System.Drawing.Point(332, 100);
-            this.txt_namaterapis.MaxLength = 35;
-            this.txt_namaterapis.Name = "txt_namaterapis";
-            this.txt_namaterapis.Size = new System.Drawing.Size(530, 47);
-            this.txt_namaterapis.TabIndex = 9;
+            this.txt_tbhtrps_namaterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tbhtrps_namaterapis.Location = new System.Drawing.Point(332, 100);
+            this.txt_tbhtrps_namaterapis.MaxLength = 35;
+            this.txt_tbhtrps_namaterapis.Name = "txt_tbhtrps_namaterapis";
+            this.txt_tbhtrps_namaterapis.Size = new System.Drawing.Size(530, 47);
+            this.txt_tbhtrps_namaterapis.TabIndex = 9;
             // 
-            // txt_kodeterapis
+            // txt_tbhtrps_kodeterapis
             // 
-            this.txt_kodeterapis.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_kodeterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_kodeterapis.Location = new System.Drawing.Point(332, 22);
-            this.txt_kodeterapis.MaxLength = 4;
-            this.txt_kodeterapis.Name = "txt_kodeterapis";
-            this.txt_kodeterapis.Size = new System.Drawing.Size(92, 47);
-            this.txt_kodeterapis.TabIndex = 8;
+            this.txt_tbhtrps_kodeterapis.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_tbhtrps_kodeterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tbhtrps_kodeterapis.Location = new System.Drawing.Point(332, 22);
+            this.txt_tbhtrps_kodeterapis.MaxLength = 4;
+            this.txt_tbhtrps_kodeterapis.Name = "txt_tbhtrps_kodeterapis";
+            this.txt_tbhtrps_kodeterapis.Size = new System.Drawing.Size(92, 47);
+            this.txt_tbhtrps_kodeterapis.TabIndex = 8;
             // 
             // label5
             // 
@@ -244,14 +244,14 @@
             this.panel_logo.Size = new System.Drawing.Size(888, 101);
             this.panel_logo.TabIndex = 4;
             // 
-            // pict_fotoKTP
+            // pict_tbhtrps_fotoKTP
             // 
-            this.pict_fotoKTP.Location = new System.Drawing.Point(688, 167);
-            this.pict_fotoKTP.Name = "pict_fotoKTP";
-            this.pict_fotoKTP.Size = new System.Drawing.Size(184, 206);
-            this.pict_fotoKTP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pict_fotoKTP.TabIndex = 15;
-            this.pict_fotoKTP.TabStop = false;
+            this.pict_tbhtrps_fotoKTP.Location = new System.Drawing.Point(688, 167);
+            this.pict_tbhtrps_fotoKTP.Name = "pict_tbhtrps_fotoKTP";
+            this.pict_tbhtrps_fotoKTP.Size = new System.Drawing.Size(184, 206);
+            this.pict_tbhtrps_fotoKTP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pict_tbhtrps_fotoKTP.TabIndex = 15;
+            this.pict_tbhtrps_fotoKTP.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -268,7 +268,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(915, 509);
+            this.ClientSize = new System.Drawing.Size(911, 505);
             this.ControlBox = false;
             this.Controls.Add(this.panel_isi);
             this.Controls.Add(this.panel_logo);
@@ -282,7 +282,7 @@
             this.panel_isi.ResumeLayout(false);
             this.panel_isi.PerformLayout();
             this.panel_logo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pict_fotoKTP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pict_tbhtrps_fotoKTP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -291,13 +291,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel_isi;
-        private System.Windows.Forms.Button btn_batal;
-        private System.Windows.Forms.Button btn_tambah;
-        private System.Windows.Forms.RadioButton rdo_statustdkaktif;
-        private System.Windows.Forms.RadioButton rdo_statusaktif;
-        private System.Windows.Forms.Button btn_browsefoto;
-        private System.Windows.Forms.TextBox txt_namaterapis;
-        private System.Windows.Forms.TextBox txt_kodeterapis;
+        private System.Windows.Forms.Button btn_tbhtrps_batal;
+        private System.Windows.Forms.Button btn_tbhtrps_tambah;
+        private System.Windows.Forms.RadioButton rdo_tbhtrps_statustdkaktif;
+        private System.Windows.Forms.RadioButton rdo_tbhtrps_statusaktif;
+        private System.Windows.Forms.Button btn_tbhtrps_browsefoto;
+        private System.Windows.Forms.TextBox txt_tbhtrps_namaterapis;
+        private System.Windows.Forms.TextBox txt_tbhtrps_kodeterapis;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -307,7 +307,7 @@
         private System.Windows.Forms.Label label_namaterapis;
         private System.Windows.Forms.Label label_kodeterapis;
         private System.Windows.Forms.Panel panel_logo;
-        private System.Windows.Forms.PictureBox pict_fotoKTP;
+        private System.Windows.Forms.PictureBox pict_tbhtrps_fotoKTP;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
