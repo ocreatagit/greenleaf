@@ -62,6 +62,12 @@
     <Compile Include="frm_tmbahterapis.Designer.cs">
       <DependentUpon>frm_tmbahterapis.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_userlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_userlogin.Designer.cs">
+      <DependentUpon>frm_userlogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_editterapis.resx">
@@ -69,6 +75,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_tmbahterapis.resx">
       <DependentUpon>frm_tmbahterapis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_userlogin.resx">
+      <DependentUpon>frm_userlogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

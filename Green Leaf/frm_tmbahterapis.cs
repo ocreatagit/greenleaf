@@ -45,10 +45,11 @@ namespace Green_Leaf
         private void btn_tambah_Click(object sender, EventArgs e)
         {
             DBConnect sql = new DBConnect();
-            string query;
+            
             bool kodeSama=false;
 
             #region(Select khusus kode terapis, disimpan ke dalam List lstkode)
+            string query;
             string connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
             MySqlConnection conn = new MySqlConnection(connStr);
             List<string> lstKode = new List<string>();
