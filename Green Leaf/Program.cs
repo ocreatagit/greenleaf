@@ -15,7 +15,7 @@ namespace Green_Leaf
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_editpaket());
+            Application.Run(new frm_cetaknota());
         }
     }
 }
