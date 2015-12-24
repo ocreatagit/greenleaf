@@ -19,6 +19,7 @@ namespace Green_Leaf
         }
 
         //DataTable dtEmp = new DataTable();
+        DataSet DS = new DataSet();
         int tamuhotel;
         int extra;
 
@@ -224,6 +225,7 @@ namespace Green_Leaf
             dgv_ctknota_tabelhrgpkt.DataSource = null;
             dgv_ctknota_tabelhrgpkt.Rows.Clear();
             dgv_ctknota_tabelhrgpkt.Refresh();
+            DS.Tables.Clear();
 
             if (rdo_ctknota_normal.Checked)
             {
@@ -237,11 +239,10 @@ namespace Green_Leaf
                     try
                     {
                         ctknota_conn.Open();
-
                         ctknota_query = "SELECT * FROM `paket` WHERE `jenis_paket` = '"+cbo_ctknota_jenispaket.SelectedItem+"'";
                         MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(ctknota_query, ctknota_conn);
                         MySqlCommand ctknota_cmd = new MySqlCommand(ctknota_query, ctknota_conn);
-                        DataSet DS = new DataSet();
+                        
                         mySqlDataAdapter.Fill(DS);
                         DS.Tables[0].Columns.Remove("id_paket");
                         DS.Tables[0].Columns.Remove("jenis_paket");
@@ -266,14 +267,28 @@ namespace Green_Leaf
 
                         DS.Tables[0].Columns.Add(new DataColumn("Extra", typeof(bool)));
                         DS.Tables[0].Columns.Add(new DataColumn("Pilih", typeof(bool)));
-
+                        DS.Tables[0].Columns["Pilih"].SetOrdinal(0);
 
                         dgv_ctknota_tabelhrgpkt.DataSource = DS.Tables[0];
                         dgv_ctknota_tabelhrgpkt.Columns["Extra"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Pilih"].Width = 70;
+                        dgv_ctknota_tabelhrgpkt.Columns["Nama Paket"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Nama Paket"].Width = 300;
+                        dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].Width = 175;
+                        dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].Width = 200;
+                        dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].Width = 175;
+                        dgv_ctknota_tabelhrgpkt.Columns["Extra"].Width = 70;
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.ToString());
+                        string error = ex.ToString();
+                        MessageBox.Show("Error Occurred");
                     }
                     ctknota_conn.Close();
                     #endregion
@@ -281,31 +296,58 @@ namespace Green_Leaf
                 else if (rdo_ctknota_biasa.Checked)
                 {
                     #region(Select)
-            string ctknota_query;
-            string ctknota_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection ctknota_conn = new MySqlConnection(ctknota_connStr);
-            List<string> ctknota_lstKode = new List<string>();
-            try
-            {
-                ctknota_conn.Open();
+                    string ctknota_query;
+                    string ctknota_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                    MySqlConnection ctknota_conn = new MySqlConnection(ctknota_connStr);
+                    List<string> ctknota_lstKode = new List<string>();
+                    try
+                    {
+                        ctknota_conn.Open();
+                        ctknota_query = "SELECT * FROM `paket` WHERE `jenis_paket` = '" + cbo_ctknota_jenispaket.SelectedItem + "'";
+                        MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(ctknota_query, ctknota_conn);
+                        MySqlCommand ctknota_cmd = new MySqlCommand(ctknota_query, ctknota_conn);
+                        mySqlDataAdapter.Fill(DS);
+                        DS.Tables[0].Columns.Remove("id_paket");
+                        DS.Tables[0].Columns.Remove("jenis_paket");
+                        DS.Tables[0].Columns.Remove("komisi_normal_paket");
+                        DS.Tables[0].Columns.Remove("komisi_midnight_paket");
+                        DS.Tables[0].Columns["nama_paket"].ColumnName = "Nama Paket";
+                        DS.Tables[0].Columns["harga_paket"].ColumnName = "Harga Paket";
+                        DS.Tables[0].Columns["durasi_paket"].ColumnName = "Durasi Paket";
 
-                ctknota_query = "SELECT * FROM `paket` WHERE `jenis_paket` = 'VIP' AND `jam_kerja` = 'Normal'";
-                MySqlCommand ctknota_cmd = new MySqlCommand(ctknota_query, ctknota_conn);
-                MySqlDataReader ctknota_rdr = ctknota_cmd.ExecuteReader();
+                        //DS.Tables[0].Columns.Add(new DataColumn("Tamu Hotel", typeof(int)));
+                        //for (int i = 0; i < DS.Tables[0].Rows.Count; i++)
+                        //{
+                        //    DS.Tables[0].Rows[i]["Tamu Hotel"] = tamuhotel;
+                        //}
 
-                while (ctknota_rdr.Read())
-                {
-                    //cbo_kodeterapis.Items.Add(edttrps_rdr.GetString(1));
-                    //lsb_edttrps_kodeterapis.Items.Add(ctknota_rdr.GetString(1));
-                }
-                ctknota_rdr.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            ctknota_conn.Close();
-            #endregion
+                        DS.Tables[0].Columns.Add(new DataColumn("Extra", typeof(bool)));
+                        DS.Tables[0].Columns.Add(new DataColumn("Pilih", typeof(bool)));
+                        DS.Tables[0].Columns["Pilih"].SetOrdinal(0);
+
+                        dgv_ctknota_tabelhrgpkt.DataSource = DS.Tables[0];
+                        dgv_ctknota_tabelhrgpkt.Columns["Extra"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Pilih"].Width = 70;
+                        dgv_ctknota_tabelhrgpkt.Columns["Nama Paket"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Nama Paket"].Width = 300;
+                        dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].Width = 175;
+                        dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].Width = 200;
+                        //dgv_ctknota_tabelhrgpkt.Columns["Tamu Paket"].ReadOnly = true;
+                        //dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        //dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].Width = 200;
+                        dgv_ctknota_tabelhrgpkt.Columns["Extra"].Width = 70;
+                    }
+                    catch (Exception ex)
+                    {
+                        string error = ex.ToString();
+                        MessageBox.Show("Error Occurred");
+                    }
+                    ctknota_conn.Close();
+                    #endregion
                 }
             }
             else if (rdo_ctknota_midnight.Checked)
@@ -321,20 +363,55 @@ namespace Green_Leaf
                     {
                         ctknota_conn.Open();
 
-                        ctknota_query = "SELECT * FROM `paket` WHERE `jenis_paket` = 'VIP' AND `jam_kerja` = 'Normal'";
+                        ctknota_query = "SELECT * FROM `paket` WHERE `jenis_paket` = '" + cbo_ctknota_jenispaket.SelectedItem + "'";
+                        MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(ctknota_query, ctknota_conn);
                         MySqlCommand ctknota_cmd = new MySqlCommand(ctknota_query, ctknota_conn);
-                        MySqlDataReader ctknota_rdr = ctknota_cmd.ExecuteReader();
+                        mySqlDataAdapter.Fill(DS);
+                        DS.Tables[0].Columns.Remove("id_paket");
+                        DS.Tables[0].Columns.Remove("jenis_paket");
+                        DS.Tables[0].Columns.Remove("komisi_normal_paket");
+                        DS.Tables[0].Columns.Remove("komisi_midnight_paket");
+                        DS.Tables[0].Columns["nama_paket"].ColumnName = "Nama Paket";
+                        DS.Tables[0].Columns["harga_paket"].ColumnName = "Harga Paket";
+                        DS.Tables[0].Columns["durasi_paket"].ColumnName = "Durasi Paket";
 
-                        while (ctknota_rdr.Read())
+                        DS.Tables[0].Columns.Add(new DataColumn("Tamu Hotel", typeof(int)));
+                        //int i = 0;
+                        //int[] listI = new int[1];
+                        //listI[0] = 100000;
+                        //foreach (int somevalue in listI)
+                        //{
+                        //    DS.Tables[0].Rows[i++][1] = somevalue;  //Add value to second column of each row
+                        //}
+                        for (int i = 0; i < DS.Tables[0].Rows.Count; i++)
                         {
-                            //cbo_kodeterapis.Items.Add(edttrps_rdr.GetString(1));
-                            //lsb_edttrps_kodeterapis.Items.Add(ctknota_rdr.GetString(1));
+                            DS.Tables[0].Rows[i]["Tamu Hotel"] = tamuhotel;
                         }
-                        ctknota_rdr.Close();
+
+                        DS.Tables[0].Columns.Add(new DataColumn("Extra", typeof(bool)));
+                        DS.Tables[0].Columns.Add(new DataColumn("Pilih", typeof(bool)));
+                        DS.Tables[0].Columns["Pilih"].SetOrdinal(0);
+
+                        dgv_ctknota_tabelhrgpkt.DataSource = DS.Tables[0];
+                        dgv_ctknota_tabelhrgpkt.Columns["Extra"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Pilih"].Width = 70;
+                        dgv_ctknota_tabelhrgpkt.Columns["Nama Paket"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Nama Paket"].Width = 300;
+                        dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].Width = 175;
+                        dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].Width = 200;
+                        dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].Width = 175;
+                        dgv_ctknota_tabelhrgpkt.Columns["Extra"].Width = 70;
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.ToString());
+                        string error = ex.ToString();
+                        MessageBox.Show("Error Occurred");
                     }
                     ctknota_conn.Close();
                     #endregion
@@ -350,20 +427,48 @@ namespace Green_Leaf
                     {
                         ctknota_conn.Open();
 
-                        ctknota_query = "SELECT * FROM `paket` WHERE `jenis_paket` = 'VIP' AND `jam_kerja` = 'Normal'";
+                        ctknota_query = "SELECT * FROM `paket` WHERE `jenis_paket` = '" + cbo_ctknota_jenispaket.SelectedItem + "'";
+                        MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(ctknota_query, ctknota_conn);
                         MySqlCommand ctknota_cmd = new MySqlCommand(ctknota_query, ctknota_conn);
-                        MySqlDataReader ctknota_rdr = ctknota_cmd.ExecuteReader();
+                        mySqlDataAdapter.Fill(DS);
+                        DS.Tables[0].Columns.Remove("id_paket");
+                        DS.Tables[0].Columns.Remove("jenis_paket");
+                        DS.Tables[0].Columns.Remove("komisi_normal_paket");
+                        DS.Tables[0].Columns.Remove("komisi_midnight_paket");
+                        DS.Tables[0].Columns["nama_paket"].ColumnName = "Nama Paket";
+                        DS.Tables[0].Columns["harga_paket"].ColumnName = "Harga Paket";
+                        DS.Tables[0].Columns["durasi_paket"].ColumnName = "Durasi Paket";
 
-                        while (ctknota_rdr.Read())
-                        {
-                            //cbo_kodeterapis.Items.Add(edttrps_rdr.GetString(1));
-                            //lsb_edttrps_kodeterapis.Items.Add(ctknota_rdr.GetString(1));
-                        }
-                        ctknota_rdr.Close();
+                        //DS.Tables[0].Columns.Add(new DataColumn("Tamu Hotel", typeof(int)));
+                        //for (int i = 0; i < DS.Tables[0].Rows.Count; i++)
+                        //{
+                        //    DS.Tables[0].Rows[i]["Tamu Hotel"] = tamuhotel;
+                        //}
+
+                        DS.Tables[0].Columns.Add(new DataColumn("Extra", typeof(bool)));
+                        DS.Tables[0].Columns.Add(new DataColumn("Pilih", typeof(bool)));
+                        DS.Tables[0].Columns["Pilih"].SetOrdinal(0);
+
+                        dgv_ctknota_tabelhrgpkt.DataSource = DS.Tables[0];
+                        dgv_ctknota_tabelhrgpkt.Columns["Extra"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Pilih"].Width = 70;
+                        dgv_ctknota_tabelhrgpkt.Columns["Nama Paket"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Nama Paket"].Width = 300;
+                        dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].Width = 175;
+                        dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].Width = 200;
+                        //dgv_ctknota_tabelhrgpkt.Columns["Tamu Paket"].ReadOnly = true;
+                        //dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        //dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].Width = 200;
+                        dgv_ctknota_tabelhrgpkt.Columns["Extra"].Width = 70;
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.ToString());
+                        string error = ex.ToString();
+                        MessageBox.Show("Error Occurred");
                     }
                     ctknota_conn.Close();
                     #endregion
@@ -499,6 +604,14 @@ namespace Green_Leaf
             //}
             if (dgv_ctknota_tabelhrgpkt.CurrentCell.OwningColumn.Name == "Pilih")
             {
+                if (DS.Tables[0].Columns.Count == 7)
+                {
+                    DS.Tables[0].Columns.Remove("Nominal Extra");
+                }
+                else if (DS.Tables[0].Columns.Count == 7)
+                {
+                    DS.Tables[0].Columns.Remove("Nominal Extra");
+                }
                 dgv_ctknota_tabelhrgpkt.Columns["Extra"].ReadOnly = true;
                 for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
                 {
@@ -518,6 +631,119 @@ namespace Green_Leaf
 
                 }
             }
+            //else if (dgv_ctknota_tabelhrgpkt.CurrentCell.OwningColumn.Name == "Extra")
+            //{
+            //    if (dgv_ctknota_tabelhrgpkt.Columns["Extra"].ReadOnly == false)
+            //    {
+            //        for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
+            //        {
+            //            if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].ReadOnly == false)
+            //            {
+            //                MessageBox.Show("Test");
+            //            }
+
+            //        }
+            //    }
+                
+            //}
+            ////else if (dgv_ctknota_tabelhrgpkt.CurrentCell.OwningColumn.Name == "Extra")
+            ////{
+            ////    for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
+            ////    {
+            ////        if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Selected)
+            ////        {
+            ////            //if (DS.Tables[0].Columns.Count == 7)
+            ////            //{
+            ////            //    DS.Tables[0].Columns.Remove("Nominal Extra");
+            ////            //}
+            ////            //else if (DS.Tables[0].Columns.Count == 7)
+            ////            //{
+            ////            //    DS.Tables[0].Columns.Remove("Nominal Extra");
+            ////            //}
+            ////            //else
+            ////            //{
+            ////            //    if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value.ToString() == "True")
+            ////            //    {
+            ////            //        dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value = false;
+            ////            //    }
+            ////            //    else if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value.ToString() == "False")
+            ////            //    {
+            ////            //        dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value = true;
+            ////            //    }
+            ////            //    DS.Tables[0].Columns.Add(new DataColumn("Nominal Extra", typeof(int)));
+            ////            //    for (int ii = 0; ii < DS.Tables[0].Rows.Count; ii++)
+            ////            //    {
+            ////            //        DS.Tables[0].Rows[ii]["Nominal Extra"] = extra;
+            ////            //    }
+            ////            //    if (rdo_ctknota_hotel.Checked)
+            ////            //    {
+            ////            //        DS.Tables[0].Columns["Nominal Extra"].SetOrdinal(6);
+            ////            //    }
+            ////            //    else if (rdo_ctknota_biasa.Checked)
+            ////            //    {
+            ////            //        DS.Tables[0].Columns["Nominal Extra"].SetOrdinal(5);
+            ////            //    }
+
+
+            ////            //    dgv_ctknota_tabelhrgpkt.DataSource = DS.Tables[0];
+            ////            //    dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].ReadOnly = true;
+            ////            //    dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            ////            //    dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].Width = 175;
+            ////        }
+            ////        else
+            ////        {
+            ////            dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].ReadOnly = true;
+            ////        }
+            //        //if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].Value.ToString() == "True")
+            //        //{
+            //            //if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].ReadOnly == false && dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Selected)
+            //            //{
+            //                //if (DS.Tables[0].Columns.Count == 7)
+            //                //{
+            //                //    DS.Tables[0].Columns.Remove("Nominal Extra");
+            //                //}
+            //                //else if (DS.Tables[0].Columns.Count == 7)
+            //                //{
+            //                //    DS.Tables[0].Columns.Remove("Nominal Extra");
+            //                //}
+            //                //else
+            //                //{
+            //                //    if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value.ToString() == "True")
+            //                //    {
+            //                //        dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value = false;
+            //                //    }
+            //                //    else if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value.ToString() == "False")
+            //                //    {
+            //                //        dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value = true;
+            //                //    }
+            //                //    DS.Tables[0].Columns.Add(new DataColumn("Nominal Extra", typeof(int)));
+            //                //    for (int ii = 0; ii < DS.Tables[0].Rows.Count; ii++)
+            //                //    {
+            //                //        DS.Tables[0].Rows[ii]["Nominal Extra"] = extra;
+            //                //    }
+            //                //    if (rdo_ctknota_hotel.Checked)
+            //                //    {
+            //                //        DS.Tables[0].Columns["Nominal Extra"].SetOrdinal(6);
+            //                //    }
+            //                //    else if (rdo_ctknota_biasa.Checked)
+            //                //    {
+            //                //        DS.Tables[0].Columns["Nominal Extra"].SetOrdinal(5);
+            //                //    }
+
+
+            //                //    dgv_ctknota_tabelhrgpkt.DataSource = DS.Tables[0];
+            //                //    dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].ReadOnly = true;
+            //                //    dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //                //    dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].Width = 175;
+            //                //}
+            //            //}
+            //        //}
+            //    }
+            //}
+            
+            
+            
+
             //else if (dgv_ctknota_tabelhrgpkt.CurrentCell.OwningColumn.Name == "Extra")
             //{
             //    for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
