@@ -19,6 +19,8 @@ namespace Green_Leaf
         }
 
         //DataTable dtEmp = new DataTable();
+        int tamuhotel;
+        int extra;
 
         private void frm_cetaknota_Load(object sender, EventArgs e)
         {
@@ -66,6 +68,34 @@ namespace Green_Leaf
                 Console.WriteLine(ex.ToString());
             }
             ctknota_conn.Close();
+            #endregion
+
+            #region(Ambil data Potongan dan Extra dari database)
+            string ctknota_query2;
+            string ctknota_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+            MySqlConnection ctknota_conn2 = new MySqlConnection(ctknota_connStr2);
+            try
+            {
+                ctknota_conn2.Open();
+
+                ctknota_query2 = "SELECT * FROM `variabel`";
+                MySqlCommand ctknota_cmd2 = new MySqlCommand(ctknota_query2, ctknota_conn2);
+                MySqlDataReader ctknota_rdr2 = ctknota_cmd2.ExecuteReader();
+
+                while (ctknota_rdr2.Read())
+                {
+                    //cbo_kodeterapis.Items.Add(edttrps_rdr.GetString(1));
+                    //cbo_ctknota_jenispaket.Items.Add(ctknota_rdr.GetString(0));
+                    extra = ctknota_rdr2.GetInt32(1);
+                    tamuhotel = ctknota_rdr2.GetInt32(2);
+                }
+                ctknota_rdr2.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            ctknota_conn2.Close();
             #endregion
         }
 
@@ -221,8 +251,23 @@ namespace Green_Leaf
                         DS.Tables[0].Columns["harga_paket"].ColumnName = "Harga Paket";
                         DS.Tables[0].Columns["durasi_paket"].ColumnName = "Durasi Paket";
 
+                        DS.Tables[0].Columns.Add(new DataColumn("Tamu Hotel", typeof(int)));
+                        //int i = 0;
+                        //int[] listI = new int[1];
+                        //listI[0] = 100000;
+                        //foreach (int somevalue in listI)
+                        //{
+                        //    DS.Tables[0].Rows[i++][1] = somevalue;  //Add value to second column of each row
+                        //}
+                        for (int i = 0; i < DS.Tables[0].Rows.Count; i++)
+                        {
+                            DS.Tables[0].Rows[i]["Tamu Hotel"] = tamuhotel;
+                        }
+
                         DS.Tables[0].Columns.Add(new DataColumn("Extra", typeof(bool)));
                         DS.Tables[0].Columns.Add(new DataColumn("Pilih", typeof(bool)));
+
+
                         dgv_ctknota_tabelhrgpkt.DataSource = DS.Tables[0];
                         dgv_ctknota_tabelhrgpkt.Columns["Extra"].ReadOnly = true;
                     }
