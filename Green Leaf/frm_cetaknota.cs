@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Web;
 
 namespace Green_Leaf
 {
@@ -207,12 +208,23 @@ namespace Green_Leaf
                     {
                         ctknota_conn.Open();
 
-                        ctknota_query = "SELECT * FROM `paket` WHERE `jenis_paket` = '"+cbo_ctknota_jenispaket.SelectedItem+"' AND `jam_kerja` = 'Normal'";
+                        ctknota_query = "SELECT * FROM `paket` WHERE `jenis_paket` = '"+cbo_ctknota_jenispaket.SelectedItem+"'";
                         MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(ctknota_query, ctknota_conn);
                         MySqlCommand ctknota_cmd = new MySqlCommand(ctknota_query, ctknota_conn);
                         DataSet DS = new DataSet();
                         mySqlDataAdapter.Fill(DS);
+                        DS.Tables[0].Columns.Remove("id_paket");
+                        DS.Tables[0].Columns.Remove("jenis_paket");
+                        DS.Tables[0].Columns.Remove("komisi_normal_paket");
+                        DS.Tables[0].Columns.Remove("komisi_midnight_paket");
+                        DS.Tables[0].Columns["nama_paket"].ColumnName = "Nama Paket";
+                        DS.Tables[0].Columns["harga_paket"].ColumnName = "Harga Paket";
+                        DS.Tables[0].Columns["durasi_paket"].ColumnName = "Durasi Paket";
+
+                        DS.Tables[0].Columns.Add(new DataColumn("Extra", typeof(bool)));
+                        DS.Tables[0].Columns.Add(new DataColumn("Pilih", typeof(bool)));
                         dgv_ctknota_tabelhrgpkt.DataSource = DS.Tables[0];
+                        dgv_ctknota_tabelhrgpkt.Columns["Extra"].ReadOnly = true;
                     }
                     catch (Exception ex)
                     {
@@ -422,6 +434,60 @@ namespace Green_Leaf
         private void txt_ctknota_nomorruangan_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgv_ctknota_tabelhrgpkt_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (dgv_ctknota_tabelhrgpkt.CurrentCell.OwningColumn.Name == "Extra")
+            //{
+            //    for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
+            //    {
+            //        if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Selected)
+            //        {
+            //            dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value = true;
+            //            dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].ReadOnly = true;
+            //        }
+            //        else
+            //            dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value = false;
+
+            //    }
+            //}
+            if (dgv_ctknota_tabelhrgpkt.CurrentCell.OwningColumn.Name == "Pilih")
+            {
+                dgv_ctknota_tabelhrgpkt.Columns["Extra"].ReadOnly = true;
+                for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
+                {
+                    dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value = false;
+
+                }
+                for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
+                {
+                    if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].Selected)
+                    {
+                        dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].Value = true;
+                        dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].ReadOnly = true;
+                        dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].ReadOnly = false;
+                    }
+                    else
+                        dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].Value = false;
+
+                }
+            }
+            //else if (dgv_ctknota_tabelhrgpkt.CurrentCell.OwningColumn.Name == "Extra")
+            //{
+            //    for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
+            //    {
+            //        if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Selected)
+            //        {
+            //            dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value = true;
+            //        }
+            //        else
+            //        dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value = false;
+            //        dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].ReadOnly = true;
+            //    }
+
+            //}
+            
         }
     }
 }
