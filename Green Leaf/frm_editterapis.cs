@@ -54,9 +54,10 @@ namespace Green_Leaf
             rdo_edttrps_statusaktif.Enabled = false;
             rdo_edttrps_statustdkaktif.Enabled = false;
 
-            string edttrps_query;
+            
 
             #region(Select)
+            string edttrps_query;
             string edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
             MySqlConnection edttrps_conn = new MySqlConnection(edttrps_connStr);
             List<string> edttrps_lstKode = new List<string>();

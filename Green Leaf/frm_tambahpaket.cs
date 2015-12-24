@@ -29,21 +29,25 @@ namespace Green_Leaf
             {
                 MessageBox.Show("Mohon isi kolom Nama Paket terlebih dahulu");
             }
-            else if (txt_tbhpkt_durasipaket.Text=="")
+            else if (txt_tbhpkt_durasipaketjam.Text=="")
             {
-                MessageBox.Show("Mohon isi kolom Durasi Paket terlebih dahulu");
+                MessageBox.Show("Mohon lengkapi kolom Durasi Paket terlebih dahulu");
+            }
+            else if (txt_tbhpkt_durasipaketmenit.Text == "")
+            {
+                MessageBox.Show("Mohon lengkapi kolom Durasi Paket terlebih dahulu");
             }
             else if (txt_tbhpkt_hargapaket.Text=="")
             {
                 MessageBox.Show("Mohon isi kolom Harga Paket terlebih dahulu");
             }
-            else if (rdo_tbhpkt_jamnormal.Checked==false&&rdo_tbhpkt_jammidnight.Checked==false)
+            else if (txt_tbhpkt_komisipaketnormal.Text=="")
             {
-                MessageBox.Show("Mohon pilih Jam Kerja terlebih dahulu");
+                MessageBox.Show("Mohon lengkapi kolom Komisi Paket terlebih dahulu");
             }
-            else if (txt_tbhpkt_komisipaket.Text=="")
+            else if (txt_tbhpkt_komisipaketmidnight.Text == "")
             {
-                MessageBox.Show("Mohon isi kolom Komisi Paket terlebih dahulu");
+                MessageBox.Show("Mohon lengkapi kolom Komisi Paket terlebih dahulu");
             }
             
             else
@@ -82,30 +86,37 @@ namespace Green_Leaf
             #region(Insert paket ke databse)
                 else
                 {
-                    #region(Buat huruf besar untuk Jam dan Menit)
-                    string tbhpkt_durasiPaket = txt_tbhpkt_durasipaket.Text;
-                    var regex = new Regex(@"\b[A-Z]", RegexOptions.IgnoreCase);
-                    tbhpkt_durasiPaket = regex.Replace(tbhpkt_durasiPaket, m => m.ToString().ToUpper());
-                    #endregion
+                    //#region(Buat huruf besar untuk Jam dan Menit)
+                    //string tbhpkt_durasiPaket = txt_tbhpkt_durasipaketjam.Text;
+                    //var regex = new Regex(@"\b[A-Z]", RegexOptions.IgnoreCase);
+                    //tbhpkt_durasiPaket = regex.Replace(tbhpkt_durasiPaket, m => m.ToString().ToUpper());
+                    //#endregion
+                    string durasi = txt_tbhpkt_durasipaketjam.Text + " Jam " + txt_tbhpkt_durasipaketmenit.Text + " Menit";
+
                     DBConnect tbhpkt_sql = new DBConnect();
 
-                    if (rdo_tbhpkt_jamnormal.Checked)
-                    {
-                        tbhpkt_query = "INSERT INTO `paket` (`id_paket`, `jenis_paket`, `nama_paket`, `durasi_paket`, `harga_paket`, `jam_kerja`, `komisi_per_paket`) "
-                                + "VALUES (NULL, '" + cbo_tbhpkt_jenispaket.SelectedItem + "', '" + txt_tbhpkt_namapaket.Text + "', '" + tbhpkt_durasiPaket + "', '" + txt_tbhpkt_hargapaket.Text + "', 'Normal', '"+txt_tbhpkt_komisipaket.Text+"');";
+                        //tbhpkt_query = "INSERT INTO `paket` (`id_paket`, `jenis_paket`, `nama_paket`, `durasi_paket`, `harga_paket`, `jam_kerja`, `komisi_per_paket`) "
+                        //        + "VALUES (NULL, '" +  + "', '" +  + "', '" +  + "', '" +  + "', 'Normal', '');";
+                        
+                        tbhpkt_query = "INSERT INTO `paket` (`id_paket`, `jenis_paket`, `nama_paket`, `durasi_paket`, `harga_paket`, "
+                            + "`komisi_normal_paket`, `komisi_midnight_paket`) VALUES (NULL, '" + cbo_tbhpkt_jenispaket.SelectedItem + "', '" + txt_tbhpkt_namapaket.Text + "', '" +
+                            durasi + "', '" + txt_tbhpkt_hargapaket.Text + "', '" + txt_tbhpkt_komisipaketnormal.Text + "', '" + txt_tbhpkt_komisipaketmidnight.Text + "');";
                         tbhpkt_sql.Insert(tbhpkt_query);
-                    }
-                    else if (rdo_tbhpkt_jammidnight.Checked)
-                    {
-                        tbhpkt_query = "INSERT INTO `paket` (`id_paket`, `jenis_paket`, `nama_paket`, `durasi_paket`, `harga_paket`, `jam_kerja`, `komisi_per_paket`) "
-                                + "VALUES (NULL, '" + cbo_tbhpkt_jenispaket.SelectedItem + "', '" + txt_tbhpkt_namapaket.Text + "', '" + tbhpkt_durasiPaket + "', '" + txt_tbhpkt_hargapaket.Text + "', 'Midnight', '" + txt_tbhpkt_komisipaket.Text + "');";
-                        tbhpkt_sql.Insert(tbhpkt_query);
-                    }
+
                     MessageBox.Show("Paket telah berhasil ditambahkan");
+                    cbo_tbhpkt_jenispaket.SelectedItem = null;
+                    txt_tbhpkt_namapaket.Clear();
+                    txt_tbhpkt_durasipaketjam.Clear();
+                    txt_tbhpkt_durasipaketmenit.Clear();
+                    txt_tbhpkt_hargapaket.Clear();
+                    txt_tbhpkt_komisipaketnormal.Clear();
+                    txt_tbhpkt_komisipaketmidnight.Clear();
                 }
 
             }
             #endregion
+
+            
         }
 
         private void btn_tbhpkt_batal_Click(object sender, EventArgs e)
