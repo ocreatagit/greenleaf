@@ -202,6 +202,7 @@
             this.txt_edttrps_kodeterapis.Name = "txt_edttrps_kodeterapis";
             this.txt_edttrps_kodeterapis.Size = new System.Drawing.Size(92, 47);
             this.txt_edttrps_kodeterapis.TabIndex = 8;
+            this.txt_edttrps_kodeterapis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_edttrps_kodeterapis_KeyPress);
             // 
             // label5
             // 

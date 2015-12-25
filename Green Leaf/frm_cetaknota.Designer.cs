@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_isi = new System.Windows.Forms.Panel();
             this.txt_ctknota_fee = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -137,6 +137,8 @@
             this.txt_ctknota_fee.Name = "txt_ctknota_fee";
             this.txt_ctknota_fee.Size = new System.Drawing.Size(116, 35);
             this.txt_ctknota_fee.TabIndex = 71;
+            this.txt_ctknota_fee.TextChanged += new System.EventHandler(this.txt_ctknota_fee_TextChanged);
+            this.txt_ctknota_fee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ctknota_fee_KeyPress);
             // 
             // label15
             // 
@@ -197,6 +199,7 @@
             this.txt_ctknota_nomorruangan.Size = new System.Drawing.Size(100, 35);
             this.txt_ctknota_nomorruangan.TabIndex = 68;
             this.txt_ctknota_nomorruangan.TextChanged += new System.EventHandler(this.txt_ctknota_nomorruangan_TextChanged);
+            this.txt_ctknota_nomorruangan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ctknota_nomorruangan_KeyPress);
             // 
             // panel3
             // 
@@ -334,29 +337,29 @@
             this.dgv_ctknota_tabelhrgpkt.AllowUserToDeleteRows = false;
             this.dgv_ctknota_tabelhrgpkt.AllowUserToResizeColumns = false;
             this.dgv_ctknota_tabelhrgpkt.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_ctknota_tabelhrgpkt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_ctknota_tabelhrgpkt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
             this.dgv_ctknota_tabelhrgpkt.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ctknota_tabelhrgpkt.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersHeight = 40;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ctknota_tabelhrgpkt.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ctknota_tabelhrgpkt.DefaultCellStyle = dataGridViewCellStyle33;
             this.dgv_ctknota_tabelhrgpkt.Location = new System.Drawing.Point(28, 107);
             this.dgv_ctknota_tabelhrgpkt.MultiSelect = false;
             this.dgv_ctknota_tabelhrgpkt.Name = "dgv_ctknota_tabelhrgpkt";
@@ -389,15 +392,14 @@
             this.txt_ctknota_namaterapis.ReadOnly = true;
             this.txt_ctknota_namaterapis.Size = new System.Drawing.Size(220, 35);
             this.txt_ctknota_namaterapis.TabIndex = 62;
-            this.txt_ctknota_namaterapis.Text = "William Rumengan";
             // 
             // cbo_ctknota_kodeterapis
             // 
+            this.cbo_ctknota_kodeterapis.DropDownHeight = 150;
+            this.cbo_ctknota_kodeterapis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_ctknota_kodeterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_ctknota_kodeterapis.FormattingEnabled = true;
-            this.cbo_ctknota_kodeterapis.Items.AddRange(new object[] {
-            "A53",
-            "A52"});
+            this.cbo_ctknota_kodeterapis.IntegralHeight = false;
             this.cbo_ctknota_kodeterapis.Location = new System.Drawing.Point(274, 387);
             this.cbo_ctknota_kodeterapis.Name = "cbo_ctknota_kodeterapis";
             this.cbo_ctknota_kodeterapis.Size = new System.Drawing.Size(100, 37);
@@ -410,9 +412,8 @@
             this.lbl_ctknota_totalbyr.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ctknota_totalbyr.Location = new System.Drawing.Point(970, 399);
             this.lbl_ctknota_totalbyr.Name = "lbl_ctknota_totalbyr";
-            this.lbl_ctknota_totalbyr.Size = new System.Drawing.Size(191, 37);
+            this.lbl_ctknota_totalbyr.Size = new System.Drawing.Size(0, 37);
             this.lbl_ctknota_totalbyr.TabIndex = 60;
-            this.lbl_ctknota_totalbyr.Text = "5.000.000,-";
             // 
             // label27
             // 
@@ -614,6 +615,7 @@
             this.txt_ctknota_ket.Name = "txt_ctknota_ket";
             this.txt_ctknota_ket.Size = new System.Drawing.Size(337, 35);
             this.txt_ctknota_ket.TabIndex = 9;
+            this.txt_ctknota_ket.TextChanged += new System.EventHandler(this.txt_ctknota_ket_TextChanged);
             // 
             // label_kodeterapis
             // 

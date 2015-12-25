@@ -11,3 +11,5 @@ C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj
 C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Release\GenerateResource.write.1.tlog
 C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Release\Green Leaf.exe
 C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Release\Green Leaf.pdb
+C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Release\Green_Leaf.frm_cetaknota.resources
+C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Release\Green_Leaf.frm_editpaket.resources

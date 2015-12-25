@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel_isi = new System.Windows.Forms.Panel();
+            this.pict_tbhtrps_fotoKTP = new System.Windows.Forms.PictureBox();
             this.btn_tbhtrps_batal = new System.Windows.Forms.Button();
             this.btn_tbhtrps_tambah = new System.Windows.Forms.Button();
             this.rdo_tbhtrps_statustdkaktif = new System.Windows.Forms.RadioButton();
@@ -45,11 +46,10 @@
             this.label_namaterapis = new System.Windows.Forms.Label();
             this.label_kodeterapis = new System.Windows.Forms.Label();
             this.panel_logo = new System.Windows.Forms.Panel();
-            this.pict_tbhtrps_fotoKTP = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_isi.SuspendLayout();
-            this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict_tbhtrps_fotoKTP)).BeginInit();
+            this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,6 +76,15 @@
             this.panel_isi.Name = "panel_isi";
             this.panel_isi.Size = new System.Drawing.Size(888, 387);
             this.panel_isi.TabIndex = 5;
+            // 
+            // pict_tbhtrps_fotoKTP
+            // 
+            this.pict_tbhtrps_fotoKTP.Location = new System.Drawing.Point(688, 167);
+            this.pict_tbhtrps_fotoKTP.Name = "pict_tbhtrps_fotoKTP";
+            this.pict_tbhtrps_fotoKTP.Size = new System.Drawing.Size(184, 206);
+            this.pict_tbhtrps_fotoKTP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pict_tbhtrps_fotoKTP.TabIndex = 15;
+            this.pict_tbhtrps_fotoKTP.TabStop = false;
             // 
             // btn_tbhtrps_batal
             // 
@@ -154,6 +163,7 @@
             this.txt_tbhtrps_kodeterapis.Name = "txt_tbhtrps_kodeterapis";
             this.txt_tbhtrps_kodeterapis.Size = new System.Drawing.Size(92, 47);
             this.txt_tbhtrps_kodeterapis.TabIndex = 8;
+            this.txt_tbhtrps_kodeterapis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tbhtrps_kodeterapis_KeyPress);
             // 
             // label5
             // 
@@ -244,15 +254,6 @@
             this.panel_logo.Size = new System.Drawing.Size(888, 101);
             this.panel_logo.TabIndex = 4;
             // 
-            // pict_tbhtrps_fotoKTP
-            // 
-            this.pict_tbhtrps_fotoKTP.Location = new System.Drawing.Point(688, 167);
-            this.pict_tbhtrps_fotoKTP.Name = "pict_tbhtrps_fotoKTP";
-            this.pict_tbhtrps_fotoKTP.Size = new System.Drawing.Size(184, 206);
-            this.pict_tbhtrps_fotoKTP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pict_tbhtrps_fotoKTP.TabIndex = 15;
-            this.pict_tbhtrps_fotoKTP.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Green_Leaf.Properties.Resources.logo;
@@ -268,7 +269,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(911, 505);
+            this.ClientSize = new System.Drawing.Size(907, 501);
             this.ControlBox = false;
             this.Controls.Add(this.panel_isi);
             this.Controls.Add(this.panel_logo);
@@ -277,12 +278,11 @@
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Form Tambah Terapis";
             this.Load += new System.EventHandler(this.frm_tmbahterapis_Load);
             this.panel_isi.ResumeLayout(false);
             this.panel_isi.PerformLayout();
-            this.panel_logo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pict_tbhtrps_fotoKTP)).EndInit();
+            this.panel_logo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

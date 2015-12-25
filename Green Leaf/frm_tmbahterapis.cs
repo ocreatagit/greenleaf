@@ -52,7 +52,7 @@ namespace Green_Leaf
             string tbhtrps_query;
             string tbhtrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
             MySqlConnection tbhtrps_conn = new MySqlConnection(tbhtrps_connStr);
-            List<string> tbhtrps_lstKode = new List<string>();
+            List<int> tbhtrps_lstKode = new List<int>();
             try
             {
                 tbhtrps_conn.Open();
@@ -63,7 +63,7 @@ namespace Green_Leaf
 
                 while (tbhtrps_rdr.Read())
                 {
-                    tbhtrps_lstKode.Add(tbhtrps_rdr[0].ToString());
+                    tbhtrps_lstKode.Add(tbhtrps_rdr.GetInt32(0));
                 }
                 tbhtrps_rdr.Close();
             }
@@ -74,9 +74,9 @@ namespace Green_Leaf
             tbhtrps_conn.Close();
             #endregion
 
-            foreach (string tbhtrps_kode in tbhtrps_lstKode)
+            foreach (int tbhtrps_kode in tbhtrps_lstKode)
             {
-                if (tbhtrps_kode==txt_tbhtrps_kodeterapis.Text)
+                if (tbhtrps_kode.ToString()==txt_tbhtrps_kodeterapis.Text)
                 {
                     MessageBox.Show("Maaf, Kode Terapis yang anda masukkan sudah terdaftar, silahkan ganti dengan Kode Terapis yang berbeda!");
                     tbhtrps_kodeSama = true;
@@ -141,6 +141,14 @@ namespace Green_Leaf
         private void btn_batal_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txt_tbhtrps_kodeterapis_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         

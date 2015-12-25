@@ -15,8 +15,8 @@ namespace Green_Leaf
     public partial class frm_editterapis : Form
     {
         string edttrps_lokasi_gambar;
-        string edttrps_idTerapis;
-        string edttrps_kodeTerakhir;
+        int edttrps_idTerapis;
+        int edttrps_kodeTerakhir;
 
         public frm_editterapis()
         {
@@ -112,9 +112,9 @@ namespace Green_Leaf
 
                     while (edttrps_rdr.Read())
                     {
-                        edttrps_idTerapis = edttrps_rdr.GetString(0);
-                        txt_edttrps_kodeterapis.Text = edttrps_rdr.GetString(1);
-                        edttrps_kodeTerakhir = txt_edttrps_kodeterapis.Text;
+                        edttrps_idTerapis = edttrps_rdr.GetInt32(0);
+                        txt_edttrps_kodeterapis.Text = edttrps_rdr.GetInt32(1).ToString();
+                        edttrps_kodeTerakhir = int.Parse(txt_edttrps_kodeterapis.Text);
                         txt_edttrps_namaterapis.Text = edttrps_rdr.GetString(2);
                         pcb_edttrps_fotoKTP.Image = new Bitmap(edttrps_rdr.GetString(3));
                         edttrps_lokasi_gambar = edttrps_rdr.GetString(3);
@@ -165,7 +165,7 @@ namespace Green_Leaf
                 bool edttrps_kodeSama = false;
                 edttrps_lokasi_gambar = edttrps_lokasi_gambar.Replace(@"\", @"\\");
 
-                if (txt_edttrps_kodeterapis.Text == edttrps_kodeTerakhir)
+                if (txt_edttrps_kodeterapis.Text == edttrps_kodeTerakhir.ToString())
                 {
                         if (rdo_edttrps_statusaktif.Checked)
                         {
@@ -383,6 +383,14 @@ namespace Green_Leaf
         private void btn_batal_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txt_edttrps_kodeterapis_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
