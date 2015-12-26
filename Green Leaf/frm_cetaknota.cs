@@ -24,6 +24,24 @@ namespace Green_Leaf
         int ctknota_extra;
         int ctknota_countExtraColumn;
 
+        #region(Buat Windows Form tidak bisa dirubah posisinya)
+        protected override void WndProc(ref Message message)
+        {
+            const int WM_SYSCOMMAND = 0x0112;
+            const int SC_MOVE = 0xF010;
+
+            switch (message.Msg)
+            {
+                case WM_SYSCOMMAND:
+                    int command = message.WParam.ToInt32() & 0xfff0;
+                    if (command == SC_MOVE)
+                        return;
+                    break;
+            }
+
+            base.WndProc(ref message);
+        }
+        #endregion
 
         private void frm_cetaknota_Load(object sender, EventArgs e)
         {
@@ -254,6 +272,8 @@ namespace Green_Leaf
 
         private void cbo_ctknota_jenispaket_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txt_ctknota_fee.Focus();
+
             rdo_ctknota_normal.Enabled = true;
             rdo_ctknota_midnight.Enabled = true;
             rdo_ctknota_hotel.Enabled = true;
@@ -346,6 +366,11 @@ namespace Green_Leaf
                         dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].Width = 175;
                         dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].Visible = false;
 
+                        dgv_ctknota_tabelhrgpkt.Columns["Nama Paket"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].SortMode = DataGridViewColumnSortMode.NotSortable;
                         
                         List<string> lstExtra = new List<string>();
                         for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
@@ -518,6 +543,8 @@ namespace Green_Leaf
                         //dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].Width = 200;
                         dgv_ctknota_tabelhrgpkt.Columns["Extra"].Width = 70;
 
+                        
+
                         ctknota_DS.Tables[0].Columns.Add(new DataColumn("Nominal Extra", typeof(int)));
                         for (int ii = 0; ii < ctknota_DS.Tables[0].Rows.Count; ii++)
                         {
@@ -527,6 +554,12 @@ namespace Green_Leaf
                         dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].Width = 175;
                         dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].Visible = false;
+
+                        dgv_ctknota_tabelhrgpkt.Columns["Nama Paket"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        //dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].SortMode = DataGridViewColumnSortMode.NotSortable;
 
                         List<string> lstExtra = new List<string>();
                         for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
@@ -708,6 +741,8 @@ namespace Green_Leaf
                         dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].Width = 175;
                         dgv_ctknota_tabelhrgpkt.Columns["Extra"].Width = 70;
 
+                        
+
                         ctknota_DS.Tables[0].Columns.Add(new DataColumn("Nominal Extra", typeof(int)));
                         for (int ii = 0; ii < ctknota_DS.Tables[0].Rows.Count; ii++)
                         {
@@ -750,6 +785,12 @@ namespace Green_Leaf
                         dsCloned.Tables[0].Columns["Harga Paket"].DataType = typeof(string);
                         dsCloned.Tables[0].Columns["Tamu Hotel"].DataType = typeof(string);
                         dsCloned.Tables[0].Columns["Nominal Extra"].DataType = typeof(string);
+
+                        dgv_ctknota_tabelhrgpkt.Columns["Nama Paket"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].SortMode = DataGridViewColumnSortMode.NotSortable;
                         foreach (DataRow row in ctknota_DS.Tables[0].Rows)
                         {
                             dsCloned.Tables[0].ImportRow(row);
@@ -887,6 +928,9 @@ namespace Green_Leaf
                         //dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         //dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].Width = 200;
                         dgv_ctknota_tabelhrgpkt.Columns["Extra"].Width = 70;
+
+                        
+
                         ctknota_DS.Tables[0].Columns.Add(new DataColumn("Nominal Extra", typeof(int)));
                         for (int ii = 0; ii < ctknota_DS.Tables[0].Rows.Count; ii++)
                         {
@@ -896,6 +940,11 @@ namespace Green_Leaf
                         dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].Width = 175;
                         dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].Visible = false;
+                        dgv_ctknota_tabelhrgpkt.Columns["Nama Paket"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        //dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].SortMode = DataGridViewColumnSortMode.NotSortable;
 
                         List<string> lstExtra = new List<string>();
                         for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
@@ -1666,6 +1715,26 @@ namespace Green_Leaf
             {
                 e.Handled = true;
             }
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ctknota_batal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_isi_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         
