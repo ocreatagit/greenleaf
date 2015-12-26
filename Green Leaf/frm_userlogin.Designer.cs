@@ -28,120 +28,131 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel_isi = new System.Windows.Forms.Panel();
-            this.btn_batal = new System.Windows.Forms.Button();
-            this.btn_masuk = new System.Windows.Forms.Button();
-            this.txt_pass = new System.Windows.Forms.TextBox();
-            this.txt_username = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label_namaterapis = new System.Windows.Forms.Label();
-            this.label_kodeterapis = new System.Windows.Forms.Label();
+            this.pnl_login_isi = new System.Windows.Forms.Panel();
+            this.lbl_login_silahkan = new System.Windows.Forms.Label();
+            this.btn_login_batal = new System.Windows.Forms.Button();
+            this.btn_login_masuk = new System.Windows.Forms.Button();
+            this.txt_login_pass = new System.Windows.Forms.TextBox();
+            this.txt_login_username = new System.Windows.Forms.TextBox();
+            this.lbl_login_2 = new System.Windows.Forms.Label();
+            this.lbl_login_1 = new System.Windows.Forms.Label();
+            this.lbl_login_pass = new System.Windows.Forms.Label();
+            this.lbl_login_user = new System.Windows.Forms.Label();
             this.panel_logo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel_isi.SuspendLayout();
+            this.pnl_login_isi.SuspendLayout();
             this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel_isi
+            // pnl_login_isi
             // 
-            this.panel_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_isi.Controls.Add(this.label2);
-            this.panel_isi.Controls.Add(this.btn_batal);
-            this.panel_isi.Controls.Add(this.btn_masuk);
-            this.panel_isi.Controls.Add(this.txt_pass);
-            this.panel_isi.Controls.Add(this.txt_username);
-            this.panel_isi.Controls.Add(this.label3);
-            this.panel_isi.Controls.Add(this.label1);
-            this.panel_isi.Controls.Add(this.label_namaterapis);
-            this.panel_isi.Controls.Add(this.label_kodeterapis);
-            this.panel_isi.Location = new System.Drawing.Point(12, 101);
-            this.panel_isi.Name = "panel_isi";
-            this.panel_isi.Size = new System.Drawing.Size(772, 407);
-            this.panel_isi.TabIndex = 7;
+            this.pnl_login_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_login_isi.Controls.Add(this.lbl_login_silahkan);
+            this.pnl_login_isi.Controls.Add(this.btn_login_batal);
+            this.pnl_login_isi.Controls.Add(this.btn_login_masuk);
+            this.pnl_login_isi.Controls.Add(this.txt_login_pass);
+            this.pnl_login_isi.Controls.Add(this.txt_login_username);
+            this.pnl_login_isi.Controls.Add(this.lbl_login_2);
+            this.pnl_login_isi.Controls.Add(this.lbl_login_1);
+            this.pnl_login_isi.Controls.Add(this.lbl_login_pass);
+            this.pnl_login_isi.Controls.Add(this.lbl_login_user);
+            this.pnl_login_isi.Location = new System.Drawing.Point(12, 101);
+            this.pnl_login_isi.Name = "pnl_login_isi";
+            this.pnl_login_isi.Size = new System.Drawing.Size(1250, 528);
+            this.pnl_login_isi.TabIndex = 7;
             // 
-            // btn_batal
+            // lbl_login_silahkan
             // 
-            this.btn_batal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_batal.Location = new System.Drawing.Point(399, 251);
-            this.btn_batal.Name = "btn_batal";
-            this.btn_batal.Size = new System.Drawing.Size(155, 67);
-            this.btn_batal.TabIndex = 14;
-            this.btn_batal.Text = "Batal";
-            this.btn_batal.UseVisualStyleBackColor = true;
-            this.btn_batal.Click += new System.EventHandler(this.btn_batal_Click);
+            this.lbl_login_silahkan.AutoSize = true;
+            this.lbl_login_silahkan.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_login_silahkan.Location = new System.Drawing.Point(152, 14);
+            this.lbl_login_silahkan.Name = "lbl_login_silahkan";
+            this.lbl_login_silahkan.Size = new System.Drawing.Size(467, 39);
+            this.lbl_login_silahkan.TabIndex = 15;
+            this.lbl_login_silahkan.Text = "Silahkan login terlebih dahulu";
             // 
-            // btn_masuk
+            // btn_login_batal
             // 
-            this.btn_masuk.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_masuk.Location = new System.Drawing.Point(217, 251);
-            this.btn_masuk.Name = "btn_masuk";
-            this.btn_masuk.Size = new System.Drawing.Size(155, 67);
-            this.btn_masuk.TabIndex = 13;
-            this.btn_masuk.Text = "Masuk";
-            this.btn_masuk.UseVisualStyleBackColor = true;
-            this.btn_masuk.Click += new System.EventHandler(this.btn_masuk_Click);
+            this.btn_login_batal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_login_batal.Location = new System.Drawing.Point(399, 251);
+            this.btn_login_batal.Name = "btn_login_batal";
+            this.btn_login_batal.Size = new System.Drawing.Size(155, 67);
+            this.btn_login_batal.TabIndex = 14;
+            this.btn_login_batal.Text = "Batal";
+            this.btn_login_batal.UseVisualStyleBackColor = true;
+            this.btn_login_batal.Click += new System.EventHandler(this.btn_batal_Click);
             // 
-            // txt_pass
+            // btn_login_masuk
             // 
-            this.txt_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pass.Location = new System.Drawing.Point(330, 178);
-            this.txt_pass.MaxLength = 30;
-            this.txt_pass.Name = "txt_pass";
-            this.txt_pass.PasswordChar = '*';
-            this.txt_pass.Size = new System.Drawing.Size(337, 47);
-            this.txt_pass.TabIndex = 9;
+            this.btn_login_masuk.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_login_masuk.Location = new System.Drawing.Point(217, 251);
+            this.btn_login_masuk.Name = "btn_login_masuk";
+            this.btn_login_masuk.Size = new System.Drawing.Size(155, 67);
+            this.btn_login_masuk.TabIndex = 13;
+            this.btn_login_masuk.Text = "Masuk";
+            this.btn_login_masuk.UseVisualStyleBackColor = true;
+            this.btn_login_masuk.Click += new System.EventHandler(this.btn_masuk_Click);
             // 
-            // txt_username
+            // txt_login_pass
             // 
-            this.txt_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_username.Location = new System.Drawing.Point(330, 100);
-            this.txt_username.MaxLength = 30;
-            this.txt_username.Name = "txt_username";
-            this.txt_username.Size = new System.Drawing.Size(337, 47);
-            this.txt_username.TabIndex = 8;
+            this.txt_login_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_login_pass.Location = new System.Drawing.Point(330, 178);
+            this.txt_login_pass.MaxLength = 30;
+            this.txt_login_pass.Name = "txt_login_pass";
+            this.txt_login_pass.PasswordChar = '*';
+            this.txt_login_pass.Size = new System.Drawing.Size(337, 47);
+            this.txt_login_pass.TabIndex = 9;
+            this.txt_login_pass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_login_pass_KeyDown);
             // 
-            // label3
+            // txt_login_username
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(297, 181);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 39);
-            this.label3.TabIndex = 5;
-            this.label3.Text = ":";
+            this.txt_login_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_login_username.Location = new System.Drawing.Point(330, 100);
+            this.txt_login_username.MaxLength = 30;
+            this.txt_login_username.Name = "txt_login_username";
+            this.txt_login_username.Size = new System.Drawing.Size(337, 47);
+            this.txt_login_username.TabIndex = 8;
             // 
-            // label1
+            // lbl_login_2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(297, 103);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 39);
-            this.label1.TabIndex = 4;
-            this.label1.Text = ":";
+            this.lbl_login_2.AutoSize = true;
+            this.lbl_login_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_login_2.Location = new System.Drawing.Point(297, 181);
+            this.lbl_login_2.Name = "lbl_login_2";
+            this.lbl_login_2.Size = new System.Drawing.Size(27, 39);
+            this.lbl_login_2.TabIndex = 5;
+            this.lbl_login_2.Text = ":";
             // 
-            // label_namaterapis
+            // lbl_login_1
             // 
-            this.label_namaterapis.AutoSize = true;
-            this.label_namaterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_namaterapis.Location = new System.Drawing.Point(103, 181);
-            this.label_namaterapis.Name = "label_namaterapis";
-            this.label_namaterapis.Size = new System.Drawing.Size(170, 39);
-            this.label_namaterapis.TabIndex = 1;
-            this.label_namaterapis.Text = "Password";
+            this.lbl_login_1.AutoSize = true;
+            this.lbl_login_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_login_1.Location = new System.Drawing.Point(297, 103);
+            this.lbl_login_1.Name = "lbl_login_1";
+            this.lbl_login_1.Size = new System.Drawing.Size(27, 39);
+            this.lbl_login_1.TabIndex = 4;
+            this.lbl_login_1.Text = ":";
             // 
-            // label_kodeterapis
+            // lbl_login_pass
             // 
-            this.label_kodeterapis.AutoSize = true;
-            this.label_kodeterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_kodeterapis.Location = new System.Drawing.Point(103, 103);
-            this.label_kodeterapis.Name = "label_kodeterapis";
-            this.label_kodeterapis.Size = new System.Drawing.Size(91, 39);
-            this.label_kodeterapis.TabIndex = 0;
-            this.label_kodeterapis.Text = "User";
+            this.lbl_login_pass.AutoSize = true;
+            this.lbl_login_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_login_pass.Location = new System.Drawing.Point(103, 181);
+            this.lbl_login_pass.Name = "lbl_login_pass";
+            this.lbl_login_pass.Size = new System.Drawing.Size(170, 39);
+            this.lbl_login_pass.TabIndex = 1;
+            this.lbl_login_pass.Text = "Password";
+            // 
+            // lbl_login_user
+            // 
+            this.lbl_login_user.AutoSize = true;
+            this.lbl_login_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_login_user.Location = new System.Drawing.Point(103, 103);
+            this.lbl_login_user.Name = "lbl_login_user";
+            this.lbl_login_user.Size = new System.Drawing.Size(91, 39);
+            this.lbl_login_user.TabIndex = 0;
+            this.lbl_login_user.Text = "User";
             // 
             // panel_logo
             // 
@@ -162,32 +173,22 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(152, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(467, 39);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Silahkan login terlebih dahulu";
-            // 
             // frm_userlogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(796, 520);
+            this.ClientSize = new System.Drawing.Size(1274, 652);
             this.ControlBox = false;
-            this.Controls.Add(this.panel_isi);
+            this.Controls.Add(this.pnl_login_isi);
             this.Controls.Add(this.panel_logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frm_userlogin";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Login";
-            this.panel_isi.ResumeLayout(false);
-            this.panel_isi.PerformLayout();
+            this.pnl_login_isi.ResumeLayout(false);
+            this.pnl_login_isi.PerformLayout();
             this.panel_logo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -196,16 +197,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel_isi;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btn_batal;
-        private System.Windows.Forms.Button btn_masuk;
-        private System.Windows.Forms.TextBox txt_pass;
-        private System.Windows.Forms.TextBox txt_username;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label_namaterapis;
-        private System.Windows.Forms.Label label_kodeterapis;
+        private System.Windows.Forms.Panel pnl_login_isi;
+        private System.Windows.Forms.Label lbl_login_silahkan;
+        private System.Windows.Forms.Button btn_login_batal;
+        private System.Windows.Forms.Button btn_login_masuk;
+        private System.Windows.Forms.TextBox txt_login_pass;
+        private System.Windows.Forms.TextBox txt_login_username;
+        private System.Windows.Forms.Label lbl_login_2;
+        private System.Windows.Forms.Label lbl_login_1;
+        private System.Windows.Forms.Label lbl_login_pass;
+        private System.Windows.Forms.Label lbl_login_user;
         private System.Windows.Forms.Panel panel_logo;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

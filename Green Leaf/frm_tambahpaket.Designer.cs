@@ -28,139 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel_isi = new System.Windows.Forms.Panel();
+            this.pnl_tbhpkt_isi = new System.Windows.Forms.Panel();
             this.txt_tbhpkt_komisipaketmidnight = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_rp3 = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_5 = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_komisimidnight = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_menit = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_jam = new System.Windows.Forms.Label();
             this.txt_tbhpkt_durasipaketmenit = new System.Windows.Forms.TextBox();
             this.cbo_tbhpkt_jenispaket = new System.Windows.Forms.ComboBox();
             this.txt_tbhpkt_komisipaketnormal = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_rp2 = new System.Windows.Forms.Label();
             this.txt_tbhpkt_hargapaket = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_rp1 = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_6 = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_komisinormal = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_4 = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_harga = new System.Windows.Forms.Label();
             this.txt_tbhpkt_durasipaketjam = new System.Windows.Forms.TextBox();
             this.btn_tbhpkt_batal = new System.Windows.Forms.Button();
             this.btn_tbhpkt_tambah = new System.Windows.Forms.Button();
             this.txt_tbhpkt_namapaket = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label_upload = new System.Windows.Forms.Label();
-            this.label_namaterapis = new System.Windows.Forms.Label();
-            this.label_kodeterapis = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_3 = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_2 = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_1 = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_upload = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_namaterapis = new System.Windows.Forms.Label();
+            this.lbl_tbhpkt_kodeterapis = new System.Windows.Forms.Label();
             this.panel_logo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel_isi.SuspendLayout();
+            this.pnl_tbhpkt_isi.SuspendLayout();
             this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel_isi
+            // pnl_tbhpkt_isi
             // 
-            this.panel_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_isi.Controls.Add(this.txt_tbhpkt_komisipaketmidnight);
-            this.panel_isi.Controls.Add(this.label13);
-            this.panel_isi.Controls.Add(this.label14);
-            this.panel_isi.Controls.Add(this.label15);
-            this.panel_isi.Controls.Add(this.label12);
-            this.panel_isi.Controls.Add(this.label11);
-            this.panel_isi.Controls.Add(this.txt_tbhpkt_durasipaketmenit);
-            this.panel_isi.Controls.Add(this.cbo_tbhpkt_jenispaket);
-            this.panel_isi.Controls.Add(this.txt_tbhpkt_komisipaketnormal);
-            this.panel_isi.Controls.Add(this.label10);
-            this.panel_isi.Controls.Add(this.txt_tbhpkt_hargapaket);
-            this.panel_isi.Controls.Add(this.label9);
-            this.panel_isi.Controls.Add(this.label7);
-            this.panel_isi.Controls.Add(this.label8);
-            this.panel_isi.Controls.Add(this.label2);
-            this.panel_isi.Controls.Add(this.label6);
-            this.panel_isi.Controls.Add(this.txt_tbhpkt_durasipaketjam);
-            this.panel_isi.Controls.Add(this.btn_tbhpkt_batal);
-            this.panel_isi.Controls.Add(this.btn_tbhpkt_tambah);
-            this.panel_isi.Controls.Add(this.txt_tbhpkt_namapaket);
-            this.panel_isi.Controls.Add(this.label4);
-            this.panel_isi.Controls.Add(this.label3);
-            this.panel_isi.Controls.Add(this.label1);
-            this.panel_isi.Controls.Add(this.label_upload);
-            this.panel_isi.Controls.Add(this.label_namaterapis);
-            this.panel_isi.Controls.Add(this.label_kodeterapis);
-            this.panel_isi.Location = new System.Drawing.Point(8, 106);
-            this.panel_isi.Name = "panel_isi";
-            this.panel_isi.Size = new System.Drawing.Size(845, 589);
-            this.panel_isi.TabIndex = 7;
+            this.pnl_tbhpkt_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_tbhpkt_isi.Controls.Add(this.txt_tbhpkt_komisipaketmidnight);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_rp3);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_5);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_komisimidnight);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_menit);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_jam);
+            this.pnl_tbhpkt_isi.Controls.Add(this.txt_tbhpkt_durasipaketmenit);
+            this.pnl_tbhpkt_isi.Controls.Add(this.cbo_tbhpkt_jenispaket);
+            this.pnl_tbhpkt_isi.Controls.Add(this.txt_tbhpkt_komisipaketnormal);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_rp2);
+            this.pnl_tbhpkt_isi.Controls.Add(this.txt_tbhpkt_hargapaket);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_rp1);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_6);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_komisinormal);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_4);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_harga);
+            this.pnl_tbhpkt_isi.Controls.Add(this.txt_tbhpkt_durasipaketjam);
+            this.pnl_tbhpkt_isi.Controls.Add(this.btn_tbhpkt_batal);
+            this.pnl_tbhpkt_isi.Controls.Add(this.btn_tbhpkt_tambah);
+            this.pnl_tbhpkt_isi.Controls.Add(this.txt_tbhpkt_namapaket);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_3);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_2);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_1);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_upload);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_namaterapis);
+            this.pnl_tbhpkt_isi.Controls.Add(this.lbl_tbhpkt_kodeterapis);
+            this.pnl_tbhpkt_isi.Location = new System.Drawing.Point(8, 106);
+            this.pnl_tbhpkt_isi.Name = "pnl_tbhpkt_isi";
+            this.pnl_tbhpkt_isi.Size = new System.Drawing.Size(1250, 528);
+            this.pnl_tbhpkt_isi.TabIndex = 7;
             // 
             // txt_tbhpkt_komisipaketmidnight
             // 
             this.txt_tbhpkt_komisipaketmidnight.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tbhpkt_komisipaketmidnight.Location = new System.Drawing.Point(404, 421);
+            this.txt_tbhpkt_komisipaketmidnight.Location = new System.Drawing.Point(602, 345);
             this.txt_tbhpkt_komisipaketmidnight.MaxLength = 35;
             this.txt_tbhpkt_komisipaketmidnight.Name = "txt_tbhpkt_komisipaketmidnight";
             this.txt_tbhpkt_komisipaketmidnight.Size = new System.Drawing.Size(215, 47);
             this.txt_tbhpkt_komisipaketmidnight.TabIndex = 7;
             this.txt_tbhpkt_komisipaketmidnight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tbhpkt_komisipaketmidnight_KeyPress);
             // 
-            // label13
+            // lbl_tbhpkt_rp3
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(339, 424);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(71, 39);
-            this.label13.TabIndex = 33;
-            this.label13.Text = "Rp.";
+            this.lbl_tbhpkt_rp3.AutoSize = true;
+            this.lbl_tbhpkt_rp3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_rp3.Location = new System.Drawing.Point(537, 348);
+            this.lbl_tbhpkt_rp3.Name = "lbl_tbhpkt_rp3";
+            this.lbl_tbhpkt_rp3.Size = new System.Drawing.Size(71, 39);
+            this.lbl_tbhpkt_rp3.TabIndex = 33;
+            this.lbl_tbhpkt_rp3.Text = "Rp.";
             // 
-            // label14
+            // lbl_tbhpkt_5
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(313, 341);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(27, 39);
-            this.label14.TabIndex = 31;
-            this.label14.Text = ":";
+            this.lbl_tbhpkt_5.AutoSize = true;
+            this.lbl_tbhpkt_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_5.Location = new System.Drawing.Point(511, 265);
+            this.lbl_tbhpkt_5.Name = "lbl_tbhpkt_5";
+            this.lbl_tbhpkt_5.Size = new System.Drawing.Size(27, 39);
+            this.lbl_tbhpkt_5.TabIndex = 31;
+            this.lbl_tbhpkt_5.Text = ":";
             // 
-            // label15
+            // lbl_tbhpkt_komisimidnight
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(22, 424);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(293, 78);
-            this.label15.TabIndex = 30;
-            this.label15.Text = "Gaji Komisi/Paket\r\n(Midnight)";
+            this.lbl_tbhpkt_komisimidnight.AutoSize = true;
+            this.lbl_tbhpkt_komisimidnight.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_komisimidnight.Location = new System.Drawing.Point(220, 348);
+            this.lbl_tbhpkt_komisimidnight.Name = "lbl_tbhpkt_komisimidnight";
+            this.lbl_tbhpkt_komisimidnight.Size = new System.Drawing.Size(293, 78);
+            this.lbl_tbhpkt_komisimidnight.TabIndex = 30;
+            this.lbl_tbhpkt_komisimidnight.Text = "Gaji Komisi/Paket\r\n(Midnight)";
             // 
-            // label12
+            // lbl_tbhpkt_menit
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(554, 181);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(102, 39);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "Menit";
+            this.lbl_tbhpkt_menit.AutoSize = true;
+            this.lbl_tbhpkt_menit.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_menit.Location = new System.Drawing.Point(752, 144);
+            this.lbl_tbhpkt_menit.Name = "lbl_tbhpkt_menit";
+            this.lbl_tbhpkt_menit.Size = new System.Drawing.Size(102, 39);
+            this.lbl_tbhpkt_menit.TabIndex = 29;
+            this.lbl_tbhpkt_menit.Text = "Menit";
             // 
-            // label11
+            // lbl_tbhpkt_jam
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(405, 181);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 39);
-            this.label11.TabIndex = 28;
-            this.label11.Text = "Jam";
+            this.lbl_tbhpkt_jam.AutoSize = true;
+            this.lbl_tbhpkt_jam.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_jam.Location = new System.Drawing.Point(603, 144);
+            this.lbl_tbhpkt_jam.Name = "lbl_tbhpkt_jam";
+            this.lbl_tbhpkt_jam.Size = new System.Drawing.Size(84, 39);
+            this.lbl_tbhpkt_jam.TabIndex = 28;
+            this.lbl_tbhpkt_jam.Text = "Jam";
             // 
             // txt_tbhpkt_durasipaketmenit
             // 
             this.txt_tbhpkt_durasipaketmenit.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tbhpkt_durasipaketmenit.Location = new System.Drawing.Point(495, 178);
-            this.txt_tbhpkt_durasipaketmenit.MaxLength = 35;
+            this.txt_tbhpkt_durasipaketmenit.Location = new System.Drawing.Point(693, 141);
+            this.txt_tbhpkt_durasipaketmenit.MaxLength = 2;
             this.txt_tbhpkt_durasipaketmenit.Name = "txt_tbhpkt_durasipaketmenit";
             this.txt_tbhpkt_durasipaketmenit.Size = new System.Drawing.Size(53, 47);
             this.txt_tbhpkt_durasipaketmenit.TabIndex = 4;
@@ -176,7 +176,7 @@
             "Deluxe",
             "VIP",
             "VVIP"});
-            this.cbo_tbhpkt_jenispaket.Location = new System.Drawing.Point(346, 22);
+            this.cbo_tbhpkt_jenispaket.Location = new System.Drawing.Point(544, 23);
             this.cbo_tbhpkt_jenispaket.Name = "cbo_tbhpkt_jenispaket";
             this.cbo_tbhpkt_jenispaket.Size = new System.Drawing.Size(168, 47);
             this.cbo_tbhpkt_jenispaket.TabIndex = 1;
@@ -184,27 +184,27 @@
             // txt_tbhpkt_komisipaketnormal
             // 
             this.txt_tbhpkt_komisipaketnormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tbhpkt_komisipaketnormal.Location = new System.Drawing.Point(404, 338);
+            this.txt_tbhpkt_komisipaketnormal.Location = new System.Drawing.Point(602, 262);
             this.txt_tbhpkt_komisipaketnormal.MaxLength = 35;
             this.txt_tbhpkt_komisipaketnormal.Name = "txt_tbhpkt_komisipaketnormal";
             this.txt_tbhpkt_komisipaketnormal.Size = new System.Drawing.Size(215, 47);
             this.txt_tbhpkt_komisipaketnormal.TabIndex = 6;
             this.txt_tbhpkt_komisipaketnormal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tbhpkt_komisipaketnormal_KeyPress);
             // 
-            // label10
+            // lbl_tbhpkt_rp2
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(339, 341);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(71, 39);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "Rp.";
+            this.lbl_tbhpkt_rp2.AutoSize = true;
+            this.lbl_tbhpkt_rp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_rp2.Location = new System.Drawing.Point(537, 265);
+            this.lbl_tbhpkt_rp2.Name = "lbl_tbhpkt_rp2";
+            this.lbl_tbhpkt_rp2.Size = new System.Drawing.Size(71, 39);
+            this.lbl_tbhpkt_rp2.TabIndex = 24;
+            this.lbl_tbhpkt_rp2.Text = "Rp.";
             // 
             // txt_tbhpkt_hargapaket
             // 
             this.txt_tbhpkt_hargapaket.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tbhpkt_hargapaket.Location = new System.Drawing.Point(404, 255);
+            this.txt_tbhpkt_hargapaket.Location = new System.Drawing.Point(602, 202);
             this.txt_tbhpkt_hargapaket.MaxLength = 35;
             this.txt_tbhpkt_hargapaket.Name = "txt_tbhpkt_hargapaket";
             this.txt_tbhpkt_hargapaket.Size = new System.Drawing.Size(215, 47);
@@ -212,61 +212,61 @@
             this.txt_tbhpkt_hargapaket.TextChanged += new System.EventHandler(this.txt_tbhpkt_hargapaket_TextChanged);
             this.txt_tbhpkt_hargapaket.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tbhpkt_hargapaket_KeyPress);
             // 
-            // label9
+            // lbl_tbhpkt_rp1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(339, 258);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 39);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Rp.";
+            this.lbl_tbhpkt_rp1.AutoSize = true;
+            this.lbl_tbhpkt_rp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_rp1.Location = new System.Drawing.Point(537, 205);
+            this.lbl_tbhpkt_rp1.Name = "lbl_tbhpkt_rp1";
+            this.lbl_tbhpkt_rp1.Size = new System.Drawing.Size(71, 39);
+            this.lbl_tbhpkt_rp1.TabIndex = 22;
+            this.lbl_tbhpkt_rp1.Text = "Rp.";
             // 
-            // label7
+            // lbl_tbhpkt_6
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(313, 414);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 39);
-            this.label7.TabIndex = 20;
-            this.label7.Text = ":";
+            this.lbl_tbhpkt_6.AutoSize = true;
+            this.lbl_tbhpkt_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_6.Location = new System.Drawing.Point(511, 338);
+            this.lbl_tbhpkt_6.Name = "lbl_tbhpkt_6";
+            this.lbl_tbhpkt_6.Size = new System.Drawing.Size(27, 39);
+            this.lbl_tbhpkt_6.TabIndex = 20;
+            this.lbl_tbhpkt_6.Text = ":";
             // 
-            // label8
+            // lbl_tbhpkt_komisinormal
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(22, 341);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(293, 78);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Gaji Komisi/Paket\r\n(Normal)";
+            this.lbl_tbhpkt_komisinormal.AutoSize = true;
+            this.lbl_tbhpkt_komisinormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_komisinormal.Location = new System.Drawing.Point(220, 265);
+            this.lbl_tbhpkt_komisinormal.Name = "lbl_tbhpkt_komisinormal";
+            this.lbl_tbhpkt_komisinormal.Size = new System.Drawing.Size(293, 78);
+            this.lbl_tbhpkt_komisinormal.TabIndex = 19;
+            this.lbl_tbhpkt_komisinormal.Text = "Gaji Komisi/Paket\r\n(Normal)";
             // 
-            // label2
+            // lbl_tbhpkt_4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(313, 258);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 39);
-            this.label2.TabIndex = 17;
-            this.label2.Text = ":";
+            this.lbl_tbhpkt_4.AutoSize = true;
+            this.lbl_tbhpkt_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_4.Location = new System.Drawing.Point(511, 205);
+            this.lbl_tbhpkt_4.Name = "lbl_tbhpkt_4";
+            this.lbl_tbhpkt_4.Size = new System.Drawing.Size(27, 39);
+            this.lbl_tbhpkt_4.TabIndex = 17;
+            this.lbl_tbhpkt_4.Text = ":";
             // 
-            // label6
+            // lbl_tbhpkt_harga
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(22, 258);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(209, 39);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Harga Paket";
+            this.lbl_tbhpkt_harga.AutoSize = true;
+            this.lbl_tbhpkt_harga.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_harga.Location = new System.Drawing.Point(220, 205);
+            this.lbl_tbhpkt_harga.Name = "lbl_tbhpkt_harga";
+            this.lbl_tbhpkt_harga.Size = new System.Drawing.Size(209, 39);
+            this.lbl_tbhpkt_harga.TabIndex = 16;
+            this.lbl_tbhpkt_harga.Text = "Harga Paket";
             // 
             // txt_tbhpkt_durasipaketjam
             // 
             this.txt_tbhpkt_durasipaketjam.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tbhpkt_durasipaketjam.Location = new System.Drawing.Point(346, 178);
-            this.txt_tbhpkt_durasipaketjam.MaxLength = 35;
+            this.txt_tbhpkt_durasipaketjam.Location = new System.Drawing.Point(544, 141);
+            this.txt_tbhpkt_durasipaketjam.MaxLength = 2;
             this.txt_tbhpkt_durasipaketjam.Name = "txt_tbhpkt_durasipaketjam";
             this.txt_tbhpkt_durasipaketjam.Size = new System.Drawing.Size(53, 47);
             this.txt_tbhpkt_durasipaketjam.TabIndex = 3;
@@ -276,7 +276,7 @@
             // btn_tbhpkt_batal
             // 
             this.btn_tbhpkt_batal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_tbhpkt_batal.Location = new System.Drawing.Point(444, 505);
+            this.btn_tbhpkt_batal.Location = new System.Drawing.Point(652, 439);
             this.btn_tbhpkt_batal.Name = "btn_tbhpkt_batal";
             this.btn_tbhpkt_batal.Size = new System.Drawing.Size(155, 67);
             this.btn_tbhpkt_batal.TabIndex = 9;
@@ -287,7 +287,7 @@
             // btn_tbhpkt_tambah
             // 
             this.btn_tbhpkt_tambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_tbhpkt_tambah.Location = new System.Drawing.Point(244, 505);
+            this.btn_tbhpkt_tambah.Location = new System.Drawing.Point(441, 439);
             this.btn_tbhpkt_tambah.Name = "btn_tbhpkt_tambah";
             this.btn_tbhpkt_tambah.Size = new System.Drawing.Size(155, 67);
             this.btn_tbhpkt_tambah.TabIndex = 8;
@@ -298,71 +298,71 @@
             // txt_tbhpkt_namapaket
             // 
             this.txt_tbhpkt_namapaket.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tbhpkt_namapaket.Location = new System.Drawing.Point(346, 100);
+            this.txt_tbhpkt_namapaket.Location = new System.Drawing.Point(544, 83);
             this.txt_tbhpkt_namapaket.MaxLength = 40;
             this.txt_tbhpkt_namapaket.Name = "txt_tbhpkt_namapaket";
             this.txt_tbhpkt_namapaket.Size = new System.Drawing.Size(484, 47);
             this.txt_tbhpkt_namapaket.TabIndex = 2;
             // 
-            // label4
+            // lbl_tbhpkt_3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(313, 181);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 39);
-            this.label4.TabIndex = 6;
-            this.label4.Text = ":";
+            this.lbl_tbhpkt_3.AutoSize = true;
+            this.lbl_tbhpkt_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_3.Location = new System.Drawing.Point(511, 144);
+            this.lbl_tbhpkt_3.Name = "lbl_tbhpkt_3";
+            this.lbl_tbhpkt_3.Size = new System.Drawing.Size(27, 39);
+            this.lbl_tbhpkt_3.TabIndex = 6;
+            this.lbl_tbhpkt_3.Text = ":";
             // 
-            // label3
+            // lbl_tbhpkt_2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(313, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 39);
-            this.label3.TabIndex = 5;
-            this.label3.Text = ":";
+            this.lbl_tbhpkt_2.AutoSize = true;
+            this.lbl_tbhpkt_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_2.Location = new System.Drawing.Point(511, 86);
+            this.lbl_tbhpkt_2.Name = "lbl_tbhpkt_2";
+            this.lbl_tbhpkt_2.Size = new System.Drawing.Size(27, 39);
+            this.lbl_tbhpkt_2.TabIndex = 5;
+            this.lbl_tbhpkt_2.Text = ":";
             // 
-            // label1
+            // lbl_tbhpkt_1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(313, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 39);
-            this.label1.TabIndex = 4;
-            this.label1.Text = ":";
+            this.lbl_tbhpkt_1.AutoSize = true;
+            this.lbl_tbhpkt_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_1.Location = new System.Drawing.Point(511, 26);
+            this.lbl_tbhpkt_1.Name = "lbl_tbhpkt_1";
+            this.lbl_tbhpkt_1.Size = new System.Drawing.Size(27, 39);
+            this.lbl_tbhpkt_1.TabIndex = 4;
+            this.lbl_tbhpkt_1.Text = ":";
             // 
-            // label_upload
+            // lbl_tbhpkt_upload
             // 
-            this.label_upload.AutoSize = true;
-            this.label_upload.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_upload.Location = new System.Drawing.Point(22, 181);
-            this.label_upload.Name = "label_upload";
-            this.label_upload.Size = new System.Drawing.Size(216, 39);
-            this.label_upload.TabIndex = 2;
-            this.label_upload.Text = "Durasi Paket";
+            this.lbl_tbhpkt_upload.AutoSize = true;
+            this.lbl_tbhpkt_upload.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_upload.Location = new System.Drawing.Point(220, 144);
+            this.lbl_tbhpkt_upload.Name = "lbl_tbhpkt_upload";
+            this.lbl_tbhpkt_upload.Size = new System.Drawing.Size(216, 39);
+            this.lbl_tbhpkt_upload.TabIndex = 2;
+            this.lbl_tbhpkt_upload.Text = "Durasi Paket";
             // 
-            // label_namaterapis
+            // lbl_tbhpkt_namaterapis
             // 
-            this.label_namaterapis.AutoSize = true;
-            this.label_namaterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_namaterapis.Location = new System.Drawing.Point(22, 103);
-            this.label_namaterapis.Name = "label_namaterapis";
-            this.label_namaterapis.Size = new System.Drawing.Size(208, 39);
-            this.label_namaterapis.TabIndex = 1;
-            this.label_namaterapis.Text = "Nama Paket";
+            this.lbl_tbhpkt_namaterapis.AutoSize = true;
+            this.lbl_tbhpkt_namaterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_namaterapis.Location = new System.Drawing.Point(220, 86);
+            this.lbl_tbhpkt_namaterapis.Name = "lbl_tbhpkt_namaterapis";
+            this.lbl_tbhpkt_namaterapis.Size = new System.Drawing.Size(208, 39);
+            this.lbl_tbhpkt_namaterapis.TabIndex = 1;
+            this.lbl_tbhpkt_namaterapis.Text = "Nama Paket";
             // 
-            // label_kodeterapis
+            // lbl_tbhpkt_kodeterapis
             // 
-            this.label_kodeterapis.AutoSize = true;
-            this.label_kodeterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_kodeterapis.Location = new System.Drawing.Point(22, 25);
-            this.label_kodeterapis.Name = "label_kodeterapis";
-            this.label_kodeterapis.Size = new System.Drawing.Size(197, 39);
-            this.label_kodeterapis.TabIndex = 0;
-            this.label_kodeterapis.Text = "Jenis Paket";
+            this.lbl_tbhpkt_kodeterapis.AutoSize = true;
+            this.lbl_tbhpkt_kodeterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhpkt_kodeterapis.Location = new System.Drawing.Point(220, 26);
+            this.lbl_tbhpkt_kodeterapis.Name = "lbl_tbhpkt_kodeterapis";
+            this.lbl_tbhpkt_kodeterapis.Size = new System.Drawing.Size(197, 39);
+            this.lbl_tbhpkt_kodeterapis.TabIndex = 0;
+            this.lbl_tbhpkt_kodeterapis.Text = "Jenis Paket";
             // 
             // panel_logo
             // 
@@ -387,14 +387,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 709);
-            this.Controls.Add(this.panel_isi);
+            this.ClientSize = new System.Drawing.Size(1264, 642);
+            this.Controls.Add(this.pnl_tbhpkt_isi);
             this.Controls.Add(this.panel_logo);
+            this.MaximumSize = new System.Drawing.Size(1280, 680);
+            this.MinimumSize = new System.Drawing.Size(1280, 680);
             this.Name = "frm_tambahpaket";
             this.Text = "frm_tambahpaket";
             this.Load += new System.EventHandler(this.frm_tambahpaket_Load);
-            this.panel_isi.ResumeLayout(false);
-            this.panel_isi.PerformLayout();
+            this.pnl_tbhpkt_isi.ResumeLayout(false);
+            this.pnl_tbhpkt_isi.PerformLayout();
             this.panel_logo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -403,34 +405,34 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel_isi;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel pnl_tbhpkt_isi;
+        private System.Windows.Forms.Label lbl_tbhpkt_6;
+        private System.Windows.Forms.Label lbl_tbhpkt_komisinormal;
         private System.Windows.Forms.TextBox txt_tbhpkt_hargapaket;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_tbhpkt_4;
+        private System.Windows.Forms.Label lbl_tbhpkt_harga;
         private System.Windows.Forms.TextBox txt_tbhpkt_durasipaketjam;
         private System.Windows.Forms.Button btn_tbhpkt_batal;
         private System.Windows.Forms.Button btn_tbhpkt_tambah;
         private System.Windows.Forms.TextBox txt_tbhpkt_namapaket;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label_upload;
-        private System.Windows.Forms.Label label_namaterapis;
-        private System.Windows.Forms.Label label_kodeterapis;
+        private System.Windows.Forms.Label lbl_tbhpkt_3;
+        private System.Windows.Forms.Label lbl_tbhpkt_2;
+        private System.Windows.Forms.Label lbl_tbhpkt_1;
+        private System.Windows.Forms.Label lbl_tbhpkt_upload;
+        private System.Windows.Forms.Label lbl_tbhpkt_namaterapis;
+        private System.Windows.Forms.Label lbl_tbhpkt_kodeterapis;
         private System.Windows.Forms.Panel panel_logo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txt_tbhpkt_komisipaketnormal;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbl_tbhpkt_rp2;
+        private System.Windows.Forms.Label lbl_tbhpkt_rp1;
         private System.Windows.Forms.ComboBox cbo_tbhpkt_jenispaket;
         private System.Windows.Forms.TextBox txt_tbhpkt_durasipaketmenit;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lbl_tbhpkt_menit;
+        private System.Windows.Forms.Label lbl_tbhpkt_jam;
         private System.Windows.Forms.TextBox txt_tbhpkt_komisipaketmidnight;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lbl_tbhpkt_rp3;
+        private System.Windows.Forms.Label lbl_tbhpkt_5;
+        private System.Windows.Forms.Label lbl_tbhpkt_komisimidnight;
     }
 }

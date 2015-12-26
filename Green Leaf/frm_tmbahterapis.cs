@@ -26,7 +26,7 @@ namespace Green_Leaf
             
         }
 
-        private void btn_browsefoto_Click(object sender, EventArgs e)
+        private void btn_tbhtrps_browsefoto_Click(object sender, EventArgs e)
         {
             // open file dialog 
             OpenFileDialog tbhtrps_open = new OpenFileDialog();
@@ -42,7 +42,7 @@ namespace Green_Leaf
             }
         }
 
-        private void btn_tambah_Click(object sender, EventArgs e)
+        private void btn_tbhtrps_tambah_Click(object sender, EventArgs e)
         {
             DBConnect tbhtrps_sql = new DBConnect();
             
@@ -138,7 +138,7 @@ namespace Green_Leaf
             }
         }
 
-        private void btn_batal_Click(object sender, EventArgs e)
+        private void btn_tbhtrps_batal_Click(object sender, EventArgs e)
         {
             this.Close();
         }

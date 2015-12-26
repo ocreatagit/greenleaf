@@ -45,8 +45,9 @@ namespace Green_Leaf
 
         private void frm_cetaknota_Load(object sender, EventArgs e)
         {
-            rdo_ctknota_normal.Enabled = true;
-            rdo_ctknota_midnight.Enabled = true;
+            txt_ctknota_nomorruangan.Enabled = true;
+            rdo_ctknota_normal.Enabled = false;
+            rdo_ctknota_midnight.Enabled = false;
             rdo_ctknota_hotel.Enabled = false;
             rdo_ctknota_biasa.Enabled = false;
             cbo_ctknota_jenispaket.Enabled = false;
@@ -58,7 +59,7 @@ namespace Green_Leaf
             txt_ctknota_diskon.Enabled = false;
             txt_ctknota_ket.Enabled = false;
             txt_ctknota_fee.Enabled = false;
-            txt_ctknota_nomorruangan.Enabled = false;
+            
             btn_ctknota_cetak.Enabled = false;
             btn_ctknota_batal.Enabled = true;
 
@@ -123,6 +124,7 @@ namespace Green_Leaf
 
         private void rdo_ctknota_biasa_CheckedChanged(object sender, EventArgs e)
         {
+            txt_ctknota_nomorruangan.Enabled = true;
             rdo_ctknota_normal.Enabled = true;
             rdo_ctknota_midnight.Enabled = true;
             rdo_ctknota_hotel.Enabled = true;
@@ -136,9 +138,7 @@ namespace Green_Leaf
             txt_ctknota_diskon.Enabled = false;
             txt_ctknota_ket.Enabled = false;
             txt_ctknota_fee.Enabled = false;
-            txt_ctknota_nomorruangan.Enabled = false;
-            btn_ctknota_cetak.Enabled = false;
-            btn_ctknota_batal.Enabled = true;
+            btn_ctknota_batal.Enabled = false;
 
             cbo_ctknota_jenispaket.Items.Clear();
             #region(Select)
@@ -180,6 +180,7 @@ namespace Green_Leaf
 
         private void rdo_ctknota_hotel_CheckedChanged(object sender, EventArgs e)
         {
+            txt_ctknota_nomorruangan.Enabled = true;
             rdo_ctknota_normal.Enabled = true;
             rdo_ctknota_midnight.Enabled = true;
             rdo_ctknota_hotel.Enabled = true;
@@ -193,9 +194,7 @@ namespace Green_Leaf
             txt_ctknota_diskon.Enabled = false;
             txt_ctknota_ket.Enabled = false;
             txt_ctknota_fee.Enabled = false;
-            txt_ctknota_nomorruangan.Enabled = false;
-            btn_ctknota_cetak.Enabled = false;
-            btn_ctknota_batal.Enabled = true;
+            btn_ctknota_batal.Enabled = false;
             
 
             cbo_ctknota_jenispaket.Items.Clear();
@@ -230,6 +229,7 @@ namespace Green_Leaf
 
         private void rdo_ctknota_normal_CheckedChanged(object sender, EventArgs e)
         {
+            txt_ctknota_nomorruangan.Enabled = true;
             rdo_ctknota_normal.Enabled = true;
             rdo_ctknota_midnight.Enabled = true;
             rdo_ctknota_hotel.Enabled = true;
@@ -243,14 +243,12 @@ namespace Green_Leaf
             txt_ctknota_diskon.Enabled = false;
             txt_ctknota_ket.Enabled = false;
             txt_ctknota_fee.Enabled = false;
-            txt_ctknota_nomorruangan.Enabled = false;
-            
-            btn_ctknota_cetak.Enabled = false;
-            btn_ctknota_batal.Enabled = true;
+            btn_ctknota_batal.Enabled = false;
         }
 
         private void rdo_ctknota_midnight_CheckedChanged(object sender, EventArgs e)
         {
+            txt_ctknota_nomorruangan.Enabled = true;
             rdo_ctknota_normal.Enabled = true;
             rdo_ctknota_midnight.Enabled = true;
             rdo_ctknota_hotel.Enabled = true;
@@ -264,16 +262,14 @@ namespace Green_Leaf
             txt_ctknota_diskon.Enabled = false;
             txt_ctknota_ket.Enabled = false;
             txt_ctknota_fee.Enabled = false;
-            txt_ctknota_nomorruangan.Enabled = false;
-             
-            btn_ctknota_cetak.Enabled = false;
-            btn_ctknota_batal.Enabled = true;
+            btn_ctknota_batal.Enabled = false;
         }
 
         private void cbo_ctknota_jenispaket_SelectedIndexChanged(object sender, EventArgs e)
         {
             txt_ctknota_fee.Focus();
 
+            txt_ctknota_nomorruangan.Enabled = true;
             rdo_ctknota_normal.Enabled = true;
             rdo_ctknota_midnight.Enabled = true;
             rdo_ctknota_hotel.Enabled = true;
@@ -287,10 +283,7 @@ namespace Green_Leaf
             txt_ctknota_diskon.Enabled = false;
             txt_ctknota_ket.Enabled = false;
             txt_ctknota_fee.Enabled = false;
-            txt_ctknota_nomorruangan.Enabled = false;
-             
-            btn_ctknota_cetak.Enabled = false;
-            btn_ctknota_batal.Enabled = true;
+            btn_ctknota_batal.Enabled = false;
 
             //dtEmp.Columns.Add("Nama Paket", typeof(string));
             //dtEmp.Columns.Add("Durasi Paket", typeof(string));
@@ -1640,7 +1633,21 @@ namespace Green_Leaf
 
         private void txt_ctknota_nomorruangan_TextChanged(object sender, EventArgs e)
         {
-
+            txt_ctknota_nomorruangan.Enabled = true;
+            rdo_ctknota_normal.Enabled = true;
+            rdo_ctknota_midnight.Enabled = true;
+            rdo_ctknota_hotel.Enabled = false;
+            rdo_ctknota_biasa.Enabled = false;
+            cbo_ctknota_jenispaket.Enabled = false;
+            dgv_ctknota_tabelhrgpkt.Enabled = false;
+            rdo_ctknota_cash.Enabled = false;
+            rdo_ctknota_credit.Enabled = false;
+            cbo_ctknota_kodeterapis.Enabled = false;
+            txt_ctknota_namaterapis.Enabled = false;
+            txt_ctknota_diskon.Enabled = false;
+            txt_ctknota_ket.Enabled = false;
+            txt_ctknota_fee.Enabled = false;
+            btn_ctknota_batal.Enabled = false;
         }
 
         private void dgv_ctknota_tabelhrgpkt_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -1691,11 +1698,6 @@ namespace Green_Leaf
             }
         }
 
-        private void txt_ctknota_ket_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txt_ctknota_nomorruangan_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -1704,10 +1706,6 @@ namespace Green_Leaf
             }
         }
 
-        private void txt_ctknota_fee_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void txt_ctknota_fee_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -1717,25 +1715,6 @@ namespace Green_Leaf
             }
         }
 
-        private void label27_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_ctknota_batal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_isi_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         
     }

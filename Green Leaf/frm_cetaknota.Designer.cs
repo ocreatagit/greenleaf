@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_ctknota_logo = new System.Windows.Forms.Panel();
             this.pict_ctknota_logo = new System.Windows.Forms.PictureBox();
             this.lbl_ctknota_kodeterapis = new System.Windows.Forms.Label();
@@ -107,7 +107,7 @@
             // 
             this.lbl_ctknota_kodeterapis.AutoSize = true;
             this.lbl_ctknota_kodeterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ctknota_kodeterapis.Location = new System.Drawing.Point(24, 6);
+            this.lbl_ctknota_kodeterapis.Location = new System.Drawing.Point(24, 55);
             this.lbl_ctknota_kodeterapis.Name = "lbl_ctknota_kodeterapis";
             this.lbl_ctknota_kodeterapis.Size = new System.Drawing.Size(211, 33);
             this.lbl_ctknota_kodeterapis.TabIndex = 0;
@@ -120,8 +120,7 @@
             this.txt_ctknota_ket.MaxLength = 35;
             this.txt_ctknota_ket.Name = "txt_ctknota_ket";
             this.txt_ctknota_ket.Size = new System.Drawing.Size(337, 40);
-            this.txt_ctknota_ket.TabIndex = 9;
-            this.txt_ctknota_ket.TextChanged += new System.EventHandler(this.txt_ctknota_ket_TextChanged);
+            this.txt_ctknota_ket.TabIndex = 13;
             // 
             // btn_ctknota_cetak
             // 
@@ -129,7 +128,7 @@
             this.btn_ctknota_cetak.Location = new System.Drawing.Point(874, 417);
             this.btn_ctknota_cetak.Name = "btn_ctknota_cetak";
             this.btn_ctknota_cetak.Size = new System.Drawing.Size(155, 98);
-            this.btn_ctknota_cetak.TabIndex = 13;
+            this.btn_ctknota_cetak.TabIndex = 14;
             this.btn_ctknota_cetak.Text = "Cetak";
             this.btn_ctknota_cetak.UseVisualStyleBackColor = true;
             this.btn_ctknota_cetak.Click += new System.EventHandler(this.btn_ctknota_cetak_Click);
@@ -140,10 +139,9 @@
             this.btn_ctknota_batal.Location = new System.Drawing.Point(1058, 417);
             this.btn_ctknota_batal.Name = "btn_ctknota_batal";
             this.btn_ctknota_batal.Size = new System.Drawing.Size(155, 98);
-            this.btn_ctknota_batal.TabIndex = 14;
+            this.btn_ctknota_batal.TabIndex = 15;
             this.btn_ctknota_batal.Text = "Batal";
             this.btn_ctknota_batal.UseVisualStyleBackColor = true;
-            this.btn_ctknota_batal.Click += new System.EventHandler(this.btn_ctknota_batal_Click);
             // 
             // lbl_ctknota_tamu
             // 
@@ -208,19 +206,18 @@
             // lbl_ctknota_totalyangdibayar
             // 
             this.lbl_ctknota_totalyangdibayar.AutoSize = true;
-            this.lbl_ctknota_totalyangdibayar.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ctknota_totalyangdibayar.Location = new System.Drawing.Point(889, 301);
+            this.lbl_ctknota_totalyangdibayar.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ctknota_totalyangdibayar.Location = new System.Drawing.Point(884, 299);
             this.lbl_ctknota_totalyangdibayar.Name = "lbl_ctknota_totalyangdibayar";
-            this.lbl_ctknota_totalyangdibayar.Size = new System.Drawing.Size(299, 37);
+            this.lbl_ctknota_totalyangdibayar.Size = new System.Drawing.Size(319, 39);
             this.lbl_ctknota_totalyangdibayar.TabIndex = 38;
             this.lbl_ctknota_totalyangdibayar.Text = "Total yang dibayar";
-            this.lbl_ctknota_totalyangdibayar.Click += new System.EventHandler(this.label7_Click);
             // 
             // lbl_ctknota_1
             // 
             this.lbl_ctknota_1.AutoSize = true;
             this.lbl_ctknota_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ctknota_1.Location = new System.Drawing.Point(258, 6);
+            this.lbl_ctknota_1.Location = new System.Drawing.Point(258, 55);
             this.lbl_ctknota_1.Name = "lbl_ctknota_1";
             this.lbl_ctknota_1.Size = new System.Drawing.Size(23, 33);
             this.lbl_ctknota_1.TabIndex = 44;
@@ -293,29 +290,28 @@
             this.txt_ctknota_diskon.MaxLength = 35;
             this.txt_ctknota_diskon.Name = "txt_ctknota_diskon";
             this.txt_ctknota_diskon.Size = new System.Drawing.Size(116, 40);
-            this.txt_ctknota_diskon.TabIndex = 57;
+            this.txt_ctknota_diskon.TabIndex = 12;
             this.txt_ctknota_diskon.TextChanged += new System.EventHandler(this.txt_ctknota_diskon_TextChanged);
             this.txt_ctknota_diskon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ctknota_diskon_KeyPress);
             // 
             // lbl_ctknota_rp3
             // 
             this.lbl_ctknota_rp3.AutoSize = true;
-            this.lbl_ctknota_rp3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ctknota_rp3.Location = new System.Drawing.Point(914, 354);
+            this.lbl_ctknota_rp3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ctknota_rp3.Location = new System.Drawing.Point(909, 352);
             this.lbl_ctknota_rp3.Name = "lbl_ctknota_rp3";
-            this.lbl_ctknota_rp3.Size = new System.Drawing.Size(69, 37);
+            this.lbl_ctknota_rp3.Size = new System.Drawing.Size(74, 39);
             this.lbl_ctknota_rp3.TabIndex = 59;
             this.lbl_ctknota_rp3.Text = "Rp.";
-            this.lbl_ctknota_rp3.Click += new System.EventHandler(this.label27_Click);
             // 
             // lbl_ctknota_totalbyr
             // 
-            this.lbl_ctknota_totalbyr.AutoSize = true;
-            this.lbl_ctknota_totalbyr.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ctknota_totalbyr.Location = new System.Drawing.Point(971, 354);
+            this.lbl_ctknota_totalbyr.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ctknota_totalbyr.Location = new System.Drawing.Point(976, 352);
             this.lbl_ctknota_totalbyr.Name = "lbl_ctknota_totalbyr";
-            this.lbl_ctknota_totalbyr.Size = new System.Drawing.Size(0, 37);
+            this.lbl_ctknota_totalbyr.Size = new System.Drawing.Size(228, 39);
             this.lbl_ctknota_totalbyr.TabIndex = 60;
+            this.lbl_ctknota_totalbyr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cbo_ctknota_kodeterapis
             // 
@@ -327,7 +323,7 @@
             this.cbo_ctknota_kodeterapis.Location = new System.Drawing.Point(312, 322);
             this.cbo_ctknota_kodeterapis.Name = "cbo_ctknota_kodeterapis";
             this.cbo_ctknota_kodeterapis.Size = new System.Drawing.Size(100, 41);
-            this.cbo_ctknota_kodeterapis.TabIndex = 61;
+            this.cbo_ctknota_kodeterapis.TabIndex = 10;
             this.cbo_ctknota_kodeterapis.SelectedIndexChanged += new System.EventHandler(this.cbo_ctknota_kodeterapis_SelectedIndexChanged);
             // 
             // txt_ctknota_namaterapis
@@ -347,19 +343,19 @@
             this.dgv_ctknota_tabelhrgpkt.AllowUserToDeleteRows = false;
             this.dgv_ctknota_tabelhrgpkt.AllowUserToResizeColumns = false;
             this.dgv_ctknota_tabelhrgpkt.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_ctknota_tabelhrgpkt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_ctknota_tabelhrgpkt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_ctknota_tabelhrgpkt.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ctknota_tabelhrgpkt.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersHeight = 40;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_ctknota_tabelhrgpkt.Location = new System.Drawing.Point(32, 104);
@@ -381,7 +377,7 @@
             this.dgv_ctknota_tabelhrgpkt.ShowEditingIcon = false;
             this.dgv_ctknota_tabelhrgpkt.ShowRowErrors = false;
             this.dgv_ctknota_tabelhrgpkt.Size = new System.Drawing.Size(1185, 162);
-            this.dgv_ctknota_tabelhrgpkt.TabIndex = 63;
+            this.dgv_ctknota_tabelhrgpkt.TabIndex = 7;
             this.dgv_ctknota_tabelhrgpkt.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ctknota_tabelhrgpkt_CellContentClick);
             // 
             // cbo_ctknota_jenispaket
@@ -394,7 +390,7 @@
             this.cbo_ctknota_jenispaket.Location = new System.Drawing.Point(828, 52);
             this.cbo_ctknota_jenispaket.Name = "cbo_ctknota_jenispaket";
             this.cbo_ctknota_jenispaket.Size = new System.Drawing.Size(144, 41);
-            this.cbo_ctknota_jenispaket.TabIndex = 64;
+            this.cbo_ctknota_jenispaket.TabIndex = 6;
             this.cbo_ctknota_jenispaket.SelectedIndexChanged += new System.EventHandler(this.cbo_ctknota_jenispaket_SelectedIndexChanged);
             // 
             // pnl_ctknota_hotelbiasa
@@ -415,7 +411,7 @@
             this.rdo_ctknota_biasa.Location = new System.Drawing.Point(144, -1);
             this.rdo_ctknota_biasa.Name = "rdo_ctknota_biasa";
             this.rdo_ctknota_biasa.Size = new System.Drawing.Size(106, 37);
-            this.rdo_ctknota_biasa.TabIndex = 54;
+            this.rdo_ctknota_biasa.TabIndex = 5;
             this.rdo_ctknota_biasa.TabStop = true;
             this.rdo_ctknota_biasa.Text = "Biasa";
             this.rdo_ctknota_biasa.UseVisualStyleBackColor = true;
@@ -430,7 +426,7 @@
             this.rdo_ctknota_hotel.Location = new System.Drawing.Point(0, -1);
             this.rdo_ctknota_hotel.Name = "rdo_ctknota_hotel";
             this.rdo_ctknota_hotel.Size = new System.Drawing.Size(101, 37);
-            this.rdo_ctknota_hotel.TabIndex = 53;
+            this.rdo_ctknota_hotel.TabIndex = 4;
             this.rdo_ctknota_hotel.TabStop = true;
             this.rdo_ctknota_hotel.Text = "Hotel";
             this.rdo_ctknota_hotel.UseVisualStyleBackColor = true;
@@ -440,7 +436,7 @@
             // 
             this.pnl_ctknota_normalmidnight.Controls.Add(this.rdo_ctknota_normal);
             this.pnl_ctknota_normalmidnight.Controls.Add(this.rdo_ctknota_midnight);
-            this.pnl_ctknota_normalmidnight.Location = new System.Drawing.Point(283, 9);
+            this.pnl_ctknota_normalmidnight.Location = new System.Drawing.Point(283, 58);
             this.pnl_ctknota_normalmidnight.Name = "pnl_ctknota_normalmidnight";
             this.pnl_ctknota_normalmidnight.Size = new System.Drawing.Size(297, 40);
             this.pnl_ctknota_normalmidnight.TabIndex = 66;
@@ -454,7 +450,7 @@
             this.rdo_ctknota_midnight.Location = new System.Drawing.Point(144, -3);
             this.rdo_ctknota_midnight.Name = "rdo_ctknota_midnight";
             this.rdo_ctknota_midnight.Size = new System.Drawing.Size(143, 37);
-            this.rdo_ctknota_midnight.TabIndex = 52;
+            this.rdo_ctknota_midnight.TabIndex = 2;
             this.rdo_ctknota_midnight.TabStop = true;
             this.rdo_ctknota_midnight.Text = "Midnight";
             this.rdo_ctknota_midnight.UseVisualStyleBackColor = true;
@@ -469,7 +465,7 @@
             this.rdo_ctknota_normal.Location = new System.Drawing.Point(0, -3);
             this.rdo_ctknota_normal.Name = "rdo_ctknota_normal";
             this.rdo_ctknota_normal.Size = new System.Drawing.Size(128, 37);
-            this.rdo_ctknota_normal.TabIndex = 11;
+            this.rdo_ctknota_normal.TabIndex = 1;
             this.rdo_ctknota_normal.TabStop = true;
             this.rdo_ctknota_normal.Text = "Normal";
             this.rdo_ctknota_normal.UseVisualStyleBackColor = true;
@@ -493,7 +489,7 @@
             this.rdo_ctknota_cash.Location = new System.Drawing.Point(0, 1);
             this.rdo_ctknota_cash.Name = "rdo_ctknota_cash";
             this.rdo_ctknota_cash.Size = new System.Drawing.Size(101, 37);
-            this.rdo_ctknota_cash.TabIndex = 55;
+            this.rdo_ctknota_cash.TabIndex = 8;
             this.rdo_ctknota_cash.TabStop = true;
             this.rdo_ctknota_cash.Text = "Cash";
             this.rdo_ctknota_cash.UseVisualStyleBackColor = true;
@@ -508,7 +504,7 @@
             this.rdo_ctknota_credit.Location = new System.Drawing.Point(144, 0);
             this.rdo_ctknota_credit.Name = "rdo_ctknota_credit";
             this.rdo_ctknota_credit.Size = new System.Drawing.Size(111, 37);
-            this.rdo_ctknota_credit.TabIndex = 56;
+            this.rdo_ctknota_credit.TabIndex = 9;
             this.rdo_ctknota_credit.TabStop = true;
             this.rdo_ctknota_credit.Text = "Credit";
             this.rdo_ctknota_credit.UseVisualStyleBackColor = true;
@@ -517,11 +513,11 @@
             // txt_ctknota_nomorruangan
             // 
             this.txt_ctknota_nomorruangan.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ctknota_nomorruangan.Location = new System.Drawing.Point(281, 52);
+            this.txt_ctknota_nomorruangan.Location = new System.Drawing.Point(285, 4);
             this.txt_ctknota_nomorruangan.MaxLength = 35;
             this.txt_ctknota_nomorruangan.Name = "txt_ctknota_nomorruangan";
-            this.txt_ctknota_nomorruangan.Size = new System.Drawing.Size(100, 40);
-            this.txt_ctknota_nomorruangan.TabIndex = 68;
+            this.txt_ctknota_nomorruangan.Size = new System.Drawing.Size(55, 40);
+            this.txt_ctknota_nomorruangan.TabIndex = 3;
             this.txt_ctknota_nomorruangan.TextChanged += new System.EventHandler(this.txt_ctknota_nomorruangan_TextChanged);
             this.txt_ctknota_nomorruangan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ctknota_nomorruangan_KeyPress);
             // 
@@ -529,7 +525,7 @@
             // 
             this.lbl_ctknota_nomorruangan.AutoSize = true;
             this.lbl_ctknota_nomorruangan.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ctknota_nomorruangan.Location = new System.Drawing.Point(22, 55);
+            this.lbl_ctknota_nomorruangan.Location = new System.Drawing.Point(26, 7);
             this.lbl_ctknota_nomorruangan.Name = "lbl_ctknota_nomorruangan";
             this.lbl_ctknota_nomorruangan.Size = new System.Drawing.Size(228, 33);
             this.lbl_ctknota_nomorruangan.TabIndex = 69;
@@ -539,7 +535,7 @@
             // 
             this.lbl_ctknota_2.AutoSize = true;
             this.lbl_ctknota_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ctknota_2.Location = new System.Drawing.Point(256, 55);
+            this.lbl_ctknota_2.Location = new System.Drawing.Point(260, 7);
             this.lbl_ctknota_2.Name = "lbl_ctknota_2";
             this.lbl_ctknota_2.Size = new System.Drawing.Size(23, 33);
             this.lbl_ctknota_2.TabIndex = 70;
@@ -578,17 +574,17 @@
             // txt_ctknota_fee
             // 
             this.txt_ctknota_fee.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ctknota_fee.Location = new System.Drawing.Point(364, 375);
+            this.txt_ctknota_fee.Location = new System.Drawing.Point(368, 375);
             this.txt_ctknota_fee.MaxLength = 35;
             this.txt_ctknota_fee.Name = "txt_ctknota_fee";
             this.txt_ctknota_fee.Size = new System.Drawing.Size(116, 40);
-            this.txt_ctknota_fee.TabIndex = 71;
-            this.txt_ctknota_fee.TextChanged += new System.EventHandler(this.txt_ctknota_fee_TextChanged);
+            this.txt_ctknota_fee.TabIndex = 11;
             this.txt_ctknota_fee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ctknota_fee_KeyPress);
             // 
             // pnl_ctknota_isi
             // 
             this.pnl_ctknota_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_ctknota_rp3);
             this.pnl_ctknota_isi.Controls.Add(this.lbl_ctknota_5);
             this.pnl_ctknota_isi.Controls.Add(this.txt_ctknota_fee);
             this.pnl_ctknota_isi.Controls.Add(this.lbl_ctknota_rp1);
@@ -605,7 +601,6 @@
             this.pnl_ctknota_isi.Controls.Add(this.txt_ctknota_namaterapis);
             this.pnl_ctknota_isi.Controls.Add(this.cbo_ctknota_kodeterapis);
             this.pnl_ctknota_isi.Controls.Add(this.lbl_ctknota_totalbyr);
-            this.pnl_ctknota_isi.Controls.Add(this.lbl_ctknota_rp3);
             this.pnl_ctknota_isi.Controls.Add(this.txt_ctknota_diskon);
             this.pnl_ctknota_isi.Controls.Add(this.lbl_ctknota_rp2);
             this.pnl_ctknota_isi.Controls.Add(this.lbl_ctknota_9);
@@ -629,7 +624,6 @@
             this.pnl_ctknota_isi.Name = "pnl_ctknota_isi";
             this.pnl_ctknota_isi.Size = new System.Drawing.Size(1250, 528);
             this.pnl_ctknota_isi.TabIndex = 7;
-            this.pnl_ctknota_isi.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_isi_Paint);
             // 
             // lbl_ctknota_5
             // 
@@ -656,7 +650,7 @@
             this.Name = "frm_cetaknota";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form Cetak Nota";
+            this.Text = "frm_cetaknota";
             this.Load += new System.EventHandler(this.frm_cetaknota_Load);
             this.pnl_ctknota_logo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pict_ctknota_logo)).EndInit();

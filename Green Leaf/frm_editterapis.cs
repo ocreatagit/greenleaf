@@ -41,13 +41,13 @@ namespace Green_Leaf
 
                 // image file path
                 edttrps_lokasi_gambar = edttrps_open.FileName.Replace(@"\", @"\\");
-                pcb_edttrps_fotoKTP.Image = new Bitmap(edttrps_lokasi_gambar);
+                pict_edttrps_fotoKTP.Image = new Bitmap(edttrps_lokasi_gambar);
             }
         }
 
         private void frm_editterapis_Load(object sender, EventArgs e)
         {
-            btn_edttrp_simpan.Enabled = false;
+            btn_edttrps_simpan.Enabled = false;
             txt_edttrps_kodeterapis.Enabled = false;
             txt_edttrps_namaterapis.Enabled = false;
             btn_edttrps_browsefoto.Enabled = false;
@@ -86,14 +86,15 @@ namespace Green_Leaf
 
         private void button1_Click(object sender, EventArgs e)
         {
-            btn_edttrp_simpan.Enabled = true;
-            txt_edttrps_kodeterapis.Enabled = true;
-            txt_edttrps_namaterapis.Enabled = true;
-            btn_edttrps_browsefoto.Enabled = true;
-            rdo_edttrps_statusaktif.Enabled = true;
-            rdo_edttrps_statustdkaktif.Enabled = true;
+            
             if (lsb_edttrps_kodeterapis.SelectedItem != null)
             {
+                btn_edttrps_simpan.Enabled = true;
+                txt_edttrps_kodeterapis.Enabled = true;
+                txt_edttrps_namaterapis.Enabled = true;
+                btn_edttrps_browsefoto.Enabled = true;
+                rdo_edttrps_statusaktif.Enabled = true;
+                rdo_edttrps_statustdkaktif.Enabled = true;
                 string edttrps_kodeTerpilih = lsb_edttrps_kodeterapis.SelectedItem.ToString();
 
                 string edttrps_query;
@@ -116,7 +117,7 @@ namespace Green_Leaf
                         txt_edttrps_kodeterapis.Text = edttrps_rdr.GetInt32(1).ToString();
                         edttrps_kodeTerakhir = int.Parse(txt_edttrps_kodeterapis.Text);
                         txt_edttrps_namaterapis.Text = edttrps_rdr.GetString(2);
-                        pcb_edttrps_fotoKTP.Image = new Bitmap(edttrps_rdr.GetString(3));
+                        pict_edttrps_fotoKTP.Image = new Bitmap(edttrps_rdr.GetString(3));
                         edttrps_lokasi_gambar = edttrps_rdr.GetString(3);
                         if (edttrps_rdr.GetString(4) == "Aktif")
                         {
@@ -192,9 +193,9 @@ namespace Green_Leaf
                             edttrps_lokasi_gambar = "";
                             rdo_edttrps_statusaktif.Checked = false;
                             rdo_edttrps_statustdkaktif.Checked = false;
-                            pcb_edttrps_fotoKTP.Image = null;
+                            pict_edttrps_fotoKTP.Image = null;
                             txt_edttrps_kodeterapis.Focus();
-                            btn_edttrp_simpan.Enabled = false;
+                            btn_edttrps_simpan.Enabled = false;
                             txt_edttrps_kodeterapis.Enabled = false;
                             txt_edttrps_namaterapis.Enabled = false;
                             btn_edttrps_browsefoto.Enabled = false;
@@ -226,9 +227,9 @@ namespace Green_Leaf
                             edttrps_lokasi_gambar = "";
                             rdo_edttrps_statusaktif.Checked = false;
                             rdo_edttrps_statustdkaktif.Checked = false;
-                            pcb_edttrps_fotoKTP.Image = null;
+                            pict_edttrps_fotoKTP.Image = null;
                             txt_edttrps_kodeterapis.Focus();
-                            btn_edttrp_simpan.Enabled = false;
+                            btn_edttrps_simpan.Enabled = false;
                             txt_edttrps_kodeterapis.Enabled = false;
                             txt_edttrps_namaterapis.Enabled = false;
                             btn_edttrps_browsefoto.Enabled = false;
@@ -304,9 +305,9 @@ namespace Green_Leaf
                                 edttrps_lokasi_gambar = "";
                                 rdo_edttrps_statusaktif.Checked = false;
                                 rdo_edttrps_statustdkaktif.Checked = false;
-                                pcb_edttrps_fotoKTP.Image = null;
+                                pict_edttrps_fotoKTP.Image = null;
                                 txt_edttrps_kodeterapis.Focus();
-                                btn_edttrp_simpan.Enabled = false;
+                                btn_edttrps_simpan.Enabled = false;
                                 txt_edttrps_kodeterapis.Enabled = false;
                                 txt_edttrps_namaterapis.Enabled = false;
                                 btn_edttrps_browsefoto.Enabled = false;
@@ -338,9 +339,9 @@ namespace Green_Leaf
                                 edttrps_lokasi_gambar = "";
                                 rdo_edttrps_statusaktif.Checked = false;
                                 rdo_edttrps_statustdkaktif.Checked = false;
-                                pcb_edttrps_fotoKTP.Image = null;
+                                pict_edttrps_fotoKTP.Image = null;
                                 txt_edttrps_kodeterapis.Focus();
-                                btn_edttrp_simpan.Enabled = false;
+                                btn_edttrps_simpan.Enabled = false;
                                 txt_edttrps_kodeterapis.Enabled = false;
                                 txt_edttrps_namaterapis.Enabled = false;
                                 btn_edttrps_browsefoto.Enabled = false;
