@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_ctknota_logo = new System.Windows.Forms.Panel();
             this.pict_ctknota_logo = new System.Windows.Forms.PictureBox();
             this.pnl_login_isi = new System.Windows.Forms.Panel();
@@ -116,6 +116,8 @@
             this.lbl_tbhpkt_namaterapis = new System.Windows.Forms.Label();
             this.lbl_tbhpkt_kodeterapis = new System.Windows.Forms.Label();
             this.pnl_edtpkt_isi = new System.Windows.Forms.Panel();
+            this.txt_edtpkt_komisipaketmidnight = new System.Windows.Forms.TextBox();
+            this.txt_edtpkt_komisipaketnormal = new System.Windows.Forms.TextBox();
             this.lbl_edtpkt_menit = new System.Windows.Forms.Label();
             this.lbl_edtpkt_jam = new System.Windows.Forms.Label();
             this.txt_edtpkt_durasipaketmenit = new System.Windows.Forms.TextBox();
@@ -142,8 +144,6 @@
             this.lbl_edtpkt_durasipaket = new System.Windows.Forms.Label();
             this.lbl_edtpkt_namaterapis = new System.Windows.Forms.Label();
             this.lbl_edtpkt_jenispaket = new System.Windows.Forms.Label();
-            this.txt_edtpkt_komisipaketmidnight = new System.Windows.Forms.TextBox();
-            this.txt_edtpkt_komisipaketnormal = new System.Windows.Forms.TextBox();
             this.pnl_ctknota_isi = new System.Windows.Forms.Panel();
             this.lbl_ctknota_rp3 = new System.Windows.Forms.Label();
             this.lbl_ctknota_5 = new System.Windows.Forms.Label();
@@ -187,6 +187,17 @@
             this.btn_ctknota_cetak = new System.Windows.Forms.Button();
             this.txt_ctknota_ket = new System.Windows.Forms.TextBox();
             this.lbl_ctknota_kodeterapis = new System.Windows.Forms.Label();
+            this.btn_variabel_simpan = new System.Windows.Forms.Button();
+            this.btn_variabel_batal = new System.Windows.Forms.Button();
+            this.txt_variabel_extra = new System.Windows.Forms.TextBox();
+            this.lbl_variabel_extra = new System.Windows.Forms.Label();
+            this.lbl_variabel_1 = new System.Windows.Forms.Label();
+            this.lbl_variabel_potonganhotel = new System.Windows.Forms.Label();
+            this.lbl_variabel_2 = new System.Windows.Forms.Label();
+            this.lbl_variabel_persen = new System.Windows.Forms.Label();
+            this.lbl_variabel_rp1 = new System.Windows.Forms.Label();
+            this.txt_variabel_potonganhotel = new System.Windows.Forms.TextBox();
+            this.pnl_variabel_isi = new System.Windows.Forms.Panel();
             this.pnl_ctknota_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict_ctknota_logo)).BeginInit();
             this.pnl_login_isi.SuspendLayout();
@@ -202,6 +213,7 @@
             this.pnl_ctknota_normalmidnight.SuspendLayout();
             this.pnl_ctknota_hotelbiasa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ctknota_tabelhrgpkt)).BeginInit();
+            this.pnl_variabel_isi.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_ctknota_logo
@@ -1200,6 +1212,26 @@
             this.pnl_edtpkt_isi.TabIndex = 24;
             this.pnl_edtpkt_isi.Visible = false;
             // 
+            // txt_edtpkt_komisipaketmidnight
+            // 
+            this.txt_edtpkt_komisipaketmidnight.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_edtpkt_komisipaketmidnight.Location = new System.Drawing.Point(398, 357);
+            this.txt_edtpkt_komisipaketmidnight.MaxLength = 35;
+            this.txt_edtpkt_komisipaketmidnight.Name = "txt_edtpkt_komisipaketmidnight";
+            this.txt_edtpkt_komisipaketmidnight.Size = new System.Drawing.Size(215, 47);
+            this.txt_edtpkt_komisipaketmidnight.TabIndex = 47;
+            this.txt_edtpkt_komisipaketmidnight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_edtpkt_komisipaketmidnight_KeyPress);
+            // 
+            // txt_edtpkt_komisipaketnormal
+            // 
+            this.txt_edtpkt_komisipaketnormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_edtpkt_komisipaketnormal.Location = new System.Drawing.Point(398, 272);
+            this.txt_edtpkt_komisipaketnormal.MaxLength = 35;
+            this.txt_edtpkt_komisipaketnormal.Name = "txt_edtpkt_komisipaketnormal";
+            this.txt_edtpkt_komisipaketnormal.Size = new System.Drawing.Size(215, 47);
+            this.txt_edtpkt_komisipaketnormal.TabIndex = 46;
+            this.txt_edtpkt_komisipaketnormal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_edtpkt_komisipaketnormal_KeyPress);
+            // 
             // lbl_edtpkt_menit
             // 
             this.lbl_edtpkt_menit.AutoSize = true;
@@ -1468,26 +1500,6 @@
             this.lbl_edtpkt_jenispaket.Size = new System.Drawing.Size(197, 39);
             this.lbl_edtpkt_jenispaket.TabIndex = 0;
             this.lbl_edtpkt_jenispaket.Text = "Jenis Paket";
-            // 
-            // txt_edtpkt_komisipaketmidnight
-            // 
-            this.txt_edtpkt_komisipaketmidnight.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_edtpkt_komisipaketmidnight.Location = new System.Drawing.Point(398, 357);
-            this.txt_edtpkt_komisipaketmidnight.MaxLength = 35;
-            this.txt_edtpkt_komisipaketmidnight.Name = "txt_edtpkt_komisipaketmidnight";
-            this.txt_edtpkt_komisipaketmidnight.Size = new System.Drawing.Size(215, 47);
-            this.txt_edtpkt_komisipaketmidnight.TabIndex = 47;
-            this.txt_edtpkt_komisipaketmidnight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_edtpkt_komisipaketmidnight_KeyPress);
-            // 
-            // txt_edtpkt_komisipaketnormal
-            // 
-            this.txt_edtpkt_komisipaketnormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_edtpkt_komisipaketnormal.Location = new System.Drawing.Point(398, 272);
-            this.txt_edtpkt_komisipaketnormal.MaxLength = 35;
-            this.txt_edtpkt_komisipaketnormal.Name = "txt_edtpkt_komisipaketnormal";
-            this.txt_edtpkt_komisipaketnormal.Size = new System.Drawing.Size(215, 47);
-            this.txt_edtpkt_komisipaketnormal.TabIndex = 46;
-            this.txt_edtpkt_komisipaketnormal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_edtpkt_komisipaketnormal_KeyPress);
             // 
             // pnl_ctknota_isi
             // 
@@ -1761,19 +1773,19 @@
             this.dgv_ctknota_tabelhrgpkt.AllowUserToDeleteRows = false;
             this.dgv_ctknota_tabelhrgpkt.AllowUserToResizeColumns = false;
             this.dgv_ctknota_tabelhrgpkt.AllowUserToResizeRows = false;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_ctknota_tabelhrgpkt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_ctknota_tabelhrgpkt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_ctknota_tabelhrgpkt.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ctknota_tabelhrgpkt.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersHeight = 40;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_ctknota_tabelhrgpkt.Location = new System.Drawing.Point(32, 104);
@@ -2023,6 +2035,127 @@
             this.lbl_ctknota_kodeterapis.TabIndex = 0;
             this.lbl_ctknota_kodeterapis.Text = "Pilih Jam Kerja";
             // 
+            // btn_variabel_simpan
+            // 
+            this.btn_variabel_simpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_variabel_simpan.Location = new System.Drawing.Point(442, 296);
+            this.btn_variabel_simpan.Name = "btn_variabel_simpan";
+            this.btn_variabel_simpan.Size = new System.Drawing.Size(155, 98);
+            this.btn_variabel_simpan.TabIndex = 15;
+            this.btn_variabel_simpan.Text = "Simpan";
+            this.btn_variabel_simpan.UseVisualStyleBackColor = true;
+            this.btn_variabel_simpan.Click += new System.EventHandler(this.btn_variabel_simpan_Click);
+            // 
+            // btn_variabel_batal
+            // 
+            this.btn_variabel_batal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_variabel_batal.Location = new System.Drawing.Point(669, 296);
+            this.btn_variabel_batal.Name = "btn_variabel_batal";
+            this.btn_variabel_batal.Size = new System.Drawing.Size(155, 98);
+            this.btn_variabel_batal.TabIndex = 16;
+            this.btn_variabel_batal.Text = "Batal";
+            this.btn_variabel_batal.UseVisualStyleBackColor = true;
+            this.btn_variabel_batal.Click += new System.EventHandler(this.btn_variabel_batal_Click);
+            // 
+            // txt_variabel_extra
+            // 
+            this.txt_variabel_extra.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_variabel_extra.Location = new System.Drawing.Point(690, 135);
+            this.txt_variabel_extra.MaxLength = 3;
+            this.txt_variabel_extra.Name = "txt_variabel_extra";
+            this.txt_variabel_extra.Size = new System.Drawing.Size(55, 40);
+            this.txt_variabel_extra.TabIndex = 1;
+            this.txt_variabel_extra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_variabel_extra_KeyPress);
+            // 
+            // lbl_variabel_extra
+            // 
+            this.lbl_variabel_extra.AutoSize = true;
+            this.lbl_variabel_extra.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_variabel_extra.Location = new System.Drawing.Point(427, 138);
+            this.lbl_variabel_extra.Name = "lbl_variabel_extra";
+            this.lbl_variabel_extra.Size = new System.Drawing.Size(83, 33);
+            this.lbl_variabel_extra.TabIndex = 79;
+            this.lbl_variabel_extra.Text = "Extra";
+            // 
+            // lbl_variabel_1
+            // 
+            this.lbl_variabel_1.AutoSize = true;
+            this.lbl_variabel_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_variabel_1.Location = new System.Drawing.Point(661, 138);
+            this.lbl_variabel_1.Name = "lbl_variabel_1";
+            this.lbl_variabel_1.Size = new System.Drawing.Size(23, 33);
+            this.lbl_variabel_1.TabIndex = 80;
+            this.lbl_variabel_1.Text = ":";
+            // 
+            // lbl_variabel_potonganhotel
+            // 
+            this.lbl_variabel_potonganhotel.AutoSize = true;
+            this.lbl_variabel_potonganhotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_variabel_potonganhotel.Location = new System.Drawing.Point(427, 195);
+            this.lbl_variabel_potonganhotel.Name = "lbl_variabel_potonganhotel";
+            this.lbl_variabel_potonganhotel.Size = new System.Drawing.Size(214, 33);
+            this.lbl_variabel_potonganhotel.TabIndex = 81;
+            this.lbl_variabel_potonganhotel.Text = "Potongan Hotel";
+            // 
+            // lbl_variabel_2
+            // 
+            this.lbl_variabel_2.AutoSize = true;
+            this.lbl_variabel_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_variabel_2.Location = new System.Drawing.Point(661, 195);
+            this.lbl_variabel_2.Name = "lbl_variabel_2";
+            this.lbl_variabel_2.Size = new System.Drawing.Size(23, 33);
+            this.lbl_variabel_2.TabIndex = 82;
+            this.lbl_variabel_2.Text = ":";
+            // 
+            // lbl_variabel_persen
+            // 
+            this.lbl_variabel_persen.AutoSize = true;
+            this.lbl_variabel_persen.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_variabel_persen.Location = new System.Drawing.Point(747, 138);
+            this.lbl_variabel_persen.Name = "lbl_variabel_persen";
+            this.lbl_variabel_persen.Size = new System.Drawing.Size(41, 33);
+            this.lbl_variabel_persen.TabIndex = 83;
+            this.lbl_variabel_persen.Text = "%";
+            // 
+            // lbl_variabel_rp1
+            // 
+            this.lbl_variabel_rp1.AutoSize = true;
+            this.lbl_variabel_rp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_variabel_rp1.Location = new System.Drawing.Point(684, 195);
+            this.lbl_variabel_rp1.Name = "lbl_variabel_rp1";
+            this.lbl_variabel_rp1.Size = new System.Drawing.Size(60, 33);
+            this.lbl_variabel_rp1.TabIndex = 86;
+            this.lbl_variabel_rp1.Text = "Rp.";
+            // 
+            // txt_variabel_potonganhotel
+            // 
+            this.txt_variabel_potonganhotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_variabel_potonganhotel.Location = new System.Drawing.Point(743, 192);
+            this.txt_variabel_potonganhotel.MaxLength = 35;
+            this.txt_variabel_potonganhotel.Name = "txt_variabel_potonganhotel";
+            this.txt_variabel_potonganhotel.Size = new System.Drawing.Size(116, 40);
+            this.txt_variabel_potonganhotel.TabIndex = 2;
+            this.txt_variabel_potonganhotel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_variabel_potonganhotel_KeyPress);
+            // 
+            // pnl_variabel_isi
+            // 
+            this.pnl_variabel_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_variabel_isi.Controls.Add(this.txt_variabel_potonganhotel);
+            this.pnl_variabel_isi.Controls.Add(this.lbl_variabel_rp1);
+            this.pnl_variabel_isi.Controls.Add(this.lbl_variabel_persen);
+            this.pnl_variabel_isi.Controls.Add(this.lbl_variabel_2);
+            this.pnl_variabel_isi.Controls.Add(this.lbl_variabel_potonganhotel);
+            this.pnl_variabel_isi.Controls.Add(this.lbl_variabel_1);
+            this.pnl_variabel_isi.Controls.Add(this.lbl_variabel_extra);
+            this.pnl_variabel_isi.Controls.Add(this.txt_variabel_extra);
+            this.pnl_variabel_isi.Controls.Add(this.btn_variabel_batal);
+            this.pnl_variabel_isi.Controls.Add(this.btn_variabel_simpan);
+            this.pnl_variabel_isi.Location = new System.Drawing.Point(12, 112);
+            this.pnl_variabel_isi.Name = "pnl_variabel_isi";
+            this.pnl_variabel_isi.Size = new System.Drawing.Size(1250, 528);
+            this.pnl_variabel_isi.TabIndex = 49;
+            this.pnl_variabel_isi.Visible = false;
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2030,6 +2163,7 @@
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.ClientSize = new System.Drawing.Size(1274, 652);
             this.Controls.Add(this.pnl_ctknota_isi);
+            this.Controls.Add(this.pnl_variabel_isi);
             this.Controls.Add(this.pnl_edtpkt_isi);
             this.Controls.Add(this.pnl_login_isi);
             this.Controls.Add(this.pnl_tbhpkt_isi);
@@ -2070,6 +2204,8 @@
             this.pnl_ctknota_hotelbiasa.ResumeLayout(false);
             this.pnl_ctknota_hotelbiasa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ctknota_tabelhrgpkt)).EndInit();
+            this.pnl_variabel_isi.ResumeLayout(false);
+            this.pnl_variabel_isi.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2233,5 +2369,16 @@
         private System.Windows.Forms.Button btn_ctknota_cetak;
         private System.Windows.Forms.TextBox txt_ctknota_ket;
         private System.Windows.Forms.Label lbl_ctknota_kodeterapis;
+        private System.Windows.Forms.Button btn_variabel_simpan;
+        private System.Windows.Forms.Button btn_variabel_batal;
+        private System.Windows.Forms.TextBox txt_variabel_extra;
+        private System.Windows.Forms.Label lbl_variabel_extra;
+        private System.Windows.Forms.Label lbl_variabel_1;
+        private System.Windows.Forms.Label lbl_variabel_potonganhotel;
+        private System.Windows.Forms.Label lbl_variabel_2;
+        private System.Windows.Forms.Label lbl_variabel_persen;
+        private System.Windows.Forms.Label lbl_variabel_rp1;
+        private System.Windows.Forms.TextBox txt_variabel_potonganhotel;
+        private System.Windows.Forms.Panel pnl_variabel_isi;
     }
 }
