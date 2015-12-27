@@ -115,18 +115,11 @@ namespace Green_Leaf
 
             }
             #endregion
-
-            
         }
 
         private void btn_tbhpkt_batal_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void frm_tambahpaket_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void txt_tbhpkt_durasipaketjam_KeyPress(object sender, KeyPressEventArgs e)
@@ -143,11 +136,6 @@ namespace Green_Leaf
             {
                 e.Handled = true;
             }
-        }
-
-        private void txt_tbhpkt_hargapaket_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void txt_tbhpkt_hargapaket_KeyPress(object sender, KeyPressEventArgs e)

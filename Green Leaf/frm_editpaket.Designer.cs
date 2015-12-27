@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             this.pnl_edtpkt_isi = new System.Windows.Forms.Panel();
+            this.lbl_edtpkt_menit = new System.Windows.Forms.Label();
+            this.lbl_edtpkt_jam = new System.Windows.Forms.Label();
+            this.txt_edtpkt_durasipaketmenit = new System.Windows.Forms.TextBox();
+            this.txt_edtpkt_durasipaketjam = new System.Windows.Forms.TextBox();
+            this.txt_edtpkt_komisipaketmidnight = new System.Windows.Forms.TextBox();
+            this.lbl_edtpkt_rp2 = new System.Windows.Forms.Label();
+            this.lbl_edtpkt_3 = new System.Windows.Forms.Label();
+            this.lbl_edtpkt_komisimidnight = new System.Windows.Forms.Label();
+            this.txt_edtpkt_komisipaketnormal = new System.Windows.Forms.TextBox();
+            this.lbl_edtpkt_rp1 = new System.Windows.Forms.Label();
+            this.lbl_edtpkt_4 = new System.Windows.Forms.Label();
+            this.lbl_edtpkt_komisinormal = new System.Windows.Forms.Label();
             this.lsb_edtpkt_jenisnamapkt = new System.Windows.Forms.ListBox();
             this.btn_edtpkt_ok = new System.Windows.Forms.Button();
             this.cbo_edtpkt_jenispaket = new System.Windows.Forms.ComboBox();
@@ -47,18 +59,6 @@
             this.lbl_edtpkt_jenispaket = new System.Windows.Forms.Label();
             this.panel_logo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txt_tbhpkt_komisipaketmidnight = new System.Windows.Forms.TextBox();
-            this.lbl_edtpkt_rp2 = new System.Windows.Forms.Label();
-            this.lbl_edtpkt_3 = new System.Windows.Forms.Label();
-            this.lbl_edtpkt_komisimidnight = new System.Windows.Forms.Label();
-            this.txt_tbhpkt_komisipaketnormal = new System.Windows.Forms.TextBox();
-            this.lbl_edtpkt_rp1 = new System.Windows.Forms.Label();
-            this.lbl_edtpkt_4 = new System.Windows.Forms.Label();
-            this.lbl_edtpkt_komisinormal = new System.Windows.Forms.Label();
-            this.lbl_edtpkt_menit = new System.Windows.Forms.Label();
-            this.lbl_edtpkt_jam = new System.Windows.Forms.Label();
-            this.txt_edtpkt_durasipaketmenit = new System.Windows.Forms.TextBox();
-            this.txt_edtpkt_durasipaketjam = new System.Windows.Forms.TextBox();
             this.pnl_edtpkt_isi.SuspendLayout();
             this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,11 +71,11 @@
             this.pnl_edtpkt_isi.Controls.Add(this.lbl_edtpkt_jam);
             this.pnl_edtpkt_isi.Controls.Add(this.txt_edtpkt_durasipaketmenit);
             this.pnl_edtpkt_isi.Controls.Add(this.txt_edtpkt_durasipaketjam);
-            this.pnl_edtpkt_isi.Controls.Add(this.txt_tbhpkt_komisipaketmidnight);
+            this.pnl_edtpkt_isi.Controls.Add(this.txt_edtpkt_komisipaketmidnight);
             this.pnl_edtpkt_isi.Controls.Add(this.lbl_edtpkt_rp2);
             this.pnl_edtpkt_isi.Controls.Add(this.lbl_edtpkt_3);
             this.pnl_edtpkt_isi.Controls.Add(this.lbl_edtpkt_komisimidnight);
-            this.pnl_edtpkt_isi.Controls.Add(this.txt_tbhpkt_komisipaketnormal);
+            this.pnl_edtpkt_isi.Controls.Add(this.txt_edtpkt_komisipaketnormal);
             this.pnl_edtpkt_isi.Controls.Add(this.lbl_edtpkt_rp1);
             this.pnl_edtpkt_isi.Controls.Add(this.lbl_edtpkt_4);
             this.pnl_edtpkt_isi.Controls.Add(this.lbl_edtpkt_komisinormal);
@@ -99,6 +99,128 @@
             this.pnl_edtpkt_isi.Name = "pnl_edtpkt_isi";
             this.pnl_edtpkt_isi.Size = new System.Drawing.Size(1250, 528);
             this.pnl_edtpkt_isi.TabIndex = 9;
+            // 
+            // lbl_edtpkt_menit
+            // 
+            this.lbl_edtpkt_menit.AutoSize = true;
+            this.lbl_edtpkt_menit.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edtpkt_menit.Location = new System.Drawing.Point(1119, 360);
+            this.lbl_edtpkt_menit.Name = "lbl_edtpkt_menit";
+            this.lbl_edtpkt_menit.Size = new System.Drawing.Size(102, 39);
+            this.lbl_edtpkt_menit.TabIndex = 45;
+            this.lbl_edtpkt_menit.Text = "Menit";
+            // 
+            // lbl_edtpkt_jam
+            // 
+            this.lbl_edtpkt_jam.AutoSize = true;
+            this.lbl_edtpkt_jam.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edtpkt_jam.Location = new System.Drawing.Point(970, 360);
+            this.lbl_edtpkt_jam.Name = "lbl_edtpkt_jam";
+            this.lbl_edtpkt_jam.Size = new System.Drawing.Size(84, 39);
+            this.lbl_edtpkt_jam.TabIndex = 44;
+            this.lbl_edtpkt_jam.Text = "Jam";
+            // 
+            // txt_edtpkt_durasipaketmenit
+            // 
+            this.txt_edtpkt_durasipaketmenit.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_edtpkt_durasipaketmenit.Location = new System.Drawing.Point(1060, 357);
+            this.txt_edtpkt_durasipaketmenit.MaxLength = 2;
+            this.txt_edtpkt_durasipaketmenit.Name = "txt_edtpkt_durasipaketmenit";
+            this.txt_edtpkt_durasipaketmenit.Size = new System.Drawing.Size(53, 47);
+            this.txt_edtpkt_durasipaketmenit.TabIndex = 9;
+            this.txt_edtpkt_durasipaketmenit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_edtpkt_durasipaketmenit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_edtpkt_durasipaketmenit_KeyPress);
+            // 
+            // txt_edtpkt_durasipaketjam
+            // 
+            this.txt_edtpkt_durasipaketjam.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_edtpkt_durasipaketjam.Location = new System.Drawing.Point(911, 357);
+            this.txt_edtpkt_durasipaketjam.MaxLength = 2;
+            this.txt_edtpkt_durasipaketjam.Name = "txt_edtpkt_durasipaketjam";
+            this.txt_edtpkt_durasipaketjam.Size = new System.Drawing.Size(53, 47);
+            this.txt_edtpkt_durasipaketjam.TabIndex = 8;
+            this.txt_edtpkt_durasipaketjam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_edtpkt_durasipaketjam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_edtpkt_durasipaketjam_KeyPress);
+            // 
+            // txt_edtpkt_komisipaketmidnight
+            // 
+            this.txt_edtpkt_komisipaketmidnight.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_edtpkt_komisipaketmidnight.Location = new System.Drawing.Point(397, 357);
+            this.txt_edtpkt_komisipaketmidnight.MaxLength = 35;
+            this.txt_edtpkt_komisipaketmidnight.Name = "txt_edtpkt_komisipaketmidnight";
+            this.txt_edtpkt_komisipaketmidnight.Size = new System.Drawing.Size(215, 47);
+            this.txt_edtpkt_komisipaketmidnight.TabIndex = 6;
+            this.txt_edtpkt_komisipaketmidnight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_edtpkt_komisipaketmidnight_KeyPress);
+            // 
+            // lbl_edtpkt_rp2
+            // 
+            this.lbl_edtpkt_rp2.AutoSize = true;
+            this.lbl_edtpkt_rp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edtpkt_rp2.Location = new System.Drawing.Point(332, 360);
+            this.lbl_edtpkt_rp2.Name = "lbl_edtpkt_rp2";
+            this.lbl_edtpkt_rp2.Size = new System.Drawing.Size(71, 39);
+            this.lbl_edtpkt_rp2.TabIndex = 41;
+            this.lbl_edtpkt_rp2.Text = "Rp.";
+            // 
+            // lbl_edtpkt_3
+            // 
+            this.lbl_edtpkt_3.AutoSize = true;
+            this.lbl_edtpkt_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edtpkt_3.Location = new System.Drawing.Point(306, 275);
+            this.lbl_edtpkt_3.Name = "lbl_edtpkt_3";
+            this.lbl_edtpkt_3.Size = new System.Drawing.Size(27, 39);
+            this.lbl_edtpkt_3.TabIndex = 40;
+            this.lbl_edtpkt_3.Text = ":";
+            // 
+            // lbl_edtpkt_komisimidnight
+            // 
+            this.lbl_edtpkt_komisimidnight.AutoSize = true;
+            this.lbl_edtpkt_komisimidnight.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edtpkt_komisimidnight.Location = new System.Drawing.Point(15, 360);
+            this.lbl_edtpkt_komisimidnight.Name = "lbl_edtpkt_komisimidnight";
+            this.lbl_edtpkt_komisimidnight.Size = new System.Drawing.Size(293, 78);
+            this.lbl_edtpkt_komisimidnight.TabIndex = 39;
+            this.lbl_edtpkt_komisimidnight.Text = "Gaji Komisi/Paket\r\n(Midnight)";
+            // 
+            // txt_edtpkt_komisipaketnormal
+            // 
+            this.txt_edtpkt_komisipaketnormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_edtpkt_komisipaketnormal.Location = new System.Drawing.Point(397, 272);
+            this.txt_edtpkt_komisipaketnormal.MaxLength = 35;
+            this.txt_edtpkt_komisipaketnormal.Name = "txt_edtpkt_komisipaketnormal";
+            this.txt_edtpkt_komisipaketnormal.Size = new System.Drawing.Size(215, 47);
+            this.txt_edtpkt_komisipaketnormal.TabIndex = 5;
+            this.txt_edtpkt_komisipaketnormal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_edtpkt_komisipaketnormal_KeyPress);
+            // 
+            // lbl_edtpkt_rp1
+            // 
+            this.lbl_edtpkt_rp1.AutoSize = true;
+            this.lbl_edtpkt_rp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edtpkt_rp1.Location = new System.Drawing.Point(332, 275);
+            this.lbl_edtpkt_rp1.Name = "lbl_edtpkt_rp1";
+            this.lbl_edtpkt_rp1.Size = new System.Drawing.Size(71, 39);
+            this.lbl_edtpkt_rp1.TabIndex = 38;
+            this.lbl_edtpkt_rp1.Text = "Rp.";
+            // 
+            // lbl_edtpkt_4
+            // 
+            this.lbl_edtpkt_4.AutoSize = true;
+            this.lbl_edtpkt_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edtpkt_4.Location = new System.Drawing.Point(306, 360);
+            this.lbl_edtpkt_4.Name = "lbl_edtpkt_4";
+            this.lbl_edtpkt_4.Size = new System.Drawing.Size(27, 39);
+            this.lbl_edtpkt_4.TabIndex = 37;
+            this.lbl_edtpkt_4.Text = ":";
+            // 
+            // lbl_edtpkt_komisinormal
+            // 
+            this.lbl_edtpkt_komisinormal.AutoSize = true;
+            this.lbl_edtpkt_komisinormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edtpkt_komisinormal.Location = new System.Drawing.Point(15, 275);
+            this.lbl_edtpkt_komisinormal.Name = "lbl_edtpkt_komisinormal";
+            this.lbl_edtpkt_komisinormal.Size = new System.Drawing.Size(293, 78);
+            this.lbl_edtpkt_komisinormal.TabIndex = 36;
+            this.lbl_edtpkt_komisinormal.Text = "Gaji Komisi/Paket\r\n(Normal)";
             // 
             // lsb_edtpkt_jenisnamapkt
             // 
@@ -144,7 +266,6 @@
             this.txt_edtpkt_hargapaket.Name = "txt_edtpkt_hargapaket";
             this.txt_edtpkt_hargapaket.Size = new System.Drawing.Size(215, 47);
             this.txt_edtpkt_hargapaket.TabIndex = 7;
-            this.txt_edtpkt_hargapaket.TextChanged += new System.EventHandler(this.txt_edtpkt_hargapaket_TextChanged);
             this.txt_edtpkt_hargapaket.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_edtpkt_hargapaket_KeyPress);
             // 
             // lbl_edtpkt_rp3
@@ -286,132 +407,6 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
-            // txt_tbhpkt_komisipaketmidnight
-            // 
-            this.txt_tbhpkt_komisipaketmidnight.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tbhpkt_komisipaketmidnight.Location = new System.Drawing.Point(397, 357);
-            this.txt_tbhpkt_komisipaketmidnight.MaxLength = 35;
-            this.txt_tbhpkt_komisipaketmidnight.Name = "txt_tbhpkt_komisipaketmidnight";
-            this.txt_tbhpkt_komisipaketmidnight.Size = new System.Drawing.Size(215, 47);
-            this.txt_tbhpkt_komisipaketmidnight.TabIndex = 6;
-            this.txt_tbhpkt_komisipaketmidnight.TextChanged += new System.EventHandler(this.txt_tbhpkt_komisipaketmidnight_TextChanged);
-            this.txt_tbhpkt_komisipaketmidnight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tbhpkt_komisipaketmidnight_KeyPress);
-            // 
-            // lbl_edtpkt_rp2
-            // 
-            this.lbl_edtpkt_rp2.AutoSize = true;
-            this.lbl_edtpkt_rp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_edtpkt_rp2.Location = new System.Drawing.Point(332, 360);
-            this.lbl_edtpkt_rp2.Name = "lbl_edtpkt_rp2";
-            this.lbl_edtpkt_rp2.Size = new System.Drawing.Size(71, 39);
-            this.lbl_edtpkt_rp2.TabIndex = 41;
-            this.lbl_edtpkt_rp2.Text = "Rp.";
-            // 
-            // lbl_edtpkt_3
-            // 
-            this.lbl_edtpkt_3.AutoSize = true;
-            this.lbl_edtpkt_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_edtpkt_3.Location = new System.Drawing.Point(306, 275);
-            this.lbl_edtpkt_3.Name = "lbl_edtpkt_3";
-            this.lbl_edtpkt_3.Size = new System.Drawing.Size(27, 39);
-            this.lbl_edtpkt_3.TabIndex = 40;
-            this.lbl_edtpkt_3.Text = ":";
-            // 
-            // lbl_edtpkt_komisimidnight
-            // 
-            this.lbl_edtpkt_komisimidnight.AutoSize = true;
-            this.lbl_edtpkt_komisimidnight.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_edtpkt_komisimidnight.Location = new System.Drawing.Point(15, 360);
-            this.lbl_edtpkt_komisimidnight.Name = "lbl_edtpkt_komisimidnight";
-            this.lbl_edtpkt_komisimidnight.Size = new System.Drawing.Size(293, 78);
-            this.lbl_edtpkt_komisimidnight.TabIndex = 39;
-            this.lbl_edtpkt_komisimidnight.Text = "Gaji Komisi/Paket\r\n(Midnight)";
-            // 
-            // txt_tbhpkt_komisipaketnormal
-            // 
-            this.txt_tbhpkt_komisipaketnormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tbhpkt_komisipaketnormal.Location = new System.Drawing.Point(397, 272);
-            this.txt_tbhpkt_komisipaketnormal.MaxLength = 35;
-            this.txt_tbhpkt_komisipaketnormal.Name = "txt_tbhpkt_komisipaketnormal";
-            this.txt_tbhpkt_komisipaketnormal.Size = new System.Drawing.Size(215, 47);
-            this.txt_tbhpkt_komisipaketnormal.TabIndex = 5;
-            this.txt_tbhpkt_komisipaketnormal.TextChanged += new System.EventHandler(this.txt_tbhpkt_komisipaketnormal_TextChanged);
-            this.txt_tbhpkt_komisipaketnormal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tbhpkt_komisipaketnormal_KeyPress);
-            // 
-            // lbl_edtpkt_rp1
-            // 
-            this.lbl_edtpkt_rp1.AutoSize = true;
-            this.lbl_edtpkt_rp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_edtpkt_rp1.Location = new System.Drawing.Point(332, 275);
-            this.lbl_edtpkt_rp1.Name = "lbl_edtpkt_rp1";
-            this.lbl_edtpkt_rp1.Size = new System.Drawing.Size(71, 39);
-            this.lbl_edtpkt_rp1.TabIndex = 38;
-            this.lbl_edtpkt_rp1.Text = "Rp.";
-            // 
-            // lbl_edtpkt_4
-            // 
-            this.lbl_edtpkt_4.AutoSize = true;
-            this.lbl_edtpkt_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_edtpkt_4.Location = new System.Drawing.Point(306, 360);
-            this.lbl_edtpkt_4.Name = "lbl_edtpkt_4";
-            this.lbl_edtpkt_4.Size = new System.Drawing.Size(27, 39);
-            this.lbl_edtpkt_4.TabIndex = 37;
-            this.lbl_edtpkt_4.Text = ":";
-            // 
-            // lbl_edtpkt_komisinormal
-            // 
-            this.lbl_edtpkt_komisinormal.AutoSize = true;
-            this.lbl_edtpkt_komisinormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_edtpkt_komisinormal.Location = new System.Drawing.Point(15, 275);
-            this.lbl_edtpkt_komisinormal.Name = "lbl_edtpkt_komisinormal";
-            this.lbl_edtpkt_komisinormal.Size = new System.Drawing.Size(293, 78);
-            this.lbl_edtpkt_komisinormal.TabIndex = 36;
-            this.lbl_edtpkt_komisinormal.Text = "Gaji Komisi/Paket\r\n(Normal)";
-            // 
-            // lbl_edtpkt_menit
-            // 
-            this.lbl_edtpkt_menit.AutoSize = true;
-            this.lbl_edtpkt_menit.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_edtpkt_menit.Location = new System.Drawing.Point(1119, 360);
-            this.lbl_edtpkt_menit.Name = "lbl_edtpkt_menit";
-            this.lbl_edtpkt_menit.Size = new System.Drawing.Size(102, 39);
-            this.lbl_edtpkt_menit.TabIndex = 45;
-            this.lbl_edtpkt_menit.Text = "Menit";
-            // 
-            // lbl_edtpkt_jam
-            // 
-            this.lbl_edtpkt_jam.AutoSize = true;
-            this.lbl_edtpkt_jam.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_edtpkt_jam.Location = new System.Drawing.Point(970, 360);
-            this.lbl_edtpkt_jam.Name = "lbl_edtpkt_jam";
-            this.lbl_edtpkt_jam.Size = new System.Drawing.Size(84, 39);
-            this.lbl_edtpkt_jam.TabIndex = 44;
-            this.lbl_edtpkt_jam.Text = "Jam";
-            // 
-            // txt_edtpkt_durasipaketmenit
-            // 
-            this.txt_edtpkt_durasipaketmenit.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_edtpkt_durasipaketmenit.Location = new System.Drawing.Point(1060, 357);
-            this.txt_edtpkt_durasipaketmenit.MaxLength = 2;
-            this.txt_edtpkt_durasipaketmenit.Name = "txt_edtpkt_durasipaketmenit";
-            this.txt_edtpkt_durasipaketmenit.Size = new System.Drawing.Size(53, 47);
-            this.txt_edtpkt_durasipaketmenit.TabIndex = 9;
-            this.txt_edtpkt_durasipaketmenit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_edtpkt_durasipaketmenit.TextChanged += new System.EventHandler(this.txt_edtpkt_durasipaketmenit_TextChanged);
-            this.txt_edtpkt_durasipaketmenit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_edtpkt_durasipaketmenit_KeyPress);
-            // 
-            // txt_edtpkt_durasipaketjam
-            // 
-            this.txt_edtpkt_durasipaketjam.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_edtpkt_durasipaketjam.Location = new System.Drawing.Point(911, 357);
-            this.txt_edtpkt_durasipaketjam.MaxLength = 2;
-            this.txt_edtpkt_durasipaketjam.Name = "txt_edtpkt_durasipaketjam";
-            this.txt_edtpkt_durasipaketjam.Size = new System.Drawing.Size(53, 47);
-            this.txt_edtpkt_durasipaketjam.TabIndex = 8;
-            this.txt_edtpkt_durasipaketjam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_edtpkt_durasipaketjam.TextChanged += new System.EventHandler(this.txt_edtpkt_durasipaketjam_TextChanged);
-            this.txt_edtpkt_durasipaketjam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_edtpkt_durasipaketjam_KeyPress);
-            // 
             // frm_editpaket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,11 +446,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListBox lsb_edtpkt_jenisnamapkt;
         private System.Windows.Forms.Button btn_edtpkt_ok;
-        private System.Windows.Forms.TextBox txt_tbhpkt_komisipaketmidnight;
+        private System.Windows.Forms.TextBox txt_edtpkt_komisipaketmidnight;
         private System.Windows.Forms.Label lbl_edtpkt_rp2;
         private System.Windows.Forms.Label lbl_edtpkt_3;
         private System.Windows.Forms.Label lbl_edtpkt_komisimidnight;
-        private System.Windows.Forms.TextBox txt_tbhpkt_komisipaketnormal;
+        private System.Windows.Forms.TextBox txt_edtpkt_komisipaketnormal;
         private System.Windows.Forms.Label lbl_edtpkt_rp1;
         private System.Windows.Forms.Label lbl_edtpkt_4;
         private System.Windows.Forms.Label lbl_edtpkt_komisinormal;

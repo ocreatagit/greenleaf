@@ -209,7 +209,6 @@
             this.txt_tbhpkt_hargapaket.Name = "txt_tbhpkt_hargapaket";
             this.txt_tbhpkt_hargapaket.Size = new System.Drawing.Size(215, 47);
             this.txt_tbhpkt_hargapaket.TabIndex = 5;
-            this.txt_tbhpkt_hargapaket.TextChanged += new System.EventHandler(this.txt_tbhpkt_hargapaket_TextChanged);
             this.txt_tbhpkt_hargapaket.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tbhpkt_hargapaket_KeyPress);
             // 
             // lbl_tbhpkt_rp1
@@ -394,7 +393,6 @@
             this.MinimumSize = new System.Drawing.Size(1280, 680);
             this.Name = "frm_tambahpaket";
             this.Text = "frm_tambahpaket";
-            this.Load += new System.EventHandler(this.frm_tambahpaket_Load);
             this.pnl_tbhpkt_isi.ResumeLayout(false);
             this.pnl_tbhpkt_isi.PerformLayout();
             this.panel_logo.ResumeLayout(false);

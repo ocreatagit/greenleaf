@@ -21,6 +21,7 @@ namespace Green_Leaf
         List<string>[] edtpkt_lstnamapaket = new List<string>[2];
         List<int> edtpkt_lstidpktTerpilih = new List<int>();
         int edtpkt_idTerpilih = new int();
+        string namapakettersimpan;
 
         private void frm_editpaket_Load(object sender, EventArgs e)
         {
@@ -28,8 +29,8 @@ namespace Green_Leaf
             edtpkt_lstnamapaket[1] = new List<string>();
             cbo_edtpkt_jenispaket.Enabled = false;
             txt_edtpkt_namapaket.Enabled = false;
-            txt_tbhpkt_komisipaketnormal.Enabled = false;
-            txt_tbhpkt_komisipaketmidnight.Enabled = false;
+            txt_edtpkt_komisipaketnormal.Enabled = false;
+            txt_edtpkt_komisipaketmidnight.Enabled = false;
             txt_edtpkt_durasipaketjam.Enabled = false;
             txt_edtpkt_durasipaketmenit.Enabled = false;
             txt_edtpkt_hargapaket.Enabled = false;
@@ -80,6 +81,7 @@ namespace Green_Leaf
                 string edtpkt_jam;
                 string edtpkt_menit;
                 edtpkt_idTerpilih = edtpkt_lstidpktTerpilih[lsb_edtpkt_jenisnamapkt.SelectedIndex];
+                namapakettersimpan = lsb_edtpkt_jenisnamapkt.SelectedItem.ToString();
                 #region(Select)
                 string edtpkt_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
                 MySqlConnection edtpkt_conn = new MySqlConnection(edtpkt_connStr);
@@ -122,8 +124,8 @@ namespace Green_Leaf
 
                         cbo_edtpkt_jenispaket.SelectedItem = edtpkt_rdr.GetString(1);
                         txt_edtpkt_namapaket.Text = edtpkt_rdr.GetString(2);
-                        txt_tbhpkt_komisipaketnormal.Text = edtpkt_rdr.GetString(5);
-                        txt_tbhpkt_komisipaketmidnight.Text = edtpkt_rdr.GetString(6);
+                        txt_edtpkt_komisipaketnormal.Text = edtpkt_rdr.GetString(5);
+                        txt_edtpkt_komisipaketmidnight.Text = edtpkt_rdr.GetString(6);
                         txt_edtpkt_hargapaket.Text = edtpkt_rdr.GetString(4);
                         txt_edtpkt_durasipaketjam.Text = edtpkt_jam;
                         txt_edtpkt_durasipaketmenit.Text = edtpkt_menit;
@@ -138,8 +140,8 @@ namespace Green_Leaf
 
                 cbo_edtpkt_jenispaket.Enabled = true;
                 txt_edtpkt_namapaket.Enabled = true;
-                txt_tbhpkt_komisipaketnormal.Enabled = true;
-                txt_tbhpkt_komisipaketmidnight.Enabled = true;
+                txt_edtpkt_komisipaketnormal.Enabled = true;
+                txt_edtpkt_komisipaketmidnight.Enabled = true;
                 txt_edtpkt_durasipaketjam.Enabled = true;
                 txt_edtpkt_durasipaketmenit.Enabled = true;
                 txt_edtpkt_hargapaket.Enabled = true;
@@ -164,11 +166,11 @@ namespace Green_Leaf
             {
                 MessageBox.Show("Mohon lengkapi data Nama Paket terlebih dahulu!");
             }
-            else if (txt_tbhpkt_komisipaketnormal.Text == "")
+            else if (txt_edtpkt_komisipaketnormal.Text == "")
             {
                 MessageBox.Show("Mohon lengkapi data Komisi Paket terlebih dahulu!");
             }
-            else if (txt_tbhpkt_komisipaketmidnight.Text == "")
+            else if (txt_edtpkt_komisipaketmidnight.Text == "")
             {
                 MessageBox.Show("Mohon lengkapi data Komisi Paket terlebih dahulu!");
             }
@@ -186,7 +188,8 @@ namespace Green_Leaf
             }
             else
             {
-                bool namapaketsama = false;
+                bool namapaketsamadatabase = false;
+                bool namapaketsamatersimpan = false;
                 for (int i = 0; i < edtpkt_lstnamapaket[0].Count; i++)
                 {
                     //if (edtpkt_lstnamapaket[0][i] != cbo_edtpkt_jenispaket.SelectedItem.ToString())
@@ -198,14 +201,22 @@ namespace Green_Leaf
                     {
                         if (txt_edtpkt_namapaket.Text.Replace(" ", String.Empty).ToUpper() == edtpkt_lstnamapaket[1][i].Trim().Replace(" ", String.Empty).ToUpper())
                         {
-                            namapaketsama = true;
+                            namapaketsamadatabase = true;
                             break;
                         }
                         else
                         {
-                            namapaketsama = false;
+                            namapaketsamadatabase = false;
                         }
                     }
+                }
+                if (namapakettersimpan.Replace(" ", String.Empty).ToUpper() == cbo_edtpkt_jenispaket.SelectedItem.ToString().ToUpper()+"-"+txt_edtpkt_namapaket.Text.Replace(" ", String.Empty).ToUpper())
+                {
+                    namapaketsamatersimpan = true;
+                }
+                else
+                {
+                    namapaketsamatersimpan = false;
                 }
                 //for (int i = 0; i < edtpkt_lstnamapaket[1].Count; i++)
                 //{
@@ -219,12 +230,9 @@ namespace Green_Leaf
                 //        namapaketsama = false;
                 //    }
                 //}
-                if (namapaketsama == true)
+                if (namapaketsamatersimpan == true)
                 {
-                    MessageBox.Show("Maaf Nama Paket: "+txt_edtpkt_namapaket.Text+", sudah ada di dalam daftar Paket: "+cbo_edtpkt_jenispaket.SelectedItem.ToString()+", silahkan ganti nama paket");
-                }
-                else
-                {
+
                     #region(Update)
                     edtpkt_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
                     edtpkt_conn = new MySqlConnection(edtpkt_connStr);
@@ -234,7 +242,7 @@ namespace Green_Leaf
 
                         edtpkt_query = "UPDATE `paket` SET `jenis_paket` = '" + cbo_edtpkt_jenispaket.SelectedItem + "', `nama_paket` = '" + txt_edtpkt_namapaket.Text + "', "
                                           + "`durasi_paket` = '" + txt_edtpkt_durasipaketjam.Text + " Jam " + txt_edtpkt_durasipaketmenit.Text + " Menit', `harga_paket` = '" + txt_edtpkt_hargapaket.Text + "', "
-                                            + "`komisi_normal_paket` = '" + int.Parse(txt_tbhpkt_komisipaketnormal.Text) + "', `komisi_midnight_paket` = '" + int.Parse(txt_tbhpkt_komisipaketmidnight.Text) +
+                                            + "`komisi_normal_paket` = '" + int.Parse(txt_edtpkt_komisipaketnormal.Text) + "', `komisi_midnight_paket` = '" + int.Parse(txt_edtpkt_komisipaketmidnight.Text) +
                                                 "' WHERE `paket`.`id_paket` = " + edtpkt_idTerpilih + " ;";
                         MySqlCommand cmd = new MySqlCommand(edtpkt_query, edtpkt_conn);
                         cmd.ExecuteNonQuery();
@@ -248,8 +256,8 @@ namespace Green_Leaf
 
                     cbo_edtpkt_jenispaket.Enabled = false;
                     txt_edtpkt_namapaket.Enabled = false;
-                    txt_tbhpkt_komisipaketnormal.Enabled = false;
-                    txt_tbhpkt_komisipaketmidnight.Enabled = false;
+                    txt_edtpkt_komisipaketnormal.Enabled = false;
+                    txt_edtpkt_komisipaketmidnight.Enabled = false;
                     txt_edtpkt_durasipaketjam.Enabled = false;
                     txt_edtpkt_durasipaketmenit.Enabled = false;
                     txt_edtpkt_hargapaket.Enabled = false;
@@ -258,8 +266,8 @@ namespace Green_Leaf
 
                     cbo_edtpkt_jenispaket.SelectedItem = null;
                     txt_edtpkt_namapaket.Clear();
-                    txt_tbhpkt_komisipaketnormal.Clear();
-                    txt_tbhpkt_komisipaketmidnight.Clear();
+                    txt_edtpkt_komisipaketnormal.Clear();
+                    txt_edtpkt_komisipaketmidnight.Clear();
                     txt_edtpkt_durasipaketjam.Clear();
                     txt_edtpkt_durasipaketmenit.Clear();
                     txt_edtpkt_hargapaket.Clear();
@@ -300,9 +308,97 @@ namespace Green_Leaf
                     edtpkt_conn2.Close();
                     #endregion
 
-                    
+
 
                     MessageBox.Show("Data Paket telah berhasil disimpan");
+                }
+                else
+                {
+                    if (namapaketsamadatabase == true)
+                    {
+                        MessageBox.Show("Maaf Nama Paket: " + txt_edtpkt_namapaket.Text + ", sudah ada di dalam daftar Paket: " + cbo_edtpkt_jenispaket.SelectedItem.ToString() + ", silahkan ganti nama paket");
+                    }
+                    else
+                    {
+                        #region(Update)
+                        edtpkt_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                        edtpkt_conn = new MySqlConnection(edtpkt_connStr);
+                        try
+                        {
+                            edtpkt_conn.Open();
+
+                            edtpkt_query = "UPDATE `paket` SET `jenis_paket` = '" + cbo_edtpkt_jenispaket.SelectedItem + "', `nama_paket` = '" + txt_edtpkt_namapaket.Text + "', "
+                                              + "`durasi_paket` = '" + txt_edtpkt_durasipaketjam.Text + " Jam " + txt_edtpkt_durasipaketmenit.Text + " Menit', `harga_paket` = '" + txt_edtpkt_hargapaket.Text + "', "
+                                                + "`komisi_normal_paket` = '" + int.Parse(txt_edtpkt_komisipaketnormal.Text) + "', `komisi_midnight_paket` = '" + int.Parse(txt_edtpkt_komisipaketmidnight.Text) +
+                                                    "' WHERE `paket`.`id_paket` = " + edtpkt_idTerpilih + " ;";
+                            MySqlCommand cmd = new MySqlCommand(edtpkt_query, edtpkt_conn);
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.ToString());
+                        }
+                        edtpkt_conn.Close();
+                        #endregion
+
+                        cbo_edtpkt_jenispaket.Enabled = false;
+                        txt_edtpkt_namapaket.Enabled = false;
+                        txt_edtpkt_komisipaketnormal.Enabled = false;
+                        txt_edtpkt_komisipaketmidnight.Enabled = false;
+                        txt_edtpkt_durasipaketjam.Enabled = false;
+                        txt_edtpkt_durasipaketmenit.Enabled = false;
+                        txt_edtpkt_hargapaket.Enabled = false;
+                        btn_edtpkt_simpan.Enabled = false;
+                        lsb_edtpkt_jenisnamapkt.Items.Clear();
+
+                        cbo_edtpkt_jenispaket.SelectedItem = null;
+                        txt_edtpkt_namapaket.Clear();
+                        txt_edtpkt_komisipaketnormal.Clear();
+                        txt_edtpkt_komisipaketmidnight.Clear();
+                        txt_edtpkt_durasipaketjam.Clear();
+                        txt_edtpkt_durasipaketmenit.Clear();
+                        txt_edtpkt_hargapaket.Clear();
+                        btn_edtpkt_simpan.Enabled = false;
+                        lsb_edtpkt_jenisnamapkt.Items.Clear();
+
+                        edtpkt_lstidpktTerpilih.Clear();
+                        #region(Isi listbox dengan Jenis dan Nama Paket per baris)
+                        string edtpkt_jenisnamapkt;
+                        string edtpkt_query2;
+                        string edtpkt_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                        MySqlConnection edtpkt_conn2 = new MySqlConnection(edtpkt_connStr2);
+                        try
+                        {
+                            edtpkt_conn2.Open();
+
+                            edtpkt_query2 = "SELECT * FROM `paket` ORDER BY `id_paket` DESC";
+                            MySqlCommand edtpkt_cmd2 = new MySqlCommand(edtpkt_query2, edtpkt_conn2);
+                            MySqlDataReader edtpkt_rdr2 = edtpkt_cmd2.ExecuteReader();
+
+                            while (edtpkt_rdr2.Read())
+                            {
+                                //cbo_kodeterapis.Items.Add(edtpkt_rdr.GetString(1));
+                                edtpkt_lstidpktTerpilih.Add(edtpkt_rdr2.GetInt16(0));
+                                edtpkt_jenisnamapkt = edtpkt_rdr2.GetString(1);
+                                edtpkt_jenisnamapkt += " - " + edtpkt_rdr2.GetString(2);
+                                lsb_edtpkt_jenisnamapkt.Items.Add(edtpkt_jenisnamapkt);
+                                edtpkt_lstnamapaket[0].Add(edtpkt_rdr2.GetString(1));
+                                edtpkt_lstnamapaket[1].Add(edtpkt_rdr2.GetString(2));
+                            }
+                            edtpkt_rdr2.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.ToString());
+                            MessageBox.Show("Error Occured");
+                        }
+                        edtpkt_conn2.Close();
+                        #endregion
+
+
+
+                        MessageBox.Show("Data Paket telah berhasil disimpan");
+                    }
                 }
                 //#region(Buat huruf besar untuk Jam dan Menit)
                 //string edtpkt_durasiPaket = txt_edtpkt_durasipaket.Text;
@@ -388,32 +484,7 @@ namespace Green_Leaf
             //#endregion
         }
 
-        private void txt_tbhpkt_komisipaketnormal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_tbhpkt_komisipaketmidnight_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_edtpkt_hargapaket_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_edtpkt_durasipaketjam_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_edtpkt_durasipaketmenit_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_tbhpkt_komisipaketnormal_KeyPress(object sender, KeyPressEventArgs e)
+        private void txt_edtpkt_komisipaketnormal_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -421,7 +492,7 @@ namespace Green_Leaf
             }
         }
 
-        private void txt_tbhpkt_komisipaketmidnight_KeyPress(object sender, KeyPressEventArgs e)
+        private void txt_edtpkt_komisipaketmidnight_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {

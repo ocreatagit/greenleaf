@@ -90,7 +90,7 @@
             this.lsb_edttrps_kodeterapis.Name = "lsb_edttrps_kodeterapis";
             this.lsb_edttrps_kodeterapis.ScrollAlwaysVisible = true;
             this.lsb_edttrps_kodeterapis.Size = new System.Drawing.Size(216, 355);
-            this.lsb_edttrps_kodeterapis.TabIndex = 18;
+            this.lsb_edttrps_kodeterapis.TabIndex = 1;
             // 
             // btn_edttrps_ok
             // 
@@ -98,7 +98,7 @@
             this.btn_edttrps_ok.Location = new System.Drawing.Point(23, 417);
             this.btn_edttrps_ok.Name = "btn_edttrps_ok";
             this.btn_edttrps_ok.Size = new System.Drawing.Size(216, 50);
-            this.btn_edttrps_ok.TabIndex = 17;
+            this.btn_edttrps_ok.TabIndex = 2;
             this.btn_edttrps_ok.Text = "Ok";
             this.btn_edttrps_ok.UseVisualStyleBackColor = true;
             this.btn_edttrps_ok.Click += new System.EventHandler(this.button1_Click);
@@ -119,7 +119,7 @@
             this.btn_edttrps_batal.Location = new System.Drawing.Point(640, 400);
             this.btn_edttrps_batal.Name = "btn_edttrps_batal";
             this.btn_edttrps_batal.Size = new System.Drawing.Size(155, 67);
-            this.btn_edttrps_batal.TabIndex = 14;
+            this.btn_edttrps_batal.TabIndex = 9;
             this.btn_edttrps_batal.Text = "Batal";
             this.btn_edttrps_batal.UseVisualStyleBackColor = true;
             this.btn_edttrps_batal.Click += new System.EventHandler(this.btn_batal_Click);
@@ -130,7 +130,7 @@
             this.btn_edttrps_simpan.Location = new System.Drawing.Point(440, 400);
             this.btn_edttrps_simpan.Name = "btn_edttrps_simpan";
             this.btn_edttrps_simpan.Size = new System.Drawing.Size(155, 67);
-            this.btn_edttrps_simpan.TabIndex = 13;
+            this.btn_edttrps_simpan.TabIndex = 8;
             this.btn_edttrps_simpan.Text = "Simpan";
             this.btn_edttrps_simpan.UseVisualStyleBackColor = true;
             this.btn_edttrps_simpan.Click += new System.EventHandler(this.btn_simpan_Click);
@@ -142,7 +142,7 @@
             this.rdo_edttrps_statustdkaktif.Location = new System.Drawing.Point(625, 318);
             this.rdo_edttrps_statustdkaktif.Name = "rdo_edttrps_statustdkaktif";
             this.rdo_edttrps_statustdkaktif.Size = new System.Drawing.Size(198, 43);
-            this.rdo_edttrps_statustdkaktif.TabIndex = 12;
+            this.rdo_edttrps_statustdkaktif.TabIndex = 7;
             this.rdo_edttrps_statustdkaktif.TabStop = true;
             this.rdo_edttrps_statustdkaktif.Text = "Tidak Aktif";
             this.rdo_edttrps_statustdkaktif.UseVisualStyleBackColor = true;
@@ -156,7 +156,7 @@
             this.rdo_edttrps_statusaktif.Location = new System.Drawing.Point(625, 269);
             this.rdo_edttrps_statusaktif.Name = "rdo_edttrps_statusaktif";
             this.rdo_edttrps_statusaktif.Size = new System.Drawing.Size(104, 43);
-            this.rdo_edttrps_statusaktif.TabIndex = 11;
+            this.rdo_edttrps_statusaktif.TabIndex = 6;
             this.rdo_edttrps_statusaktif.TabStop = true;
             this.rdo_edttrps_statusaktif.Text = "Aktif";
             this.rdo_edttrps_statusaktif.UseVisualStyleBackColor = true;
@@ -167,7 +167,7 @@
             this.btn_edttrps_browsefoto.Location = new System.Drawing.Point(625, 187);
             this.btn_edttrps_browsefoto.Name = "btn_edttrps_browsefoto";
             this.btn_edttrps_browsefoto.Size = new System.Drawing.Size(155, 50);
-            this.btn_edttrps_browsefoto.TabIndex = 10;
+            this.btn_edttrps_browsefoto.TabIndex = 5;
             this.btn_edttrps_browsefoto.Text = "Pilih";
             this.btn_edttrps_browsefoto.UseVisualStyleBackColor = true;
             this.btn_edttrps_browsefoto.Click += new System.EventHandler(this.btn_browsefoto_Click);
@@ -179,7 +179,7 @@
             this.txt_edttrps_namaterapis.MaxLength = 35;
             this.txt_edttrps_namaterapis.Name = "txt_edttrps_namaterapis";
             this.txt_edttrps_namaterapis.Size = new System.Drawing.Size(530, 47);
-            this.txt_edttrps_namaterapis.TabIndex = 9;
+            this.txt_edttrps_namaterapis.TabIndex = 4;
             // 
             // txt_edttrps_kodeterapis
             // 
@@ -189,7 +189,7 @@
             this.txt_edttrps_kodeterapis.MaxLength = 4;
             this.txt_edttrps_kodeterapis.Name = "txt_edttrps_kodeterapis";
             this.txt_edttrps_kodeterapis.Size = new System.Drawing.Size(92, 47);
-            this.txt_edttrps_kodeterapis.TabIndex = 8;
+            this.txt_edttrps_kodeterapis.TabIndex = 3;
             this.txt_edttrps_kodeterapis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_edttrps_kodeterapis_KeyPress);
             // 
             // lbl_edttrps_4
