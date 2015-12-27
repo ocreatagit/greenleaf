@@ -1706,7 +1706,6 @@ namespace Green_Leaf
             }
         }
 
-
         private void txt_ctknota_fee_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))

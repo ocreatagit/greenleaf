@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_ctknota_logo = new System.Windows.Forms.Panel();
             this.pict_ctknota_logo = new System.Windows.Forms.PictureBox();
             this.lbl_ctknota_kodeterapis = new System.Windows.Forms.Label();
@@ -58,14 +58,14 @@
             this.dgv_ctknota_tabelhrgpkt = new System.Windows.Forms.DataGridView();
             this.cbo_ctknota_jenispaket = new System.Windows.Forms.ComboBox();
             this.pnl_ctknota_hotelbiasa = new System.Windows.Forms.Panel();
-            this.rdo_ctknota_biasa = new System.Windows.Forms.RadioButton();
             this.rdo_ctknota_hotel = new System.Windows.Forms.RadioButton();
+            this.rdo_ctknota_biasa = new System.Windows.Forms.RadioButton();
             this.pnl_ctknota_normalmidnight = new System.Windows.Forms.Panel();
-            this.rdo_ctknota_midnight = new System.Windows.Forms.RadioButton();
             this.rdo_ctknota_normal = new System.Windows.Forms.RadioButton();
+            this.rdo_ctknota_midnight = new System.Windows.Forms.RadioButton();
             this.pnl_ctknota_cashcredit = new System.Windows.Forms.Panel();
-            this.rdo_ctknota_cash = new System.Windows.Forms.RadioButton();
             this.rdo_ctknota_credit = new System.Windows.Forms.RadioButton();
+            this.rdo_ctknota_cash = new System.Windows.Forms.RadioButton();
             this.txt_ctknota_nomorruangan = new System.Windows.Forms.TextBox();
             this.lbl_ctknota_nomorruangan = new System.Windows.Forms.Label();
             this.lbl_ctknota_2 = new System.Windows.Forms.Label();
@@ -343,19 +343,19 @@
             this.dgv_ctknota_tabelhrgpkt.AllowUserToDeleteRows = false;
             this.dgv_ctknota_tabelhrgpkt.AllowUserToResizeColumns = false;
             this.dgv_ctknota_tabelhrgpkt.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_ctknota_tabelhrgpkt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_ctknota_tabelhrgpkt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ctknota_tabelhrgpkt.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ctknota_tabelhrgpkt.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersHeight = 40;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_ctknota_tabelhrgpkt.Location = new System.Drawing.Point(32, 104);
@@ -402,21 +402,6 @@
             this.pnl_ctknota_hotelbiasa.Size = new System.Drawing.Size(268, 29);
             this.pnl_ctknota_hotelbiasa.TabIndex = 65;
             // 
-            // rdo_ctknota_biasa
-            // 
-            this.rdo_ctknota_biasa.AutoSize = true;
-            this.rdo_ctknota_biasa.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.rdo_ctknota_biasa.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.rdo_ctknota_biasa.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdo_ctknota_biasa.Location = new System.Drawing.Point(144, -1);
-            this.rdo_ctknota_biasa.Name = "rdo_ctknota_biasa";
-            this.rdo_ctknota_biasa.Size = new System.Drawing.Size(106, 37);
-            this.rdo_ctknota_biasa.TabIndex = 5;
-            this.rdo_ctknota_biasa.TabStop = true;
-            this.rdo_ctknota_biasa.Text = "Biasa";
-            this.rdo_ctknota_biasa.UseVisualStyleBackColor = true;
-            this.rdo_ctknota_biasa.CheckedChanged += new System.EventHandler(this.rdo_ctknota_biasa_CheckedChanged);
-            // 
             // rdo_ctknota_hotel
             // 
             this.rdo_ctknota_hotel.AutoSize = true;
@@ -432,6 +417,21 @@
             this.rdo_ctknota_hotel.UseVisualStyleBackColor = true;
             this.rdo_ctknota_hotel.CheckedChanged += new System.EventHandler(this.rdo_ctknota_hotel_CheckedChanged);
             // 
+            // rdo_ctknota_biasa
+            // 
+            this.rdo_ctknota_biasa.AutoSize = true;
+            this.rdo_ctknota_biasa.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.rdo_ctknota_biasa.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.rdo_ctknota_biasa.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdo_ctknota_biasa.Location = new System.Drawing.Point(144, -1);
+            this.rdo_ctknota_biasa.Name = "rdo_ctknota_biasa";
+            this.rdo_ctknota_biasa.Size = new System.Drawing.Size(106, 37);
+            this.rdo_ctknota_biasa.TabIndex = 5;
+            this.rdo_ctknota_biasa.TabStop = true;
+            this.rdo_ctknota_biasa.Text = "Biasa";
+            this.rdo_ctknota_biasa.UseVisualStyleBackColor = true;
+            this.rdo_ctknota_biasa.CheckedChanged += new System.EventHandler(this.rdo_ctknota_biasa_CheckedChanged);
+            // 
             // pnl_ctknota_normalmidnight
             // 
             this.pnl_ctknota_normalmidnight.Controls.Add(this.rdo_ctknota_normal);
@@ -440,21 +440,6 @@
             this.pnl_ctknota_normalmidnight.Name = "pnl_ctknota_normalmidnight";
             this.pnl_ctknota_normalmidnight.Size = new System.Drawing.Size(297, 40);
             this.pnl_ctknota_normalmidnight.TabIndex = 66;
-            // 
-            // rdo_ctknota_midnight
-            // 
-            this.rdo_ctknota_midnight.AutoSize = true;
-            this.rdo_ctknota_midnight.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.rdo_ctknota_midnight.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.rdo_ctknota_midnight.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdo_ctknota_midnight.Location = new System.Drawing.Point(144, -3);
-            this.rdo_ctknota_midnight.Name = "rdo_ctknota_midnight";
-            this.rdo_ctknota_midnight.Size = new System.Drawing.Size(143, 37);
-            this.rdo_ctknota_midnight.TabIndex = 2;
-            this.rdo_ctknota_midnight.TabStop = true;
-            this.rdo_ctknota_midnight.Text = "Midnight";
-            this.rdo_ctknota_midnight.UseVisualStyleBackColor = true;
-            this.rdo_ctknota_midnight.CheckedChanged += new System.EventHandler(this.rdo_ctknota_midnight_CheckedChanged);
             // 
             // rdo_ctknota_normal
             // 
@@ -465,11 +450,26 @@
             this.rdo_ctknota_normal.Location = new System.Drawing.Point(0, -3);
             this.rdo_ctknota_normal.Name = "rdo_ctknota_normal";
             this.rdo_ctknota_normal.Size = new System.Drawing.Size(128, 37);
-            this.rdo_ctknota_normal.TabIndex = 1;
+            this.rdo_ctknota_normal.TabIndex = 2;
             this.rdo_ctknota_normal.TabStop = true;
             this.rdo_ctknota_normal.Text = "Normal";
             this.rdo_ctknota_normal.UseVisualStyleBackColor = true;
             this.rdo_ctknota_normal.CheckedChanged += new System.EventHandler(this.rdo_ctknota_normal_CheckedChanged);
+            // 
+            // rdo_ctknota_midnight
+            // 
+            this.rdo_ctknota_midnight.AutoSize = true;
+            this.rdo_ctknota_midnight.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.rdo_ctknota_midnight.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.rdo_ctknota_midnight.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdo_ctknota_midnight.Location = new System.Drawing.Point(144, -3);
+            this.rdo_ctknota_midnight.Name = "rdo_ctknota_midnight";
+            this.rdo_ctknota_midnight.Size = new System.Drawing.Size(143, 37);
+            this.rdo_ctknota_midnight.TabIndex = 3;
+            this.rdo_ctknota_midnight.TabStop = true;
+            this.rdo_ctknota_midnight.Text = "Midnight";
+            this.rdo_ctknota_midnight.UseVisualStyleBackColor = true;
+            this.rdo_ctknota_midnight.CheckedChanged += new System.EventHandler(this.rdo_ctknota_midnight_CheckedChanged);
             // 
             // pnl_ctknota_cashcredit
             // 
@@ -479,21 +479,6 @@
             this.pnl_ctknota_cashcredit.Name = "pnl_ctknota_cashcredit";
             this.pnl_ctknota_cashcredit.Size = new System.Drawing.Size(268, 35);
             this.pnl_ctknota_cashcredit.TabIndex = 67;
-            // 
-            // rdo_ctknota_cash
-            // 
-            this.rdo_ctknota_cash.AutoSize = true;
-            this.rdo_ctknota_cash.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.rdo_ctknota_cash.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.rdo_ctknota_cash.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdo_ctknota_cash.Location = new System.Drawing.Point(0, 1);
-            this.rdo_ctknota_cash.Name = "rdo_ctknota_cash";
-            this.rdo_ctknota_cash.Size = new System.Drawing.Size(101, 37);
-            this.rdo_ctknota_cash.TabIndex = 8;
-            this.rdo_ctknota_cash.TabStop = true;
-            this.rdo_ctknota_cash.Text = "Cash";
-            this.rdo_ctknota_cash.UseVisualStyleBackColor = true;
-            this.rdo_ctknota_cash.CheckedChanged += new System.EventHandler(this.rdo_ctknota_cash_CheckedChanged);
             // 
             // rdo_ctknota_credit
             // 
@@ -510,6 +495,21 @@
             this.rdo_ctknota_credit.UseVisualStyleBackColor = true;
             this.rdo_ctknota_credit.CheckedChanged += new System.EventHandler(this.rdo_ctknota_credit_CheckedChanged);
             // 
+            // rdo_ctknota_cash
+            // 
+            this.rdo_ctknota_cash.AutoSize = true;
+            this.rdo_ctknota_cash.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.rdo_ctknota_cash.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.rdo_ctknota_cash.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdo_ctknota_cash.Location = new System.Drawing.Point(0, 1);
+            this.rdo_ctknota_cash.Name = "rdo_ctknota_cash";
+            this.rdo_ctknota_cash.Size = new System.Drawing.Size(101, 37);
+            this.rdo_ctknota_cash.TabIndex = 8;
+            this.rdo_ctknota_cash.TabStop = true;
+            this.rdo_ctknota_cash.Text = "Cash";
+            this.rdo_ctknota_cash.UseVisualStyleBackColor = true;
+            this.rdo_ctknota_cash.CheckedChanged += new System.EventHandler(this.rdo_ctknota_cash_CheckedChanged);
+            // 
             // txt_ctknota_nomorruangan
             // 
             this.txt_ctknota_nomorruangan.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -517,7 +517,7 @@
             this.txt_ctknota_nomorruangan.MaxLength = 35;
             this.txt_ctknota_nomorruangan.Name = "txt_ctknota_nomorruangan";
             this.txt_ctknota_nomorruangan.Size = new System.Drawing.Size(55, 40);
-            this.txt_ctknota_nomorruangan.TabIndex = 3;
+            this.txt_ctknota_nomorruangan.TabIndex = 1;
             this.txt_ctknota_nomorruangan.TextChanged += new System.EventHandler(this.txt_ctknota_nomorruangan_TextChanged);
             this.txt_ctknota_nomorruangan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ctknota_nomorruangan_KeyPress);
             // 
