@@ -105,6 +105,7 @@
             // 
             // pict_edttrps_fotoKTP
             // 
+            this.pict_edttrps_fotoKTP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pict_edttrps_fotoKTP.Location = new System.Drawing.Point(925, 177);
             this.pict_edttrps_fotoKTP.Name = "pict_edttrps_fotoKTP";
             this.pict_edttrps_fotoKTP.Size = new System.Drawing.Size(230, 290);

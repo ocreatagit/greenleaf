@@ -22,29 +22,6 @@ namespace Green_Leaf
         {
             InitializeComponent();
         }
-
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_browsefoto_Click(object sender, EventArgs e)
-        {
-            // open file dialog 
-            OpenFileDialog edttrps_open = new OpenFileDialog();
-            // image filters
-            edttrps_open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            if (edttrps_open.ShowDialog() == DialogResult.OK)
-            {
-                // display image in picture box
-
-                // image file path
-                edttrps_lokasi_gambar = edttrps_open.FileName.Replace(@"\", @"\\");
-                pict_edttrps_fotoKTP.Image = new Bitmap(edttrps_lokasi_gambar);
-            }
-        }
-
         private void frm_editterapis_Load(object sender, EventArgs e)
         {
             btn_edttrps_simpan.Enabled = false;
@@ -54,7 +31,7 @@ namespace Green_Leaf
             rdo_edttrps_statusaktif.Enabled = false;
             rdo_edttrps_statustdkaktif.Enabled = false;
 
-            
+
 
             #region(Select)
             string edttrps_query;
@@ -82,6 +59,22 @@ namespace Green_Leaf
             }
             edttrps_conn.Close();
             #endregion
+        }
+
+        private void btn_browsefoto_Click(object sender, EventArgs e)
+        {
+            // open file dialog 
+            OpenFileDialog edttrps_open = new OpenFileDialog();
+            // image filters
+            edttrps_open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (edttrps_open.ShowDialog() == DialogResult.OK)
+            {
+                // display image in picture box
+
+                // image file path
+                edttrps_lokasi_gambar = edttrps_open.FileName.Replace(@"\", @"\\");
+                pict_edttrps_fotoKTP.Image = new Bitmap(edttrps_lokasi_gambar);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

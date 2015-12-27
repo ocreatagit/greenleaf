@@ -15,5 +15,10 @@ namespace Green_Leaf
         {
             InitializeComponent();
         }
+
+        private void btn_menu_edttrps_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

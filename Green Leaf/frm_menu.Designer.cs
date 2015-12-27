@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnl_menu_isi = new System.Windows.Forms.Panel();
+            this.btn_menu_variabel = new System.Windows.Forms.Button();
             this.btn_menu_ctknota = new System.Windows.Forms.Button();
             this.btn_menu_laporangajiexcel = new System.Windows.Forms.Button();
             this.btn_menu_laporangajiterapis = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.btn_menu_tbhpkt = new System.Windows.Forms.Button();
             this.btn_menu_edttrps = new System.Windows.Forms.Button();
             this.btn_menu_tbhtrps = new System.Windows.Forms.Button();
-            this.btn_menu_variabel = new System.Windows.Forms.Button();
             this.pnl_menu_isi.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,16 @@
             this.pnl_menu_isi.Name = "pnl_menu_isi";
             this.pnl_menu_isi.Size = new System.Drawing.Size(1250, 528);
             this.pnl_menu_isi.TabIndex = 1;
+            // 
+            // btn_menu_variabel
+            // 
+            this.btn_menu_variabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_menu_variabel.Location = new System.Drawing.Point(604, 391);
+            this.btn_menu_variabel.Name = "btn_menu_variabel";
+            this.btn_menu_variabel.Size = new System.Drawing.Size(155, 110);
+            this.btn_menu_variabel.TabIndex = 22;
+            this.btn_menu_variabel.Text = "Edit Variabel";
+            this.btn_menu_variabel.UseVisualStyleBackColor = true;
             // 
             // btn_menu_ctknota
             // 
@@ -126,6 +136,7 @@
             this.btn_menu_edttrps.TabIndex = 15;
             this.btn_menu_edttrps.Text = "Edit\r\nTerapis";
             this.btn_menu_edttrps.UseVisualStyleBackColor = true;
+            this.btn_menu_edttrps.Click += new System.EventHandler(this.btn_menu_edttrps_Click);
             // 
             // btn_menu_tbhtrps
             // 
@@ -136,16 +147,6 @@
             this.btn_menu_tbhtrps.TabIndex = 14;
             this.btn_menu_tbhtrps.Text = "Tambah\r\nTerapis";
             this.btn_menu_tbhtrps.UseVisualStyleBackColor = true;
-            // 
-            // btn_menu_variabel
-            // 
-            this.btn_menu_variabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menu_variabel.Location = new System.Drawing.Point(604, 391);
-            this.btn_menu_variabel.Name = "btn_menu_variabel";
-            this.btn_menu_variabel.Size = new System.Drawing.Size(155, 110);
-            this.btn_menu_variabel.TabIndex = 22;
-            this.btn_menu_variabel.Text = "Edit Variabel";
-            this.btn_menu_variabel.UseVisualStyleBackColor = true;
             // 
             // frm_menu
             // 

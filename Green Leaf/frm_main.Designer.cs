@@ -67,12 +67,33 @@
             this.lbl_tbhtrps_upload = new System.Windows.Forms.Label();
             this.lbl_tbhtrps_namaterapis = new System.Windows.Forms.Label();
             this.lbl_tbhtrps_kodeterapis = new System.Windows.Forms.Label();
+            this.pnl_edttrps_isi = new System.Windows.Forms.Panel();
+            this.lsb_edttrps_kodeterapis = new System.Windows.Forms.ListBox();
+            this.btn_edttrps_ok = new System.Windows.Forms.Button();
+            this.pict_edttrps_fotoKTP = new System.Windows.Forms.PictureBox();
+            this.btn_edttrps_batal = new System.Windows.Forms.Button();
+            this.btn_edttrps_simpan = new System.Windows.Forms.Button();
+            this.rdo_edttrps_statustdkaktif = new System.Windows.Forms.RadioButton();
+            this.rdo_edttrps_statusaktif = new System.Windows.Forms.RadioButton();
+            this.btn_edttrps_browsefoto = new System.Windows.Forms.Button();
+            this.txt_edttrps_namaterapis = new System.Windows.Forms.TextBox();
+            this.txt_edttrps_kodeterapis = new System.Windows.Forms.TextBox();
+            this.lbl_edttrps_4 = new System.Windows.Forms.Label();
+            this.lbl_edttrps_3 = new System.Windows.Forms.Label();
+            this.lbl_edttrps_2 = new System.Windows.Forms.Label();
+            this.lbl_edttrps_1 = new System.Windows.Forms.Label();
+            this.lbl_edttrps_status = new System.Windows.Forms.Label();
+            this.lbl_edttrps_upload = new System.Windows.Forms.Label();
+            this.lbl_edttrps_namaterapis = new System.Windows.Forms.Label();
+            this.lbl_edttrps_kodeterapis = new System.Windows.Forms.Label();
             this.pnl_ctknota_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict_ctknota_logo)).BeginInit();
             this.pnl_login_isi.SuspendLayout();
             this.pnl_menu_isi.SuspendLayout();
             this.pnl_tbhtrps_isi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict_tbhtrps_fotoKTP)).BeginInit();
+            this.pnl_edttrps_isi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pict_edttrps_fotoKTP)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_ctknota_logo
@@ -513,16 +534,235 @@
             this.lbl_tbhtrps_kodeterapis.TabIndex = 0;
             this.lbl_tbhtrps_kodeterapis.Text = "Kode Terapis";
             // 
+            // pnl_edttrps_isi
+            // 
+            this.pnl_edttrps_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_edttrps_isi.Controls.Add(this.lsb_edttrps_kodeterapis);
+            this.pnl_edttrps_isi.Controls.Add(this.btn_edttrps_ok);
+            this.pnl_edttrps_isi.Controls.Add(this.pict_edttrps_fotoKTP);
+            this.pnl_edttrps_isi.Controls.Add(this.btn_edttrps_batal);
+            this.pnl_edttrps_isi.Controls.Add(this.btn_edttrps_simpan);
+            this.pnl_edttrps_isi.Controls.Add(this.rdo_edttrps_statustdkaktif);
+            this.pnl_edttrps_isi.Controls.Add(this.rdo_edttrps_statusaktif);
+            this.pnl_edttrps_isi.Controls.Add(this.btn_edttrps_browsefoto);
+            this.pnl_edttrps_isi.Controls.Add(this.txt_edttrps_namaterapis);
+            this.pnl_edttrps_isi.Controls.Add(this.txt_edttrps_kodeterapis);
+            this.pnl_edttrps_isi.Controls.Add(this.lbl_edttrps_4);
+            this.pnl_edttrps_isi.Controls.Add(this.lbl_edttrps_3);
+            this.pnl_edttrps_isi.Controls.Add(this.lbl_edttrps_2);
+            this.pnl_edttrps_isi.Controls.Add(this.lbl_edttrps_1);
+            this.pnl_edttrps_isi.Controls.Add(this.lbl_edttrps_status);
+            this.pnl_edttrps_isi.Controls.Add(this.lbl_edttrps_upload);
+            this.pnl_edttrps_isi.Controls.Add(this.lbl_edttrps_namaterapis);
+            this.pnl_edttrps_isi.Controls.Add(this.lbl_edttrps_kodeterapis);
+            this.pnl_edttrps_isi.Location = new System.Drawing.Point(12, 112);
+            this.pnl_edttrps_isi.Name = "pnl_edttrps_isi";
+            this.pnl_edttrps_isi.Size = new System.Drawing.Size(1250, 528);
+            this.pnl_edttrps_isi.TabIndex = 23;
+            this.pnl_edttrps_isi.Visible = false;
+            // 
+            // lsb_edttrps_kodeterapis
+            // 
+            this.lsb_edttrps_kodeterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsb_edttrps_kodeterapis.FormattingEnabled = true;
+            this.lsb_edttrps_kodeterapis.ItemHeight = 39;
+            this.lsb_edttrps_kodeterapis.Location = new System.Drawing.Point(23, 37);
+            this.lsb_edttrps_kodeterapis.Name = "lsb_edttrps_kodeterapis";
+            this.lsb_edttrps_kodeterapis.ScrollAlwaysVisible = true;
+            this.lsb_edttrps_kodeterapis.Size = new System.Drawing.Size(216, 355);
+            this.lsb_edttrps_kodeterapis.TabIndex = 18;
+            // 
+            // btn_edttrps_ok
+            // 
+            this.btn_edttrps_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edttrps_ok.Location = new System.Drawing.Point(23, 417);
+            this.btn_edttrps_ok.Name = "btn_edttrps_ok";
+            this.btn_edttrps_ok.Size = new System.Drawing.Size(216, 50);
+            this.btn_edttrps_ok.TabIndex = 17;
+            this.btn_edttrps_ok.Text = "Ok";
+            this.btn_edttrps_ok.UseVisualStyleBackColor = true;
+            this.btn_edttrps_ok.Click += new System.EventHandler(this.btn_edttrps_ok_Click);
+            // 
+            // pict_edttrps_fotoKTP
+            // 
+            this.pict_edttrps_fotoKTP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pict_edttrps_fotoKTP.Location = new System.Drawing.Point(925, 177);
+            this.pict_edttrps_fotoKTP.Name = "pict_edttrps_fotoKTP";
+            this.pict_edttrps_fotoKTP.Size = new System.Drawing.Size(230, 290);
+            this.pict_edttrps_fotoKTP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pict_edttrps_fotoKTP.TabIndex = 15;
+            this.pict_edttrps_fotoKTP.TabStop = false;
+            // 
+            // btn_edttrps_batal
+            // 
+            this.btn_edttrps_batal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edttrps_batal.Location = new System.Drawing.Point(640, 400);
+            this.btn_edttrps_batal.Name = "btn_edttrps_batal";
+            this.btn_edttrps_batal.Size = new System.Drawing.Size(155, 67);
+            this.btn_edttrps_batal.TabIndex = 14;
+            this.btn_edttrps_batal.Text = "Batal";
+            this.btn_edttrps_batal.UseVisualStyleBackColor = true;
+            this.btn_edttrps_batal.Click += new System.EventHandler(this.btn_edttrps_batal_Click);
+            // 
+            // btn_edttrps_simpan
+            // 
+            this.btn_edttrps_simpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edttrps_simpan.Location = new System.Drawing.Point(440, 400);
+            this.btn_edttrps_simpan.Name = "btn_edttrps_simpan";
+            this.btn_edttrps_simpan.Size = new System.Drawing.Size(155, 67);
+            this.btn_edttrps_simpan.TabIndex = 13;
+            this.btn_edttrps_simpan.Text = "Simpan";
+            this.btn_edttrps_simpan.UseVisualStyleBackColor = true;
+            this.btn_edttrps_simpan.Click += new System.EventHandler(this.btn_edttrps_simpan_Click);
+            // 
+            // rdo_edttrps_statustdkaktif
+            // 
+            this.rdo_edttrps_statustdkaktif.AutoSize = true;
+            this.rdo_edttrps_statustdkaktif.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdo_edttrps_statustdkaktif.Location = new System.Drawing.Point(625, 318);
+            this.rdo_edttrps_statustdkaktif.Name = "rdo_edttrps_statustdkaktif";
+            this.rdo_edttrps_statustdkaktif.Size = new System.Drawing.Size(198, 43);
+            this.rdo_edttrps_statustdkaktif.TabIndex = 12;
+            this.rdo_edttrps_statustdkaktif.TabStop = true;
+            this.rdo_edttrps_statustdkaktif.Text = "Tidak Aktif";
+            this.rdo_edttrps_statustdkaktif.UseVisualStyleBackColor = true;
+            // 
+            // rdo_edttrps_statusaktif
+            // 
+            this.rdo_edttrps_statusaktif.AutoSize = true;
+            this.rdo_edttrps_statusaktif.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.rdo_edttrps_statusaktif.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.rdo_edttrps_statusaktif.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdo_edttrps_statusaktif.Location = new System.Drawing.Point(625, 269);
+            this.rdo_edttrps_statusaktif.Name = "rdo_edttrps_statusaktif";
+            this.rdo_edttrps_statusaktif.Size = new System.Drawing.Size(104, 43);
+            this.rdo_edttrps_statusaktif.TabIndex = 11;
+            this.rdo_edttrps_statusaktif.TabStop = true;
+            this.rdo_edttrps_statusaktif.Text = "Aktif";
+            this.rdo_edttrps_statusaktif.UseVisualStyleBackColor = true;
+            // 
+            // btn_edttrps_browsefoto
+            // 
+            this.btn_edttrps_browsefoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edttrps_browsefoto.Location = new System.Drawing.Point(625, 187);
+            this.btn_edttrps_browsefoto.Name = "btn_edttrps_browsefoto";
+            this.btn_edttrps_browsefoto.Size = new System.Drawing.Size(155, 50);
+            this.btn_edttrps_browsefoto.TabIndex = 10;
+            this.btn_edttrps_browsefoto.Text = "Pilih";
+            this.btn_edttrps_browsefoto.UseVisualStyleBackColor = true;
+            this.btn_edttrps_browsefoto.Click += new System.EventHandler(this.btn_edttrps_browsefoto_Click);
+            // 
+            // txt_edttrps_namaterapis
+            // 
+            this.txt_edttrps_namaterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_edttrps_namaterapis.Location = new System.Drawing.Point(625, 112);
+            this.txt_edttrps_namaterapis.MaxLength = 35;
+            this.txt_edttrps_namaterapis.Name = "txt_edttrps_namaterapis";
+            this.txt_edttrps_namaterapis.Size = new System.Drawing.Size(530, 47);
+            this.txt_edttrps_namaterapis.TabIndex = 9;
+            // 
+            // txt_edttrps_kodeterapis
+            // 
+            this.txt_edttrps_kodeterapis.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_edttrps_kodeterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_edttrps_kodeterapis.Location = new System.Drawing.Point(625, 34);
+            this.txt_edttrps_kodeterapis.MaxLength = 4;
+            this.txt_edttrps_kodeterapis.Name = "txt_edttrps_kodeterapis";
+            this.txt_edttrps_kodeterapis.Size = new System.Drawing.Size(92, 47);
+            this.txt_edttrps_kodeterapis.TabIndex = 8;
+            this.txt_edttrps_kodeterapis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_edttrps_kodeterapis_KeyPress);
+            // 
+            // lbl_edttrps_4
+            // 
+            this.lbl_edttrps_4.AutoSize = true;
+            this.lbl_edttrps_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edttrps_4.Location = new System.Drawing.Point(592, 271);
+            this.lbl_edttrps_4.Name = "lbl_edttrps_4";
+            this.lbl_edttrps_4.Size = new System.Drawing.Size(27, 39);
+            this.lbl_edttrps_4.TabIndex = 7;
+            this.lbl_edttrps_4.Text = ":";
+            // 
+            // lbl_edttrps_3
+            // 
+            this.lbl_edttrps_3.AutoSize = true;
+            this.lbl_edttrps_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edttrps_3.Location = new System.Drawing.Point(592, 193);
+            this.lbl_edttrps_3.Name = "lbl_edttrps_3";
+            this.lbl_edttrps_3.Size = new System.Drawing.Size(27, 39);
+            this.lbl_edttrps_3.TabIndex = 6;
+            this.lbl_edttrps_3.Text = ":";
+            // 
+            // lbl_edttrps_2
+            // 
+            this.lbl_edttrps_2.AutoSize = true;
+            this.lbl_edttrps_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edttrps_2.Location = new System.Drawing.Point(592, 115);
+            this.lbl_edttrps_2.Name = "lbl_edttrps_2";
+            this.lbl_edttrps_2.Size = new System.Drawing.Size(27, 39);
+            this.lbl_edttrps_2.TabIndex = 5;
+            this.lbl_edttrps_2.Text = ":";
+            // 
+            // lbl_edttrps_1
+            // 
+            this.lbl_edttrps_1.AutoSize = true;
+            this.lbl_edttrps_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edttrps_1.Location = new System.Drawing.Point(592, 37);
+            this.lbl_edttrps_1.Name = "lbl_edttrps_1";
+            this.lbl_edttrps_1.Size = new System.Drawing.Size(27, 39);
+            this.lbl_edttrps_1.TabIndex = 4;
+            this.lbl_edttrps_1.Text = ":";
+            // 
+            // lbl_edttrps_status
+            // 
+            this.lbl_edttrps_status.AutoSize = true;
+            this.lbl_edttrps_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edttrps_status.Location = new System.Drawing.Point(315, 271);
+            this.lbl_edttrps_status.Name = "lbl_edttrps_status";
+            this.lbl_edttrps_status.Size = new System.Drawing.Size(116, 39);
+            this.lbl_edttrps_status.TabIndex = 3;
+            this.lbl_edttrps_status.Text = "Status";
+            // 
+            // lbl_edttrps_upload
+            // 
+            this.lbl_edttrps_upload.AutoSize = true;
+            this.lbl_edttrps_upload.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edttrps_upload.Location = new System.Drawing.Point(315, 193);
+            this.lbl_edttrps_upload.Name = "lbl_edttrps_upload";
+            this.lbl_edttrps_upload.Size = new System.Drawing.Size(280, 39);
+            this.lbl_edttrps_upload.TabIndex = 2;
+            this.lbl_edttrps_upload.Text = "Upload Foto KTP";
+            // 
+            // lbl_edttrps_namaterapis
+            // 
+            this.lbl_edttrps_namaterapis.AutoSize = true;
+            this.lbl_edttrps_namaterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edttrps_namaterapis.Location = new System.Drawing.Point(315, 115);
+            this.lbl_edttrps_namaterapis.Name = "lbl_edttrps_namaterapis";
+            this.lbl_edttrps_namaterapis.Size = new System.Drawing.Size(235, 39);
+            this.lbl_edttrps_namaterapis.TabIndex = 1;
+            this.lbl_edttrps_namaterapis.Text = "Nama Terapis";
+            // 
+            // lbl_edttrps_kodeterapis
+            // 
+            this.lbl_edttrps_kodeterapis.AutoSize = true;
+            this.lbl_edttrps_kodeterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edttrps_kodeterapis.Location = new System.Drawing.Point(315, 37);
+            this.lbl_edttrps_kodeterapis.Name = "lbl_edttrps_kodeterapis";
+            this.lbl_edttrps_kodeterapis.Size = new System.Drawing.Size(222, 39);
+            this.lbl_edttrps_kodeterapis.TabIndex = 0;
+            this.lbl_edttrps_kodeterapis.Text = "Kode Terapis";
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.ClientSize = new System.Drawing.Size(1274, 652);
-            this.Controls.Add(this.pnl_tbhtrps_isi);
+            this.Controls.Add(this.pnl_edttrps_isi);
             this.Controls.Add(this.pnl_menu_isi);
             this.Controls.Add(this.pnl_login_isi);
             this.Controls.Add(this.pnl_ctknota_logo);
+            this.Controls.Add(this.pnl_tbhtrps_isi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1280, 680);
@@ -540,6 +780,9 @@
             this.pnl_tbhtrps_isi.ResumeLayout(false);
             this.pnl_tbhtrps_isi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict_tbhtrps_fotoKTP)).EndInit();
+            this.pnl_edttrps_isi.ResumeLayout(false);
+            this.pnl_edttrps_isi.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pict_edttrps_fotoKTP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -585,5 +828,24 @@
         private System.Windows.Forms.Label lbl_tbhtrps_upload;
         private System.Windows.Forms.Label lbl_tbhtrps_namaterapis;
         private System.Windows.Forms.Label lbl_tbhtrps_kodeterapis;
+        private System.Windows.Forms.Panel pnl_edttrps_isi;
+        private System.Windows.Forms.ListBox lsb_edttrps_kodeterapis;
+        private System.Windows.Forms.Button btn_edttrps_ok;
+        private System.Windows.Forms.PictureBox pict_edttrps_fotoKTP;
+        private System.Windows.Forms.Button btn_edttrps_batal;
+        private System.Windows.Forms.Button btn_edttrps_simpan;
+        private System.Windows.Forms.RadioButton rdo_edttrps_statustdkaktif;
+        private System.Windows.Forms.RadioButton rdo_edttrps_statusaktif;
+        private System.Windows.Forms.Button btn_edttrps_browsefoto;
+        private System.Windows.Forms.TextBox txt_edttrps_namaterapis;
+        private System.Windows.Forms.TextBox txt_edttrps_kodeterapis;
+        private System.Windows.Forms.Label lbl_edttrps_4;
+        private System.Windows.Forms.Label lbl_edttrps_3;
+        private System.Windows.Forms.Label lbl_edttrps_2;
+        private System.Windows.Forms.Label lbl_edttrps_1;
+        private System.Windows.Forms.Label lbl_edttrps_status;
+        private System.Windows.Forms.Label lbl_edttrps_upload;
+        private System.Windows.Forms.Label lbl_edttrps_namaterapis;
+        private System.Windows.Forms.Label lbl_edttrps_kodeterapis;
     }
 }
