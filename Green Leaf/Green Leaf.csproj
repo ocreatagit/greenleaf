@@ -74,6 +74,12 @@
     <Compile Include="frm_gantivariabel.Designer.cs">
       <DependentUpon>frm_gantivariabel.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_laporanpenjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_laporanpenjualan.Designer.cs">
+      <DependentUpon>frm_laporanpenjualan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_gantivariabel.resx">
       <DependentUpon>frm_gantivariabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_laporanpenjualan.resx">
+      <DependentUpon>frm_laporanpenjualan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_main.resx">
       <DependentUpon>frm_main.cs</DependentUpon>
