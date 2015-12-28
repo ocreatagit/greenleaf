@@ -3154,6 +3154,7 @@ namespace Green_Leaf
                 e.Handled = true;
             }
         }
+
         private void btn_ctknota_batal_Click(object sender, EventArgs e)
         {
             pnl_menu_isi.Visible = true;

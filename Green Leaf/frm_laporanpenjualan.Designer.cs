@@ -28,451 +28,474 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_ctknota_isi = new System.Windows.Forms.Panel();
-            this.lbl_ctknota_2 = new System.Windows.Forms.Label();
-            this.lbl_ctknota_nomorruangan = new System.Windows.Forms.Label();
-            this.dgv_ctknota_tabelhrgpkt = new System.Windows.Forms.DataGridView();
-            this.lbl_ctknota_totalyangdibayar = new System.Windows.Forms.Label();
-            this.btn_ctknota_batal = new System.Windows.Forms.Button();
-            this.btn_ctknota_cetak = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_lprnpnjln_tgldari = new System.Windows.Forms.DateTimePicker();
+            this.lbl_lprnpnjln_sumtotalsubtotal = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_rp4 = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_5 = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_totalsubtotal = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_totalhotel = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_sumtotalcash = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_rp3 = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_4 = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_totalcash = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_sumtotalcredit = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_rp2 = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_3 = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_totalcredit = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_sumtotalhargapaket = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_rp1 = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_2 = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_totalhrgapaket = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_sumtotalextra = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_rp7 = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_8 = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_totalextra = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_sumtotalhotel = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_rp6 = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_7 = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_sumtotaldiskon = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_rp5 = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_6 = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_1 = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_pilihtanggal = new System.Windows.Forms.Label();
+            this.dgv_lprnpnjln_tabellaporan = new System.Windows.Forms.DataGridView();
+            this.lbl_lprnpnjln_totaldiskon = new System.Windows.Forms.Label();
+            this.btn_lprnpnjln_batal = new System.Windows.Forms.Button();
+            this.btn_lprnpnjln_excel = new System.Windows.Forms.Button();
+            this.dtp_lprnpnjln_tglsampai = new System.Windows.Forms.DateTimePicker();
+            this.lbl_lprnpnjln_sampai = new System.Windows.Forms.Label();
             this.pnl_ctknota_isi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ctknota_tabelhrgpkt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_lprnpnjln_tabellaporan)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_ctknota_isi
             // 
             this.pnl_ctknota_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_ctknota_isi.Controls.Add(this.dateTimePicker1);
-            this.pnl_ctknota_isi.Controls.Add(this.label7);
-            this.pnl_ctknota_isi.Controls.Add(this.label13);
-            this.pnl_ctknota_isi.Controls.Add(this.label14);
-            this.pnl_ctknota_isi.Controls.Add(this.label15);
-            this.pnl_ctknota_isi.Controls.Add(this.label12);
-            this.pnl_ctknota_isi.Controls.Add(this.label32);
-            this.pnl_ctknota_isi.Controls.Add(this.label33);
-            this.pnl_ctknota_isi.Controls.Add(this.label34);
-            this.pnl_ctknota_isi.Controls.Add(this.label35);
-            this.pnl_ctknota_isi.Controls.Add(this.label28);
-            this.pnl_ctknota_isi.Controls.Add(this.label29);
-            this.pnl_ctknota_isi.Controls.Add(this.label30);
-            this.pnl_ctknota_isi.Controls.Add(this.label31);
-            this.pnl_ctknota_isi.Controls.Add(this.label24);
-            this.pnl_ctknota_isi.Controls.Add(this.label25);
-            this.pnl_ctknota_isi.Controls.Add(this.label26);
-            this.pnl_ctknota_isi.Controls.Add(this.label27);
-            this.pnl_ctknota_isi.Controls.Add(this.label8);
-            this.pnl_ctknota_isi.Controls.Add(this.label9);
-            this.pnl_ctknota_isi.Controls.Add(this.label10);
-            this.pnl_ctknota_isi.Controls.Add(this.label11);
-            this.pnl_ctknota_isi.Controls.Add(this.label4);
-            this.pnl_ctknota_isi.Controls.Add(this.label5);
-            this.pnl_ctknota_isi.Controls.Add(this.label6);
-            this.pnl_ctknota_isi.Controls.Add(this.label3);
-            this.pnl_ctknota_isi.Controls.Add(this.label1);
-            this.pnl_ctknota_isi.Controls.Add(this.label2);
-            this.pnl_ctknota_isi.Controls.Add(this.lbl_ctknota_2);
-            this.pnl_ctknota_isi.Controls.Add(this.lbl_ctknota_nomorruangan);
-            this.pnl_ctknota_isi.Controls.Add(this.dgv_ctknota_tabelhrgpkt);
-            this.pnl_ctknota_isi.Controls.Add(this.lbl_ctknota_totalyangdibayar);
-            this.pnl_ctknota_isi.Controls.Add(this.btn_ctknota_batal);
-            this.pnl_ctknota_isi.Controls.Add(this.btn_ctknota_cetak);
+            this.pnl_ctknota_isi.Controls.Add(this.dtp_lprnpnjln_tglsampai);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_sampai);
+            this.pnl_ctknota_isi.Controls.Add(this.dtp_lprnpnjln_tgldari);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_sumtotalsubtotal);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_rp4);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_5);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_totalsubtotal);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_totalhotel);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_sumtotalcash);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_rp3);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_4);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_totalcash);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_sumtotalcredit);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_rp2);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_3);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_totalcredit);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_sumtotalhargapaket);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_rp1);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_2);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_totalhrgapaket);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_sumtotalextra);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_rp7);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_8);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_totalextra);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_sumtotalhotel);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_rp6);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_7);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_sumtotaldiskon);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_rp5);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_6);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_1);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_pilihtanggal);
+            this.pnl_ctknota_isi.Controls.Add(this.dgv_lprnpnjln_tabellaporan);
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_totaldiskon);
+            this.pnl_ctknota_isi.Controls.Add(this.btn_lprnpnjln_batal);
+            this.pnl_ctknota_isi.Controls.Add(this.btn_lprnpnjln_excel);
             this.pnl_ctknota_isi.Location = new System.Drawing.Point(7, 57);
             this.pnl_ctknota_isi.Name = "pnl_ctknota_isi";
             this.pnl_ctknota_isi.Size = new System.Drawing.Size(1250, 528);
             this.pnl_ctknota_isi.TabIndex = 49;
             // 
-            // lbl_ctknota_2
-            // 
-            this.lbl_ctknota_2.AutoSize = true;
-            this.lbl_ctknota_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ctknota_2.Location = new System.Drawing.Point(260, 7);
-            this.lbl_ctknota_2.Name = "lbl_ctknota_2";
-            this.lbl_ctknota_2.Size = new System.Drawing.Size(23, 33);
-            this.lbl_ctknota_2.TabIndex = 70;
-            this.lbl_ctknota_2.Text = ":";
-            // 
-            // lbl_ctknota_nomorruangan
-            // 
-            this.lbl_ctknota_nomorruangan.AutoSize = true;
-            this.lbl_ctknota_nomorruangan.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ctknota_nomorruangan.Location = new System.Drawing.Point(26, 7);
-            this.lbl_ctknota_nomorruangan.Name = "lbl_ctknota_nomorruangan";
-            this.lbl_ctknota_nomorruangan.Size = new System.Drawing.Size(228, 33);
-            this.lbl_ctknota_nomorruangan.TabIndex = 69;
-            this.lbl_ctknota_nomorruangan.Text = "Nomor Ruangan";
-            // 
-            // dgv_ctknota_tabelhrgpkt
-            // 
-            this.dgv_ctknota_tabelhrgpkt.AllowUserToAddRows = false;
-            this.dgv_ctknota_tabelhrgpkt.AllowUserToDeleteRows = false;
-            this.dgv_ctknota_tabelhrgpkt.AllowUserToResizeColumns = false;
-            this.dgv_ctknota_tabelhrgpkt.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_ctknota_tabelhrgpkt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgv_ctknota_tabelhrgpkt.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_ctknota_tabelhrgpkt.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersHeight = 40;
-            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv_ctknota_tabelhrgpkt.Location = new System.Drawing.Point(32, 104);
-            this.dgv_ctknota_tabelhrgpkt.MultiSelect = false;
-            this.dgv_ctknota_tabelhrgpkt.Name = "dgv_ctknota_tabelhrgpkt";
-            this.dgv_ctknota_tabelhrgpkt.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgv_ctknota_tabelhrgpkt.RowHeadersVisible = false;
-            this.dgv_ctknota_tabelhrgpkt.RowHeadersWidth = 40;
-            this.dgv_ctknota_tabelhrgpkt.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgv_ctknota_tabelhrgpkt.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dgv_ctknota_tabelhrgpkt.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_ctknota_tabelhrgpkt.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgv_ctknota_tabelhrgpkt.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
-            this.dgv_ctknota_tabelhrgpkt.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_ctknota_tabelhrgpkt.RowTemplate.Height = 40;
-            this.dgv_ctknota_tabelhrgpkt.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ctknota_tabelhrgpkt.ShowCellErrors = false;
-            this.dgv_ctknota_tabelhrgpkt.ShowCellToolTips = false;
-            this.dgv_ctknota_tabelhrgpkt.ShowEditingIcon = false;
-            this.dgv_ctknota_tabelhrgpkt.ShowRowErrors = false;
-            this.dgv_ctknota_tabelhrgpkt.Size = new System.Drawing.Size(1185, 162);
-            this.dgv_ctknota_tabelhrgpkt.TabIndex = 7;
-            // 
-            // lbl_ctknota_totalyangdibayar
-            // 
-            this.lbl_ctknota_totalyangdibayar.AutoSize = true;
-            this.lbl_ctknota_totalyangdibayar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ctknota_totalyangdibayar.Location = new System.Drawing.Point(218, 290);
-            this.lbl_ctknota_totalyangdibayar.Name = "lbl_ctknota_totalyangdibayar";
-            this.lbl_ctknota_totalyangdibayar.Size = new System.Drawing.Size(191, 58);
-            this.lbl_ctknota_totalyangdibayar.TabIndex = 38;
-            this.lbl_ctknota_totalyangdibayar.Text = "Total Potongan\r\nDiskon";
-            // 
-            // btn_ctknota_batal
-            // 
-            this.btn_ctknota_batal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ctknota_batal.Location = new System.Drawing.Point(1058, 455);
-            this.btn_ctknota_batal.Name = "btn_ctknota_batal";
-            this.btn_ctknota_batal.Size = new System.Drawing.Size(155, 60);
-            this.btn_ctknota_batal.TabIndex = 15;
-            this.btn_ctknota_batal.Text = "Batal";
-            this.btn_ctknota_batal.UseVisualStyleBackColor = true;
-            // 
-            // btn_ctknota_cetak
-            // 
-            this.btn_ctknota_cetak.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ctknota_cetak.Location = new System.Drawing.Point(32, 392);
-            this.btn_ctknota_cetak.Name = "btn_ctknota_cetak";
-            this.btn_ctknota_cetak.Size = new System.Drawing.Size(169, 98);
-            this.btn_ctknota_cetak.TabIndex = 14;
-            this.btn_ctknota_cetak.Text = "Convert Excel";
-            this.btn_ctknota_cetak.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(456, 290);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 29);
-            this.label1.TabIndex = 76;
-            this.label1.Text = "Rp.";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(442, 290);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 29);
-            this.label2.TabIndex = 77;
-            this.label2.Text = ":";
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(500, 290);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 29);
-            this.label3.TabIndex = 78;
-            this.label3.Text = "999.999.999.999";
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(500, 363);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(203, 29);
-            this.label4.TabIndex = 82;
-            this.label4.Text = "999.999.999.999";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(456, 363);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 29);
-            this.label5.TabIndex = 80;
-            this.label5.Text = "Rp.";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(442, 363);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 29);
-            this.label6.TabIndex = 81;
-            this.label6.Text = ":";
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(500, 441);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(203, 29);
-            this.label8.TabIndex = 86;
-            this.label8.Text = "999.999.999.999";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(456, 441);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 29);
-            this.label9.TabIndex = 84;
-            this.label9.Text = "Rp.";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(442, 441);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(20, 29);
-            this.label10.TabIndex = 85;
-            this.label10.Text = ":";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(218, 441);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(177, 58);
-            this.label11.TabIndex = 83;
-            this.label11.Text = "Total Nominal\r\nExtra";
-            // 
-            // label24
-            // 
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(1031, 290);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(203, 29);
-            this.label24.TabIndex = 102;
-            this.label24.Text = "999.999.999.999";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(987, 290);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(53, 29);
-            this.label25.TabIndex = 100;
-            this.label25.Text = "Rp.";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(973, 290);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(20, 29);
-            this.label26.TabIndex = 101;
-            this.label26.Text = ":";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(749, 290);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(223, 29);
-            this.label27.TabIndex = 99;
-            this.label27.Text = "Total Harga Paket";
-            // 
-            // label28
-            // 
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(1031, 325);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(203, 29);
-            this.label28.TabIndex = 106;
-            this.label28.Text = "999.999.999.999";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(987, 325);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(53, 29);
-            this.label29.TabIndex = 104;
-            this.label29.Text = "Rp.";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(973, 325);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(20, 29);
-            this.label30.TabIndex = 105;
-            this.label30.Text = ":";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(749, 325);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(151, 29);
-            this.label31.TabIndex = 103;
-            this.label31.Text = "Total Credit";
-            // 
-            // label32
-            // 
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(1031, 360);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(203, 29);
-            this.label32.TabIndex = 110;
-            this.label32.Text = "999.999.999.999";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(987, 360);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(53, 29);
-            this.label33.TabIndex = 108;
-            this.label33.Text = "Rp.";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(973, 360);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(20, 29);
-            this.label34.TabIndex = 109;
-            this.label34.Text = ":";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(749, 360);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(139, 29);
-            this.label35.TabIndex = 107;
-            this.label35.Text = "Total Cash";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(218, 363);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(191, 58);
-            this.label12.TabIndex = 111;
-            this.label12.Text = "Total Potongan\r\nTamu Hotel";
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1031, 395);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(203, 29);
-            this.label7.TabIndex = 115;
-            this.label7.Text = "999.999.999.999";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(987, 395);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 29);
-            this.label13.TabIndex = 113;
-            this.label13.Text = "Rp.";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(973, 395);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(20, 29);
-            this.label14.TabIndex = 114;
-            this.label14.Text = ":";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(749, 395);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(176, 29);
-            this.label15.TabIndex = 112;
-            this.label15.Text = "Total Subtotal";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(289, 7);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(255, 35);
-            this.dateTimePicker1.TabIndex = 116;
+            // dtp_lprnpnjln_tgldari
+            // 
+            this.dtp_lprnpnjln_tgldari.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_lprnpnjln_tgldari.Location = new System.Drawing.Point(277, 29);
+            this.dtp_lprnpnjln_tgldari.Name = "dtp_lprnpnjln_tgldari";
+            this.dtp_lprnpnjln_tgldari.Size = new System.Drawing.Size(363, 35);
+            this.dtp_lprnpnjln_tgldari.TabIndex = 116;
+            // 
+            // lbl_lprnpnjln_sumtotalsubtotal
+            // 
+            this.lbl_lprnpnjln_sumtotalsubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_sumtotalsubtotal.Location = new System.Drawing.Point(1031, 395);
+            this.lbl_lprnpnjln_sumtotalsubtotal.Name = "lbl_lprnpnjln_sumtotalsubtotal";
+            this.lbl_lprnpnjln_sumtotalsubtotal.Size = new System.Drawing.Size(203, 29);
+            this.lbl_lprnpnjln_sumtotalsubtotal.TabIndex = 115;
+            this.lbl_lprnpnjln_sumtotalsubtotal.Text = "999.999.999.999";
+            // 
+            // lbl_lprnpnjln_rp4
+            // 
+            this.lbl_lprnpnjln_rp4.AutoSize = true;
+            this.lbl_lprnpnjln_rp4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_rp4.Location = new System.Drawing.Point(987, 395);
+            this.lbl_lprnpnjln_rp4.Name = "lbl_lprnpnjln_rp4";
+            this.lbl_lprnpnjln_rp4.Size = new System.Drawing.Size(53, 29);
+            this.lbl_lprnpnjln_rp4.TabIndex = 113;
+            this.lbl_lprnpnjln_rp4.Text = "Rp.";
+            // 
+            // lbl_lprnpnjln_5
+            // 
+            this.lbl_lprnpnjln_5.AutoSize = true;
+            this.lbl_lprnpnjln_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_5.Location = new System.Drawing.Point(973, 395);
+            this.lbl_lprnpnjln_5.Name = "lbl_lprnpnjln_5";
+            this.lbl_lprnpnjln_5.Size = new System.Drawing.Size(20, 29);
+            this.lbl_lprnpnjln_5.TabIndex = 114;
+            this.lbl_lprnpnjln_5.Text = ":";
+            // 
+            // lbl_lprnpnjln_totalsubtotal
+            // 
+            this.lbl_lprnpnjln_totalsubtotal.AutoSize = true;
+            this.lbl_lprnpnjln_totalsubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_totalsubtotal.Location = new System.Drawing.Point(749, 395);
+            this.lbl_lprnpnjln_totalsubtotal.Name = "lbl_lprnpnjln_totalsubtotal";
+            this.lbl_lprnpnjln_totalsubtotal.Size = new System.Drawing.Size(176, 29);
+            this.lbl_lprnpnjln_totalsubtotal.TabIndex = 112;
+            this.lbl_lprnpnjln_totalsubtotal.Text = "Total Subtotal";
+            // 
+            // lbl_lprnpnjln_totalhotel
+            // 
+            this.lbl_lprnpnjln_totalhotel.AutoSize = true;
+            this.lbl_lprnpnjln_totalhotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_totalhotel.Location = new System.Drawing.Point(218, 363);
+            this.lbl_lprnpnjln_totalhotel.Name = "lbl_lprnpnjln_totalhotel";
+            this.lbl_lprnpnjln_totalhotel.Size = new System.Drawing.Size(191, 58);
+            this.lbl_lprnpnjln_totalhotel.TabIndex = 111;
+            this.lbl_lprnpnjln_totalhotel.Text = "Total Potongan\r\nTamu Hotel";
+            // 
+            // lbl_lprnpnjln_sumtotalcash
+            // 
+            this.lbl_lprnpnjln_sumtotalcash.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_sumtotalcash.Location = new System.Drawing.Point(1031, 360);
+            this.lbl_lprnpnjln_sumtotalcash.Name = "lbl_lprnpnjln_sumtotalcash";
+            this.lbl_lprnpnjln_sumtotalcash.Size = new System.Drawing.Size(203, 29);
+            this.lbl_lprnpnjln_sumtotalcash.TabIndex = 110;
+            this.lbl_lprnpnjln_sumtotalcash.Text = "999.999.999.999";
+            // 
+            // lbl_lprnpnjln_rp3
+            // 
+            this.lbl_lprnpnjln_rp3.AutoSize = true;
+            this.lbl_lprnpnjln_rp3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_rp3.Location = new System.Drawing.Point(987, 360);
+            this.lbl_lprnpnjln_rp3.Name = "lbl_lprnpnjln_rp3";
+            this.lbl_lprnpnjln_rp3.Size = new System.Drawing.Size(53, 29);
+            this.lbl_lprnpnjln_rp3.TabIndex = 108;
+            this.lbl_lprnpnjln_rp3.Text = "Rp.";
+            // 
+            // lbl_lprnpnjln_4
+            // 
+            this.lbl_lprnpnjln_4.AutoSize = true;
+            this.lbl_lprnpnjln_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_4.Location = new System.Drawing.Point(973, 360);
+            this.lbl_lprnpnjln_4.Name = "lbl_lprnpnjln_4";
+            this.lbl_lprnpnjln_4.Size = new System.Drawing.Size(20, 29);
+            this.lbl_lprnpnjln_4.TabIndex = 109;
+            this.lbl_lprnpnjln_4.Text = ":";
+            // 
+            // lbl_lprnpnjln_totalcash
+            // 
+            this.lbl_lprnpnjln_totalcash.AutoSize = true;
+            this.lbl_lprnpnjln_totalcash.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_totalcash.Location = new System.Drawing.Point(749, 360);
+            this.lbl_lprnpnjln_totalcash.Name = "lbl_lprnpnjln_totalcash";
+            this.lbl_lprnpnjln_totalcash.Size = new System.Drawing.Size(139, 29);
+            this.lbl_lprnpnjln_totalcash.TabIndex = 107;
+            this.lbl_lprnpnjln_totalcash.Text = "Total Cash";
+            // 
+            // lbl_lprnpnjln_sumtotalcredit
+            // 
+            this.lbl_lprnpnjln_sumtotalcredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_sumtotalcredit.Location = new System.Drawing.Point(1031, 325);
+            this.lbl_lprnpnjln_sumtotalcredit.Name = "lbl_lprnpnjln_sumtotalcredit";
+            this.lbl_lprnpnjln_sumtotalcredit.Size = new System.Drawing.Size(203, 29);
+            this.lbl_lprnpnjln_sumtotalcredit.TabIndex = 106;
+            this.lbl_lprnpnjln_sumtotalcredit.Text = "999.999.999.999";
+            // 
+            // lbl_lprnpnjln_rp2
+            // 
+            this.lbl_lprnpnjln_rp2.AutoSize = true;
+            this.lbl_lprnpnjln_rp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_rp2.Location = new System.Drawing.Point(987, 325);
+            this.lbl_lprnpnjln_rp2.Name = "lbl_lprnpnjln_rp2";
+            this.lbl_lprnpnjln_rp2.Size = new System.Drawing.Size(53, 29);
+            this.lbl_lprnpnjln_rp2.TabIndex = 104;
+            this.lbl_lprnpnjln_rp2.Text = "Rp.";
+            // 
+            // lbl_lprnpnjln_3
+            // 
+            this.lbl_lprnpnjln_3.AutoSize = true;
+            this.lbl_lprnpnjln_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_3.Location = new System.Drawing.Point(973, 325);
+            this.lbl_lprnpnjln_3.Name = "lbl_lprnpnjln_3";
+            this.lbl_lprnpnjln_3.Size = new System.Drawing.Size(20, 29);
+            this.lbl_lprnpnjln_3.TabIndex = 105;
+            this.lbl_lprnpnjln_3.Text = ":";
+            // 
+            // lbl_lprnpnjln_totalcredit
+            // 
+            this.lbl_lprnpnjln_totalcredit.AutoSize = true;
+            this.lbl_lprnpnjln_totalcredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_totalcredit.Location = new System.Drawing.Point(749, 325);
+            this.lbl_lprnpnjln_totalcredit.Name = "lbl_lprnpnjln_totalcredit";
+            this.lbl_lprnpnjln_totalcredit.Size = new System.Drawing.Size(151, 29);
+            this.lbl_lprnpnjln_totalcredit.TabIndex = 103;
+            this.lbl_lprnpnjln_totalcredit.Text = "Total Credit";
+            // 
+            // lbl_lprnpnjln_sumtotalhargapaket
+            // 
+            this.lbl_lprnpnjln_sumtotalhargapaket.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_sumtotalhargapaket.Location = new System.Drawing.Point(1031, 290);
+            this.lbl_lprnpnjln_sumtotalhargapaket.Name = "lbl_lprnpnjln_sumtotalhargapaket";
+            this.lbl_lprnpnjln_sumtotalhargapaket.Size = new System.Drawing.Size(203, 29);
+            this.lbl_lprnpnjln_sumtotalhargapaket.TabIndex = 102;
+            this.lbl_lprnpnjln_sumtotalhargapaket.Text = "999.999.999.999";
+            // 
+            // lbl_lprnpnjln_rp1
+            // 
+            this.lbl_lprnpnjln_rp1.AutoSize = true;
+            this.lbl_lprnpnjln_rp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_rp1.Location = new System.Drawing.Point(987, 290);
+            this.lbl_lprnpnjln_rp1.Name = "lbl_lprnpnjln_rp1";
+            this.lbl_lprnpnjln_rp1.Size = new System.Drawing.Size(53, 29);
+            this.lbl_lprnpnjln_rp1.TabIndex = 100;
+            this.lbl_lprnpnjln_rp1.Text = "Rp.";
+            // 
+            // lbl_lprnpnjln_2
+            // 
+            this.lbl_lprnpnjln_2.AutoSize = true;
+            this.lbl_lprnpnjln_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_2.Location = new System.Drawing.Point(973, 290);
+            this.lbl_lprnpnjln_2.Name = "lbl_lprnpnjln_2";
+            this.lbl_lprnpnjln_2.Size = new System.Drawing.Size(20, 29);
+            this.lbl_lprnpnjln_2.TabIndex = 101;
+            this.lbl_lprnpnjln_2.Text = ":";
+            // 
+            // lbl_lprnpnjln_totalhrgapaket
+            // 
+            this.lbl_lprnpnjln_totalhrgapaket.AutoSize = true;
+            this.lbl_lprnpnjln_totalhrgapaket.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_totalhrgapaket.Location = new System.Drawing.Point(749, 290);
+            this.lbl_lprnpnjln_totalhrgapaket.Name = "lbl_lprnpnjln_totalhrgapaket";
+            this.lbl_lprnpnjln_totalhrgapaket.Size = new System.Drawing.Size(223, 29);
+            this.lbl_lprnpnjln_totalhrgapaket.TabIndex = 99;
+            this.lbl_lprnpnjln_totalhrgapaket.Text = "Total Harga Paket";
+            // 
+            // lbl_lprnpnjln_sumtotalextra
+            // 
+            this.lbl_lprnpnjln_sumtotalextra.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_sumtotalextra.Location = new System.Drawing.Point(500, 441);
+            this.lbl_lprnpnjln_sumtotalextra.Name = "lbl_lprnpnjln_sumtotalextra";
+            this.lbl_lprnpnjln_sumtotalextra.Size = new System.Drawing.Size(203, 29);
+            this.lbl_lprnpnjln_sumtotalextra.TabIndex = 86;
+            this.lbl_lprnpnjln_sumtotalextra.Text = "999.999.999.999";
+            // 
+            // lbl_lprnpnjln_rp7
+            // 
+            this.lbl_lprnpnjln_rp7.AutoSize = true;
+            this.lbl_lprnpnjln_rp7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_rp7.Location = new System.Drawing.Point(456, 441);
+            this.lbl_lprnpnjln_rp7.Name = "lbl_lprnpnjln_rp7";
+            this.lbl_lprnpnjln_rp7.Size = new System.Drawing.Size(53, 29);
+            this.lbl_lprnpnjln_rp7.TabIndex = 84;
+            this.lbl_lprnpnjln_rp7.Text = "Rp.";
+            // 
+            // lbl_lprnpnjln_8
+            // 
+            this.lbl_lprnpnjln_8.AutoSize = true;
+            this.lbl_lprnpnjln_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_8.Location = new System.Drawing.Point(442, 441);
+            this.lbl_lprnpnjln_8.Name = "lbl_lprnpnjln_8";
+            this.lbl_lprnpnjln_8.Size = new System.Drawing.Size(20, 29);
+            this.lbl_lprnpnjln_8.TabIndex = 85;
+            this.lbl_lprnpnjln_8.Text = ":";
+            // 
+            // lbl_lprnpnjln_totalextra
+            // 
+            this.lbl_lprnpnjln_totalextra.AutoSize = true;
+            this.lbl_lprnpnjln_totalextra.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_totalextra.Location = new System.Drawing.Point(218, 441);
+            this.lbl_lprnpnjln_totalextra.Name = "lbl_lprnpnjln_totalextra";
+            this.lbl_lprnpnjln_totalextra.Size = new System.Drawing.Size(177, 58);
+            this.lbl_lprnpnjln_totalextra.TabIndex = 83;
+            this.lbl_lprnpnjln_totalextra.Text = "Total Nominal\r\nExtra";
+            // 
+            // lbl_lprnpnjln_sumtotalhotel
+            // 
+            this.lbl_lprnpnjln_sumtotalhotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_sumtotalhotel.Location = new System.Drawing.Point(500, 363);
+            this.lbl_lprnpnjln_sumtotalhotel.Name = "lbl_lprnpnjln_sumtotalhotel";
+            this.lbl_lprnpnjln_sumtotalhotel.Size = new System.Drawing.Size(203, 29);
+            this.lbl_lprnpnjln_sumtotalhotel.TabIndex = 82;
+            this.lbl_lprnpnjln_sumtotalhotel.Text = "999.999.999.999";
+            // 
+            // lbl_lprnpnjln_rp6
+            // 
+            this.lbl_lprnpnjln_rp6.AutoSize = true;
+            this.lbl_lprnpnjln_rp6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_rp6.Location = new System.Drawing.Point(456, 363);
+            this.lbl_lprnpnjln_rp6.Name = "lbl_lprnpnjln_rp6";
+            this.lbl_lprnpnjln_rp6.Size = new System.Drawing.Size(53, 29);
+            this.lbl_lprnpnjln_rp6.TabIndex = 80;
+            this.lbl_lprnpnjln_rp6.Text = "Rp.";
+            // 
+            // lbl_lprnpnjln_7
+            // 
+            this.lbl_lprnpnjln_7.AutoSize = true;
+            this.lbl_lprnpnjln_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_7.Location = new System.Drawing.Point(442, 363);
+            this.lbl_lprnpnjln_7.Name = "lbl_lprnpnjln_7";
+            this.lbl_lprnpnjln_7.Size = new System.Drawing.Size(20, 29);
+            this.lbl_lprnpnjln_7.TabIndex = 81;
+            this.lbl_lprnpnjln_7.Text = ":";
+            // 
+            // lbl_lprnpnjln_sumtotaldiskon
+            // 
+            this.lbl_lprnpnjln_sumtotaldiskon.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_sumtotaldiskon.Location = new System.Drawing.Point(500, 290);
+            this.lbl_lprnpnjln_sumtotaldiskon.Name = "lbl_lprnpnjln_sumtotaldiskon";
+            this.lbl_lprnpnjln_sumtotaldiskon.Size = new System.Drawing.Size(203, 29);
+            this.lbl_lprnpnjln_sumtotaldiskon.TabIndex = 78;
+            this.lbl_lprnpnjln_sumtotaldiskon.Text = "999.999.999.999";
+            // 
+            // lbl_lprnpnjln_rp5
+            // 
+            this.lbl_lprnpnjln_rp5.AutoSize = true;
+            this.lbl_lprnpnjln_rp5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_rp5.Location = new System.Drawing.Point(456, 290);
+            this.lbl_lprnpnjln_rp5.Name = "lbl_lprnpnjln_rp5";
+            this.lbl_lprnpnjln_rp5.Size = new System.Drawing.Size(53, 29);
+            this.lbl_lprnpnjln_rp5.TabIndex = 76;
+            this.lbl_lprnpnjln_rp5.Text = "Rp.";
+            // 
+            // lbl_lprnpnjln_6
+            // 
+            this.lbl_lprnpnjln_6.AutoSize = true;
+            this.lbl_lprnpnjln_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_6.Location = new System.Drawing.Point(442, 290);
+            this.lbl_lprnpnjln_6.Name = "lbl_lprnpnjln_6";
+            this.lbl_lprnpnjln_6.Size = new System.Drawing.Size(20, 29);
+            this.lbl_lprnpnjln_6.TabIndex = 77;
+            this.lbl_lprnpnjln_6.Text = ":";
+            // 
+            // lbl_lprnpnjln_1
+            // 
+            this.lbl_lprnpnjln_1.AutoSize = true;
+            this.lbl_lprnpnjln_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_1.Location = new System.Drawing.Point(248, 30);
+            this.lbl_lprnpnjln_1.Name = "lbl_lprnpnjln_1";
+            this.lbl_lprnpnjln_1.Size = new System.Drawing.Size(23, 33);
+            this.lbl_lprnpnjln_1.TabIndex = 70;
+            this.lbl_lprnpnjln_1.Text = ":";
+            // 
+            // lbl_lprnpnjln_pilihtanggal
+            // 
+            this.lbl_lprnpnjln_pilihtanggal.AutoSize = true;
+            this.lbl_lprnpnjln_pilihtanggal.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_pilihtanggal.Location = new System.Drawing.Point(58, 30);
+            this.lbl_lprnpnjln_pilihtanggal.Name = "lbl_lprnpnjln_pilihtanggal";
+            this.lbl_lprnpnjln_pilihtanggal.Size = new System.Drawing.Size(184, 33);
+            this.lbl_lprnpnjln_pilihtanggal.TabIndex = 69;
+            this.lbl_lprnpnjln_pilihtanggal.Text = "Pilih Tanggal";
+            // 
+            // dgv_lprnpnjln_tabellaporan
+            // 
+            this.dgv_lprnpnjln_tabellaporan.AllowUserToAddRows = false;
+            this.dgv_lprnpnjln_tabellaporan.AllowUserToDeleteRows = false;
+            this.dgv_lprnpnjln_tabellaporan.AllowUserToResizeColumns = false;
+            this.dgv_lprnpnjln_tabellaporan.AllowUserToResizeRows = false;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnpnjln_tabellaporan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgv_lprnpnjln_tabellaporan.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_lprnpnjln_tabellaporan.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgv_lprnpnjln_tabellaporan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lprnpnjln_tabellaporan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgv_lprnpnjln_tabellaporan.ColumnHeadersHeight = 40;
+            this.dgv_lprnpnjln_tabellaporan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_lprnpnjln_tabellaporan.Location = new System.Drawing.Point(32, 104);
+            this.dgv_lprnpnjln_tabellaporan.MultiSelect = false;
+            this.dgv_lprnpnjln_tabellaporan.Name = "dgv_lprnpnjln_tabellaporan";
+            this.dgv_lprnpnjln_tabellaporan.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgv_lprnpnjln_tabellaporan.RowHeadersVisible = false;
+            this.dgv_lprnpnjln_tabellaporan.RowHeadersWidth = 40;
+            this.dgv_lprnpnjln_tabellaporan.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
+            this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_lprnpnjln_tabellaporan.RowTemplate.Height = 40;
+            this.dgv_lprnpnjln_tabellaporan.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_lprnpnjln_tabellaporan.ShowCellErrors = false;
+            this.dgv_lprnpnjln_tabellaporan.ShowCellToolTips = false;
+            this.dgv_lprnpnjln_tabellaporan.ShowEditingIcon = false;
+            this.dgv_lprnpnjln_tabellaporan.ShowRowErrors = false;
+            this.dgv_lprnpnjln_tabellaporan.Size = new System.Drawing.Size(1185, 162);
+            this.dgv_lprnpnjln_tabellaporan.TabIndex = 7;
+            // 
+            // lbl_lprnpnjln_totaldiskon
+            // 
+            this.lbl_lprnpnjln_totaldiskon.AutoSize = true;
+            this.lbl_lprnpnjln_totaldiskon.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_totaldiskon.Location = new System.Drawing.Point(218, 290);
+            this.lbl_lprnpnjln_totaldiskon.Name = "lbl_lprnpnjln_totaldiskon";
+            this.lbl_lprnpnjln_totaldiskon.Size = new System.Drawing.Size(191, 58);
+            this.lbl_lprnpnjln_totaldiskon.TabIndex = 38;
+            this.lbl_lprnpnjln_totaldiskon.Text = "Total Potongan\r\nDiskon";
+            // 
+            // btn_lprnpnjln_batal
+            // 
+            this.btn_lprnpnjln_batal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_lprnpnjln_batal.Location = new System.Drawing.Point(1058, 455);
+            this.btn_lprnpnjln_batal.Name = "btn_lprnpnjln_batal";
+            this.btn_lprnpnjln_batal.Size = new System.Drawing.Size(155, 60);
+            this.btn_lprnpnjln_batal.TabIndex = 15;
+            this.btn_lprnpnjln_batal.Text = "Batal";
+            this.btn_lprnpnjln_batal.UseVisualStyleBackColor = true;
+            // 
+            // btn_lprnpnjln_excel
+            // 
+            this.btn_lprnpnjln_excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_lprnpnjln_excel.Location = new System.Drawing.Point(32, 401);
+            this.btn_lprnpnjln_excel.Name = "btn_lprnpnjln_excel";
+            this.btn_lprnpnjln_excel.Size = new System.Drawing.Size(169, 98);
+            this.btn_lprnpnjln_excel.TabIndex = 14;
+            this.btn_lprnpnjln_excel.Text = "Convert Excel";
+            this.btn_lprnpnjln_excel.UseVisualStyleBackColor = true;
+            // 
+            // dtp_lprnpnjln_tglsampai
+            // 
+            this.dtp_lprnpnjln_tglsampai.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_lprnpnjln_tglsampai.Location = new System.Drawing.Point(819, 29);
+            this.dtp_lprnpnjln_tglsampai.Name = "dtp_lprnpnjln_tglsampai";
+            this.dtp_lprnpnjln_tglsampai.Size = new System.Drawing.Size(363, 35);
+            this.dtp_lprnpnjln_tglsampai.TabIndex = 119;
+            this.dtp_lprnpnjln_tglsampai.ValueChanged += new System.EventHandler(this.dtp_lprnpnjln_tglsampai_ValueChanged);
+            // 
+            // lbl_lprnpnjln_sampai
+            // 
+            this.lbl_lprnpnjln_sampai.AutoSize = true;
+            this.lbl_lprnpnjln_sampai.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_sampai.Location = new System.Drawing.Point(670, 30);
+            this.lbl_lprnpnjln_sampai.Name = "lbl_lprnpnjln_sampai";
+            this.lbl_lprnpnjln_sampai.Size = new System.Drawing.Size(114, 33);
+            this.lbl_lprnpnjln_sampai.TabIndex = 117;
+            this.lbl_lprnpnjln_sampai.Text = "Sampai";
             // 
             // frm_laporanpenjualan
             // 
@@ -484,9 +507,10 @@
             this.MinimumSize = new System.Drawing.Size(1280, 680);
             this.Name = "frm_laporanpenjualan";
             this.Text = "frm_laporanpenjualan";
+            this.Load += new System.EventHandler(this.frm_laporanpenjualan_Load);
             this.pnl_ctknota_isi.ResumeLayout(false);
             this.pnl_ctknota_isi.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ctknota_tabelhrgpkt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_lprnpnjln_tabellaporan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -494,39 +518,41 @@
         #endregion
 
         private System.Windows.Forms.Panel pnl_ctknota_isi;
-        private System.Windows.Forms.Label lbl_ctknota_2;
-        private System.Windows.Forms.Label lbl_ctknota_nomorruangan;
-        private System.Windows.Forms.DataGridView dgv_ctknota_tabelhrgpkt;
-        private System.Windows.Forms.Label lbl_ctknota_totalyangdibayar;
-        private System.Windows.Forms.Button btn_ctknota_batal;
-        private System.Windows.Forms.Button btn_ctknota_cetak;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_lprnpnjln_1;
+        private System.Windows.Forms.Label lbl_lprnpnjln_pilihtanggal;
+        private System.Windows.Forms.DataGridView dgv_lprnpnjln_tabellaporan;
+        private System.Windows.Forms.Label lbl_lprnpnjln_totaldiskon;
+        private System.Windows.Forms.Button btn_lprnpnjln_batal;
+        private System.Windows.Forms.Button btn_lprnpnjln_excel;
+        private System.Windows.Forms.DateTimePicker dtp_lprnpnjln_tgldari;
+        private System.Windows.Forms.Label lbl_lprnpnjln_sumtotalsubtotal;
+        private System.Windows.Forms.Label lbl_lprnpnjln_rp4;
+        private System.Windows.Forms.Label lbl_lprnpnjln_5;
+        private System.Windows.Forms.Label lbl_lprnpnjln_totalsubtotal;
+        private System.Windows.Forms.Label lbl_lprnpnjln_totalhotel;
+        private System.Windows.Forms.Label lbl_lprnpnjln_sumtotalcash;
+        private System.Windows.Forms.Label lbl_lprnpnjln_rp3;
+        private System.Windows.Forms.Label lbl_lprnpnjln_4;
+        private System.Windows.Forms.Label lbl_lprnpnjln_totalcash;
+        private System.Windows.Forms.Label lbl_lprnpnjln_sumtotalcredit;
+        private System.Windows.Forms.Label lbl_lprnpnjln_rp2;
+        private System.Windows.Forms.Label lbl_lprnpnjln_3;
+        private System.Windows.Forms.Label lbl_lprnpnjln_totalcredit;
+        private System.Windows.Forms.Label lbl_lprnpnjln_sumtotalhargapaket;
+        private System.Windows.Forms.Label lbl_lprnpnjln_rp1;
+        private System.Windows.Forms.Label lbl_lprnpnjln_2;
+        private System.Windows.Forms.Label lbl_lprnpnjln_totalhrgapaket;
+        private System.Windows.Forms.Label lbl_lprnpnjln_sumtotalextra;
+        private System.Windows.Forms.Label lbl_lprnpnjln_rp7;
+        private System.Windows.Forms.Label lbl_lprnpnjln_8;
+        private System.Windows.Forms.Label lbl_lprnpnjln_totalextra;
+        private System.Windows.Forms.Label lbl_lprnpnjln_sumtotalhotel;
+        private System.Windows.Forms.Label lbl_lprnpnjln_rp6;
+        private System.Windows.Forms.Label lbl_lprnpnjln_7;
+        private System.Windows.Forms.Label lbl_lprnpnjln_sumtotaldiskon;
+        private System.Windows.Forms.Label lbl_lprnpnjln_rp5;
+        private System.Windows.Forms.Label lbl_lprnpnjln_6;
+        private System.Windows.Forms.DateTimePicker dtp_lprnpnjln_tglsampai;
+        private System.Windows.Forms.Label lbl_lprnpnjln_sampai;
     }
 }
