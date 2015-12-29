@@ -13,3 +13,7 @@ C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj
 C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Release\Green Leaf.pdb
 C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Release\Green_Leaf.frm_cetaknota.resources
 C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Release\Green_Leaf.frm_editpaket.resources
+C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Release\Green_Leaf.frm_gantivariabel.resources
+C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Release\Green_Leaf.frm_laporanpenjualan.resources
+C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Release\Green_Leaf.frm_main.resources
+C:\Users\William\documents\visual studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Release\Green_Leaf.frm_menu.resources
