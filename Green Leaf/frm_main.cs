@@ -3093,50 +3093,57 @@ namespace Green_Leaf
 
         private void dgv_ctknota_tabelhrgpkt_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgv_ctknota_tabelhrgpkt.CurrentCell.OwningColumn.Name == "Pilih")
-            {
-                ctknota_countExtraColumn = 0;
-                dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].Visible = false;
-                dgv_ctknota_tabelhrgpkt.Columns["Extra"].ReadOnly = true;
-                for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
-                {
-                    dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value = false;
+            var senderGrid = (DataGridView)sender;
 
-                }
-                for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn &&
+                e.RowIndex >= 0)
+            {
+                if (dgv_ctknota_tabelhrgpkt.CurrentCell.OwningColumn.Name == "Pilih")
                 {
-                    if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].Selected)
+                    ctknota_countExtraColumn = 0;
+                    dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].Visible = false;
+                    dgv_ctknota_tabelhrgpkt.Columns["Extra"].ReadOnly = true;
+                    for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
                     {
-                        dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].Value = true;
-                        dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].ReadOnly = true;
-                        dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].ReadOnly = false;
+                        dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value = false;
+
                     }
-                    else
-                        dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].Value = false;
-
-                }
-            }
-            else if (dgv_ctknota_tabelhrgpkt.CurrentCell.OwningColumn.Name == "Extra")
-            {
-                for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
-                {
-                    if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].Value.ToString() == "True")
+                    for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
                     {
-                        if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Selected)
+                        if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].Selected)
                         {
-                            if (ctknota_countExtraColumn % 2 == 0)
+                            dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].Value = true;
+                            dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].ReadOnly = true;
+                            dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].ReadOnly = false;
+                        }
+                        else
+                            dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].Value = false;
+
+                    }
+                }
+                else if (dgv_ctknota_tabelhrgpkt.CurrentCell.OwningColumn.Name == "Extra")
+                {
+                    for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
+                    {
+                        if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].Value.ToString() == "True")
+                        {
+                            if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Selected)
                             {
-                                dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].Visible = true;
+                                if (ctknota_countExtraColumn % 2 == 0)
+                                {
+                                    dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].Visible = true;
+                                }
+                                else
+                                {
+                                    dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].Visible = false;
+                                }
+                                ctknota_countExtraColumn++;
                             }
-                            else
-                            {
-                                dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].Visible = false;
-                            }
-                            ctknota_countExtraColumn++;
                         }
                     }
                 }
             }
+            
         }
 
         private void txt_ctknota_nomorruangan_KeyPress(object sender, KeyPressEventArgs e)

@@ -39,7 +39,24 @@ namespace Green_Leaf
                 //lprnpnjln_DS.Tables[0].Columns.Remove("jenis_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("komisi_normal_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("komisi_midnight_paket");
-                //lprnpnjln_DS.Tables[0].Columns["nama_paket"].ColumnName = "Nama Paket";
+                lprnpnjln_DS.Tables[0].Columns["id_nota"].ColumnName = "Nomor Nota";
+                lprnpnjln_DS.Tables[0].Columns["tanggalcetak_nota"].ColumnName = "Tanggal Cetak Nota";
+                lprnpnjln_DS.Tables[0].Columns["nomorruangan_nota"].ColumnName = "Nomor Ruangan";
+                lprnpnjln_DS.Tables[0].Columns["jamkerja_nota"].ColumnName = "Jam Kerja";
+                lprnpnjln_DS.Tables[0].Columns["tamuhotel_nota"].ColumnName = "Tamu Hotel";
+                lprnpnjln_DS.Tables[0].Columns["potonganhotel_nota"].ColumnName = "Potongan Tamu Hotel";
+                lprnpnjln_DS.Tables[0].Columns["namapaket_nota"].ColumnName = "Nama Paket";
+                lprnpnjln_DS.Tables[0].Columns["hargapaket_nota"].ColumnName = "Harga Paket";
+                lprnpnjln_DS.Tables[0].Columns["extra_nota"].ColumnName = "Extra";
+                lprnpnjln_DS.Tables[0].Columns["nominalextra_nota"].ColumnName = "Nominal Extra";
+                lprnpnjln_DS.Tables[0].Columns["kodeterapis_nota"].ColumnName = "Kode Terapis";
+                lprnpnjln_DS.Tables[0].Columns["namaterapis_nota"].ColumnName = "Nama Terapis";
+                lprnpnjln_DS.Tables[0].Columns["diskon_nota"].ColumnName = "Diskon";
+                lprnpnjln_DS.Tables[0].Columns["keterangan_nota"].ColumnName = "Keterangan Diskon";
+                lprnpnjln_DS.Tables[0].Columns["totalbayar_nota"].ColumnName = "Subtotal";
+                lprnpnjln_DS.Tables[0].Columns["feeterapis_nota"].ColumnName = "Fee Terapis";
+                lprnpnjln_DS.Tables[0].Columns["jenisbayar_nota"].ColumnName = "Jenis Bayar";
+                lprnpnjln_DS.Tables[0].Columns["status_nota"].ColumnName = "Status";
                 //lprnpnjln_DS.Tables[0].Columns["harga_paket"].ColumnName = "Harga Paket";
                 //lprnpnjln_DS.Tables[0].Columns["durasi_paket"].ColumnName = "Durasi Paket";
 

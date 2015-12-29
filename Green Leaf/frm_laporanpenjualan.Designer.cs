@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_ctknota_isi = new System.Windows.Forms.Panel();
+            this.dgv_lprnpnjln_tabellaporan = new System.Windows.Forms.DataGridView();
+            this.dtp_lprnpnjln_tglsampai = new System.Windows.Forms.DateTimePicker();
+            this.lbl_lprnpnjln_sampai = new System.Windows.Forms.Label();
             this.dtp_lprnpnjln_tgldari = new System.Windows.Forms.DateTimePicker();
             this.lbl_lprnpnjln_sumtotalsubtotal = new System.Windows.Forms.Label();
             this.lbl_lprnpnjln_rp4 = new System.Windows.Forms.Label();
@@ -61,19 +64,19 @@
             this.lbl_lprnpnjln_6 = new System.Windows.Forms.Label();
             this.lbl_lprnpnjln_1 = new System.Windows.Forms.Label();
             this.lbl_lprnpnjln_pilihtanggal = new System.Windows.Forms.Label();
-            this.dgv_lprnpnjln_tabellaporan = new System.Windows.Forms.DataGridView();
+            this.dgv_lprnpnjln_tabellaporan2 = new System.Windows.Forms.DataGridView();
             this.lbl_lprnpnjln_totaldiskon = new System.Windows.Forms.Label();
             this.btn_lprnpnjln_batal = new System.Windows.Forms.Button();
             this.btn_lprnpnjln_excel = new System.Windows.Forms.Button();
-            this.dtp_lprnpnjln_tglsampai = new System.Windows.Forms.DateTimePicker();
-            this.lbl_lprnpnjln_sampai = new System.Windows.Forms.Label();
             this.pnl_ctknota_isi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lprnpnjln_tabellaporan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_lprnpnjln_tabellaporan2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_ctknota_isi
             // 
             this.pnl_ctknota_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_ctknota_isi.Controls.Add(this.dgv_lprnpnjln_tabellaporan);
             this.pnl_ctknota_isi.Controls.Add(this.dtp_lprnpnjln_tglsampai);
             this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_sampai);
             this.pnl_ctknota_isi.Controls.Add(this.dtp_lprnpnjln_tgldari);
@@ -106,7 +109,7 @@
             this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_6);
             this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_1);
             this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_pilihtanggal);
-            this.pnl_ctknota_isi.Controls.Add(this.dgv_lprnpnjln_tabellaporan);
+            this.pnl_ctknota_isi.Controls.Add(this.dgv_lprnpnjln_tabellaporan2);
             this.pnl_ctknota_isi.Controls.Add(this.lbl_lprnpnjln_totaldiskon);
             this.pnl_ctknota_isi.Controls.Add(this.btn_lprnpnjln_batal);
             this.pnl_ctknota_isi.Controls.Add(this.btn_lprnpnjln_excel);
@@ -114,6 +117,35 @@
             this.pnl_ctknota_isi.Name = "pnl_ctknota_isi";
             this.pnl_ctknota_isi.Size = new System.Drawing.Size(1250, 528);
             this.pnl_ctknota_isi.TabIndex = 49;
+            // 
+            // dgv_lprnpnjln_tabellaporan
+            // 
+            this.dgv_lprnpnjln_tabellaporan.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_lprnpnjln_tabellaporan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_lprnpnjln_tabellaporan.Location = new System.Drawing.Point(32, 104);
+            this.dgv_lprnpnjln_tabellaporan.Name = "dgv_lprnpnjln_tabellaporan";
+            this.dgv_lprnpnjln_tabellaporan.RowHeadersVisible = false;
+            this.dgv_lprnpnjln_tabellaporan.Size = new System.Drawing.Size(1185, 162);
+            this.dgv_lprnpnjln_tabellaporan.TabIndex = 120;
+            // 
+            // dtp_lprnpnjln_tglsampai
+            // 
+            this.dtp_lprnpnjln_tglsampai.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_lprnpnjln_tglsampai.Location = new System.Drawing.Point(819, 29);
+            this.dtp_lprnpnjln_tglsampai.Name = "dtp_lprnpnjln_tglsampai";
+            this.dtp_lprnpnjln_tglsampai.Size = new System.Drawing.Size(363, 35);
+            this.dtp_lprnpnjln_tglsampai.TabIndex = 119;
+            this.dtp_lprnpnjln_tglsampai.ValueChanged += new System.EventHandler(this.dtp_lprnpnjln_tglsampai_ValueChanged);
+            // 
+            // lbl_lprnpnjln_sampai
+            // 
+            this.lbl_lprnpnjln_sampai.AutoSize = true;
+            this.lbl_lprnpnjln_sampai.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_sampai.Location = new System.Drawing.Point(670, 30);
+            this.lbl_lprnpnjln_sampai.Name = "lbl_lprnpnjln_sampai";
+            this.lbl_lprnpnjln_sampai.Size = new System.Drawing.Size(114, 33);
+            this.lbl_lprnpnjln_sampai.TabIndex = 117;
+            this.lbl_lprnpnjln_sampai.Text = "Sampai";
             // 
             // dtp_lprnpnjln_tgldari
             // 
@@ -406,47 +438,47 @@
             this.lbl_lprnpnjln_pilihtanggal.TabIndex = 69;
             this.lbl_lprnpnjln_pilihtanggal.Text = "Pilih Tanggal";
             // 
-            // dgv_lprnpnjln_tabellaporan
+            // dgv_lprnpnjln_tabellaporan2
             // 
-            this.dgv_lprnpnjln_tabellaporan.AllowUserToAddRows = false;
-            this.dgv_lprnpnjln_tabellaporan.AllowUserToDeleteRows = false;
-            this.dgv_lprnpnjln_tabellaporan.AllowUserToResizeColumns = false;
-            this.dgv_lprnpnjln_tabellaporan.AllowUserToResizeRows = false;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_lprnpnjln_tabellaporan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
-            this.dgv_lprnpnjln_tabellaporan.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_lprnpnjln_tabellaporan.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgv_lprnpnjln_tabellaporan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_lprnpnjln_tabellaporan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
-            this.dgv_lprnpnjln_tabellaporan.ColumnHeadersHeight = 40;
-            this.dgv_lprnpnjln_tabellaporan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv_lprnpnjln_tabellaporan.Location = new System.Drawing.Point(32, 104);
-            this.dgv_lprnpnjln_tabellaporan.MultiSelect = false;
-            this.dgv_lprnpnjln_tabellaporan.Name = "dgv_lprnpnjln_tabellaporan";
-            this.dgv_lprnpnjln_tabellaporan.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgv_lprnpnjln_tabellaporan.RowHeadersVisible = false;
-            this.dgv_lprnpnjln_tabellaporan.RowHeadersWidth = 40;
-            this.dgv_lprnpnjln_tabellaporan.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
-            this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_lprnpnjln_tabellaporan.RowTemplate.Height = 40;
-            this.dgv_lprnpnjln_tabellaporan.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_lprnpnjln_tabellaporan.ShowCellErrors = false;
-            this.dgv_lprnpnjln_tabellaporan.ShowCellToolTips = false;
-            this.dgv_lprnpnjln_tabellaporan.ShowEditingIcon = false;
-            this.dgv_lprnpnjln_tabellaporan.ShowRowErrors = false;
-            this.dgv_lprnpnjln_tabellaporan.Size = new System.Drawing.Size(1185, 162);
-            this.dgv_lprnpnjln_tabellaporan.TabIndex = 7;
+            this.dgv_lprnpnjln_tabellaporan2.AllowUserToAddRows = false;
+            this.dgv_lprnpnjln_tabellaporan2.AllowUserToDeleteRows = false;
+            this.dgv_lprnpnjln_tabellaporan2.AllowUserToResizeColumns = false;
+            this.dgv_lprnpnjln_tabellaporan2.AllowUserToResizeRows = false;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnpnjln_tabellaporan2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_lprnpnjln_tabellaporan2.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_lprnpnjln_tabellaporan2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgv_lprnpnjln_tabellaporan2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lprnpnjln_tabellaporan2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_lprnpnjln_tabellaporan2.ColumnHeadersHeight = 40;
+            this.dgv_lprnpnjln_tabellaporan2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_lprnpnjln_tabellaporan2.Location = new System.Drawing.Point(32, 104);
+            this.dgv_lprnpnjln_tabellaporan2.MultiSelect = false;
+            this.dgv_lprnpnjln_tabellaporan2.Name = "dgv_lprnpnjln_tabellaporan2";
+            this.dgv_lprnpnjln_tabellaporan2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgv_lprnpnjln_tabellaporan2.RowHeadersVisible = false;
+            this.dgv_lprnpnjln_tabellaporan2.RowHeadersWidth = 40;
+            this.dgv_lprnpnjln_tabellaporan2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgv_lprnpnjln_tabellaporan2.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dgv_lprnpnjln_tabellaporan2.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnpnjln_tabellaporan2.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgv_lprnpnjln_tabellaporan2.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
+            this.dgv_lprnpnjln_tabellaporan2.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_lprnpnjln_tabellaporan2.RowTemplate.Height = 40;
+            this.dgv_lprnpnjln_tabellaporan2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_lprnpnjln_tabellaporan2.ShowCellErrors = false;
+            this.dgv_lprnpnjln_tabellaporan2.ShowCellToolTips = false;
+            this.dgv_lprnpnjln_tabellaporan2.ShowEditingIcon = false;
+            this.dgv_lprnpnjln_tabellaporan2.ShowRowErrors = false;
+            this.dgv_lprnpnjln_tabellaporan2.Size = new System.Drawing.Size(1185, 162);
+            this.dgv_lprnpnjln_tabellaporan2.TabIndex = 7;
             // 
             // lbl_lprnpnjln_totaldiskon
             // 
@@ -478,25 +510,6 @@
             this.btn_lprnpnjln_excel.Text = "Convert Excel";
             this.btn_lprnpnjln_excel.UseVisualStyleBackColor = true;
             // 
-            // dtp_lprnpnjln_tglsampai
-            // 
-            this.dtp_lprnpnjln_tglsampai.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_lprnpnjln_tglsampai.Location = new System.Drawing.Point(819, 29);
-            this.dtp_lprnpnjln_tglsampai.Name = "dtp_lprnpnjln_tglsampai";
-            this.dtp_lprnpnjln_tglsampai.Size = new System.Drawing.Size(363, 35);
-            this.dtp_lprnpnjln_tglsampai.TabIndex = 119;
-            this.dtp_lprnpnjln_tglsampai.ValueChanged += new System.EventHandler(this.dtp_lprnpnjln_tglsampai_ValueChanged);
-            // 
-            // lbl_lprnpnjln_sampai
-            // 
-            this.lbl_lprnpnjln_sampai.AutoSize = true;
-            this.lbl_lprnpnjln_sampai.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lprnpnjln_sampai.Location = new System.Drawing.Point(670, 30);
-            this.lbl_lprnpnjln_sampai.Name = "lbl_lprnpnjln_sampai";
-            this.lbl_lprnpnjln_sampai.Size = new System.Drawing.Size(114, 33);
-            this.lbl_lprnpnjln_sampai.TabIndex = 117;
-            this.lbl_lprnpnjln_sampai.Text = "Sampai";
-            // 
             // frm_laporanpenjualan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,6 +524,7 @@
             this.pnl_ctknota_isi.ResumeLayout(false);
             this.pnl_ctknota_isi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lprnpnjln_tabellaporan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_lprnpnjln_tabellaporan2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -520,7 +534,7 @@
         private System.Windows.Forms.Panel pnl_ctknota_isi;
         private System.Windows.Forms.Label lbl_lprnpnjln_1;
         private System.Windows.Forms.Label lbl_lprnpnjln_pilihtanggal;
-        private System.Windows.Forms.DataGridView dgv_lprnpnjln_tabellaporan;
+        private System.Windows.Forms.DataGridView dgv_lprnpnjln_tabellaporan2;
         private System.Windows.Forms.Label lbl_lprnpnjln_totaldiskon;
         private System.Windows.Forms.Button btn_lprnpnjln_batal;
         private System.Windows.Forms.Button btn_lprnpnjln_excel;
@@ -554,5 +568,6 @@
         private System.Windows.Forms.Label lbl_lprnpnjln_6;
         private System.Windows.Forms.DateTimePicker dtp_lprnpnjln_tglsampai;
         private System.Windows.Forms.Label lbl_lprnpnjln_sampai;
+        private System.Windows.Forms.DataGridView dgv_lprnpnjln_tabellaporan;
     }
 }
