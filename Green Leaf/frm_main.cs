@@ -3222,7 +3222,7 @@ namespace Green_Leaf
                                             diskon = int.Parse(txt_ctknota_diskon.Text);
                                             ket = txt_ctknota_ket.Text;
                                             fee = 0;
-                                            totalbayar = hargapaket - potonganhotel + nominalextra;
+                                            totalbayar = hargapaket - potonganhotel + nominalextra - diskon;
                                             if (rdo_ctknota_cash.Checked)
                                             {
                                                 jenisbayar = "Cash";
@@ -3424,7 +3424,7 @@ namespace Green_Leaf
                                             diskon = int.Parse(txt_ctknota_diskon.Text);
                                             ket = txt_ctknota_ket.Text;
                                             fee = int.Parse(txt_ctknota_fee.Text);
-                                            totalbayar = hargapaket - potonganhotel + nominalextra;
+                                            totalbayar = hargapaket - potonganhotel + nominalextra - diskon;
                                             if (rdo_ctknota_cash.Checked)
                                             {
                                                 jenisbayar = "Cash";
