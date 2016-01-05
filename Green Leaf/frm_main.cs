@@ -1638,6 +1638,8 @@ namespace Green_Leaf
         int ctknota_tamuhotel;
         int ctknota_extra;
         int ctknota_countExtraColumn;
+        List<int> ctknota_listidpaket = new List<int>();
+
         private void rdo_ctknota_biasa_CheckedChanged(object sender, EventArgs e)
         {
             txt_ctknota_nomorruangan.Enabled = true;
@@ -1791,6 +1793,10 @@ namespace Green_Leaf
                         MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(ctknota_query, ctknota_conn);
                         MySqlCommand ctknota_cmd = new MySqlCommand(ctknota_query, ctknota_conn);
                         mySqlDataAdapter.Fill(ctknota_DS);
+                        for (int i = 0; i < ctknota_DS.Tables[0].Rows.Count; i++)
+                        {
+                            ctknota_listidpaket.Add(int.Parse(ctknota_DS.Tables[0].Rows[i]["id_paket"].ToString()));
+                        }
                         ctknota_DS.Tables[0].Columns.Remove("id_paket");
                         ctknota_DS.Tables[0].Columns.Remove("jenis_paket");
                         ctknota_DS.Tables[0].Columns.Remove("komisi_normal_paket");
@@ -1988,6 +1994,10 @@ namespace Green_Leaf
                         MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(ctknota_query, ctknota_conn);
                         MySqlCommand ctknota_cmd = new MySqlCommand(ctknota_query, ctknota_conn);
                         mySqlDataAdapter.Fill(ctknota_DS);
+                        for (int i = 0; i < ctknota_DS.Tables[0].Rows.Count; i++)
+                        {
+                            ctknota_listidpaket.Add(int.Parse(ctknota_DS.Tables[0].Rows[i]["id_paket"].ToString()));
+                        }
                         ctknota_DS.Tables[0].Columns.Remove("id_paket");
                         ctknota_DS.Tables[0].Columns.Remove("jenis_paket");
                         ctknota_DS.Tables[0].Columns.Remove("komisi_normal_paket");
@@ -2188,6 +2198,10 @@ namespace Green_Leaf
                         MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(ctknota_query, ctknota_conn);
                         MySqlCommand ctknota_cmd = new MySqlCommand(ctknota_query, ctknota_conn);
                         mySqlDataAdapter.Fill(ctknota_DS);
+                        for (int i = 0; i < ctknota_DS.Tables[0].Rows.Count; i++)
+                        {
+                            ctknota_listidpaket.Add(int.Parse(ctknota_DS.Tables[0].Rows[i]["id_paket"].ToString()));
+                        }
                         ctknota_DS.Tables[0].Columns.Remove("id_paket");
                         ctknota_DS.Tables[0].Columns.Remove("jenis_paket");
                         ctknota_DS.Tables[0].Columns.Remove("komisi_normal_paket");
@@ -2385,6 +2399,10 @@ namespace Green_Leaf
                         MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(ctknota_query, ctknota_conn);
                         MySqlCommand ctknota_cmd = new MySqlCommand(ctknota_query, ctknota_conn);
                         mySqlDataAdapter.Fill(ctknota_DS);
+                        for (int i = 0; i < ctknota_DS.Tables[0].Rows.Count; i++)
+                        {
+                            ctknota_listidpaket.Add(int.Parse(ctknota_DS.Tables[0].Rows[i]["id_paket"].ToString()));
+                        }
                         ctknota_DS.Tables[0].Columns.Remove("id_paket");
                         ctknota_DS.Tables[0].Columns.Remove("jenis_paket");
                         ctknota_DS.Tables[0].Columns.Remove("komisi_normal_paket");
@@ -2728,8 +2746,7 @@ namespace Green_Leaf
                             #region(cek)
                             if (txt_ctknota_fee.Text == "")
                             {
-                                for (int idx = 0; idx < 10000; idx++)
-                                {
+                                
                                     #region(Insert Nota)
                                     //string tanggalcetak = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString() + " " + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString();
                                     string jamkerja = "";
@@ -2746,6 +2763,7 @@ namespace Green_Leaf
                                     string ket = "";
                                     int fee = 0;
                                     int totalbayar = 0;
+                                    int idpaket = 0;
                                     string jenisbayar = "";
                                     //header.Trim(new Char[] { ' ', '*', '.' });
                                     for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
@@ -2770,6 +2788,7 @@ namespace Green_Leaf
                                                 tamuhotel = "Ya";
                                                 potonganhotel = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Tamu Hotel"].Value.ToString().Replace(".", string.Empty));
                                             }
+                                            idpaket = ctknota_listidpaket[i];
                                             nomorruangan = int.Parse(txt_ctknota_nomorruangan.Text);
                                             namapaket = cbo_ctknota_jenispaket.SelectedItem + " - " + dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Nama Paket"].Value.ToString();
                                             hargapaket = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Harga Paket"].Value.ToString().Replace(".", string.Empty));
@@ -2803,36 +2822,35 @@ namespace Green_Leaf
                                     DBConnect ctknota_sql = new DBConnect();
                                     string ctknota_query = "INSERT INTO `nota` (`id_nota`, `tanggalcetak_nota`, `nomorruangan_nota`, `jamkerja_nota`, `tamuhotel_nota`, `potonganhotel_nota`, "
                                                                 + "`namapaket_nota`, `hargapaket_nota`, `extra_nota`, `nominalextra_nota`, `kodeterapis_nota`, `namaterapis_nota`,"
-                                                                    + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`) "
+                                                                    + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`, `id_paket`) "
                                                                         + "VALUES (NULL, (now()), '" + nomorruangan + "', '" + jamkerja + "', '" + tamuhotel + "', '" + potonganhotel + "',"
                                                                             + " '" + namapaket + "', '" + hargapaket + "', '" + extra + "', '" + nominalextra + "', '" + kodeterapis + "', '" + namaterapis + "', "
-                                                                                + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-');";
+                                                                                + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '"+idpaket+"');";
                                     ctknota_sql.Insert(ctknota_query);
 
 
                                     #endregion
-                                }
 
 
-                                //string totalbayarFinal = "";
-                                //int countdigittotal = 0;
-                                //foreach (char c in totalbayar.ToString())
-                                //{
-                                //    if (char.IsDigit(c))
-                                //    {
-                                //        countdigittotal++;
-                                //    }
-                                //}
-                                //int digit = countdigittotal;
-                                //int countdigitend = 0;
-                                //while (digit > 3)
-                                //{
-                                //    countdigitend++;
-                                //    digit -= 3;
-                                //    totalbayarFinal = totalbayar.ToString().Insert(digit, ".");
-                                //}
-                                //totalbayarFinal = totalbayarFinal.Insert(countdigittotal + countdigitend, ",-");
-                                //lbl_ctknota_totalbyr.Text = totalbayarFinal;
+                                    string totalbayarFinal = totalbayar.ToString(String.Format("0,0", totalbayar));
+                                    //int countdigittotal = 0;
+                                    //foreach (char c in totalbayar.ToString())
+                                    //{
+                                    //    if (char.IsDigit(c))
+                                    //    {
+                                    //        countdigittotal++;
+                                    //    }
+                                    //}
+                                    //int digit = countdigittotal;
+                                    //int countdigitend = 0;
+                                    //while (digit > 3)
+                                    //{
+                                    //    countdigitend++;
+                                    //    digit -= 3;
+                                    //    totalbayarFinal = totalbayar.ToString().Insert(digit, ".");
+                                    //}
+                                    //totalbayarFinal = totalbayarFinal.Insert(countdigittotal + countdigitend, ",-");
+                                    lbl_ctknota_totalbyr.Text = totalbayarFinal;
                                 MessageBox.Show("Nota telah berhasil ditambahkan");
                                 //MessageBox.Show("diskon kosong, fee kosong");
                                 #region(Bersihkan Form)
@@ -2949,6 +2967,7 @@ namespace Green_Leaf
                                 string ket = "";
                                 int fee = 0;
                                 int totalbayar = 0;
+                                int idpaket = 0;
                                 string jenisbayar = "";
                                 //header.Trim(new Char[] { ' ', '*', '.' });
                                 for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
@@ -2986,6 +3005,7 @@ namespace Green_Leaf
                                             extra = "Tidak";
                                             nominalextra = 0;
                                         }
+                                        idpaket = ctknota_listidpaket[i];
                                         kodeterapis = int.Parse(cbo_ctknota_kodeterapis.SelectedItem.ToString());
                                         namaterapis = txt_ctknota_namaterapis.Text;
                                         diskon = 0;
@@ -3006,32 +3026,32 @@ namespace Green_Leaf
                                 DBConnect ctknota_sql = new DBConnect();
                                 string ctknota_query = "INSERT INTO `nota` (`id_nota`, `tanggalcetak_nota`, `nomorruangan_nota`, `jamkerja_nota`, `tamuhotel_nota`, `potonganhotel_nota`, "
                                                             + "`namapaket_nota`, `hargapaket_nota`, `extra_nota`, `nominalextra_nota`, `kodeterapis_nota`, `namaterapis_nota`,"
-                                                                + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`) "
+                                                                + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`, `id_paket`) "
                                                                     + "VALUES (NULL, (now()), '" + nomorruangan + "', '" + jamkerja + "', '" + tamuhotel + "', '" + potonganhotel + "',"
                                                                         + " '" + namapaket + "', '" + hargapaket + "', '" + extra + "', '" + nominalextra + "', '" + kodeterapis + "', '" + namaterapis + "', "
-                                                                            + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-');";
+                                                                            + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '"+idpaket+"');";
                                 ctknota_sql.Insert(ctknota_query);
 
 
                                 #endregion
-                                string totalbayarFinal = "";
-                                int countdigittotal = 0;
-                                foreach (char c in totalbayar.ToString())
-                                {
-                                    if (char.IsDigit(c))
-                                    {
-                                        countdigittotal++;
-                                    }
-                                }
-                                int digit = countdigittotal;
-                                int countdigitend = 0;
-                                while (digit > 3)
-                                {
-                                    countdigitend++;
-                                    digit -= 3;
-                                    totalbayarFinal = totalbayar.ToString().Insert(digit, ".");
-                                }
-                                totalbayarFinal = totalbayarFinal.Insert(countdigittotal + countdigitend, ",-");
+                                string totalbayarFinal = totalbayar.ToString(String.Format("0,0", totalbayar));
+                                //int countdigittotal = 0;
+                                //foreach (char c in totalbayar.ToString())
+                                //{
+                                //    if (char.IsDigit(c))
+                                //    {
+                                //        countdigittotal++;
+                                //    }
+                                //}
+                                //int digit = countdigittotal;
+                                //int countdigitend = 0;
+                                //while (digit > 3)
+                                //{
+                                //    countdigitend++;
+                                //    digit -= 3;
+                                //    totalbayarFinal = totalbayar.ToString().Insert(digit, ".");
+                                //}
+                                //totalbayarFinal = totalbayarFinal.Insert(countdigittotal + countdigitend, ",-");
                                 lbl_ctknota_totalbyr.Text = totalbayarFinal;
                                 MessageBox.Show("Nota telah berhasil ditambahkan");
                                 //MessageBox.Show("diskon kosong, fee ada");
@@ -3158,6 +3178,7 @@ namespace Green_Leaf
                                     string ket = "";
                                     int fee = 0;
                                     int totalbayar = 0;
+                                    int idpaket = 0;
                                     string jenisbayar = "";
                                     //header.Trim(new Char[] { ' ', '*', '.' });
                                     for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
@@ -3195,6 +3216,7 @@ namespace Green_Leaf
                                                 extra = "Tidak";
                                                 nominalextra = 0;
                                             }
+                                            idpaket = ctknota_listidpaket[i];
                                             kodeterapis = int.Parse(cbo_ctknota_kodeterapis.SelectedItem.ToString());
                                             namaterapis = txt_ctknota_namaterapis.Text;
                                             diskon = int.Parse(txt_ctknota_diskon.Text);
@@ -3215,32 +3237,32 @@ namespace Green_Leaf
                                     DBConnect ctknota_sql = new DBConnect();
                                     string ctknota_query = "INSERT INTO `nota` (`id_nota`, `tanggalcetak_nota`, `nomorruangan_nota`, `jamkerja_nota`, `tamuhotel_nota`, `potonganhotel_nota`, "
                                                                 + "`namapaket_nota`, `hargapaket_nota`, `extra_nota`, `nominalextra_nota`, `kodeterapis_nota`, `namaterapis_nota`,"
-                                                                    + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`) "
+                                                                    + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`, `id_paket`) "
                                                                         + "VALUES (NULL, (now()), '" + nomorruangan + "', '" + jamkerja + "', '" + tamuhotel + "', '" + potonganhotel + "',"
                                                                             + " '" + namapaket + "', '" + hargapaket + "', '" + extra + "', '" + nominalextra + "', '" + kodeterapis + "', '" + namaterapis + "', "
-                                                                                + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-');";
+                                                                                + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '"+idpaket+"');";
                                     ctknota_sql.Insert(ctknota_query);
 
 
                                     #endregion
-                                    string totalbayarFinal = "";
-                                    int countdigittotal = 0;
-                                    foreach (char c in totalbayar.ToString())
-                                    {
-                                        if (char.IsDigit(c))
-                                        {
-                                            countdigittotal++;
-                                        }
-                                    }
-                                    int digit = countdigittotal;
-                                    int countdigitend = 0;
-                                    while (digit > 3)
-                                    {
-                                        countdigitend++;
-                                        digit -= 3;
-                                        totalbayarFinal = totalbayar.ToString().Insert(digit, ".");
-                                    }
-                                    totalbayarFinal = totalbayarFinal.Insert(countdigittotal + countdigitend, ",-");
+                                    string totalbayarFinal = totalbayar.ToString(String.Format("0,0", totalbayar));
+                                    //int countdigittotal = 0;
+                                    //foreach (char c in totalbayar.ToString())
+                                    //{
+                                    //    if (char.IsDigit(c))
+                                    //    {
+                                    //        countdigittotal++;
+                                    //    }
+                                    //}
+                                    //int digit = countdigittotal;
+                                    //int countdigitend = 0;
+                                    //while (digit > 3)
+                                    //{
+                                    //    countdigitend++;
+                                    //    digit -= 3;
+                                    //    totalbayarFinal = totalbayar.ToString().Insert(digit, ".");
+                                    //}
+                                    //totalbayarFinal = totalbayarFinal.Insert(countdigittotal + countdigitend, ",-");
                                     lbl_ctknota_totalbyr.Text = totalbayarFinal;
                                     MessageBox.Show("Nota telah berhasil ditambahkan");
                                     //MessageBox.Show("diskon ada, fee kosong");
@@ -3358,6 +3380,7 @@ namespace Green_Leaf
                                     string ket = "";
                                     int fee = 0;
                                     int totalbayar = 0;
+                                    int idpaket = 0;
                                     string jenisbayar = "";
                                     //header.Trim(new Char[] { ' ', '*', '.' });
                                     for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
@@ -3382,6 +3405,7 @@ namespace Green_Leaf
                                                 tamuhotel = "Ya";
                                                 potonganhotel = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Tamu Hotel"].Value.ToString().Replace(".", string.Empty));
                                             }
+                                            idpaket = ctknota_listidpaket[i];
                                             nomorruangan = int.Parse(txt_ctknota_nomorruangan.Text);
                                             namapaket = cbo_ctknota_jenispaket.SelectedItem + " - " + dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Nama Paket"].Value.ToString();
                                             hargapaket = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Harga Paket"].Value.ToString().Replace(".", string.Empty));
@@ -3415,32 +3439,32 @@ namespace Green_Leaf
                                     DBConnect ctknota_sql = new DBConnect();
                                     string ctknota_query = "INSERT INTO `nota` (`id_nota`, `tanggalcetak_nota`, `nomorruangan_nota`, `jamkerja_nota`, `tamuhotel_nota`, `potonganhotel_nota`, "
                                                                 + "`namapaket_nota`, `hargapaket_nota`, `extra_nota`, `nominalextra_nota`, `kodeterapis_nota`, `namaterapis_nota`,"
-                                                                    + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`) "
+                                                                    + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`, `id_paket`) "
                                                                         + "VALUES (NULL, (now()), '" + nomorruangan + "', '" + jamkerja + "', '" + tamuhotel + "', '" + potonganhotel + "',"
                                                                             + " '" + namapaket + "', '" + hargapaket + "', '" + extra + "', '" + nominalextra + "', '" + kodeterapis + "', '" + namaterapis + "', "
-                                                                                + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-');";
+                                                                                + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '"+idpaket+"');";
                                     ctknota_sql.Insert(ctknota_query);
 
 
                                     #endregion
-                                    string totalbayarFinal = "";
-                                    int countdigittotal = 0;
-                                    foreach (char c in totalbayar.ToString())
-                                    {
-                                        if (char.IsDigit(c))
-                                        {
-                                            countdigittotal++;
-                                        }
-                                    }
-                                    int digit = countdigittotal;
-                                    int countdigitend = 0;
-                                    while (digit > 3)
-                                    {
-                                        countdigitend++;
-                                        digit -= 3;
-                                        totalbayarFinal = totalbayar.ToString().Insert(digit, ".");
-                                    }
-                                    totalbayarFinal = totalbayarFinal.Insert(countdigittotal + countdigitend, ",-");
+                                    string totalbayarFinal = totalbayar.ToString(String.Format("0,0", totalbayar));
+                                    //int countdigittotal = 0;
+                                    //foreach (char c in totalbayar.ToString())
+                                    //{
+                                    //    if (char.IsDigit(c))
+                                    //    {
+                                    //        countdigittotal++;
+                                    //    }
+                                    //}
+                                    //int digit = countdigittotal;
+                                    //int countdigitend = 0;
+                                    //while (digit > 3)
+                                    //{
+                                    //    countdigitend++;
+                                    //    digit -= 3;
+                                    //    totalbayarFinal = totalbayar.ToString().Insert(digit, ".");
+                                    //}
+                                    //totalbayarFinal = totalbayarFinal.Insert(countdigittotal + countdigitend, ",-");
                                     lbl_ctknota_totalbyr.Text = totalbayarFinal;
                                     MessageBox.Show("Nota telah berhasil ditambahkan");
                                     //MessageBox.Show("diskon ada, fee ada");
@@ -5539,13 +5563,6 @@ namespace Green_Leaf
             pnl_menu_isi.Visible = true;
         }
         #endregion
-
-
-
-
-
-
-
 
     }
 }

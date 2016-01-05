@@ -20,5 +20,15 @@ namespace Green_Leaf
         {
 
         }
+
+        private void btn_menu_laporangajiterapis_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_menu_ctknota_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -76,6 +76,7 @@
             this.btn_menu_ctknota.TabIndex = 21;
             this.btn_menu_ctknota.Text = "Cetak Nota";
             this.btn_menu_ctknota.UseVisualStyleBackColor = true;
+            this.btn_menu_ctknota.Click += new System.EventHandler(this.btn_menu_ctknota_Click);
             // 
             // btn_menu_laporangajiexcel
             // 
@@ -96,6 +97,7 @@
             this.btn_menu_laporangajiterapis.TabIndex = 19;
             this.btn_menu_laporangajiterapis.Text = "Laporan Gaji Terapis";
             this.btn_menu_laporangajiterapis.UseVisualStyleBackColor = true;
+            this.btn_menu_laporangajiterapis.Click += new System.EventHandler(this.btn_menu_laporangajiterapis_Click);
             // 
             // btn_menu_laporanpenjualan
             // 
