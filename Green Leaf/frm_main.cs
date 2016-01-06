@@ -3826,7 +3826,6 @@ namespace Green_Leaf
                 lprnpnjln_tanggalcetakdari = dtp_lprnpnjln_tgldari.Value.Year.ToString();
                 lprnpnjln_tanggalcetakdari += "-" + dtp_lprnpnjln_tgldari.Value.Month.ToString();
                 lprnpnjln_tanggalcetakdari += "-" + dtp_lprnpnjln_tgldari.Value.Day.ToString();
-                //tanggalcetakdari += " " + dtp_lprnpnjln_tgldari.Value.TimeOfDay.ToString();
 
                 lprnpnjln_tanggalcetaksampai = dtp_lprnpnjln_tglsampai.Value.Year.ToString();
                 lprnpnjln_tanggalcetaksampai += "-" + dtp_lprnpnjln_tglsampai.Value.Month.ToString();
@@ -3838,10 +3837,11 @@ namespace Green_Leaf
                 MySqlCommand ctknota_cmd = new MySqlCommand(lprnpnjln_query, lprnpnjln_conn);
 
                 mySqlDataAdapter.Fill(lprnpnjln_DS);
-                //lprnpnjln_DS.Tables[0].Columns.Remove("id_paket");
+                lprnpnjln_DS.Tables[0].Columns.Remove("id_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("jenis_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("komisi_normal_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("komisi_midnight_paket");
+
                 lprnpnjln_DS.Tables[0].Columns["id_nota"].ColumnName = "Nomor Nota";
                 lprnpnjln_DS.Tables[0].Columns["tanggalcetak_nota"].ColumnName = "Tanggal Cetak Nota";
                 lprnpnjln_DS.Tables[0].Columns["nomorruangan_nota"].ColumnName = "Nomor Ruangan";
@@ -4168,7 +4168,7 @@ namespace Green_Leaf
                 MySqlCommand ctknota_cmd = new MySqlCommand(lprnpnjln_query, lprnpnjln_conn);
 
                 mySqlDataAdapter.Fill(lprnpnjln_DS);
-                //lprnpnjln_DS.Tables[0].Columns.Remove("id_paket");
+                lprnpnjln_DS.Tables[0].Columns.Remove("id_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("jenis_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("komisi_normal_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("komisi_midnight_paket");
@@ -4655,7 +4655,7 @@ namespace Green_Leaf
                 MySqlCommand ctknota_cmd = new MySqlCommand(lprnpnjln_query, lprnpnjln_conn);
 
                 mySqlDataAdapter.Fill(lprnpnjln_DS);
-                //lprnpnjln_DS.Tables[0].Columns.Remove("id_paket");
+                lprnpnjln_DS.Tables[0].Columns.Remove("id_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("jenis_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("komisi_normal_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("komisi_midnight_paket");
@@ -4979,7 +4979,7 @@ namespace Green_Leaf
                 MySqlCommand ctknota_cmd = new MySqlCommand(lprnpnjln_query, lprnpnjln_conn);
 
                 mySqlDataAdapter.Fill(lprnpnjln_DS);
-                //lprnpnjln_DS.Tables[0].Columns.Remove("id_paket");
+                lprnpnjln_DS.Tables[0].Columns.Remove("id_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("jenis_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("komisi_normal_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("komisi_midnight_paket");
@@ -5303,7 +5303,7 @@ namespace Green_Leaf
                 MySqlCommand ctknota_cmd = new MySqlCommand(lprnpnjln_query, lprnpnjln_conn);
 
                 mySqlDataAdapter.Fill(lprnpnjln_DS);
-                //lprnpnjln_DS.Tables[0].Columns.Remove("id_paket");
+                lprnpnjln_DS.Tables[0].Columns.Remove("id_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("jenis_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("komisi_normal_paket");
                 //lprnpnjln_DS.Tables[0].Columns.Remove("komisi_midnight_paket");

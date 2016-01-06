@@ -1874,6 +1874,21 @@ namespace Green_Leaf
                 MessageBox.Show("File Excel telah disimpan");
             }
         }
+
+        private void lbl_lprnpnjln_1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_lprnpnjln_pilihtanggal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_lprnpnjln_sampai_Click(object sender, EventArgs e)
+        {
+
+        }
         
     }
 }
