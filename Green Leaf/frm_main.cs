@@ -395,6 +395,8 @@ namespace Green_Leaf
         {
             pnl_menu_isi.Visible = false;
             pnl_tbhpkt_isi.Visible = true;
+            txt_tbhpkt_komisipaketmidnight.Enabled = true;
+            txt_tbhpkt_komisipaketnormal.Enabled = true;
         }
 
         private void btn_menu_edtpkt_Click(object sender, EventArgs e)
@@ -473,7 +475,43 @@ namespace Green_Leaf
             btn_ctknota_cetak.Enabled = false;
             btn_ctknota_batal.Enabled = true;
 
+            dgv_ctknota_tabelhrgpkt.DataSource = null;
+            dgv_ctknota_tabelhrgpkt.Rows.Clear();
+            dgv_ctknota_tabelhrgpkt.Refresh();
+            ctknota_DS.Tables.Clear();
+            ctknota_countExtraColumn = 0;
 
+            rdo_ctknota_biasa.Checked = false;
+            rdo_ctknota_cash.Checked = false;
+            rdo_ctknota_credit.Checked = false;
+            rdo_ctknota_hotel.Checked = false;
+            rdo_ctknota_midnight.Checked = false;
+            rdo_ctknota_normal.Checked = false;
+            cbo_ctknota_jenispaket.Items.Clear();
+            txt_ctknota_namaterapis.Clear();
+            txt_ctknota_nomorruangan.Clear();
+            lbl_ctknota_totalbyr.Text = "";
+            txt_ctknota_fee.Clear();
+            txt_ctknota_diskon.Clear();
+            txt_ctknota_ket.Clear();
+
+            txt_ctknota_nomorruangan.Enabled = true;
+            rdo_ctknota_normal.Enabled = false;
+            rdo_ctknota_midnight.Enabled = false;
+            rdo_ctknota_hotel.Enabled = false;
+            rdo_ctknota_biasa.Enabled = false;
+            cbo_ctknota_jenispaket.Enabled = false;
+            dgv_ctknota_tabelhrgpkt.Enabled = false;
+            rdo_ctknota_cash.Enabled = false;
+            rdo_ctknota_credit.Enabled = false;
+            cbo_ctknota_kodeterapis.Enabled = false;
+            txt_ctknota_namaterapis.Enabled = false;
+            txt_ctknota_diskon.Enabled = false;
+            txt_ctknota_ket.Enabled = false;
+            txt_ctknota_fee.Enabled = false;
+
+            btn_ctknota_cetak.Enabled = false;
+            btn_ctknota_batal.Enabled = true;
 
             #region(Ambil data Potongan dan Extra dari database)
             string ctknota_query2;
@@ -530,6 +568,8 @@ namespace Green_Leaf
             }
             ctknota_conn3.Close();
             #endregion
+
+
         }
 
         private void btn_menu_laporanpenjualan_Click(object sender, EventArgs e)

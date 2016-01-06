@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
+using System.Reflection;
+using ClosedXML.Excel;
 
 namespace Green_Leaf
 {
@@ -24,9 +27,9 @@ namespace Green_Leaf
             string sql_laporan = "";
             
             #region(Select)
-            dgv_lprnlayanan.DataSource = null;
-            dgv_lprnlayanan.Rows.Clear();
-            dgv_lprnlayanan.Columns.Clear();
+            dgv_lprnlayanan_tabellayanan.DataSource = null;
+            dgv_lprnlayanan_tabellayanan.Rows.Clear();
+            dgv_lprnlayanan_tabellayanan.Columns.Clear();
             //dgv_lprnpnjln_tabellaporan.Refresh();
             lprnpnjln_DS.Tables.Clear();
             string lprnpnjln_query;
@@ -229,7 +232,7 @@ namespace Green_Leaf
                 //    lprnpnjln_DS.Tables[0].Rows[ii]["Nominal Extra"] = ctknota_extra;
                 //}
 
-                dgv_lprnlayanan.DataSource = lprnpnjln_DS.Tables[0];
+                dgv_lprnlayanan_tabellayanan.DataSource = lprnpnjln_DS.Tables[0];
                 //if (txt_login_username.Text == "superadmin")
                 //{
                 //    dgv_lprnpnjln_tabellaporan.Columns.Add(lprnpnjln_hapusNota);
@@ -564,7 +567,7 @@ namespace Green_Leaf
                 //    lprnpnjln_DS.Tables[0].Rows[ii]["Nominal Extra"] = ctknota_extra;
                 //}
 
-                dgv_lprnlayanan.DataSource = lprnpnjln_DS.Tables[0];
+                dgv_lprnlayanan_tabellayanan.DataSource = lprnpnjln_DS.Tables[0];
                 //if (txt_login_username.Text == "superadmin")
                 //{
                 //    dgv_lprnpnjln_tabellaporan.Columns.Add(lprnpnjln_hapusNota);
@@ -817,6 +820,26 @@ namespace Green_Leaf
             }
             lprnpnjln_conn2.Close();
             #endregion
+
+            for (int i = 3; i < dgv_lprnlayanan_tabellayanan.Columns.Count; i++)
+            {
+                dgv_lprnlayanan_tabellayanan.Columns[i].CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+        }
+
+        private void btn_lprnlayanan_excel_Click(object sender, EventArgs e)
+        {
+            string folderPath = "C:\\Excel\\";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(lprnpnjln_DS.Tables[0], "Customers");
+                wb.SaveAs(folderPath + "Laporan Layanan.xlsx");
+                MessageBox.Show("File Excel telah disimpan");
+            }
         }
     }
 }
