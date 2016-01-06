@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_ctknota_logo = new System.Windows.Forms.Panel();
             this.pict_ctknota_logo = new System.Windows.Forms.PictureBox();
             this.pnl_login_isi = new System.Windows.Forms.Panel();
@@ -248,6 +252,15 @@
             this.lbl_lprnpnjln_totaldiskon = new System.Windows.Forms.Label();
             this.btn_lprnpnjln_batal = new System.Windows.Forms.Button();
             this.btn_lprnpnjln_excel = new System.Windows.Forms.Button();
+            this.pnl_lprnlayanan_isi = new System.Windows.Forms.Panel();
+            this.dtp_lprnlayanan_tglsampai = new System.Windows.Forms.DateTimePicker();
+            this.lbl_lprnlayanan_sampai = new System.Windows.Forms.Label();
+            this.dtp_lprnlayanan_tgldari = new System.Windows.Forms.DateTimePicker();
+            this.lbl_lprnlayanan_1 = new System.Windows.Forms.Label();
+            this.lbl_lprnlayanan_pilihtanggal = new System.Windows.Forms.Label();
+            this.btn_lprnlayanan_excel = new System.Windows.Forms.Button();
+            this.dgv_lprnlayanan_tabellayanan = new System.Windows.Forms.DataGridView();
+            this.btn_lprnlayanan_batal = new System.Windows.Forms.Button();
             this.pnl_ctknota_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict_ctknota_logo)).BeginInit();
             this.pnl_login_isi.SuspendLayout();
@@ -268,6 +281,8 @@
             this.pnl_lprnpnjln_totalcredit.SuspendLayout();
             this.pnl_lprnpnjln_totalcash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lprnpnjln_tabellaporan)).BeginInit();
+            this.pnl_lprnlayanan_isi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_lprnlayanan_tabellayanan)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_ctknota_logo
@@ -456,9 +471,9 @@
             this.btn_menu_laporangajiterapis.Name = "btn_menu_laporangajiterapis";
             this.btn_menu_laporangajiterapis.Size = new System.Drawing.Size(215, 107);
             this.btn_menu_laporangajiterapis.TabIndex = 19;
-            this.btn_menu_laporangajiterapis.Text = "Laporan Gaji Terapis";
+            this.btn_menu_laporangajiterapis.Text = "Laporan Layanan";
             this.btn_menu_laporangajiterapis.UseVisualStyleBackColor = true;
-            this.btn_menu_laporangajiterapis.Click += new System.EventHandler(this.btn_menu_laporangajiterapis_Click);
+            this.btn_menu_laporangajiterapis.Click += new System.EventHandler(this.btn_menu_laporanlayanan_Click);
             // 
             // btn_menu_laporanpenjualan
             // 
@@ -1825,19 +1840,19 @@
             this.dgv_ctknota_tabelhrgpkt.AllowUserToDeleteRows = false;
             this.dgv_ctknota_tabelhrgpkt.AllowUserToResizeColumns = false;
             this.dgv_ctknota_tabelhrgpkt.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_ctknota_tabelhrgpkt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_ctknota_tabelhrgpkt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
             this.dgv_ctknota_tabelhrgpkt.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ctknota_tabelhrgpkt.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersHeight = 40;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_ctknota_tabelhrgpkt.Location = new System.Drawing.Point(32, 104);
@@ -2444,34 +2459,34 @@
             this.dgv_lprnpnjln_tabellaporan.AllowUserToDeleteRows = false;
             this.dgv_lprnpnjln_tabellaporan.AllowUserToResizeColumns = false;
             this.dgv_lprnpnjln_tabellaporan.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_lprnpnjln_tabellaporan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnpnjln_tabellaporan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
             this.dgv_lprnpnjln_tabellaporan.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_lprnpnjln_tabellaporan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lprnpnjln_tabellaporan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
             this.dgv_lprnpnjln_tabellaporan.ColumnHeadersHeight = 45;
             this.dgv_lprnpnjln_tabellaporan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_lprnpnjln_tabellaporan.Location = new System.Drawing.Point(13, 76);
             this.dgv_lprnpnjln_tabellaporan.Name = "dgv_lprnpnjln_tabellaporan";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_lprnpnjln_tabellaporan.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lprnpnjln_tabellaporan.RowHeadersDefaultCellStyle = dataGridViewCellStyle45;
             this.dgv_lprnpnjln_tabellaporan.RowHeadersVisible = false;
             this.dgv_lprnpnjln_tabellaporan.RowHeadersWidth = 20;
             this.dgv_lprnpnjln_tabellaporan.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_lprnpnjln_tabellaporan.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnpnjln_tabellaporan.RowsDefaultCellStyle = dataGridViewCellStyle46;
             this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.NullValue = null;
             this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -2757,6 +2772,137 @@
             this.btn_lprnpnjln_excel.UseVisualStyleBackColor = true;
             this.btn_lprnpnjln_excel.Click += new System.EventHandler(this.btn_lprnpnjln_excel_Click);
             // 
+            // pnl_lprnlayanan_isi
+            // 
+            this.pnl_lprnlayanan_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_lprnlayanan_isi.Controls.Add(this.dtp_lprnlayanan_tglsampai);
+            this.pnl_lprnlayanan_isi.Controls.Add(this.lbl_lprnlayanan_sampai);
+            this.pnl_lprnlayanan_isi.Controls.Add(this.dtp_lprnlayanan_tgldari);
+            this.pnl_lprnlayanan_isi.Controls.Add(this.lbl_lprnlayanan_1);
+            this.pnl_lprnlayanan_isi.Controls.Add(this.lbl_lprnlayanan_pilihtanggal);
+            this.pnl_lprnlayanan_isi.Controls.Add(this.btn_lprnlayanan_excel);
+            this.pnl_lprnlayanan_isi.Controls.Add(this.dgv_lprnlayanan_tabellayanan);
+            this.pnl_lprnlayanan_isi.Controls.Add(this.btn_lprnlayanan_batal);
+            this.pnl_lprnlayanan_isi.Location = new System.Drawing.Point(12, 112);
+            this.pnl_lprnlayanan_isi.Name = "pnl_lprnlayanan_isi";
+            this.pnl_lprnlayanan_isi.Size = new System.Drawing.Size(1250, 528);
+            this.pnl_lprnlayanan_isi.TabIndex = 51;
+            this.pnl_lprnlayanan_isi.Visible = false;
+            // 
+            // dtp_lprnlayanan_tglsampai
+            // 
+            this.dtp_lprnlayanan_tglsampai.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_lprnlayanan_tglsampai.Location = new System.Drawing.Point(823, 11);
+            this.dtp_lprnlayanan_tglsampai.Name = "dtp_lprnlayanan_tglsampai";
+            this.dtp_lprnlayanan_tglsampai.Size = new System.Drawing.Size(363, 35);
+            this.dtp_lprnlayanan_tglsampai.TabIndex = 126;
+            this.dtp_lprnlayanan_tglsampai.ValueChanged += new System.EventHandler(this.dtp_lprnlayanan_tglsampai_ValueChanged);
+            // 
+            // lbl_lprnlayanan_sampai
+            // 
+            this.lbl_lprnlayanan_sampai.AutoSize = true;
+            this.lbl_lprnlayanan_sampai.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnlayanan_sampai.Location = new System.Drawing.Point(674, 12);
+            this.lbl_lprnlayanan_sampai.Name = "lbl_lprnlayanan_sampai";
+            this.lbl_lprnlayanan_sampai.Size = new System.Drawing.Size(114, 33);
+            this.lbl_lprnlayanan_sampai.TabIndex = 125;
+            this.lbl_lprnlayanan_sampai.Text = "Sampai";
+            // 
+            // dtp_lprnlayanan_tgldari
+            // 
+            this.dtp_lprnlayanan_tgldari.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_lprnlayanan_tgldari.Location = new System.Drawing.Point(281, 11);
+            this.dtp_lprnlayanan_tgldari.Name = "dtp_lprnlayanan_tgldari";
+            this.dtp_lprnlayanan_tgldari.Size = new System.Drawing.Size(363, 35);
+            this.dtp_lprnlayanan_tgldari.TabIndex = 124;
+            this.dtp_lprnlayanan_tgldari.ValueChanged += new System.EventHandler(this.dtp_lprnlayanan_tgldari_ValueChanged);
+            // 
+            // lbl_lprnlayanan_1
+            // 
+            this.lbl_lprnlayanan_1.AutoSize = true;
+            this.lbl_lprnlayanan_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnlayanan_1.Location = new System.Drawing.Point(252, 12);
+            this.lbl_lprnlayanan_1.Name = "lbl_lprnlayanan_1";
+            this.lbl_lprnlayanan_1.Size = new System.Drawing.Size(23, 33);
+            this.lbl_lprnlayanan_1.TabIndex = 123;
+            this.lbl_lprnlayanan_1.Text = ":";
+            // 
+            // lbl_lprnlayanan_pilihtanggal
+            // 
+            this.lbl_lprnlayanan_pilihtanggal.AutoSize = true;
+            this.lbl_lprnlayanan_pilihtanggal.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnlayanan_pilihtanggal.Location = new System.Drawing.Point(62, 12);
+            this.lbl_lprnlayanan_pilihtanggal.Name = "lbl_lprnlayanan_pilihtanggal";
+            this.lbl_lprnlayanan_pilihtanggal.Size = new System.Drawing.Size(184, 33);
+            this.lbl_lprnlayanan_pilihtanggal.TabIndex = 122;
+            this.lbl_lprnlayanan_pilihtanggal.Text = "Pilih Tanggal";
+            // 
+            // btn_lprnlayanan_excel
+            // 
+            this.btn_lprnlayanan_excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_lprnlayanan_excel.Location = new System.Drawing.Point(13, 455);
+            this.btn_lprnlayanan_excel.Name = "btn_lprnlayanan_excel";
+            this.btn_lprnlayanan_excel.Size = new System.Drawing.Size(250, 60);
+            this.btn_lprnlayanan_excel.TabIndex = 121;
+            this.btn_lprnlayanan_excel.Text = "Convert Excel";
+            this.btn_lprnlayanan_excel.UseVisualStyleBackColor = true;
+            this.btn_lprnlayanan_excel.Click += new System.EventHandler(this.btn_lprnlayanan_excel_Click);
+            // 
+            // dgv_lprnlayanan_tabellayanan
+            // 
+            this.dgv_lprnlayanan_tabellayanan.AllowUserToAddRows = false;
+            this.dgv_lprnlayanan_tabellayanan.AllowUserToDeleteRows = false;
+            this.dgv_lprnlayanan_tabellayanan.AllowUserToResizeColumns = false;
+            this.dgv_lprnlayanan_tabellayanan.AllowUserToResizeRows = false;
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnlayanan_tabellayanan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle47;
+            this.dgv_lprnlayanan_tabellayanan.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle48.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lprnlayanan_tabellayanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle48;
+            this.dgv_lprnlayanan_tabellayanan.ColumnHeadersHeight = 200;
+            this.dgv_lprnlayanan_tabellayanan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_lprnlayanan_tabellayanan.Location = new System.Drawing.Point(13, 72);
+            this.dgv_lprnlayanan_tabellayanan.Name = "dgv_lprnlayanan_tabellayanan";
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lprnlayanan_tabellayanan.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
+            this.dgv_lprnlayanan_tabellayanan.RowHeadersVisible = false;
+            this.dgv_lprnlayanan_tabellayanan.RowHeadersWidth = 20;
+            this.dgv_lprnlayanan_tabellayanan.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnlayanan_tabellayanan.RowsDefaultCellStyle = dataGridViewCellStyle50;
+            this.dgv_lprnlayanan_tabellayanan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnlayanan_tabellayanan.RowTemplate.DefaultCellStyle.NullValue = null;
+            this.dgv_lprnlayanan_tabellayanan.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_lprnlayanan_tabellayanan.RowTemplate.Height = 20;
+            this.dgv_lprnlayanan_tabellayanan.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_lprnlayanan_tabellayanan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_lprnlayanan_tabellayanan.Size = new System.Drawing.Size(1221, 377);
+            this.dgv_lprnlayanan_tabellayanan.TabIndex = 120;
+            // 
+            // btn_lprnlayanan_batal
+            // 
+            this.btn_lprnlayanan_batal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_lprnlayanan_batal.Location = new System.Drawing.Point(1079, 455);
+            this.btn_lprnlayanan_batal.Name = "btn_lprnlayanan_batal";
+            this.btn_lprnlayanan_batal.Size = new System.Drawing.Size(155, 60);
+            this.btn_lprnlayanan_batal.TabIndex = 15;
+            this.btn_lprnlayanan_batal.Text = "Batal";
+            this.btn_lprnlayanan_batal.UseVisualStyleBackColor = true;
+            this.btn_lprnlayanan_batal.Click += new System.EventHandler(this.btn_lprnlayanan_batal_Click);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2764,6 +2910,7 @@
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.ClientSize = new System.Drawing.Size(1274, 652);
             this.Controls.Add(this.pnl_menu_isi);
+            this.Controls.Add(this.pnl_lprnlayanan_isi);
             this.Controls.Add(this.pnl_variabel_isi);
             this.Controls.Add(this.pnl_lprnpnjln_isi);
             this.Controls.Add(this.pnl_ctknota_isi);
@@ -2815,6 +2962,9 @@
             this.pnl_lprnpnjln_totalcash.ResumeLayout(false);
             this.pnl_lprnpnjln_totalcash.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lprnpnjln_tabellaporan)).EndInit();
+            this.pnl_lprnlayanan_isi.ResumeLayout(false);
+            this.pnl_lprnlayanan_isi.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_lprnlayanan_tabellayanan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3035,5 +3185,14 @@
         private System.Windows.Forms.Label lbl_lprnpnjln_totaldiskon;
         private System.Windows.Forms.Button btn_lprnpnjln_batal;
         private System.Windows.Forms.Button btn_lprnpnjln_excel;
+        private System.Windows.Forms.Panel pnl_lprnlayanan_isi;
+        private System.Windows.Forms.DateTimePicker dtp_lprnlayanan_tglsampai;
+        private System.Windows.Forms.Label lbl_lprnlayanan_sampai;
+        private System.Windows.Forms.DateTimePicker dtp_lprnlayanan_tgldari;
+        private System.Windows.Forms.Label lbl_lprnlayanan_1;
+        private System.Windows.Forms.Label lbl_lprnlayanan_pilihtanggal;
+        private System.Windows.Forms.Button btn_lprnlayanan_excel;
+        private System.Windows.Forms.DataGridView dgv_lprnlayanan_tabellayanan;
+        private System.Windows.Forms.Button btn_lprnlayanan_batal;
     }
 }

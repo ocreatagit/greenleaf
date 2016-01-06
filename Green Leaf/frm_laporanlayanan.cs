@@ -34,21 +34,6 @@ namespace Green_Leaf
             btn_lprnlayanan_excel.Enabled = false;
         }
 
-        private void btn_lprnlayanan_excel_Click(object sender, EventArgs e)
-        {
-            string folderPath = "C:\\Excel\\";
-            if (!Directory.Exists(folderPath))
-            {
-                Directory.CreateDirectory(folderPath);
-            }
-            using (XLWorkbook wb = new XLWorkbook())
-            {
-                wb.Worksheets.Add(lprnlayanan_DS.Tables[0], "Customers");
-                wb.SaveAs(folderPath + "Laporan Layanan.xlsx");
-                MessageBox.Show("File Excel telah disimpan");
-            }
-        }
-
         private void dtp_lprnlayanan_tgldari_ValueChanged(object sender, EventArgs e)
         {
             string lprnlayanan_queryfinal = "";
@@ -163,14 +148,38 @@ namespace Green_Leaf
                 
                 for (int i = 3; i < dgv_lprnlayanan_tabellayanan.Columns.Count; i++)
                 {
-                    dgv_lprnlayanan_tabellayanan.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    //dgv_lprnlayanan_tabellayanan.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                     dgv_lprnlayanan_tabellayanan.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 }
                 for (int i = 0; i < dgv_lprnlayanan_tabellayanan.Columns.Count; i++)
                 {
                     dgv_lprnlayanan_tabellayanan.Columns[i].ReadOnly = true;
                 }
+                List<string> lprnlayanan_listtotal = new List<string>();
+                lprnlayanan_listtotal.Add("0");
+                lprnlayanan_listtotal.Add("0");
+                lprnlayanan_listtotal.Add("0");
+                for (int i = 3; i < lprnlayanan_DS.Tables[0].Columns.Count; i++)
+                {
+                    int totalperkolom = 0;
+                    for (int ii = 0; ii < lprnlayanan_DS.Tables[0].Rows.Count; ii++)
+                    {
 
+                        totalperkolom += Convert.ToInt32(lprnlayanan_DS.Tables[0].Rows[ii][i].ToString());
+                        
+                    }
+                    lprnlayanan_listtotal.Add(totalperkolom.ToString());
+                }
+                DataRow row = lprnlayanan_DS.Tables[0].NewRow();
+                row[0] = "0";
+                row[1] = "Total";
+                row[2] = "";
+                for (int i = 3; i < lprnlayanan_listtotal.Count; i++)
+                {
+                    row[i] = lprnlayanan_listtotal[i];
+                }
+                lprnlayanan_DS.Tables[0].Rows.Add(row);
+                dgv_lprnlayanan_tabellayanan.Rows[dgv_lprnlayanan_tabellayanan.Rows.Count - 1].DefaultCellStyle.Font = new Font(dgv_lprnlayanan_tabellayanan.Font, FontStyle.Bold);
                 btn_lprnlayanan_excel.Enabled = true;
             }
             catch (Exception ex)
@@ -315,6 +324,26 @@ namespace Green_Leaf
             }
             lprnlayanan_conn3.Close();
             #endregion
+        }
+
+        private void btn_lprnlayanan_excel_Click(object sender, EventArgs e)
+        {
+            string folderPath = "C:\\Excel\\";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(lprnlayanan_DS.Tables[0], "Customers");
+                wb.SaveAs(folderPath + "Laporan Layanan.xlsx");
+                MessageBox.Show("File Excel telah disimpan");
+            }
+        }
+
+        private void btn_lprnlayanan_batal_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

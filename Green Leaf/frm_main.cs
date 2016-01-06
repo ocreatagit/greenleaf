@@ -631,9 +631,17 @@ namespace Green_Leaf
             //rdo_lprnpnjln_credit.Checked = false;
         }
 
-        private void btn_menu_laporangajiterapis_Click(object sender, EventArgs e)
+        private void btn_menu_laporanlayanan_Click(object sender, EventArgs e)
         {
             pnl_menu_isi.Visible = false;
+            pnl_lprnlayanan_isi.Visible = true;
+
+            dgv_lprnlayanan_tabellayanan.DataSource = null;
+            dgv_lprnlayanan_tabellayanan.Rows.Clear();
+            dgv_lprnlayanan_tabellayanan.Columns.Clear();
+            lprnlayanan_DS.Tables.Clear();
+
+            btn_lprnlayanan_excel.Enabled = false;
         }
 
         private void btn_menu_laporangajiexcel_Click(object sender, EventArgs e)
@@ -2910,101 +2918,101 @@ namespace Green_Leaf
                                     lbl_ctknota_totalbyr.Text = totalbayarFinal;
                                 MessageBox.Show("Nota telah berhasil ditambahkan");
                                 //MessageBox.Show("diskon kosong, fee kosong");
-                                //#region(Bersihkan Form)
-                                //dgv_ctknota_tabelhrgpkt.DataSource = null;
-                                //dgv_ctknota_tabelhrgpkt.Rows.Clear();
-                                //dgv_ctknota_tabelhrgpkt.Refresh();
-                                //ctknota_DS.Tables.Clear();
-                                //ctknota_countExtraColumn = 0;
+                                #region(Bersihkan Form)
+                                dgv_ctknota_tabelhrgpkt.DataSource = null;
+                                dgv_ctknota_tabelhrgpkt.Rows.Clear();
+                                dgv_ctknota_tabelhrgpkt.Refresh();
+                                ctknota_DS.Tables.Clear();
+                                ctknota_countExtraColumn = 0;
 
-                                //rdo_ctknota_biasa.Checked = false;
-                                //rdo_ctknota_cash.Checked = false;
-                                //rdo_ctknota_credit.Checked = false;
-                                //rdo_ctknota_hotel.Checked = false;
-                                //rdo_ctknota_midnight.Checked = false;
-                                //rdo_ctknota_normal.Checked = false;
-                                //cbo_ctknota_jenispaket.Items.Clear();
-                                //txt_ctknota_namaterapis.Clear();
-                                //txt_ctknota_nomorruangan.Clear();
-                                //lbl_ctknota_totalbyr.Text = "";
-                                //txt_ctknota_fee.Clear();
-                                //txt_ctknota_diskon.Clear();
-                                //txt_ctknota_ket.Clear();
+                                rdo_ctknota_biasa.Checked = false;
+                                rdo_ctknota_cash.Checked = false;
+                                rdo_ctknota_credit.Checked = false;
+                                rdo_ctknota_hotel.Checked = false;
+                                rdo_ctknota_midnight.Checked = false;
+                                rdo_ctknota_normal.Checked = false;
+                                cbo_ctknota_jenispaket.Items.Clear();
+                                txt_ctknota_namaterapis.Clear();
+                                txt_ctknota_nomorruangan.Clear();
+                                lbl_ctknota_totalbyr.Text = "";
+                                txt_ctknota_fee.Clear();
+                                txt_ctknota_diskon.Clear();
+                                txt_ctknota_ket.Clear();
 
-                                //txt_ctknota_nomorruangan.Enabled = true;
-                                //rdo_ctknota_normal.Enabled = false;
-                                //rdo_ctknota_midnight.Enabled = false;
-                                //rdo_ctknota_hotel.Enabled = false;
-                                //rdo_ctknota_biasa.Enabled = false;
-                                //cbo_ctknota_jenispaket.Enabled = false;
-                                //dgv_ctknota_tabelhrgpkt.Enabled = false;
-                                //rdo_ctknota_cash.Enabled = false;
-                                //rdo_ctknota_credit.Enabled = false;
-                                //cbo_ctknota_kodeterapis.Enabled = false;
-                                //txt_ctknota_namaterapis.Enabled = false;
-                                //txt_ctknota_diskon.Enabled = false;
-                                //txt_ctknota_ket.Enabled = false;
-                                //txt_ctknota_fee.Enabled = false;
+                                txt_ctknota_nomorruangan.Enabled = true;
+                                rdo_ctknota_normal.Enabled = false;
+                                rdo_ctknota_midnight.Enabled = false;
+                                rdo_ctknota_hotel.Enabled = false;
+                                rdo_ctknota_biasa.Enabled = false;
+                                cbo_ctknota_jenispaket.Enabled = false;
+                                dgv_ctknota_tabelhrgpkt.Enabled = false;
+                                rdo_ctknota_cash.Enabled = false;
+                                rdo_ctknota_credit.Enabled = false;
+                                cbo_ctknota_kodeterapis.Enabled = false;
+                                txt_ctknota_namaterapis.Enabled = false;
+                                txt_ctknota_diskon.Enabled = false;
+                                txt_ctknota_ket.Enabled = false;
+                                txt_ctknota_fee.Enabled = false;
 
-                                //btn_ctknota_cetak.Enabled = false;
-                                //btn_ctknota_batal.Enabled = true;
+                                btn_ctknota_cetak.Enabled = false;
+                                btn_ctknota_batal.Enabled = true;
 
-                                ////#region(Ambil data Potongan dan Extra dari database)
-                                ////string ctknota_query2;
-                                ////string ctknota_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                                ////MySqlConnection ctknota_conn2 = new MySqlConnection(ctknota_connStr2);
-                                ////try
-                                ////{
-                                ////    ctknota_conn2.Open();
-
-                                ////    ctknota_query2 = "SELECT * FROM `variabel`";
-                                ////    MySqlCommand ctknota_cmd2 = new MySqlCommand(ctknota_query2, ctknota_conn2);
-                                ////    MySqlDataReader ctknota_rdr2 = ctknota_cmd2.ExecuteReader();
-
-                                ////    while (ctknota_rdr2.Read())
-                                ////    {
-                                ////        //cbo_kodeterapis.Items.Add(edttrps_rdr.GetString(1));
-                                ////        //cbo_ctknota_jenispaket.Items.Add(ctknota_rdr.GetString(0));
-                                ////        ctknota_extra = ctknota_rdr2.GetInt32(1);
-                                ////        ctknota_tamuhotel = ctknota_rdr2.GetInt32(2);
-                                ////    }
-                                ////    ctknota_rdr2.Close();
-                                ////}
-                                ////catch (Exception ex)
-                                ////{
-                                ////    Console.WriteLine(ex.ToString());
-                                ////}
-                                ////ctknota_conn2.Close();
-                                ////#endregion
-
-                                //cbo_ctknota_kodeterapis.Items.Clear();
-                                //#region(Select)
-                                //string ctknota_query3;
-                                //string ctknota_connStr3 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                                //MySqlConnection ctknota_conn3 = new MySqlConnection(ctknota_connStr3);
+                                //#region(Ambil data Potongan dan Extra dari database)
+                                //string ctknota_query2;
+                                //string ctknota_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                                //MySqlConnection ctknota_conn2 = new MySqlConnection(ctknota_connStr2);
                                 //try
                                 //{
-                                //    ctknota_conn3.Open();
+                                //    ctknota_conn2.Open();
 
-                                //    ctknota_query3 = "SELECT * FROM `terapis` WHERE `status_terapis` = 'Aktif'";
-                                //    MySqlCommand ctknota_cmd3 = new MySqlCommand(ctknota_query3, ctknota_conn3);
-                                //    MySqlDataReader ctknota_rdr3 = ctknota_cmd3.ExecuteReader();
+                                //    ctknota_query2 = "SELECT * FROM `variabel`";
+                                //    MySqlCommand ctknota_cmd2 = new MySqlCommand(ctknota_query2, ctknota_conn2);
+                                //    MySqlDataReader ctknota_rdr2 = ctknota_cmd2.ExecuteReader();
 
-                                //    while (ctknota_rdr3.Read())
+                                //    while (ctknota_rdr2.Read())
                                 //    {
                                 //        //cbo_kodeterapis.Items.Add(edttrps_rdr.GetString(1));
-                                //        cbo_ctknota_kodeterapis.Items.Add(ctknota_rdr3.GetString(1));
+                                //        //cbo_ctknota_jenispaket.Items.Add(ctknota_rdr.GetString(0));
+                                //        ctknota_extra = ctknota_rdr2.GetInt32(1);
+                                //        ctknota_tamuhotel = ctknota_rdr2.GetInt32(2);
                                 //    }
-                                //    ctknota_rdr3.Close();
+                                //    ctknota_rdr2.Close();
                                 //}
                                 //catch (Exception ex)
                                 //{
-                                //    string Hasilex = ex.ToString();
-                                //    MessageBox.Show("Error Occured");
+                                //    Console.WriteLine(ex.ToString());
                                 //}
-                                //ctknota_conn3.Close();
+                                //ctknota_conn2.Close();
                                 //#endregion
-                                //#endregion
+
+                                cbo_ctknota_kodeterapis.Items.Clear();
+                                #region(Select)
+                                string ctknota_query3;
+                                string ctknota_connStr3 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                                MySqlConnection ctknota_conn3 = new MySqlConnection(ctknota_connStr3);
+                                try
+                                {
+                                    ctknota_conn3.Open();
+
+                                    ctknota_query3 = "SELECT * FROM `terapis` WHERE `status_terapis` = 'Aktif'";
+                                    MySqlCommand ctknota_cmd3 = new MySqlCommand(ctknota_query3, ctknota_conn3);
+                                    MySqlDataReader ctknota_rdr3 = ctknota_cmd3.ExecuteReader();
+
+                                    while (ctknota_rdr3.Read())
+                                    {
+                                        //cbo_kodeterapis.Items.Add(edttrps_rdr.GetString(1));
+                                        cbo_ctknota_kodeterapis.Items.Add(ctknota_rdr3.GetString(1));
+                                    }
+                                    ctknota_rdr3.Close();
+                                }
+                                catch (Exception ex)
+                                {
+                                    string Hasilex = ex.ToString();
+                                    MessageBox.Show("Error Occured");
+                                }
+                                ctknota_conn3.Close();
+                                #endregion
+                                #endregion
                             }
                             else
                             {
@@ -5609,7 +5617,7 @@ namespace Green_Leaf
             using (XLWorkbook wb = new XLWorkbook())
             {
                 wb.Worksheets.Add(lprnpnjln_DS.Tables[0], "Customers");
-                wb.SaveAs(folderPath + "DataGridViewExport.xlsx");
+                wb.SaveAs(folderPath + "Laporan Penjualan.xlsx");
                 MessageBox.Show("File Excel telah disimpan");
             }
         }
@@ -5618,6 +5626,352 @@ namespace Green_Leaf
         {
             pnl_lprnpnjln_isi.Visible = false;
             pnl_menu_isi.Visible = true;
+        }
+        #endregion
+
+        #region(Panel Laporan Layanan)
+        string lprnlayanan_tanggalcetakdari = "";
+        string lprnlayanan_tanggalcetaksampai = "";
+        DataSet lprnlayanan_DS = new DataSet();
+        private void dtp_lprnlayanan_tgldari_ValueChanged(object sender, EventArgs e)
+        {
+            string lprnlayanan_queryfinal = "";
+
+            #region(Select)
+            dgv_lprnlayanan_tabellayanan.DataSource = null;
+            dgv_lprnlayanan_tabellayanan.Rows.Clear();
+            dgv_lprnlayanan_tabellayanan.Columns.Clear();
+            lprnlayanan_DS.Tables.Clear();
+            string lprnlayanan_query;
+            string lprnlayanan_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+            MySqlConnection lprnlayanan_conn = new MySqlConnection(lprnlayanan_connStr);
+            try
+            {
+                // RRyner   
+                lprnlayanan_conn.Open();
+                lprnlayanan_query = "SELECT *, 'Normal', 'Tidak' FROM `paket` WHERE jenis_paket = 'VIP' " +
+                                    "UNION " +
+                                    "SELECT *, 'Normal', 'Tidak' FROM paket WHERE jenis_paket = 'Deluxe' " +
+                                    "UNION " +
+                                    "SELECT *, 'Normal', 'Tidak' FROM paket WHERE jenis_paket = 'VVIP' " +
+                                    "UNION " +
+                                    "SELECT *, 'Normal', 'Ya' FROM `paket` WHERE jenis_paket = 'VIP' " +
+                                    "UNION " +
+                                    "SELECT *, 'Normal', 'Ya' FROM `paket` WHERE jenis_paket = 'Deluxe' " +
+                                    "UNION " +
+                                    "SELECT *, 'Normal', 'Ya' FROM `paket` WHERE jenis_paket = 'VVIP' " +
+                                    "UNION " +
+                                    "SELECT *, 'Midnight', 'Tidak' FROM `paket` WHERE jenis_paket = 'VIP' " +
+                                    "UNION  " +
+                                    "SELECT *, 'Midnight', 'Tidak' FROM paket WHERE jenis_paket = 'Deluxe' " +
+                                    "UNION " +
+                                    "SELECT *, 'Midnight', 'Tidak' FROM paket WHERE jenis_paket = 'VVIP' " +
+                                    "UNION " +
+                                    "SELECT *, 'Midnight', 'Ya' FROM `paket` WHERE jenis_paket = 'VIP' " +
+                                    "UNION " +
+                                    "SELECT *, 'Midnight', 'Ya' FROM `paket` WHERE jenis_paket = 'Deluxe'" +
+                                    "UNION " +
+                                    "SELECT *, 'Midnight', 'Ya' FROM `paket` WHERE jenis_paket = 'VVIP';";
+
+                lprnlayanan_queryfinal = "SELECT t.kode_terapis, t.nama_terapis, 'THERAPIST', ";
+
+                MySqlCommand lprnlayanan_cmd = new MySqlCommand(lprnlayanan_query, lprnlayanan_conn);
+                MySqlDataReader lprnlayanan_readr = lprnlayanan_cmd.ExecuteReader();
+
+                lprnlayanan_tanggalcetakdari = dtp_lprnlayanan_tgldari.Value.Year.ToString();
+                lprnlayanan_tanggalcetakdari += "-" + dtp_lprnlayanan_tgldari.Value.Month.ToString();
+                lprnlayanan_tanggalcetakdari += "-" + dtp_lprnlayanan_tgldari.Value.Day.ToString();
+
+                lprnlayanan_tanggalcetaksampai = dtp_lprnlayanan_tglsampai.Value.Year.ToString();
+                lprnlayanan_tanggalcetaksampai += "-" + dtp_lprnlayanan_tglsampai.Value.Month.ToString();
+                lprnlayanan_tanggalcetaksampai += "-" + dtp_lprnlayanan_tglsampai.Value.Day.ToString();
+
+                if (lprnlayanan_readr.HasRows)
+                {
+                    while (lprnlayanan_readr.Read())
+                    {
+                        string extra = "Dasar";
+                        if (lprnlayanan_readr.GetString(8) != "Tidak")
+                        {
+                            extra = "Extra";
+                        }
+
+                        string temp = lprnlayanan_readr.GetString(4);
+                        string harga = Convert.ToInt32(temp).ToString(String.Format("0,0", temp));
+
+                        lprnlayanan_queryfinal += "(SELECT COUNT(n1.id_nota)" +
+                                        " FROM nota n1 INNER JOIN terapis t1 ON t1.kode_terapis = n1.kodeterapis_nota " +
+                                        "INNER JOIN paket p1 ON p1.id_paket = n1.id_paket " +
+                                        "WHERE DATE(`tanggalcetak_nota`) >= '" + lprnlayanan_tanggalcetakdari + "' AND DATE(tanggalcetak_nota) <= '" + lprnlayanan_tanggalcetaksampai + "' AND n1.status_nota='-' AND n1.jamkerja_nota = '" + lprnlayanan_readr.GetString(7) + "' AND n1.extra_nota = '" + lprnlayanan_readr.GetString(8) + "' " +
+                                        "AND p1.jenis_paket = TRIM('" + lprnlayanan_readr.GetString(1) + "') AND n1.id_paket = " + lprnlayanan_readr.GetInt32(0) + " AND t.id_terapis = t1.id_terapis) as ' " + lprnlayanan_readr.GetString(7) + "\n\n{" + extra + "}\n\n[" + lprnlayanan_readr.GetString(1) + "]\n____________________\n" + lprnlayanan_readr.GetString(2) + "\n(" + harga + ")',";
+                    }
+                    //MessageBox.Show(readr.FieldCount + "");
+                }
+                lprnlayanan_queryfinal = lprnlayanan_queryfinal.Substring(0, lprnlayanan_queryfinal.Length - 1);
+                lprnlayanan_queryfinal += " FROM terapis t";
+            }
+            catch (Exception ex)
+            {
+                string error = ex.ToString();
+                MessageBox.Show("Error Occurred");
+            }
+            lprnlayanan_conn.Close();
+            #endregion
+
+            #region(Select)
+            lprnlayanan_DS.Tables.Clear();
+            string lprnlayanan_connStr3 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+            MySqlConnection lprnlayanan_conn3 = new MySqlConnection(lprnlayanan_connStr3);
+            try
+            {
+                lprnlayanan_conn3.Open();
+
+                MySqlDataAdapter lprnlayanan_mySqlDataAdapter3 = new MySqlDataAdapter(lprnlayanan_queryfinal, lprnlayanan_conn3);
+                MySqlCommand lprnlayanan_cmd3 = new MySqlCommand(lprnlayanan_queryfinal, lprnlayanan_conn3);
+
+                lprnlayanan_mySqlDataAdapter3.Fill(lprnlayanan_DS);
+
+                dgv_lprnlayanan_tabellayanan.DataSource = lprnlayanan_DS.Tables[0];
+
+                lprnlayanan_DS.Tables[0].Columns[0].ColumnName = "Nomor";
+                lprnlayanan_DS.Tables[0].Columns[1].ColumnName = "Nama Terapis";
+                lprnlayanan_DS.Tables[0].Columns[2].ColumnName = "Jabatan";
+
+                dgv_lprnlayanan_tabellayanan.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgv_lprnlayanan_tabellayanan.Columns[0].Width = 75;
+                dgv_lprnlayanan_tabellayanan.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgv_lprnlayanan_tabellayanan.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgv_lprnlayanan_tabellayanan.Columns[2].Width = 75;
+                dgv_lprnlayanan_tabellayanan.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgv_lprnlayanan_tabellayanan.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                for (int i = 3; i < dgv_lprnlayanan_tabellayanan.Columns.Count; i++)
+                {
+                    //dgv_lprnlayanan_tabellayanan.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    dgv_lprnlayanan_tabellayanan.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                }
+                for (int i = 0; i < dgv_lprnlayanan_tabellayanan.Columns.Count; i++)
+                {
+                    dgv_lprnlayanan_tabellayanan.Columns[i].ReadOnly = true;
+                }
+                List<string> lprnlayanan_listtotal = new List<string>();
+                lprnlayanan_listtotal.Add("0");
+                lprnlayanan_listtotal.Add("0");
+                lprnlayanan_listtotal.Add("0");
+                for (int i = 3; i < lprnlayanan_DS.Tables[0].Columns.Count; i++)
+                {
+                    int totalperkolom = 0;
+                    for (int ii = 0; ii < lprnlayanan_DS.Tables[0].Rows.Count; ii++)
+                    {
+
+                        totalperkolom += Convert.ToInt32(lprnlayanan_DS.Tables[0].Rows[ii][i].ToString());
+
+                    }
+                    lprnlayanan_listtotal.Add(totalperkolom.ToString());
+                }
+                DataRow row = lprnlayanan_DS.Tables[0].NewRow();
+                row[0] = "0";
+                row[1] = "Total";
+                row[2] = "";
+                for (int i = 3; i < lprnlayanan_listtotal.Count; i++)
+                {
+                    row[i] = lprnlayanan_listtotal[i];
+                }
+                lprnlayanan_DS.Tables[0].Rows.Add(row);
+                dgv_lprnlayanan_tabellayanan.Rows[dgv_lprnlayanan_tabellayanan.Rows.Count - 1].DefaultCellStyle.Font = new Font(dgv_lprnlayanan_tabellayanan.Font, FontStyle.Bold);
+
+                dgv_lprnlayanan_tabellayanan.Columns[0].Frozen = true;
+                dgv_lprnlayanan_tabellayanan.Columns[1].Frozen = true;
+                dgv_lprnlayanan_tabellayanan.Columns[2].Frozen = true;
+                btn_lprnlayanan_excel.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                string error = ex.ToString();
+                MessageBox.Show("Error Occurred");
+            }
+            lprnlayanan_conn3.Close();
+            #endregion
+
+
+        }
+
+        private void dtp_lprnlayanan_tglsampai_ValueChanged(object sender, EventArgs e)
+        {
+            string lprnlayanan_queryfinal = "";
+
+            #region(Select)
+            dgv_lprnlayanan_tabellayanan.DataSource = null;
+            dgv_lprnlayanan_tabellayanan.Rows.Clear();
+            dgv_lprnlayanan_tabellayanan.Columns.Clear();
+            lprnlayanan_DS.Tables.Clear();
+            string lprnlayanan_query;
+            string lprnlayanan_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+            MySqlConnection lprnlayanan_conn = new MySqlConnection(lprnlayanan_connStr);
+            try
+            {
+                // RRyner   
+                lprnlayanan_conn.Open();
+                lprnlayanan_query = "SELECT *, 'Normal', 'Tidak' FROM `paket` WHERE jenis_paket = 'VIP' " +
+                                    "UNION " +
+                                    "SELECT *, 'Normal', 'Tidak' FROM paket WHERE jenis_paket = 'Deluxe' " +
+                                    "UNION " +
+                                    "SELECT *, 'Normal', 'Tidak' FROM paket WHERE jenis_paket = 'VVIP' " +
+                                    "UNION " +
+                                    "SELECT *, 'Normal', 'Ya' FROM `paket` WHERE jenis_paket = 'VIP' " +
+                                    "UNION " +
+                                    "SELECT *, 'Normal', 'Ya' FROM `paket` WHERE jenis_paket = 'Deluxe' " +
+                                    "UNION " +
+                                    "SELECT *, 'Normal', 'Ya' FROM `paket` WHERE jenis_paket = 'VVIP' " +
+                                    "UNION " +
+                                    "SELECT *, 'Midnight', 'Tidak' FROM `paket` WHERE jenis_paket = 'VIP' " +
+                                    "UNION  " +
+                                    "SELECT *, 'Midnight', 'Tidak' FROM paket WHERE jenis_paket = 'Deluxe' " +
+                                    "UNION " +
+                                    "SELECT *, 'Midnight', 'Tidak' FROM paket WHERE jenis_paket = 'VVIP' " +
+                                    "UNION " +
+                                    "SELECT *, 'Midnight', 'Ya' FROM `paket` WHERE jenis_paket = 'VIP' " +
+                                    "UNION " +
+                                    "SELECT *, 'Midnight', 'Ya' FROM `paket` WHERE jenis_paket = 'Deluxe'" +
+                                    "UNION " +
+                                    "SELECT *, 'Midnight', 'Ya' FROM `paket` WHERE jenis_paket = 'VVIP';";
+
+                lprnlayanan_queryfinal = "SELECT t.kode_terapis, t.nama_terapis, 'THERAPIST', ";
+
+                MySqlCommand lprnlayanan_cmd = new MySqlCommand(lprnlayanan_query, lprnlayanan_conn);
+                MySqlDataReader lprnlayanan_readr = lprnlayanan_cmd.ExecuteReader();
+
+                lprnlayanan_tanggalcetakdari = dtp_lprnlayanan_tgldari.Value.Year.ToString();
+                lprnlayanan_tanggalcetakdari += "-" + dtp_lprnlayanan_tgldari.Value.Month.ToString();
+                lprnlayanan_tanggalcetakdari += "-" + dtp_lprnlayanan_tgldari.Value.Day.ToString();
+
+                lprnlayanan_tanggalcetaksampai = dtp_lprnlayanan_tglsampai.Value.Year.ToString();
+                lprnlayanan_tanggalcetaksampai += "-" + dtp_lprnlayanan_tglsampai.Value.Month.ToString();
+                lprnlayanan_tanggalcetaksampai += "-" + dtp_lprnlayanan_tglsampai.Value.Day.ToString();
+
+                if (lprnlayanan_readr.HasRows)
+                {
+                    while (lprnlayanan_readr.Read())
+                    {
+                        string extra = "Dasar";
+                        if (lprnlayanan_readr.GetString(8) != "Tidak")
+                        {
+                            extra = "Extra";
+                        }
+
+                        string temp = lprnlayanan_readr.GetString(4);
+                        string harga = Convert.ToInt32(temp).ToString(String.Format("0,0", temp));
+
+                        lprnlayanan_queryfinal += "(SELECT COUNT(n1.id_nota)" +
+                                        " FROM nota n1 INNER JOIN terapis t1 ON t1.kode_terapis = n1.kodeterapis_nota " +
+                                        "INNER JOIN paket p1 ON p1.id_paket = n1.id_paket " +
+                                        "WHERE DATE(`tanggalcetak_nota`) >= '" + lprnlayanan_tanggalcetakdari + "' AND DATE(tanggalcetak_nota) <= '" + lprnlayanan_tanggalcetaksampai + "' AND n1.status_nota='-' AND n1.jamkerja_nota = '" + lprnlayanan_readr.GetString(7) + "' AND n1.extra_nota = '" + lprnlayanan_readr.GetString(8) + "' " +
+                                        "AND p1.jenis_paket = TRIM('" + lprnlayanan_readr.GetString(1) + "') AND n1.id_paket = " + lprnlayanan_readr.GetInt32(0) + " AND t.id_terapis = t1.id_terapis) as ' " + lprnlayanan_readr.GetString(7) + "\n\n{" + extra + "}\n\n[" + lprnlayanan_readr.GetString(1) + "]\n____________________\n" + lprnlayanan_readr.GetString(2) + "\n(" + harga + ")',";
+                    }
+                    //MessageBox.Show(readr.FieldCount + "");
+                }
+                lprnlayanan_queryfinal = lprnlayanan_queryfinal.Substring(0, lprnlayanan_queryfinal.Length - 1);
+                lprnlayanan_queryfinal += " FROM terapis t";
+            }
+            catch (Exception ex)
+            {
+                string error = ex.ToString();
+                MessageBox.Show("Error Occurred");
+            }
+            lprnlayanan_conn.Close();
+            #endregion
+
+            #region(Select)
+            lprnlayanan_DS.Tables.Clear();
+            string lprnlayanan_connStr3 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+            MySqlConnection lprnlayanan_conn3 = new MySqlConnection(lprnlayanan_connStr3);
+            try
+            {
+                lprnlayanan_conn3.Open();
+
+                MySqlDataAdapter lprnlayanan_mySqlDataAdapter3 = new MySqlDataAdapter(lprnlayanan_queryfinal, lprnlayanan_conn3);
+                MySqlCommand lprnlayanan_cmd3 = new MySqlCommand(lprnlayanan_queryfinal, lprnlayanan_conn3);
+
+                lprnlayanan_mySqlDataAdapter3.Fill(lprnlayanan_DS);
+
+                dgv_lprnlayanan_tabellayanan.DataSource = lprnlayanan_DS.Tables[0];
+
+                lprnlayanan_DS.Tables[0].Columns[0].ColumnName = "Nomor";
+                lprnlayanan_DS.Tables[0].Columns[1].ColumnName = "Nama Terapis";
+                lprnlayanan_DS.Tables[0].Columns[2].ColumnName = "Jabatan";
+
+                dgv_lprnlayanan_tabellayanan.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgv_lprnlayanan_tabellayanan.Columns[0].Width = 75;
+                dgv_lprnlayanan_tabellayanan.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgv_lprnlayanan_tabellayanan.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgv_lprnlayanan_tabellayanan.Columns[2].Width = 75;
+                dgv_lprnlayanan_tabellayanan.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgv_lprnlayanan_tabellayanan.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                for (int i = 3; i < dgv_lprnlayanan_tabellayanan.Columns.Count; i++)
+                {
+                    //dgv_lprnlayanan_tabellayanan.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    dgv_lprnlayanan_tabellayanan.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                }
+                for (int i = 0; i < dgv_lprnlayanan_tabellayanan.Columns.Count; i++)
+                {
+                    dgv_lprnlayanan_tabellayanan.Columns[i].ReadOnly = true;
+                }
+                List<string> lprnlayanan_listtotal = new List<string>();
+                lprnlayanan_listtotal.Add("0");
+                lprnlayanan_listtotal.Add("0");
+                lprnlayanan_listtotal.Add("0");
+                for (int i = 3; i < lprnlayanan_DS.Tables[0].Columns.Count; i++)
+                {
+                    int totalperkolom = 0;
+                    for (int ii = 0; ii < lprnlayanan_DS.Tables[0].Rows.Count; ii++)
+                    {
+
+                        totalperkolom += Convert.ToInt32(lprnlayanan_DS.Tables[0].Rows[ii][i].ToString());
+
+                    }
+                    lprnlayanan_listtotal.Add(totalperkolom.ToString());
+                }
+                DataRow row = lprnlayanan_DS.Tables[0].NewRow();
+                row[0] = "0";
+                row[1] = "Total";
+                row[2] = "";
+                for (int i = 3; i < lprnlayanan_listtotal.Count; i++)
+                {
+                    row[i] = lprnlayanan_listtotal[i];
+                }
+                lprnlayanan_DS.Tables[0].Rows.Add(row);
+                dgv_lprnlayanan_tabellayanan.Rows[dgv_lprnlayanan_tabellayanan.Rows.Count - 1].DefaultCellStyle.Font = new Font(dgv_lprnlayanan_tabellayanan.Font, FontStyle.Bold);
+                btn_lprnlayanan_excel.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                string error = ex.ToString();
+                MessageBox.Show("Error Occurred");
+            }
+            lprnlayanan_conn3.Close();
+            #endregion
+        }
+
+        private void btn_lprnlayanan_excel_Click(object sender, EventArgs e)
+        {
+            string folderPath = "C:\\Excel\\";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(lprnlayanan_DS.Tables[0], "Customers");
+                wb.SaveAs(folderPath + "Laporan Layanan.xlsx");
+                MessageBox.Show("File Excel telah disimpan");
+            }
+        }
+
+        private void btn_lprnlayanan_batal_Click(object sender, EventArgs e)
+        {
+            pnl_menu_isi.Visible = true;
+            pnl_lprnlayanan_isi.Visible = false;
         }
         #endregion
 
