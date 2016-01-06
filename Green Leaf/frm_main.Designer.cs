@@ -51,6 +51,7 @@
             this.lbl_login_pass = new System.Windows.Forms.Label();
             this.lbl_login_user = new System.Windows.Forms.Label();
             this.pnl_menu_isi = new System.Windows.Forms.Panel();
+            this.btn_menu_logout = new System.Windows.Forms.Button();
             this.btn_menu_variabel = new System.Windows.Forms.Button();
             this.btn_menu_ctknota = new System.Windows.Forms.Button();
             this.btn_menu_laporangajiexcel = new System.Windows.Forms.Button();
@@ -78,6 +79,7 @@
             this.lbl_tbhtrps_namaterapis = new System.Windows.Forms.Label();
             this.lbl_tbhtrps_kodeterapis = new System.Windows.Forms.Label();
             this.pnl_edttrps_isi = new System.Windows.Forms.Panel();
+            this.btn_edttrps_hapus = new System.Windows.Forms.Button();
             this.lsb_edttrps_kodeterapis = new System.Windows.Forms.ListBox();
             this.btn_edttrps_ok = new System.Windows.Forms.Button();
             this.pict_edttrps_fotoKTP = new System.Windows.Forms.PictureBox();
@@ -124,6 +126,7 @@
             this.lbl_tbhpkt_namaterapis = new System.Windows.Forms.Label();
             this.lbl_tbhpkt_kodeterapis = new System.Windows.Forms.Label();
             this.pnl_edtpkt_isi = new System.Windows.Forms.Panel();
+            this.btn_edtpkt_hapus = new System.Windows.Forms.Button();
             this.txt_edtpkt_komisipaketmidnight = new System.Windows.Forms.TextBox();
             this.txt_edtpkt_komisipaketnormal = new System.Windows.Forms.TextBox();
             this.lbl_edtpkt_menit = new System.Windows.Forms.Label();
@@ -261,9 +264,6 @@
             this.btn_lprnlayanan_excel = new System.Windows.Forms.Button();
             this.dgv_lprnlayanan_tabellayanan = new System.Windows.Forms.DataGridView();
             this.btn_lprnlayanan_batal = new System.Windows.Forms.Button();
-            this.btn_edttrps_hapus = new System.Windows.Forms.Button();
-            this.btn_edtpkt_hapus = new System.Windows.Forms.Button();
-            this.btn_menu_logout = new System.Windows.Forms.Button();
             this.pnl_ctknota_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict_ctknota_logo)).BeginInit();
             this.pnl_login_isi.SuspendLayout();
@@ -343,6 +343,7 @@
             this.btn_login_batal.TabIndex = 14;
             this.btn_login_batal.Text = "Batal";
             this.btn_login_batal.UseVisualStyleBackColor = true;
+            this.btn_login_batal.Click += new System.EventHandler(this.btn_login_batal_Click);
             // 
             // btn_login_masuk
             // 
@@ -434,6 +435,17 @@
             this.pnl_menu_isi.Size = new System.Drawing.Size(1250, 528);
             this.pnl_menu_isi.TabIndex = 16;
             this.pnl_menu_isi.Visible = false;
+            // 
+            // btn_menu_logout
+            // 
+            this.btn_menu_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_menu_logout.Location = new System.Drawing.Point(1090, 5);
+            this.btn_menu_logout.Name = "btn_menu_logout";
+            this.btn_menu_logout.Size = new System.Drawing.Size(155, 49);
+            this.btn_menu_logout.TabIndex = 10;
+            this.btn_menu_logout.Text = "Logout";
+            this.btn_menu_logout.UseVisualStyleBackColor = true;
+            this.btn_menu_logout.Click += new System.EventHandler(this.btn_menu_logout_Click);
             // 
             // btn_menu_variabel
             // 
@@ -755,6 +767,17 @@
             this.pnl_edttrps_isi.Size = new System.Drawing.Size(1250, 528);
             this.pnl_edttrps_isi.TabIndex = 23;
             this.pnl_edttrps_isi.Visible = false;
+            // 
+            // btn_edttrps_hapus
+            // 
+            this.btn_edttrps_hapus.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edttrps_hapus.Location = new System.Drawing.Point(359, 377);
+            this.btn_edttrps_hapus.Name = "btn_edttrps_hapus";
+            this.btn_edttrps_hapus.Size = new System.Drawing.Size(155, 88);
+            this.btn_edttrps_hapus.TabIndex = 16;
+            this.btn_edttrps_hapus.Text = "Hapus Terapis";
+            this.btn_edttrps_hapus.UseVisualStyleBackColor = true;
+            this.btn_edttrps_hapus.Click += new System.EventHandler(this.btn_edttrps_hapus_Click);
             // 
             // lsb_edttrps_kodeterapis
             // 
@@ -1286,6 +1309,17 @@
             this.pnl_edtpkt_isi.Size = new System.Drawing.Size(1250, 528);
             this.pnl_edtpkt_isi.TabIndex = 24;
             this.pnl_edtpkt_isi.Visible = false;
+            // 
+            // btn_edtpkt_hapus
+            // 
+            this.btn_edtpkt_hapus.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edtpkt_hapus.Location = new System.Drawing.Point(710, 439);
+            this.btn_edtpkt_hapus.Name = "btn_edtpkt_hapus";
+            this.btn_edtpkt_hapus.Size = new System.Drawing.Size(224, 67);
+            this.btn_edtpkt_hapus.TabIndex = 12;
+            this.btn_edtpkt_hapus.Text = "Hapus Paket";
+            this.btn_edtpkt_hapus.UseVisualStyleBackColor = true;
+            this.btn_edtpkt_hapus.Click += new System.EventHandler(this.btn_edtpkt_hapus_Click);
             // 
             // txt_edtpkt_komisipaketmidnight
             // 
@@ -2909,53 +2943,20 @@
             this.btn_lprnlayanan_batal.UseVisualStyleBackColor = true;
             this.btn_lprnlayanan_batal.Click += new System.EventHandler(this.btn_lprnlayanan_batal_Click);
             // 
-            // btn_edttrps_hapus
-            // 
-            this.btn_edttrps_hapus.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_edttrps_hapus.Location = new System.Drawing.Point(359, 377);
-            this.btn_edttrps_hapus.Name = "btn_edttrps_hapus";
-            this.btn_edttrps_hapus.Size = new System.Drawing.Size(155, 88);
-            this.btn_edttrps_hapus.TabIndex = 16;
-            this.btn_edttrps_hapus.Text = "Hapus Terapis";
-            this.btn_edttrps_hapus.UseVisualStyleBackColor = true;
-            this.btn_edttrps_hapus.Click += new System.EventHandler(this.btn_edttrps_hapus_Click);
-            // 
-            // btn_edtpkt_hapus
-            // 
-            this.btn_edtpkt_hapus.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_edtpkt_hapus.Location = new System.Drawing.Point(710, 439);
-            this.btn_edtpkt_hapus.Name = "btn_edtpkt_hapus";
-            this.btn_edtpkt_hapus.Size = new System.Drawing.Size(224, 67);
-            this.btn_edtpkt_hapus.TabIndex = 12;
-            this.btn_edtpkt_hapus.Text = "Hapus Paket";
-            this.btn_edtpkt_hapus.UseVisualStyleBackColor = true;
-            this.btn_edtpkt_hapus.Click += new System.EventHandler(this.btn_edtpkt_hapus_Click);
-            // 
-            // btn_menu_logout
-            // 
-            this.btn_menu_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menu_logout.Location = new System.Drawing.Point(1090, 5);
-            this.btn_menu_logout.Name = "btn_menu_logout";
-            this.btn_menu_logout.Size = new System.Drawing.Size(155, 49);
-            this.btn_menu_logout.TabIndex = 10;
-            this.btn_menu_logout.Text = "Logout";
-            this.btn_menu_logout.UseVisualStyleBackColor = true;
-            this.btn_menu_logout.Click += new System.EventHandler(this.btn_menu_logout_Click);
-            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.ClientSize = new System.Drawing.Size(1274, 652);
+            this.Controls.Add(this.pnl_login_isi);
+            this.Controls.Add(this.pnl_menu_isi);
             this.Controls.Add(this.pnl_edtpkt_isi);
             this.Controls.Add(this.pnl_edttrps_isi);
-            this.Controls.Add(this.pnl_menu_isi);
             this.Controls.Add(this.pnl_lprnlayanan_isi);
             this.Controls.Add(this.pnl_variabel_isi);
             this.Controls.Add(this.pnl_lprnpnjln_isi);
             this.Controls.Add(this.pnl_ctknota_isi);
-            this.Controls.Add(this.pnl_login_isi);
             this.Controls.Add(this.pnl_tbhpkt_isi);
             this.Controls.Add(this.pnl_ctknota_logo);
             this.Controls.Add(this.pnl_tbhtrps_isi);
@@ -2967,6 +2968,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Green Leaf Spa";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_main_FormClosing);
             this.Load += new System.EventHandler(this.frm_main_Load);
             this.pnl_ctknota_logo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pict_ctknota_logo)).EndInit();

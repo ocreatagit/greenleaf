@@ -44,6 +44,11 @@ namespace Green_Leaf
 
         }
 
+        private void frm_main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
+
         #region(Panel Login)
         private void btn_login_masuk_Click(object sender, EventArgs e)
         {
@@ -141,7 +146,7 @@ namespace Green_Leaf
 
         }
 
-        private void btn_batal_Click(object sender, EventArgs e)
+        private void btn_login_batal_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -689,7 +694,7 @@ namespace Green_Leaf
 
         private void btn_menu_laporangajiexcel_Click(object sender, EventArgs e)
         {
-            pnl_menu_isi.Visible = false;
+            //pnl_menu_isi.Visible = false;
         }
 
         private void btn_menu_variabel_Click(object sender, EventArgs e)
@@ -727,11 +732,16 @@ namespace Green_Leaf
 
         private void btn_menu_logout_Click(object sender, EventArgs e)
         {
-            pnl_menu_isi.Visible = false;
-            pnl_login_isi.Visible = true;
-            txt_login_username.Clear();
-            txt_login_pass.Clear();
-            txt_login_username.Focus();
+            DialogResult dialogResult = MessageBox.Show("Apakah anda sudah yakin?", "Alert", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                pnl_menu_isi.Visible = false;
+                pnl_login_isi.Visible = true;
+                txt_login_username.Clear();
+                txt_login_pass.Clear();
+                txt_login_username.Focus();
+        
+            }
         }
         #endregion
 
@@ -1196,70 +1206,75 @@ namespace Green_Leaf
 
         private void btn_edttrps_hapus_Click(object sender, EventArgs e)
         {
-            #region(Update)
-            string edttrps_connStr;
-            MySqlConnection edttrps_conn;
-            DBConnect edttrps_sql = new DBConnect();
-            string edttrps_query;
-            edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            edttrps_conn = new MySqlConnection(edttrps_connStr);
-            try
+            DialogResult dialogResult = MessageBox.Show("Apakah anda sudah yakin?", "Alert", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                edttrps_conn.Open();
-
-                edttrps_query = "DELETE FROM `terapis` WHERE `terapis`.`nama_terapis` = '" + txt_edttrps_namaterapis.Text + "' AND `terapis`.`kode_terapis` = " + txt_edttrps_kodeterapis.Text + "";
-                MySqlCommand cmd = new MySqlCommand(edttrps_query, edttrps_conn);
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            edttrps_conn.Close();
-            #endregion
-            MessageBox.Show("Data terapis telah berhasil dihapus");
-            txt_edttrps_kodeterapis.Clear();
-            txt_edttrps_namaterapis.Clear();
-            edttrps_lokasi_gambar = "";
-            rdo_edttrps_statusaktif.Checked = false;
-            rdo_edttrps_statustdkaktif.Checked = false;
-            pict_edttrps_fotoKTP.Image = null;
-            txt_edttrps_kodeterapis.Focus();
-            btn_edttrps_simpan.Enabled = false;
-            txt_edttrps_kodeterapis.Enabled = false;
-            txt_edttrps_namaterapis.Enabled = false;
-            btn_edttrps_browsefoto.Enabled = false;
-            rdo_edttrps_statusaktif.Enabled = false;
-            rdo_edttrps_statustdkaktif.Enabled = false;
-            btn_edttrps_hapus.Enabled = false;
-
-            lsb_edttrps_kodeterapis.Items.Clear();
-            #region(Select)
-            MySqlConnection edttrps_conn2 = new MySqlConnection();
-            string edttrps_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            string edttrps_query2 = "";
-            edttrps_conn2 = new MySqlConnection(edttrps_connStr2);
-            try
-            {
-                edttrps_conn2.Open();
-
-                edttrps_query2 = "SELECT * FROM `terapis` order by id_terapis DESC";
-                MySqlCommand edttrps_cmd2 = new MySqlCommand(edttrps_query2, edttrps_conn2);
-                MySqlDataReader edttrps_rdr2 = edttrps_cmd2.ExecuteReader();
-
-                while (edttrps_rdr2.Read())
+                #region(Update)
+                string edttrps_connStr;
+                MySqlConnection edttrps_conn;
+                DBConnect edttrps_sql = new DBConnect();
+                string edttrps_query;
+                edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                edttrps_conn = new MySqlConnection(edttrps_connStr);
+                try
                 {
-                    //cbo_kodeterapis.Items.Add(rdr.GetString(1));
-                    lsb_edttrps_kodeterapis.Items.Add(edttrps_rdr2.GetString(1));
+                    edttrps_conn.Open();
+
+                    edttrps_query = "DELETE FROM `terapis` WHERE `terapis`.`nama_terapis` = '" + txt_edttrps_namaterapis.Text + "' AND `terapis`.`kode_terapis` = " + txt_edttrps_kodeterapis.Text + "";
+                    MySqlCommand cmd = new MySqlCommand(edttrps_query, edttrps_conn);
+                    cmd.ExecuteNonQuery();
                 }
-                edttrps_rdr2.Close();
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                edttrps_conn.Close();
+                #endregion
+                MessageBox.Show("Data terapis telah berhasil dihapus");
+                txt_edttrps_kodeterapis.Clear();
+                txt_edttrps_namaterapis.Clear();
+                edttrps_lokasi_gambar = "";
+                rdo_edttrps_statusaktif.Checked = false;
+                rdo_edttrps_statustdkaktif.Checked = false;
+                pict_edttrps_fotoKTP.Image = null;
+                txt_edttrps_kodeterapis.Focus();
+                btn_edttrps_simpan.Enabled = false;
+                txt_edttrps_kodeterapis.Enabled = false;
+                txt_edttrps_namaterapis.Enabled = false;
+                btn_edttrps_browsefoto.Enabled = false;
+                rdo_edttrps_statusaktif.Enabled = false;
+                rdo_edttrps_statustdkaktif.Enabled = false;
+                btn_edttrps_hapus.Enabled = false;
+
+                lsb_edttrps_kodeterapis.Items.Clear();
+                #region(Select)
+                MySqlConnection edttrps_conn2 = new MySqlConnection();
+                string edttrps_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                string edttrps_query2 = "";
+                edttrps_conn2 = new MySqlConnection(edttrps_connStr2);
+                try
+                {
+                    edttrps_conn2.Open();
+
+                    edttrps_query2 = "SELECT * FROM `terapis` order by id_terapis DESC";
+                    MySqlCommand edttrps_cmd2 = new MySqlCommand(edttrps_query2, edttrps_conn2);
+                    MySqlDataReader edttrps_rdr2 = edttrps_cmd2.ExecuteReader();
+
+                    while (edttrps_rdr2.Read())
+                    {
+                        //cbo_kodeterapis.Items.Add(rdr.GetString(1));
+                        lsb_edttrps_kodeterapis.Items.Add(edttrps_rdr2.GetString(1));
+                    }
+                    edttrps_rdr2.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                edttrps_conn2.Close();
+                #endregion
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            edttrps_conn2.Close();
-            #endregion
+            
         }
 
         private void txt_edttrps_kodeterapis_KeyPress(object sender, KeyPressEventArgs e)
@@ -5835,8 +5850,9 @@ namespace Green_Leaf
             }
             using (XLWorkbook wb = new XLWorkbook())
             {
+                
                 wb.Worksheets.Add(lprnpnjln_DS.Tables[0], "Customers");
-                wb.SaveAs(folderPath + "Laporan Penjualan.xlsx");
+                wb.SaveAs(folderPath + "Laporan Penjualan (" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + " " + DateTime.Now.Hour + ";" + DateTime.Now.Minute.ToString() + ";" + DateTime.Now.Second.ToString() + ").xlsx");
                 MessageBox.Show("File Excel telah disimpan");
             }
         }
@@ -5923,6 +5939,12 @@ namespace Green_Leaf
                                         "INNER JOIN paket p1 ON p1.id_paket = n1.id_paket " +
                                         "WHERE DATE(`tanggalcetak_nota`) >= '" + lprnlayanan_tanggalcetakdari + "' AND DATE(tanggalcetak_nota) <= '" + lprnlayanan_tanggalcetaksampai + "' AND n1.status_nota='-' AND n1.jamkerja_nota = '" + lprnlayanan_readr.GetString(7) + "' AND n1.extra_nota = '" + lprnlayanan_readr.GetString(8) + "' " +
                                         "AND p1.jenis_paket = TRIM('" + lprnlayanan_readr.GetString(1) + "') AND n1.id_paket = " + lprnlayanan_readr.GetInt32(0) + " AND t.id_terapis = t1.id_terapis) as ' " + lprnlayanan_readr.GetString(7) + "\n\n{" + extra + "}\n\n[" + lprnlayanan_readr.GetString(1) + "]\n____________________\n" + lprnlayanan_readr.GetString(2) + "\n(" + harga + ")',";
+
+                        //lprnlayanan_queryfinal += "(SELECT COUNT(n1.id_nota)" +
+                        //                " FROM nota n1 INNER JOIN terapis t1 ON t1.kode_terapis = n1.kodeterapis_nota " +
+                        //                "INNER JOIN paket p1 ON p1.id_paket = n1.id_paket " +
+                        //                "WHERE DATE(`tanggalcetak_nota`) >= '" + lprnlayanan_tanggalcetakdari + "' AND DATE(tanggalcetak_nota) <= '" + lprnlayanan_tanggalcetaksampai + "' AND n1.status_nota='-' AND n1.jamkerja_nota = '" + lprnlayanan_readr.GetString(7) + "' AND n1.extra_nota = '" + lprnlayanan_readr.GetString(8) + "' " +
+                        //                "AND p1.jenis_paket = TRIM('" + lprnlayanan_readr.GetString(1) + "') AND n1.id_paket = " + lprnlayanan_readr.GetInt32(0) + " AND t.id_terapis = t1.id_terapis) as ' " + lprnlayanan_readr.GetString(7).Substring(0, 1) + "\n\n{" + extra.Substring(0, 1) + "}\n\n[" + lprnlayanan_readr.GetString(1).Substring(0, 1) + "]\n\n" + lprnlayanan_readr.GetString(2) + "\n(" + harga + ")',";
                     }
                     //MessageBox.Show(readr.FieldCount + "");
                 }
@@ -5989,7 +6011,7 @@ namespace Green_Leaf
                     lprnlayanan_listtotal.Add(totalperkolom.ToString());
                 }
                 DataRow row = lprnlayanan_DS.Tables[0].NewRow();
-                row[0] = "0";
+                row[0] = 0;
                 row[1] = "Total";
                 row[2] = "";
                 for (int i = 3; i < lprnlayanan_listtotal.Count; i++)
@@ -6193,6 +6215,8 @@ namespace Green_Leaf
             pnl_lprnlayanan_isi.Visible = false;
         }
         #endregion
+
+        
 
         
 
