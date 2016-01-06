@@ -1650,6 +1650,10 @@ namespace Green_Leaf
             cbo_ctknota_jenispaket.Enabled = true;
             dgv_ctknota_tabelhrgpkt.Enabled = false;
 
+            dgv_ctknota_tabelhrgpkt.DataSource = null;
+            dgv_ctknota_tabelhrgpkt.Rows.Clear();
+            dgv_ctknota_tabelhrgpkt.Refresh();
+
             cbo_ctknota_jenispaket.Items.Clear();
             #region(Select)
             string ctknota_query;
@@ -1698,6 +1702,9 @@ namespace Green_Leaf
             cbo_ctknota_jenispaket.Enabled = true;
             dgv_ctknota_tabelhrgpkt.Enabled = false;
 
+            dgv_ctknota_tabelhrgpkt.DataSource = null;
+            dgv_ctknota_tabelhrgpkt.Rows.Clear();
+            dgv_ctknota_tabelhrgpkt.Refresh();
 
             cbo_ctknota_jenispaket.Items.Clear();
             #region(Select)
@@ -1738,6 +1745,10 @@ namespace Green_Leaf
             rdo_ctknota_biasa.Enabled = true;
             cbo_ctknota_jenispaket.Enabled = true;
             dgv_ctknota_tabelhrgpkt.Enabled = false;
+
+            dgv_ctknota_tabelhrgpkt.DataSource = null;
+            dgv_ctknota_tabelhrgpkt.Rows.Clear();
+            dgv_ctknota_tabelhrgpkt.Refresh();
         }
 
         private void rdo_ctknota_midnight_CheckedChanged(object sender, EventArgs e)
@@ -1749,6 +1760,10 @@ namespace Green_Leaf
             rdo_ctknota_biasa.Enabled = true;
             cbo_ctknota_jenispaket.Enabled = true;
             dgv_ctknota_tabelhrgpkt.Enabled = false;
+
+            dgv_ctknota_tabelhrgpkt.DataSource = null;
+            dgv_ctknota_tabelhrgpkt.Rows.Clear();
+            dgv_ctknota_tabelhrgpkt.Refresh();
         }
 
         private void cbo_ctknota_jenispaket_SelectedIndexChanged(object sender, EventArgs e)
@@ -1775,6 +1790,7 @@ namespace Green_Leaf
             dgv_ctknota_tabelhrgpkt.Refresh();
             ctknota_DS.Tables.Clear();
             ctknota_countExtraColumn = 0;
+            ctknota_listidpaket.Clear();
 
             if (rdo_ctknota_normal.Checked)
             {
@@ -1785,6 +1801,7 @@ namespace Green_Leaf
                     string ctknota_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
                     MySqlConnection ctknota_conn = new MySqlConnection(ctknota_connStr);
                     List<string> ctknota_lstKode = new List<string>();
+                    
                     try
                     {
                         ctknota_conn.Open();
@@ -2853,101 +2870,101 @@ namespace Green_Leaf
                                     lbl_ctknota_totalbyr.Text = totalbayarFinal;
                                 MessageBox.Show("Nota telah berhasil ditambahkan");
                                 //MessageBox.Show("diskon kosong, fee kosong");
-                                #region(Bersihkan Form)
-                                dgv_ctknota_tabelhrgpkt.DataSource = null;
-                                dgv_ctknota_tabelhrgpkt.Rows.Clear();
-                                dgv_ctknota_tabelhrgpkt.Refresh();
-                                ctknota_DS.Tables.Clear();
-                                ctknota_countExtraColumn = 0;
+                                //#region(Bersihkan Form)
+                                //dgv_ctknota_tabelhrgpkt.DataSource = null;
+                                //dgv_ctknota_tabelhrgpkt.Rows.Clear();
+                                //dgv_ctknota_tabelhrgpkt.Refresh();
+                                //ctknota_DS.Tables.Clear();
+                                //ctknota_countExtraColumn = 0;
 
-                                rdo_ctknota_biasa.Checked = false;
-                                rdo_ctknota_cash.Checked = false;
-                                rdo_ctknota_credit.Checked = false;
-                                rdo_ctknota_hotel.Checked = false;
-                                rdo_ctknota_midnight.Checked = false;
-                                rdo_ctknota_normal.Checked = false;
-                                cbo_ctknota_jenispaket.Items.Clear();
-                                txt_ctknota_namaterapis.Clear();
-                                txt_ctknota_nomorruangan.Clear();
-                                lbl_ctknota_totalbyr.Text = "";
-                                txt_ctknota_fee.Clear();
-                                txt_ctknota_diskon.Clear();
-                                txt_ctknota_ket.Clear();
+                                //rdo_ctknota_biasa.Checked = false;
+                                //rdo_ctknota_cash.Checked = false;
+                                //rdo_ctknota_credit.Checked = false;
+                                //rdo_ctknota_hotel.Checked = false;
+                                //rdo_ctknota_midnight.Checked = false;
+                                //rdo_ctknota_normal.Checked = false;
+                                //cbo_ctknota_jenispaket.Items.Clear();
+                                //txt_ctknota_namaterapis.Clear();
+                                //txt_ctknota_nomorruangan.Clear();
+                                //lbl_ctknota_totalbyr.Text = "";
+                                //txt_ctknota_fee.Clear();
+                                //txt_ctknota_diskon.Clear();
+                                //txt_ctknota_ket.Clear();
 
-                                txt_ctknota_nomorruangan.Enabled = true;
-                                rdo_ctknota_normal.Enabled = false;
-                                rdo_ctknota_midnight.Enabled = false;
-                                rdo_ctknota_hotel.Enabled = false;
-                                rdo_ctknota_biasa.Enabled = false;
-                                cbo_ctknota_jenispaket.Enabled = false;
-                                dgv_ctknota_tabelhrgpkt.Enabled = false;
-                                rdo_ctknota_cash.Enabled = false;
-                                rdo_ctknota_credit.Enabled = false;
-                                cbo_ctknota_kodeterapis.Enabled = false;
-                                txt_ctknota_namaterapis.Enabled = false;
-                                txt_ctknota_diskon.Enabled = false;
-                                txt_ctknota_ket.Enabled = false;
-                                txt_ctknota_fee.Enabled = false;
+                                //txt_ctknota_nomorruangan.Enabled = true;
+                                //rdo_ctknota_normal.Enabled = false;
+                                //rdo_ctknota_midnight.Enabled = false;
+                                //rdo_ctknota_hotel.Enabled = false;
+                                //rdo_ctknota_biasa.Enabled = false;
+                                //cbo_ctknota_jenispaket.Enabled = false;
+                                //dgv_ctknota_tabelhrgpkt.Enabled = false;
+                                //rdo_ctknota_cash.Enabled = false;
+                                //rdo_ctknota_credit.Enabled = false;
+                                //cbo_ctknota_kodeterapis.Enabled = false;
+                                //txt_ctknota_namaterapis.Enabled = false;
+                                //txt_ctknota_diskon.Enabled = false;
+                                //txt_ctknota_ket.Enabled = false;
+                                //txt_ctknota_fee.Enabled = false;
 
-                                btn_ctknota_cetak.Enabled = false;
-                                btn_ctknota_batal.Enabled = true;
+                                //btn_ctknota_cetak.Enabled = false;
+                                //btn_ctknota_batal.Enabled = true;
 
-                                //#region(Ambil data Potongan dan Extra dari database)
-                                //string ctknota_query2;
-                                //string ctknota_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                                //MySqlConnection ctknota_conn2 = new MySqlConnection(ctknota_connStr2);
+                                ////#region(Ambil data Potongan dan Extra dari database)
+                                ////string ctknota_query2;
+                                ////string ctknota_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                                ////MySqlConnection ctknota_conn2 = new MySqlConnection(ctknota_connStr2);
+                                ////try
+                                ////{
+                                ////    ctknota_conn2.Open();
+
+                                ////    ctknota_query2 = "SELECT * FROM `variabel`";
+                                ////    MySqlCommand ctknota_cmd2 = new MySqlCommand(ctknota_query2, ctknota_conn2);
+                                ////    MySqlDataReader ctknota_rdr2 = ctknota_cmd2.ExecuteReader();
+
+                                ////    while (ctknota_rdr2.Read())
+                                ////    {
+                                ////        //cbo_kodeterapis.Items.Add(edttrps_rdr.GetString(1));
+                                ////        //cbo_ctknota_jenispaket.Items.Add(ctknota_rdr.GetString(0));
+                                ////        ctknota_extra = ctknota_rdr2.GetInt32(1);
+                                ////        ctknota_tamuhotel = ctknota_rdr2.GetInt32(2);
+                                ////    }
+                                ////    ctknota_rdr2.Close();
+                                ////}
+                                ////catch (Exception ex)
+                                ////{
+                                ////    Console.WriteLine(ex.ToString());
+                                ////}
+                                ////ctknota_conn2.Close();
+                                ////#endregion
+
+                                //cbo_ctknota_kodeterapis.Items.Clear();
+                                //#region(Select)
+                                //string ctknota_query3;
+                                //string ctknota_connStr3 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                                //MySqlConnection ctknota_conn3 = new MySqlConnection(ctknota_connStr3);
                                 //try
                                 //{
-                                //    ctknota_conn2.Open();
+                                //    ctknota_conn3.Open();
 
-                                //    ctknota_query2 = "SELECT * FROM `variabel`";
-                                //    MySqlCommand ctknota_cmd2 = new MySqlCommand(ctknota_query2, ctknota_conn2);
-                                //    MySqlDataReader ctknota_rdr2 = ctknota_cmd2.ExecuteReader();
+                                //    ctknota_query3 = "SELECT * FROM `terapis` WHERE `status_terapis` = 'Aktif'";
+                                //    MySqlCommand ctknota_cmd3 = new MySqlCommand(ctknota_query3, ctknota_conn3);
+                                //    MySqlDataReader ctknota_rdr3 = ctknota_cmd3.ExecuteReader();
 
-                                //    while (ctknota_rdr2.Read())
+                                //    while (ctknota_rdr3.Read())
                                 //    {
                                 //        //cbo_kodeterapis.Items.Add(edttrps_rdr.GetString(1));
-                                //        //cbo_ctknota_jenispaket.Items.Add(ctknota_rdr.GetString(0));
-                                //        ctknota_extra = ctknota_rdr2.GetInt32(1);
-                                //        ctknota_tamuhotel = ctknota_rdr2.GetInt32(2);
+                                //        cbo_ctknota_kodeterapis.Items.Add(ctknota_rdr3.GetString(1));
                                 //    }
-                                //    ctknota_rdr2.Close();
+                                //    ctknota_rdr3.Close();
                                 //}
                                 //catch (Exception ex)
                                 //{
-                                //    Console.WriteLine(ex.ToString());
+                                //    string Hasilex = ex.ToString();
+                                //    MessageBox.Show("Error Occured");
                                 //}
-                                //ctknota_conn2.Close();
+                                //ctknota_conn3.Close();
                                 //#endregion
-
-                                cbo_ctknota_kodeterapis.Items.Clear();
-                                #region(Select)
-                                string ctknota_query3;
-                                string ctknota_connStr3 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                                MySqlConnection ctknota_conn3 = new MySqlConnection(ctknota_connStr3);
-                                try
-                                {
-                                    ctknota_conn3.Open();
-
-                                    ctknota_query3 = "SELECT * FROM `terapis` WHERE `status_terapis` = 'Aktif'";
-                                    MySqlCommand ctknota_cmd3 = new MySqlCommand(ctknota_query3, ctknota_conn3);
-                                    MySqlDataReader ctknota_rdr3 = ctknota_cmd3.ExecuteReader();
-
-                                    while (ctknota_rdr3.Read())
-                                    {
-                                        //cbo_kodeterapis.Items.Add(edttrps_rdr.GetString(1));
-                                        cbo_ctknota_kodeterapis.Items.Add(ctknota_rdr3.GetString(1));
-                                    }
-                                    ctknota_rdr3.Close();
-                                }
-                                catch (Exception ex)
-                                {
-                                    string Hasilex = ex.ToString();
-                                    MessageBox.Show("Error Occured");
-                                }
-                                ctknota_conn3.Close();
-                                #endregion
-                                #endregion
+                                //#endregion
                             }
                             else
                             {

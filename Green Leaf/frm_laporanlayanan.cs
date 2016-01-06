@@ -22,6 +22,7 @@ namespace Green_Leaf
         private void frm_laporanlayanan_Load(object sender, EventArgs e)
         {
             string sql_laporan = "";
+            
             #region(Select)
             dgv_lprnlayanan.DataSource = null;
             dgv_lprnlayanan.Rows.Clear();
@@ -40,17 +41,25 @@ namespace Green_Leaf
                                     "UNION " +
                                     "SELECT *, 'Normal', 'Tidak' FROM paket WHERE jenis_paket = 'Deluxe' " +
                                     "UNION " +
+                                    "SELECT *, 'Normal', 'Tidak' FROM paket WHERE jenis_paket = 'VVIP' " +
+                                    "UNION " +
                                     "SELECT *, 'Normal', 'Ya' FROM `paket` WHERE jenis_paket = 'VIP' " +
                                     "UNION " +
                                     "SELECT *, 'Normal', 'Ya' FROM `paket` WHERE jenis_paket = 'Deluxe' " +
+                                    "UNION " +
+                                    "SELECT *, 'Normal', 'Ya' FROM `paket` WHERE jenis_paket = 'VVIP' " +
                                     "UNION " +
                                     "SELECT *, 'Midnight', 'Tidak' FROM `paket` WHERE jenis_paket = 'VIP' " +
                                     "UNION  " +
                                     "SELECT *, 'Midnight', 'Tidak' FROM paket WHERE jenis_paket = 'Deluxe' " +
                                     "UNION " +
+                                    "SELECT *, 'Midnight', 'Tidak' FROM paket WHERE jenis_paket = 'VVIP' " +
+                                    "UNION " +
                                     "SELECT *, 'Midnight', 'Ya' FROM `paket` WHERE jenis_paket = 'VIP' " +
                                     "UNION " +
-                                    "SELECT *, 'Midnight', 'Ya' FROM `paket` WHERE jenis_paket = 'Deluxe';";
+                                    "SELECT *, 'Midnight', 'Ya' FROM `paket` WHERE jenis_paket = 'Deluxe'" +
+                                    "UNION " +
+                                    "SELECT *, 'Midnight', 'Ya' FROM `paket` WHERE jenis_paket = 'VVIP';";
 
                 sql_laporan = "SELECT t.kode_terapis, t.nama_terapis, 'THERAPIST', ";
 
@@ -72,7 +81,7 @@ namespace Green_Leaf
                                         " FROM nota n1 INNER JOIN terapis t1 ON t1.kode_terapis = n1.kodeterapis_nota " +
                                         "INNER JOIN paket p1 ON p1.id_paket = n1.id_paket " +
                                         "WHERE n1.jamkerja_nota = '" + readr.GetString(7) + "' AND n1.extra_nota = '" + readr.GetString(8) + "' " +
-                                        "AND p1.jenis_paket = TRIM('" + readr.GetString(1) + "') AND n1.id_paket = " + readr.GetInt32(0) + " AND t.id_terapis = t1.id_terapis) as ' " + readr.GetString(7) + " -> " + extra + " -> " + readr.GetString(1) + " -> " + readr.GetString(2) + "',";
+                                        "AND p1.jenis_paket = TRIM('" + readr.GetString(1) + "') AND n1.id_paket = " + readr.GetInt32(0) + " AND t.id_terapis = t1.id_terapis) as ' " + readr.GetString(7) + "\n\n{" + extra + "}\n\n[" + readr.GetString(1) + "]\n\n" + readr.GetString(2) + "',";
                     }
                     MessageBox.Show(readr.FieldCount + "");
                 }
@@ -129,7 +138,7 @@ namespace Green_Leaf
                 MessageBox.Show("Error Occurred");
             }
             lprnpnjln_conn.Close();
-            #endregion
+            #endregion 
 
             #region(Select)
             //dgv_lprnpnjln_tabellaporan.DataSource = null;
@@ -156,17 +165,25 @@ namespace Green_Leaf
                                     "UNION " +
                                     "SELECT *, 'Normal', 'Tidak' FROM paket WHERE jenis_paket = 'Deluxe' " +
                                     "UNION " +
+                                    "SELECT *, 'Normal', 'Tidak' FROM paket WHERE jenis_paket = 'VVIP' " +
+                                    "UNION " +
                                     "SELECT *, 'Normal', 'Ya' FROM `paket` WHERE jenis_paket = 'VIP' " +
                                     "UNION " +
                                     "SELECT *, 'Normal', 'Ya' FROM `paket` WHERE jenis_paket = 'Deluxe' " +
+                                    "UNION " +
+                                    "SELECT *, 'Normal', 'Ya' FROM `paket` WHERE jenis_paket = 'VVIP' " +
                                     "UNION " +
                                     "SELECT *, 'Midnight', 'Tidak' FROM `paket` WHERE jenis_paket = 'VIP' " +
                                     "UNION  " +
                                     "SELECT *, 'Midnight', 'Tidak' FROM paket WHERE jenis_paket = 'Deluxe' " +
                                     "UNION " +
+                                    "SELECT *, 'Midnight', 'Tidak' FROM paket WHERE jenis_paket = 'VVIP' " +
+                                    "UNION " +
                                     "SELECT *, 'Midnight', 'Ya' FROM `paket` WHERE jenis_paket = 'VIP' " +
                                     "UNION " +
-                                    "SELECT *, 'Midnight', 'Ya' FROM `paket` WHERE jenis_paket = 'Deluxe';";
+                                    "SELECT *, 'Midnight', 'Ya' FROM `paket` WHERE jenis_paket = 'Deluxe'" +
+                                    "UNION " +
+                                    "SELECT *, 'Midnight', 'Ya' FROM `paket` WHERE jenis_paket = 'VVIP';";
                 MySqlDataAdapter mySqlDataAdapter2 = new MySqlDataAdapter(lprnpnjln_query2, lprnpnjln_conn2);
                 MySqlCommand ctknota_cmd2 = new MySqlCommand(lprnpnjln_query2, lprnpnjln_conn2);
 
