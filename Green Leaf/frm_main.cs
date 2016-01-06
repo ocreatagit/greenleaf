@@ -352,22 +352,43 @@ namespace Green_Leaf
 
         private void btn_menu_edttrps_Click(object sender, EventArgs e)
         {
-            pnl_menu_isi.Visible = false;
             pnl_edttrps_isi.Visible = true;
+            pnl_menu_isi.Visible = false;
+
+            if (txt_login_username.Text == "superadmin")
+            {
+                btn_edttrps_hapus.Visible = true;
+                btn_edttrps_simpan.Location = new Point(550, 399);
+                btn_edttrps_batal.Location = new Point(735, 399);
+            }
+            else
+            {
+                btn_edttrps_hapus.Visible = false;
+                btn_edttrps_simpan.Location = new Point(454, 399);
+                btn_edttrps_batal.Location = new Point(639, 399);
+            }
+
+            txt_edttrps_kodeterapis.Clear();
+            txt_edttrps_namaterapis.Clear();
+            edttrps_lokasi_gambar = "";
+            rdo_edttrps_statusaktif.Checked = false;
+            rdo_edttrps_statustdkaktif.Checked = false;
+            pict_edttrps_fotoKTP.Image = null;
+            txt_edttrps_kodeterapis.Focus();
             btn_edttrps_simpan.Enabled = false;
             txt_edttrps_kodeterapis.Enabled = false;
             txt_edttrps_namaterapis.Enabled = false;
             btn_edttrps_browsefoto.Enabled = false;
             rdo_edttrps_statusaktif.Enabled = false;
             rdo_edttrps_statustdkaktif.Enabled = false;
+            btn_edttrps_hapus.Enabled = false;
 
-
-
+            lsb_edttrps_kodeterapis.Items.Clear();
             #region(Select)
-            string edttrps_query;
+            MySqlConnection edttrps_conn = new MySqlConnection();
             string edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection edttrps_conn = new MySqlConnection(edttrps_connStr);
-            List<string> edttrps_lstKode = new List<string>();
+            string edttrps_query = "";
+            edttrps_conn = new MySqlConnection(edttrps_connStr);
             try
             {
                 edttrps_conn.Open();
@@ -378,7 +399,7 @@ namespace Green_Leaf
 
                 while (edttrps_rdr.Read())
                 {
-                    //cbo_kodeterapis.Items.Add(edttrps_rdr.GetString(1));
+                    //cbo_kodeterapis.Items.Add(rdr.GetString(1));
                     lsb_edttrps_kodeterapis.Items.Add(edttrps_rdr.GetString(1));
                 }
                 edttrps_rdr.Close();
@@ -404,51 +425,73 @@ namespace Green_Leaf
             pnl_menu_isi.Visible = false;
             pnl_edtpkt_isi.Visible = true;
 
+            if (txt_login_username.Text == "superadmin")
+            {
+                btn_edtpkt_hapus.Visible = true;
+                btn_edtpkt_simpan.Location = new Point(314, 439);
+                btn_edtpkt_batal.Location = new Point(514, 439);
+            }
+            else
+            {
+                btn_edtpkt_hapus.Visible = false;
+                btn_edtpkt_simpan.Location = new Point(447, 439);
+                btn_edtpkt_batal.Location = new Point(647, 439);
+            }
             edtpkt_lstnamapaket[0] = new List<string>();
             edtpkt_lstnamapaket[1] = new List<string>();
             cbo_edtpkt_jenispaket.Enabled = false;
             txt_edtpkt_namapaket.Enabled = false;
-            txt_tbhpkt_komisipaketnormal.Enabled = false;
-            txt_tbhpkt_komisipaketmidnight.Enabled = false;
+            txt_edtpkt_komisipaketnormal.Enabled = false;
+            txt_edtpkt_komisipaketmidnight.Enabled = false;
             txt_edtpkt_durasipaketjam.Enabled = false;
             txt_edtpkt_durasipaketmenit.Enabled = false;
             txt_edtpkt_hargapaket.Enabled = false;
             btn_edtpkt_simpan.Enabled = false;
             lsb_edtpkt_jenisnamapkt.Items.Clear();
+            btn_edtpkt_hapus.Enabled = false;
+
+            cbo_edtpkt_jenispaket.SelectedItem = null;
+            txt_edtpkt_namapaket.Clear();
+            txt_edtpkt_komisipaketnormal.Clear();
+            txt_edtpkt_komisipaketmidnight.Clear();
+            txt_edtpkt_durasipaketjam.Clear();
+            txt_edtpkt_durasipaketmenit.Clear();
+            txt_edtpkt_hargapaket.Clear();
+            btn_edtpkt_simpan.Enabled = false;
+            lsb_edtpkt_jenisnamapkt.Items.Clear();
 
             edtpkt_lstidpktTerpilih.Clear();
-
             #region(Isi listbox dengan Jenis dan Nama Paket per baris)
             string edtpkt_jenisnamapkt;
-            string edtpkt_query;
-            string edtpkt_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection edtpkt_conn = new MySqlConnection(edtpkt_connStr);
+            string edtpkt_query2;
+            string edtpkt_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+            MySqlConnection edtpkt_conn2 = new MySqlConnection(edtpkt_connStr2);
             try
             {
-                edtpkt_conn.Open();
+                edtpkt_conn2.Open();
 
-                edtpkt_query = "SELECT * FROM `paket` ORDER BY `id_paket` DESC";
-                MySqlCommand edtpkt_cmd = new MySqlCommand(edtpkt_query, edtpkt_conn);
-                MySqlDataReader edtpkt_rdr = edtpkt_cmd.ExecuteReader();
+                edtpkt_query2 = "SELECT * FROM `paket` ORDER BY `id_paket` DESC";
+                MySqlCommand edtpkt_cmd2 = new MySqlCommand(edtpkt_query2, edtpkt_conn2);
+                MySqlDataReader edtpkt_rdr2 = edtpkt_cmd2.ExecuteReader();
 
-                while (edtpkt_rdr.Read())
+                while (edtpkt_rdr2.Read())
                 {
                     //cbo_kodeterapis.Items.Add(edtpkt_rdr.GetString(1));
-                    edtpkt_lstidpktTerpilih.Add(edtpkt_rdr.GetInt16(0));
-                    edtpkt_jenisnamapkt = edtpkt_rdr.GetString(1);
-                    edtpkt_jenisnamapkt += " - " + edtpkt_rdr.GetString(2);
+                    edtpkt_lstidpktTerpilih.Add(edtpkt_rdr2.GetInt16(0));
+                    edtpkt_jenisnamapkt = edtpkt_rdr2.GetString(1);
+                    edtpkt_jenisnamapkt += " - " + edtpkt_rdr2.GetString(2);
                     lsb_edtpkt_jenisnamapkt.Items.Add(edtpkt_jenisnamapkt);
-                    edtpkt_lstnamapaket[0].Add(edtpkt_rdr.GetString(1));
-                    edtpkt_lstnamapaket[1].Add(edtpkt_rdr.GetString(2));
+                    edtpkt_lstnamapaket[0].Add(edtpkt_rdr2.GetString(1));
+                    edtpkt_lstnamapaket[1].Add(edtpkt_rdr2.GetString(2));
                 }
-                edtpkt_rdr.Close();
+                edtpkt_rdr2.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 MessageBox.Show("Error Occured");
             }
-            edtpkt_conn.Close();
+            edtpkt_conn2.Close();
             #endregion
         }
 
@@ -681,6 +724,15 @@ namespace Green_Leaf
             edtpkt_conn.Close();
             #endregion
         }
+
+        private void btn_menu_logout_Click(object sender, EventArgs e)
+        {
+            pnl_menu_isi.Visible = false;
+            pnl_login_isi.Visible = true;
+            txt_login_username.Clear();
+            txt_login_pass.Clear();
+            txt_login_username.Focus();
+        }
         #endregion
 
         #region(Panel Tambah Terapis)
@@ -843,6 +895,7 @@ namespace Green_Leaf
                 btn_edttrps_browsefoto.Enabled = true;
                 rdo_edttrps_statusaktif.Enabled = true;
                 rdo_edttrps_statustdkaktif.Enabled = true;
+                btn_edttrps_hapus.Enabled = true;
                 string edttrps_kodeTerpilih = lsb_edttrps_kodeterapis.SelectedItem.ToString();
 
                 string edttrps_query;
@@ -949,6 +1002,7 @@ namespace Green_Leaf
                         btn_edttrps_browsefoto.Enabled = false;
                         rdo_edttrps_statusaktif.Enabled = false;
                         rdo_edttrps_statustdkaktif.Enabled = false;
+                        btn_edttrps_hapus.Enabled = false;
                     }
                     else if (rdo_edttrps_statustdkaktif.Checked)
                     {
@@ -983,6 +1037,7 @@ namespace Green_Leaf
                         btn_edttrps_browsefoto.Enabled = false;
                         rdo_edttrps_statusaktif.Enabled = false;
                         rdo_edttrps_statustdkaktif.Enabled = false;
+                        btn_edttrps_hapus.Enabled = false;
                     }
                 }
                 else
@@ -1061,6 +1116,7 @@ namespace Green_Leaf
                             btn_edttrps_browsefoto.Enabled = false;
                             rdo_edttrps_statusaktif.Enabled = false;
                             rdo_edttrps_statustdkaktif.Enabled = false;
+                            btn_edttrps_hapus.Enabled = false;
                         }
                         else if (rdo_edttrps_statustdkaktif.Checked)
                         {
@@ -1095,37 +1151,40 @@ namespace Green_Leaf
                             btn_edttrps_browsefoto.Enabled = false;
                             rdo_edttrps_statusaktif.Enabled = false;
                             rdo_edttrps_statustdkaktif.Enabled = false;
+                            btn_edttrps_hapus.Enabled = false;
                         }
                     }
                 }
                 //cbo_kodeterapis.Items.Clear();
                 lsb_edttrps_kodeterapis.Items.Clear();
                 #region(Select)
-                edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                edttrps_conn = new MySqlConnection(edttrps_connStr);
+                MySqlConnection edttrps_conn2 = new MySqlConnection();
+                string edttrps_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                string edttrps_query2 = "";
+                edttrps_conn2 = new MySqlConnection(edttrps_connStr2);
                 try
                 {
-                    edttrps_conn.Open();
+                    edttrps_conn2.Open();
 
-                    edttrps_query = "SELECT * FROM `terapis` order by id_terapis DESC";
-                    MySqlCommand edttrps_cmd = new MySqlCommand(edttrps_query, edttrps_conn);
-                    MySqlDataReader edttrps_rdr = edttrps_cmd.ExecuteReader();
+                    edttrps_query2 = "SELECT * FROM `terapis` order by id_terapis DESC";
+                    MySqlCommand edttrps_cmd2 = new MySqlCommand(edttrps_query2, edttrps_conn2);
+                    MySqlDataReader edttrps_rdr2 = edttrps_cmd2.ExecuteReader();
 
-                    while (edttrps_rdr.Read())
+                    while (edttrps_rdr2.Read())
                     {
                         //cbo_kodeterapis.Items.Add(rdr.GetString(1));
-                        lsb_edttrps_kodeterapis.Items.Add(edttrps_rdr.GetString(1));
+                        lsb_edttrps_kodeterapis.Items.Add(edttrps_rdr2.GetString(1));
                     }
-                    edttrps_rdr.Close();
+                    edttrps_rdr2.Close();
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
                 }
-                edttrps_conn.Close();
+                edttrps_conn2.Close();
                 #endregion
             }
-
+            
 
         }
 
@@ -1133,6 +1192,74 @@ namespace Green_Leaf
         {
             pnl_menu_isi.Visible = true;
             pnl_edttrps_isi.Visible = false;
+        }
+
+        private void btn_edttrps_hapus_Click(object sender, EventArgs e)
+        {
+            #region(Update)
+            string edttrps_connStr;
+            MySqlConnection edttrps_conn;
+            DBConnect edttrps_sql = new DBConnect();
+            string edttrps_query;
+            edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+            edttrps_conn = new MySqlConnection(edttrps_connStr);
+            try
+            {
+                edttrps_conn.Open();
+
+                edttrps_query = "DELETE FROM `terapis` WHERE `terapis`.`nama_terapis` = '" + txt_edttrps_namaterapis.Text + "' AND `terapis`.`kode_terapis` = " + txt_edttrps_kodeterapis.Text + "";
+                MySqlCommand cmd = new MySqlCommand(edttrps_query, edttrps_conn);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            edttrps_conn.Close();
+            #endregion
+            MessageBox.Show("Data terapis telah berhasil dihapus");
+            txt_edttrps_kodeterapis.Clear();
+            txt_edttrps_namaterapis.Clear();
+            edttrps_lokasi_gambar = "";
+            rdo_edttrps_statusaktif.Checked = false;
+            rdo_edttrps_statustdkaktif.Checked = false;
+            pict_edttrps_fotoKTP.Image = null;
+            txt_edttrps_kodeterapis.Focus();
+            btn_edttrps_simpan.Enabled = false;
+            txt_edttrps_kodeterapis.Enabled = false;
+            txt_edttrps_namaterapis.Enabled = false;
+            btn_edttrps_browsefoto.Enabled = false;
+            rdo_edttrps_statusaktif.Enabled = false;
+            rdo_edttrps_statustdkaktif.Enabled = false;
+            btn_edttrps_hapus.Enabled = false;
+
+            lsb_edttrps_kodeterapis.Items.Clear();
+            #region(Select)
+            MySqlConnection edttrps_conn2 = new MySqlConnection();
+            string edttrps_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+            string edttrps_query2 = "";
+            edttrps_conn2 = new MySqlConnection(edttrps_connStr2);
+            try
+            {
+                edttrps_conn2.Open();
+
+                edttrps_query2 = "SELECT * FROM `terapis` order by id_terapis DESC";
+                MySqlCommand edttrps_cmd2 = new MySqlCommand(edttrps_query2, edttrps_conn2);
+                MySqlDataReader edttrps_rdr2 = edttrps_cmd2.ExecuteReader();
+
+                while (edttrps_rdr2.Read())
+                {
+                    //cbo_kodeterapis.Items.Add(rdr.GetString(1));
+                    lsb_edttrps_kodeterapis.Items.Add(edttrps_rdr2.GetString(1));
+                }
+                edttrps_rdr2.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            edttrps_conn2.Close();
+            #endregion
         }
 
         private void txt_edttrps_kodeterapis_KeyPress(object sender, KeyPressEventArgs e)
@@ -1369,6 +1496,7 @@ namespace Green_Leaf
                 txt_edtpkt_durasipaketmenit.Enabled = true;
                 txt_edtpkt_hargapaket.Enabled = true;
                 btn_edtpkt_simpan.Enabled = true;
+                btn_edtpkt_hapus.Enabled = true;
                 #endregion
             }
             else
@@ -1486,6 +1614,7 @@ namespace Green_Leaf
                     txt_edtpkt_hargapaket.Enabled = false;
                     btn_edtpkt_simpan.Enabled = false;
                     lsb_edtpkt_jenisnamapkt.Items.Clear();
+                    btn_edtpkt_hapus.Enabled = false;
 
                     cbo_edtpkt_jenispaket.SelectedItem = null;
                     txt_edtpkt_namapaket.Clear();
@@ -1573,6 +1702,7 @@ namespace Green_Leaf
                         txt_edtpkt_hargapaket.Enabled = false;
                         btn_edtpkt_simpan.Enabled = false;
                         lsb_edtpkt_jenisnamapkt.Items.Clear();
+                        btn_edtpkt_hapus.Enabled = false;
 
                         cbo_edtpkt_jenispaket.SelectedItem = null;
                         txt_edtpkt_namapaket.Clear();
@@ -1678,6 +1808,95 @@ namespace Green_Leaf
         {
             pnl_menu_isi.Visible = true;
             pnl_edtpkt_isi.Visible = false;
+        }
+
+        private void btn_edtpkt_hapus_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Apakah anda sudah yakin?", "Alert", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                #region(Update)
+                string edttrps_connStr;
+                MySqlConnection edttrps_conn;
+                DBConnect edttrps_sql = new DBConnect();
+                string edttrps_query;
+                edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                edttrps_conn = new MySqlConnection(edttrps_connStr);
+                try
+                {
+                    edttrps_conn.Open();
+
+                    edttrps_query = "DELETE FROM `paket` WHERE `paket`.`nama_paket` = '" + txt_edtpkt_namapaket.Text + "' AND `paket`.`jenis_paket` = '" + cbo_edtpkt_jenispaket.SelectedItem.ToString() + "'";
+                    MySqlCommand cmd = new MySqlCommand(edttrps_query, edttrps_conn);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                edttrps_conn.Close();
+                #endregion
+
+                cbo_edtpkt_jenispaket.Enabled = false;
+                txt_edtpkt_namapaket.Enabled = false;
+                txt_edtpkt_komisipaketnormal.Enabled = false;
+                txt_edtpkt_komisipaketmidnight.Enabled = false;
+                txt_edtpkt_durasipaketjam.Enabled = false;
+                txt_edtpkt_durasipaketmenit.Enabled = false;
+                txt_edtpkt_hargapaket.Enabled = false;
+                btn_edtpkt_simpan.Enabled = false;
+                lsb_edtpkt_jenisnamapkt.Items.Clear();
+                btn_edtpkt_hapus.Enabled = false;
+
+                cbo_edtpkt_jenispaket.SelectedItem = null;
+                txt_edtpkt_namapaket.Clear();
+                txt_edtpkt_komisipaketnormal.Clear();
+                txt_edtpkt_komisipaketmidnight.Clear();
+                txt_edtpkt_durasipaketjam.Clear();
+                txt_edtpkt_durasipaketmenit.Clear();
+                txt_edtpkt_hargapaket.Clear();
+                btn_edtpkt_simpan.Enabled = false;
+                lsb_edtpkt_jenisnamapkt.Items.Clear();
+
+                edtpkt_lstidpktTerpilih.Clear();
+                #region(Isi listbox dengan Jenis dan Nama Paket per baris)
+                string edtpkt_jenisnamapkt;
+                string edtpkt_query2;
+                string edtpkt_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                MySqlConnection edtpkt_conn2 = new MySqlConnection(edtpkt_connStr2);
+                try
+                {
+                    edtpkt_conn2.Open();
+
+                    edtpkt_query2 = "SELECT * FROM `paket` ORDER BY `id_paket` DESC";
+                    MySqlCommand edtpkt_cmd2 = new MySqlCommand(edtpkt_query2, edtpkt_conn2);
+                    MySqlDataReader edtpkt_rdr2 = edtpkt_cmd2.ExecuteReader();
+
+                    while (edtpkt_rdr2.Read())
+                    {
+                        //cbo_kodeterapis.Items.Add(edtpkt_rdr.GetString(1));
+                        edtpkt_lstidpktTerpilih.Add(edtpkt_rdr2.GetInt16(0));
+                        edtpkt_jenisnamapkt = edtpkt_rdr2.GetString(1);
+                        edtpkt_jenisnamapkt += " - " + edtpkt_rdr2.GetString(2);
+                        lsb_edtpkt_jenisnamapkt.Items.Add(edtpkt_jenisnamapkt);
+                        edtpkt_lstnamapaket[0].Add(edtpkt_rdr2.GetString(1));
+                        edtpkt_lstnamapaket[1].Add(edtpkt_rdr2.GetString(2));
+                    }
+                    edtpkt_rdr2.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Error Occured");
+                }
+                edtpkt_conn2.Close();
+                #endregion
+
+
+
+                MessageBox.Show("Data Paket telah berhasil dihapus");
+            }
+
         }
         #endregion
 
@@ -5974,6 +6193,12 @@ namespace Green_Leaf
             pnl_lprnlayanan_isi.Visible = false;
         }
         #endregion
+
+        
+
+        
+
+        
 
     }
 }
