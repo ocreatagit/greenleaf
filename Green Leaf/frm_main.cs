@@ -41,7 +41,16 @@ namespace Green_Leaf
 
         private void frm_main_Load(object sender, EventArgs e)
         {
-
+            pnl_login_isi.Enabled = true;
+            pnl_edttrps_isi.Enabled = false;
+            pnl_edtpkt_isi.Enabled = false;
+            pnl_ctknota_isi.Enabled = false;
+            pnl_lprnlayanan_isi.Enabled = false;
+            pnl_lprnpnjln_isi.Enabled = false;
+            pnl_menu_isi.Enabled = false;
+            pnl_tbhpkt_isi.Enabled = false;
+            pnl_tbhtrps_isi.Enabled = false;
+            pnl_variabel_isi.Enabled = false;
         }
 
         private void frm_main_FormClosing(object sender, FormClosingEventArgs e)
@@ -79,6 +88,7 @@ namespace Green_Leaf
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+                MessageBox.Show("Error Occured");
             }
             conn.Close();
             #endregion
@@ -117,17 +127,40 @@ namespace Green_Leaf
                     }
                     if (login_passSama == true)
                     {
-                        MessageBox.Show("Login berhasil");
+                        
                         if (txt_login_username.Text == "superadmin")
                         {
                             pnl_login_isi.Visible = false;
                             pnl_menu_isi.Visible = true;
+                            lbl_menu_user.Text = "Superadmin,";
+                            pnl_login_isi.Enabled = false;
+                            pnl_edttrps_isi.Enabled = false;
+                            pnl_edtpkt_isi.Enabled = false;
+                            pnl_ctknota_isi.Enabled = false;
+                            pnl_lprnlayanan_isi.Enabled = false;
+                            pnl_lprnpnjln_isi.Enabled = false;
+                            pnl_menu_isi.Enabled = true;
+                            pnl_tbhpkt_isi.Enabled = false;
+                            pnl_tbhtrps_isi.Enabled = false;
+                            pnl_variabel_isi.Enabled = false;
                         }
                         else if (txt_login_username.Text == "sales")
                         {
                             pnl_login_isi.Visible = false;
                             pnl_menu_isi.Visible = true;
+                            lbl_menu_user.Text = "Sales,";
+                            pnl_login_isi.Enabled = false;
+                            pnl_edttrps_isi.Enabled = false;
+                            pnl_edtpkt_isi.Enabled = false;
+                            pnl_ctknota_isi.Enabled = false;
+                            pnl_lprnlayanan_isi.Enabled = false;
+                            pnl_lprnpnjln_isi.Enabled = false;
+                            pnl_menu_isi.Enabled = true;
+                            pnl_tbhpkt_isi.Enabled = false;
+                            pnl_tbhtrps_isi.Enabled = false;
+                            pnl_variabel_isi.Enabled = false;
                         }
+                        MessageBox.Show("Login berhasil");
                     }
                     else
                     {
@@ -153,6 +186,7 @@ namespace Green_Leaf
 
         private void txt_login_pass_KeyDown(object sender, KeyEventArgs e)
         {
+
             if (e.KeyCode == Keys.Enter)
             {
                 bool login_userAda = false;
@@ -182,6 +216,7 @@ namespace Green_Leaf
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Error Occured");
                 }
                 conn.Close();
                 #endregion
@@ -225,11 +260,33 @@ namespace Green_Leaf
                             {
                                 pnl_login_isi.Visible = false;
                                 pnl_menu_isi.Visible = true;
+                                lbl_menu_user.Text = "Superadmin,";
+                                pnl_login_isi.Enabled = false;
+                                pnl_edttrps_isi.Enabled = false;
+                                pnl_edtpkt_isi.Enabled = false;
+                                pnl_ctknota_isi.Enabled = false;
+                                pnl_lprnlayanan_isi.Enabled = false;
+                                pnl_lprnpnjln_isi.Enabled = false;
+                                pnl_menu_isi.Enabled = true;
+                                pnl_tbhpkt_isi.Enabled = false;
+                                pnl_tbhtrps_isi.Enabled = false;
+                                pnl_variabel_isi.Enabled = false;
                             }
                             else if (txt_login_username.Text == "sales")
                             {
                                 pnl_login_isi.Visible = false;
                                 pnl_menu_isi.Visible = true;
+                                lbl_menu_user.Text = "Sales,";
+                                pnl_login_isi.Enabled = false;
+                                pnl_edttrps_isi.Enabled = false;
+                                pnl_edtpkt_isi.Enabled = false;
+                                pnl_ctknota_isi.Enabled = false;
+                                pnl_lprnlayanan_isi.Enabled = false;
+                                pnl_lprnpnjln_isi.Enabled = false;
+                                pnl_menu_isi.Enabled = true;
+                                pnl_tbhpkt_isi.Enabled = false;
+                                pnl_tbhtrps_isi.Enabled = false;
+                                pnl_variabel_isi.Enabled = false;
                             }
                         }
                         else
@@ -280,6 +337,7 @@ namespace Green_Leaf
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Error Occured");
                 }
                 conn.Close();
                 #endregion
@@ -323,11 +381,33 @@ namespace Green_Leaf
                             {
                                 pnl_login_isi.Visible = false;
                                 pnl_menu_isi.Visible = true;
+                                lbl_menu_user.Text = "Superadmin,";
+                                pnl_login_isi.Enabled = false;
+                                pnl_edttrps_isi.Enabled = false;
+                                pnl_edtpkt_isi.Enabled = false;
+                                pnl_ctknota_isi.Enabled = false;
+                                pnl_lprnlayanan_isi.Enabled = false;
+                                pnl_lprnpnjln_isi.Enabled = false;
+                                pnl_menu_isi.Enabled = true;
+                                pnl_tbhpkt_isi.Enabled = false;
+                                pnl_tbhtrps_isi.Enabled = false;
+                                pnl_variabel_isi.Enabled = false;
                             }
                             else if (txt_login_username.Text == "sales")
                             {
                                 pnl_login_isi.Visible = false;
                                 pnl_menu_isi.Visible = true;
+                                lbl_menu_user.Text = "Sales,";
+                                pnl_login_isi.Enabled = false;
+                                pnl_edttrps_isi.Enabled = false;
+                                pnl_edtpkt_isi.Enabled = false;
+                                pnl_ctknota_isi.Enabled = false;
+                                pnl_lprnlayanan_isi.Enabled = false;
+                                pnl_lprnpnjln_isi.Enabled = false;
+                                pnl_menu_isi.Enabled = true;
+                                pnl_tbhpkt_isi.Enabled = false;
+                                pnl_tbhtrps_isi.Enabled = false;
+                                pnl_variabel_isi.Enabled = false;
                             }
                         }
                         else
@@ -353,12 +433,40 @@ namespace Green_Leaf
         {
             pnl_menu_isi.Visible = false;
             pnl_tbhtrps_isi.Visible = true;
+            pnl_login_isi.Enabled = false;
+            pnl_edttrps_isi.Enabled = false;
+            pnl_edtpkt_isi.Enabled = false;
+            pnl_ctknota_isi.Enabled = false;
+            pnl_lprnlayanan_isi.Enabled = false;
+            pnl_lprnpnjln_isi.Enabled = false;
+            pnl_menu_isi.Enabled = false;
+            pnl_tbhpkt_isi.Enabled = false;
+            pnl_tbhtrps_isi.Enabled = true;
+            pnl_variabel_isi.Enabled = false;
+
+            txt_tbhtrps_kodeterapis.Clear();
+            txt_tbhtrps_namaterapis.Clear();
+            tbhtrps_lokasi_gambar = "";
+            rdo_tbhtrps_statusaktif.Checked = false;
+            rdo_tbhtrps_statustdkaktif.Checked = false;
+            pict_tbhtrps_fotoKTP.Image = null;
+            txt_tbhtrps_kodeterapis.Focus();
         }
 
         private void btn_menu_edttrps_Click(object sender, EventArgs e)
         {
             pnl_edttrps_isi.Visible = true;
             pnl_menu_isi.Visible = false;
+            pnl_login_isi.Enabled = false;
+            pnl_edttrps_isi.Enabled = true;
+            pnl_edtpkt_isi.Enabled = false;
+            pnl_ctknota_isi.Enabled = false;
+            pnl_lprnlayanan_isi.Enabled = false;
+            pnl_lprnpnjln_isi.Enabled = false;
+            pnl_menu_isi.Enabled = false;
+            pnl_tbhpkt_isi.Enabled = false;
+            pnl_tbhtrps_isi.Enabled = false;
+            pnl_variabel_isi.Enabled = false;
 
             if (txt_login_username.Text == "superadmin")
             {
@@ -412,6 +520,7 @@ namespace Green_Leaf
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+                MessageBox.Show("Error Occured");
             }
             edttrps_conn.Close();
             #endregion
@@ -421,6 +530,18 @@ namespace Green_Leaf
         {
             pnl_menu_isi.Visible = false;
             pnl_tbhpkt_isi.Visible = true;
+
+            pnl_login_isi.Enabled = false;
+            pnl_edttrps_isi.Enabled = false;
+            pnl_edtpkt_isi.Enabled = false;
+            pnl_ctknota_isi.Enabled = false;
+            pnl_lprnlayanan_isi.Enabled = false;
+            pnl_lprnpnjln_isi.Enabled = false;
+            pnl_menu_isi.Enabled = false;
+            pnl_tbhpkt_isi.Enabled = true;
+            pnl_tbhtrps_isi.Enabled = false;
+            pnl_variabel_isi.Enabled = false;
+
             txt_tbhpkt_komisipaketmidnight.Enabled = true;
             txt_tbhpkt_komisipaketnormal.Enabled = true;
         }
@@ -429,6 +550,17 @@ namespace Green_Leaf
         {
             pnl_menu_isi.Visible = false;
             pnl_edtpkt_isi.Visible = true;
+
+            pnl_login_isi.Enabled = false;
+            pnl_edttrps_isi.Enabled = false;
+            pnl_edtpkt_isi.Enabled = true;
+            pnl_ctknota_isi.Enabled = false;
+            pnl_lprnlayanan_isi.Enabled = false;
+            pnl_lprnpnjln_isi.Enabled = false;
+            pnl_menu_isi.Enabled = false;
+            pnl_tbhpkt_isi.Enabled = false;
+            pnl_tbhtrps_isi.Enabled = false;
+            pnl_variabel_isi.Enabled = false;
 
             if (txt_login_username.Text == "superadmin")
             {
@@ -504,6 +636,17 @@ namespace Green_Leaf
         {
             pnl_menu_isi.Visible = false;
             pnl_ctknota_isi.Visible = true;
+
+            pnl_login_isi.Enabled = false;
+            pnl_edttrps_isi.Enabled = false;
+            pnl_edtpkt_isi.Enabled = false;
+            pnl_ctknota_isi.Enabled = true;
+            pnl_lprnlayanan_isi.Enabled = false;
+            pnl_lprnpnjln_isi.Enabled = false;
+            pnl_menu_isi.Enabled = false;
+            pnl_tbhpkt_isi.Enabled = false;
+            pnl_tbhtrps_isi.Enabled = false;
+            pnl_variabel_isi.Enabled = false;
 
             txt_ctknota_nomorruangan.Enabled = true;
             rdo_ctknota_normal.Enabled = false;
@@ -585,6 +728,7 @@ namespace Green_Leaf
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+                MessageBox.Show("Error Occured");
             }
             ctknota_conn2.Close();
             #endregion
@@ -624,6 +768,17 @@ namespace Green_Leaf
         {
             pnl_menu_isi.Visible = false;
             pnl_lprnpnjln_isi.Visible = true;
+
+            pnl_login_isi.Enabled = false;
+            pnl_edttrps_isi.Enabled = false;
+            pnl_edtpkt_isi.Enabled = false;
+            pnl_ctknota_isi.Enabled = false;
+            pnl_lprnlayanan_isi.Enabled = false;
+            pnl_lprnpnjln_isi.Enabled = true;
+            pnl_menu_isi.Enabled = false;
+            pnl_tbhpkt_isi.Enabled = false;
+            pnl_tbhtrps_isi.Enabled = false;
+            pnl_variabel_isi.Enabled = false;
 
             lprnpnjln_tanggalcetakdari = dtp_lprnpnjln_tgldari.Value.Year.ToString();
             lprnpnjln_tanggalcetakdari += "-" + dtp_lprnpnjln_tgldari.Value.Month.ToString();
@@ -684,6 +839,17 @@ namespace Green_Leaf
             pnl_menu_isi.Visible = false;
             pnl_lprnlayanan_isi.Visible = true;
 
+            pnl_login_isi.Enabled = false;
+            pnl_edttrps_isi.Enabled = false;
+            pnl_edtpkt_isi.Enabled = false;
+            pnl_ctknota_isi.Enabled = false;
+            pnl_lprnlayanan_isi.Enabled = true;
+            pnl_lprnpnjln_isi.Enabled = false;
+            pnl_menu_isi.Enabled = false;
+            pnl_tbhpkt_isi.Enabled = false;
+            pnl_tbhtrps_isi.Enabled = false;
+            pnl_variabel_isi.Enabled = false;
+
             dgv_lprnlayanan_tabellayanan.DataSource = null;
             dgv_lprnlayanan_tabellayanan.Rows.Clear();
             dgv_lprnlayanan_tabellayanan.Columns.Clear();
@@ -695,12 +861,24 @@ namespace Green_Leaf
         private void btn_menu_laporangajiexcel_Click(object sender, EventArgs e)
         {
             //pnl_menu_isi.Visible = false;
+
         }
 
         private void btn_menu_variabel_Click(object sender, EventArgs e)
         {
             pnl_menu_isi.Visible = false;
             pnl_variabel_isi.Visible = true;
+
+            pnl_login_isi.Enabled = false;
+            pnl_edttrps_isi.Enabled = false;
+            pnl_edtpkt_isi.Enabled = false;
+            pnl_ctknota_isi.Enabled = false;
+            pnl_lprnlayanan_isi.Enabled = false;
+            pnl_lprnpnjln_isi.Enabled = false;
+            pnl_menu_isi.Enabled = false;
+            pnl_tbhpkt_isi.Enabled = false;
+            pnl_tbhtrps_isi.Enabled = false;
+            pnl_variabel_isi.Enabled = true;
 
             #region(Isi textbox)
             string edtpkt_query;
@@ -730,7 +908,7 @@ namespace Green_Leaf
             #endregion
         }
 
-        private void btn_menu_logout_Click(object sender, EventArgs e)
+        private void lbllink_menu_logout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Apakah anda sudah yakin?", "Alert", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -740,26 +918,38 @@ namespace Green_Leaf
                 txt_login_username.Clear();
                 txt_login_pass.Clear();
                 txt_login_username.Focus();
-        
+
+                pnl_login_isi.Enabled = true;
+                pnl_edttrps_isi.Enabled = false;
+                pnl_edtpkt_isi.Enabled = false;
+                pnl_ctknota_isi.Enabled = false;
+                pnl_lprnlayanan_isi.Enabled = false;
+                pnl_lprnpnjln_isi.Enabled = false;
+                pnl_menu_isi.Enabled = false;
+                pnl_tbhpkt_isi.Enabled = false;
+                pnl_tbhtrps_isi.Enabled = false;
+                pnl_variabel_isi.Enabled = false;
             }
         }
         #endregion
 
         #region(Panel Tambah Terapis)
         string tbhtrps_lokasi_gambar = "";
+        OpenFileDialog tbhtrps_open = new OpenFileDialog();
         private void btn_tbhtrps_browsefoto_Click(object sender, EventArgs e)
         {
             // open file dialog 
-            OpenFileDialog tbhtrps_open = new OpenFileDialog();
+            
             // image filters
             tbhtrps_open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             if (tbhtrps_open.ShowDialog() == DialogResult.OK)
             {
                 // display image in picture box
-
+                
                 // image file path
-                tbhtrps_lokasi_gambar = tbhtrps_open.FileName.Replace(@"\", @"\\");
-                pict_tbhtrps_fotoKTP.Image = new Bitmap(tbhtrps_lokasi_gambar);
+                
+                
+                pict_tbhtrps_fotoKTP.Image = new Bitmap(tbhtrps_open.FileName);
             }
         }
 
@@ -791,6 +981,7 @@ namespace Green_Leaf
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+                MessageBox.Show("Error Occured");
             }
             tbhtrps_conn.Close();
             #endregion
@@ -819,7 +1010,7 @@ namespace Green_Leaf
                 {
                     MessageBox.Show("Mohon lengkapi data Nama Terapis terlebih dahulu!");
                 }
-                else if (tbhtrps_lokasi_gambar == "")
+                else if (pict_tbhtrps_fotoKTP.ImageLocation == "")
                 {
                     MessageBox.Show("Mohon pilih foto KTP terlebih dahulu!");
                 }
@@ -831,6 +1022,10 @@ namespace Green_Leaf
                     }
                     else if (rdo_tbhtrps_statusaktif.Checked)
                     {
+                        File.Copy(tbhtrps_open.FileName.ToString(), Application.StartupPath.ToString() + "\\img\\" + txt_tbhtrps_namaterapis.Text + ".jpg", true);
+                        tbhtrps_lokasi_gambar = Application.StartupPath.ToString() + "\\img\\" + txt_tbhtrps_namaterapis.Text + ".jpg";
+                        tbhtrps_lokasi_gambar = tbhtrps_lokasi_gambar.Replace("\\", "\\\\");
+
                         tbhtrps_query = "INSERT INTO `terapis` (`kode_terapis`, `nama_terapis`, `lokasi_gambar`, `status_terapis`) VALUES ('" + txt_tbhtrps_kodeterapis.Text + "', '" + txt_tbhtrps_namaterapis.Text + "', '" + tbhtrps_lokasi_gambar + "', 'Aktif');";
                         tbhtrps_sql.Insert(tbhtrps_query);
                         MessageBox.Show("Terapis telah berhasil ditambahkan");
@@ -841,9 +1036,15 @@ namespace Green_Leaf
                         rdo_tbhtrps_statustdkaktif.Checked = false;
                         pict_tbhtrps_fotoKTP.Image = null;
                         txt_tbhtrps_kodeterapis.Focus();
+
+                        
                     }
                     else if (rdo_tbhtrps_statustdkaktif.Checked)
                     {
+                        File.Copy(tbhtrps_open.FileName.ToString(), Application.StartupPath.ToString() + "\\img\\" + txt_tbhtrps_namaterapis.Text + ".jpg", true);
+                        tbhtrps_lokasi_gambar = Application.StartupPath.ToString() + "\\img\\" + txt_tbhtrps_namaterapis.Text + ".jpg";
+                        tbhtrps_lokasi_gambar = tbhtrps_lokasi_gambar.Replace("\\", "\\\\");
+
                         tbhtrps_query = "INSERT INTO `terapis` (`kode_terapis`, `nama_terapis`, `lokasi_gambar`, `status_terapis`) VALUES ('" + txt_tbhtrps_kodeterapis.Text + "', '" + txt_tbhtrps_namaterapis.Text + "', '" + tbhtrps_lokasi_gambar + "', 'Tidak Aktif');";
                         tbhtrps_sql.Insert(tbhtrps_query);
                         MessageBox.Show("Terapis telah berhasil ditambahkan");
@@ -854,6 +1055,7 @@ namespace Green_Leaf
                         rdo_tbhtrps_statustdkaktif.Checked = false;
                         pict_tbhtrps_fotoKTP.Image = null;
                         txt_tbhtrps_kodeterapis.Focus();
+
                     }
                 }
             }
@@ -863,6 +1065,17 @@ namespace Green_Leaf
         {
             pnl_tbhtrps_isi.Visible = false;
             pnl_menu_isi.Visible = true;
+
+            pnl_login_isi.Enabled = false;
+            pnl_edttrps_isi.Enabled = false;
+            pnl_edtpkt_isi.Enabled = false;
+            pnl_ctknota_isi.Enabled = false;
+            pnl_lprnlayanan_isi.Enabled = false;
+            pnl_lprnpnjln_isi.Enabled = false;
+            pnl_menu_isi.Enabled = true;
+            pnl_tbhpkt_isi.Enabled = false;
+            pnl_tbhtrps_isi.Enabled = false;
+            pnl_variabel_isi.Enabled = false;
         }
 
         private void txt_tbhtrps_kodeterapis_KeyPress(object sender, KeyPressEventArgs e)
@@ -878,10 +1091,11 @@ namespace Green_Leaf
         string edttrps_lokasi_gambar;
         int edttrps_idTerapis;
         int edttrps_kodeTerakhir;
+        OpenFileDialog edttrps_open = new OpenFileDialog();
         private void btn_edttrps_browsefoto_Click(object sender, EventArgs e)
         {
             // open file dialog 
-            OpenFileDialog edttrps_open = new OpenFileDialog();
+            
             // image filters
             edttrps_open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             if (edttrps_open.ShowDialog() == DialogResult.OK)
@@ -889,8 +1103,7 @@ namespace Green_Leaf
                 // display image in picture box
 
                 // image file path
-                edttrps_lokasi_gambar = edttrps_open.FileName.Replace(@"\", @"\\");
-                pict_edttrps_fotoKTP.Image = new Bitmap(edttrps_lokasi_gambar);
+                pict_edttrps_fotoKTP.Image = new Bitmap(edttrps_open.FileName);
             }
         }
 
@@ -944,6 +1157,7 @@ namespace Green_Leaf
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Error Occured");
                 }
                 edttrps_conn.Close();
                 #endregion
@@ -981,6 +1195,9 @@ namespace Green_Leaf
                 {
                     if (rdo_edttrps_statusaktif.Checked)
                     {
+                        File.Copy(edttrps_open.FileName.ToString(), Application.StartupPath.ToString() + "\\img\\" + txt_edttrps_namaterapis.Text + ".jpg", true);
+                        edttrps_lokasi_gambar = Application.StartupPath.ToString() + "\\img\\" + txt_edttrps_namaterapis.Text + ".jpg";
+                        edttrps_lokasi_gambar = edttrps_lokasi_gambar.Replace("\\", "\\\\");
                         #region(Update)
                         edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
                         edttrps_conn = new MySqlConnection(edttrps_connStr);
@@ -995,6 +1212,7 @@ namespace Green_Leaf
                         catch (Exception ex)
                         {
                             Console.WriteLine(ex.ToString());
+                            MessageBox.Show("Error Occured");
                         }
                         edttrps_conn.Close();
                         #endregion
@@ -1016,6 +1234,9 @@ namespace Green_Leaf
                     }
                     else if (rdo_edttrps_statustdkaktif.Checked)
                     {
+                        File.Copy(edttrps_open.FileName.ToString(), Application.StartupPath.ToString() + "\\img\\" + txt_edttrps_namaterapis.Text + ".jpg", true);
+                        edttrps_lokasi_gambar = Application.StartupPath.ToString() + "\\img\\" + txt_edttrps_namaterapis.Text + ".jpg";
+                        edttrps_lokasi_gambar = edttrps_lokasi_gambar.Replace("\\", "\\\\");
                         #region(Update)
                         edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
                         edttrps_conn = new MySqlConnection(edttrps_connStr);
@@ -1030,6 +1251,7 @@ namespace Green_Leaf
                         catch (Exception ex)
                         {
                             Console.WriteLine(ex.ToString());
+                            MessageBox.Show("Error Occured");
                         }
                         edttrps_conn.Close();
                         #endregion
@@ -1073,6 +1295,7 @@ namespace Green_Leaf
                     catch (Exception ex)
                     {
                         Console.WriteLine(ex.ToString());
+                        MessageBox.Show("Error Occured");
                     }
                     edttrps_conn.Close();
                     #endregion
@@ -1109,6 +1332,7 @@ namespace Green_Leaf
                             catch (Exception ex)
                             {
                                 Console.WriteLine(ex.ToString());
+                                MessageBox.Show("Error Occured");
                             }
                             edttrps_conn.Close();
                             #endregion
@@ -1144,6 +1368,7 @@ namespace Green_Leaf
                             catch (Exception ex)
                             {
                                 Console.WriteLine(ex.ToString());
+                                MessageBox.Show("Error Occured");
                             }
                             edttrps_conn.Close();
                             #endregion
@@ -1190,6 +1415,7 @@ namespace Green_Leaf
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Error Occured");
                 }
                 edttrps_conn2.Close();
                 #endregion
@@ -1202,6 +1428,17 @@ namespace Green_Leaf
         {
             pnl_menu_isi.Visible = true;
             pnl_edttrps_isi.Visible = false;
+
+            pnl_login_isi.Enabled = false;
+            pnl_edttrps_isi.Enabled = false;
+            pnl_edtpkt_isi.Enabled = false;
+            pnl_ctknota_isi.Enabled = false;
+            pnl_lprnlayanan_isi.Enabled = false;
+            pnl_lprnpnjln_isi.Enabled = false;
+            pnl_menu_isi.Enabled = true;
+            pnl_tbhpkt_isi.Enabled = false;
+            pnl_tbhtrps_isi.Enabled = false;
+            pnl_variabel_isi.Enabled = false;
         }
 
         private void btn_edttrps_hapus_Click(object sender, EventArgs e)
@@ -1227,6 +1464,7 @@ namespace Green_Leaf
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Error Occured");
                 }
                 edttrps_conn.Close();
                 #endregion
@@ -1270,6 +1508,7 @@ namespace Green_Leaf
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Error Occured");
                 }
                 edttrps_conn2.Close();
                 #endregion
@@ -1345,6 +1584,7 @@ namespace Green_Leaf
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Error Occured");
                 }
                 tbhpkt_conn.Close();
                 if (tbhpkt_lstHasil.Count != 0)
@@ -1390,6 +1630,17 @@ namespace Green_Leaf
         {
             pnl_tbhpkt_isi.Visible = false;
             pnl_menu_isi.Visible = true;
+
+            pnl_login_isi.Enabled = false;
+            pnl_edttrps_isi.Enabled = false;
+            pnl_edtpkt_isi.Enabled = false;
+            pnl_ctknota_isi.Enabled = false;
+            pnl_lprnlayanan_isi.Enabled = false;
+            pnl_lprnpnjln_isi.Enabled = false;
+            pnl_menu_isi.Enabled = true;
+            pnl_tbhpkt_isi.Enabled = false;
+            pnl_tbhtrps_isi.Enabled = false;
+            pnl_variabel_isi.Enabled = false;
         }
 
         private void txt_tbhpkt_durasipaketjam_KeyPress(object sender, KeyPressEventArgs e)
@@ -1500,6 +1751,7 @@ namespace Green_Leaf
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Error Occured");
                 }
                 edtpkt_conn.Close();
 
@@ -1616,6 +1868,7 @@ namespace Green_Leaf
                     catch (Exception ex)
                     {
                         Console.WriteLine(ex.ToString());
+                        MessageBox.Show("Error Occured");
                     }
                     edtpkt_conn.Close();
                     #endregion
@@ -1704,6 +1957,7 @@ namespace Green_Leaf
                         catch (Exception ex)
                         {
                             Console.WriteLine(ex.ToString());
+                            MessageBox.Show("Error Occured");
                         }
                         edtpkt_conn.Close();
                         #endregion
@@ -1823,6 +2077,17 @@ namespace Green_Leaf
         {
             pnl_menu_isi.Visible = true;
             pnl_edtpkt_isi.Visible = false;
+
+            pnl_login_isi.Enabled = false;
+            pnl_edttrps_isi.Enabled = false;
+            pnl_edtpkt_isi.Enabled = false;
+            pnl_ctknota_isi.Enabled = false;
+            pnl_lprnlayanan_isi.Enabled = false;
+            pnl_lprnpnjln_isi.Enabled = false;
+            pnl_menu_isi.Enabled = true;
+            pnl_tbhpkt_isi.Enabled = false;
+            pnl_tbhtrps_isi.Enabled = false;
+            pnl_variabel_isi.Enabled = false;
         }
 
         private void btn_edtpkt_hapus_Click(object sender, EventArgs e)
@@ -1848,6 +2113,7 @@ namespace Green_Leaf
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Error Occured");
                 }
                 edttrps_conn.Close();
                 #endregion
@@ -1960,6 +2226,7 @@ namespace Green_Leaf
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+                MessageBox.Show("Error Occured");
             }
             ctknota_conn.Close();
             #endregion
@@ -2012,6 +2279,7 @@ namespace Green_Leaf
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+                MessageBox.Show("Error Occured");
             }
             ctknota_conn.Close();
             #endregion
@@ -3961,6 +4229,17 @@ namespace Green_Leaf
         {
             pnl_menu_isi.Visible = true;
             pnl_ctknota_isi.Visible = false;
+
+            pnl_login_isi.Enabled = false;
+            pnl_edttrps_isi.Enabled = false;
+            pnl_edtpkt_isi.Enabled = false;
+            pnl_ctknota_isi.Enabled = false;
+            pnl_lprnlayanan_isi.Enabled = false;
+            pnl_lprnpnjln_isi.Enabled = false;
+            pnl_menu_isi.Enabled = true;
+            pnl_tbhpkt_isi.Enabled = false;
+            pnl_tbhtrps_isi.Enabled = false;
+            pnl_variabel_isi.Enabled = false;
         }
         #endregion
 
@@ -3998,6 +4277,7 @@ namespace Green_Leaf
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Error Occured");
                 }
                 edtpkt_conn.Close();
                 #endregion
@@ -4024,6 +4304,17 @@ namespace Green_Leaf
         {
             pnl_variabel_isi.Visible = false;
             pnl_menu_isi.Visible = true;
+
+            pnl_login_isi.Enabled = false;
+            pnl_edttrps_isi.Enabled = false;
+            pnl_edtpkt_isi.Enabled = false;
+            pnl_ctknota_isi.Enabled = false;
+            pnl_lprnlayanan_isi.Enabled = false;
+            pnl_lprnpnjln_isi.Enabled = false;
+            pnl_menu_isi.Enabled = true;
+            pnl_tbhpkt_isi.Enabled = false;
+            pnl_tbhtrps_isi.Enabled = false;
+            pnl_variabel_isi.Enabled = false;
         }
         #endregion
 
@@ -4227,6 +4518,27 @@ namespace Green_Leaf
                 lbl_lprnpnjln_sumtotalcash.Text = lprnpnjln_totalbayarcash.ToString("#,##0");
                 lbl_lprnpnjln_sumtotalcredit.Text = lprnpnjln_totalbayarcredit.ToString("#,##0");
                 lbl_lprnpnjln_sumfeeterapis.Text = lprnpnjln_feeterapis.ToString("#,##0");
+
+                DataRow row = lprnpnjln_DS.Tables[0].NewRow();
+                row[0] = "0";
+                row[1] = "2016-01-08 15:42:16";
+                row[2] = "0";
+                row[3] = "";
+                row[4] = "";
+                row[5] = lbl_lprnpnjln_sumtotalhotel.Text;
+                row[6] = "";
+                row[7] = lbl_lprnpnjln_sumtotalhargapaket.Text;
+                row[8] = "";
+                row[9] = lbl_lprnpnjln_sumtotalextra.Text;
+                row[10] = "0";
+                row[11] = "";
+                row[12] = lbl_lprnpnjln_sumtotaldiskon.Text;
+                row[13] = "";
+                row[14] = lbl_lprnpnjln_sumtotalsubtotal.Text;
+                row[15] = lbl_lprnpnjln_sumfeeterapis.Text;
+                row[16] = "";
+                row[17] = "";
+                lprnpnjln_DS.Tables[0].Rows.Add(row);
                 #endregion
                 //dgv_ctknota_tabelhrgpkt.Columns["Extra"].ReadOnly = true;
                 //dgv_ctknota_tabelhrgpkt.Columns["Extra"].Width = 70;
@@ -4739,6 +5051,7 @@ namespace Green_Leaf
                                 catch (Exception ex)
                                 {
                                     Console.WriteLine(ex.ToString());
+                                    MessageBox.Show("Error Occured");
                                 }
                                 edtpkt_conn.Close();
                                 #endregion
@@ -4815,6 +5128,7 @@ namespace Green_Leaf
                                 catch (Exception ex)
                                 {
                                     Console.WriteLine(ex.ToString());
+                                    MessageBox.Show("Error Occured");
                                 }
                                 edtpkt_conn.Close();
                                 #endregion
@@ -5850,17 +6164,374 @@ namespace Green_Leaf
             }
             using (XLWorkbook wb = new XLWorkbook())
             {
-                
+
                 wb.Worksheets.Add(lprnpnjln_DS.Tables[0], "Customers");
                 wb.SaveAs(folderPath + "Laporan Penjualan (" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + " " + DateTime.Now.Hour + ";" + DateTime.Now.Minute.ToString() + ";" + DateTime.Now.Second.ToString() + ").xlsx");
                 MessageBox.Show("File Excel telah disimpan");
             }
+
+            DialogResult dialogResult = MessageBox.Show("Apakah anda ingin menghapus Data Laporan Penjualan?", "Alert", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                #region(Update)
+                string lprnpnjln_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                MySqlConnection lprnpnjln_conn = new MySqlConnection(lprnpnjln_connStr);
+                try
+                {
+                    lprnpnjln_conn.Open();
+
+                    string lprnpnjln_query = "DELETE FROM `nota` WHERE DATE(`tanggalcetak_nota`) >= '" + lprnpnjln_tanggalcetakdari + "' and DATE(tanggalcetak_nota) <= '" + lprnpnjln_tanggalcetaksampai + "'";
+                    MySqlCommand lprnpnjln_cmd = new MySqlCommand(lprnpnjln_query, lprnpnjln_conn);
+                    lprnpnjln_cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Error Occured");
+                }
+                lprnpnjln_conn.Close();
+                #endregion
+
+                #region(Select)
+                dgv_lprnpnjln_tabellaporan.DataSource = null;
+                dgv_lprnpnjln_tabellaporan.Rows.Clear();
+                dgv_lprnpnjln_tabellaporan.Columns.Clear();
+                //dgv_lprnpnjln_tabellaporan.Refresh();
+                lprnpnjln_DS.Tables.Clear();
+                string lprnpnjln_query2;
+                string lprnpnjln_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+                MySqlConnection lprnpnjln_conn2 = new MySqlConnection(lprnpnjln_connStr2);
+                try
+                {
+                    lprnpnjln_tanggalcetakdari = dtp_lprnpnjln_tgldari.Value.Year.ToString();
+                    lprnpnjln_tanggalcetakdari += "-" + dtp_lprnpnjln_tgldari.Value.Month.ToString();
+                    lprnpnjln_tanggalcetakdari += "-" + dtp_lprnpnjln_tgldari.Value.Day.ToString();
+
+                    lprnpnjln_tanggalcetaksampai = dtp_lprnpnjln_tglsampai.Value.Year.ToString();
+                    lprnpnjln_tanggalcetaksampai += "-" + dtp_lprnpnjln_tglsampai.Value.Month.ToString();
+                    lprnpnjln_tanggalcetaksampai += "-" + dtp_lprnpnjln_tglsampai.Value.Day.ToString();
+
+                    lprnpnjln_conn2.Open();
+                    lprnpnjln_query2 = "SELECT * FROM `nota` WHERE DATE(`tanggalcetak_nota`) >= '" + lprnpnjln_tanggalcetakdari + "' and DATE(tanggalcetak_nota) <= '" + lprnpnjln_tanggalcetaksampai + "'";
+                    MySqlDataAdapter mySqlDataAdapter2 = new MySqlDataAdapter(lprnpnjln_query2, lprnpnjln_conn2);
+                    MySqlCommand ctknota_cmd2 = new MySqlCommand(lprnpnjln_query2, lprnpnjln_conn2);
+
+                    mySqlDataAdapter2.Fill(lprnpnjln_DS);
+                    lprnpnjln_DS.Tables[0].Columns.Remove("id_paket");
+                    //lprnpnjln_DS.Tables[0].Columns.Remove("jenis_paket");
+                    //lprnpnjln_DS.Tables[0].Columns.Remove("komisi_normal_paket");
+                    //lprnpnjln_DS.Tables[0].Columns.Remove("komisi_midnight_paket");
+
+                    lprnpnjln_DS.Tables[0].Columns["id_nota"].ColumnName = "Nomor Nota";
+                    lprnpnjln_DS.Tables[0].Columns["tanggalcetak_nota"].ColumnName = "Tanggal Cetak Nota";
+                    lprnpnjln_DS.Tables[0].Columns["nomorruangan_nota"].ColumnName = "Nomor Ruangan";
+                    lprnpnjln_DS.Tables[0].Columns["jamkerja_nota"].ColumnName = "Jam Kerja";
+                    lprnpnjln_DS.Tables[0].Columns["tamuhotel_nota"].ColumnName = "Tamu Hotel";
+                    lprnpnjln_DS.Tables[0].Columns["potonganhotel_nota"].ColumnName = "Potongan Tamu Hotel";
+                    lprnpnjln_DS.Tables[0].Columns["namapaket_nota"].ColumnName = "Nama Paket";
+                    lprnpnjln_DS.Tables[0].Columns["hargapaket_nota"].ColumnName = "Harga Paket";
+                    lprnpnjln_DS.Tables[0].Columns["extra_nota"].ColumnName = "Extra";
+                    lprnpnjln_DS.Tables[0].Columns["nominalextra_nota"].ColumnName = "Nominal Extra";
+                    lprnpnjln_DS.Tables[0].Columns["kodeterapis_nota"].ColumnName = "Kode Terapis";
+                    lprnpnjln_DS.Tables[0].Columns["namaterapis_nota"].ColumnName = "Nama Terapis";
+                    lprnpnjln_DS.Tables[0].Columns["diskon_nota"].ColumnName = "Diskon";
+                    lprnpnjln_DS.Tables[0].Columns["keterangan_nota"].ColumnName = "Keterangan Diskon";
+                    lprnpnjln_DS.Tables[0].Columns["totalbayar_nota"].ColumnName = "Subtotal";
+                    lprnpnjln_DS.Tables[0].Columns["feeterapis_nota"].ColumnName = "Fee Terapis";
+                    lprnpnjln_DS.Tables[0].Columns["jenisbayar_nota"].ColumnName = "Jenis Bayar";
+                    lprnpnjln_DS.Tables[0].Columns["status_nota"].ColumnName = "Status";
+                    //lprnpnjln_DS.Tables[0].Columns["harga_paket"].ColumnName = "Harga Paket";
+                    //lprnpnjln_DS.Tables[0].Columns["durasi_paket"].ColumnName = "Durasi Paket";
+
+                    //lprnpnjln_DS.Tables[0].Columns.Add(new DataColumn("Tamu Hotel", typeof(int)));
+                    //for (int i = 0; i < lprnpnjln_DS.Tables[0].Rows.Count; i++)
+                    //{
+                    //    lprnpnjln_DS.Tables[0].Rows[i]["Tamu Hotel"] = ctknota_tamuhotel;
+                    //}
+
+                    //lprnpnjln_DS.Tables[0].Columns.Add(new DataColumn("Extra", typeof(bool)));
+                    //lprnpnjln_DS.Tables[0].Columns.Add(new DataColumn("Pilih", typeof(bool)));
+                    //lprnpnjln_DS.Tables[0].Columns["Pilih"].SetOrdinal(0);
+
+                    //lprnpnjln_DS.Tables[0].Columns.Add(new DataColumn("Nominal Extra", typeof(int)));
+                    //for (int ii = 0; ii < lprnpnjln_DS.Tables[0].Rows.Count; ii++)
+                    //{
+                    //    lprnpnjln_DS.Tables[0].Rows[ii]["Nominal Extra"] = ctknota_extra;
+                    //}
+
+                    dgv_lprnpnjln_tabellaporan.DataSource = lprnpnjln_DS.Tables[0];
+                    if (txt_login_username.Text == "superadmin")
+                    {
+                        dgv_lprnpnjln_tabellaporan.Columns.Add(lprnpnjln_hapusNota);
+                        dgv_lprnpnjln_tabellaporan.Columns["Hapus Nota"].DisplayIndex = 18;
+                        dgv_lprnpnjln_tabellaporan.Columns.Add(lprnpnjln_batalhapusNota);
+                        dgv_lprnpnjln_tabellaporan.Columns["Batal Hapus"].DisplayIndex = 19;
+                    }
+
+
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Nomor Nota"].ReadOnly = true;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Nomor Nota"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Nomor Nota"].Width = 55;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Tanggal Cetak Nota"].ReadOnly = true;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Tanggal Cetak Nota"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Tanggal Cetak Nota"].Width = 115;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Nomor Ruangan"].ReadOnly = true;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Nomor Ruangan"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Nomor Ruangan"].Width = 70;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Jam Kerja"].ReadOnly = true;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Jam Kerja"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Jam Kerja"].Width = 50;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Tamu Hotel"].ReadOnly = true;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Tamu Hotel"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Tamu Hotel"].Width = 45;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Potongan Tamu Hotel"].ReadOnly = true;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Potongan Tamu Hotel"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Potongan Tamu Hotel"].Width = 85;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Potongan Tamu Hotel"].DefaultCellStyle.Format = "N0";
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Nama Paket"].ReadOnly = true;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Nama Paket"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Nama Paket"].Width = 150;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Harga Paket"].ReadOnly = true;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Harga Paket"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Harga Paket"].Width = 60;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Harga Paket"].DefaultCellStyle.Format = "N0";
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Extra"].ReadOnly = true;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Extra"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Extra"].Width = 85;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Nominal Extra"].ReadOnly = true;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Nominal Extra"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Nominal Extra"].Width = 85;
+                    ////dgv_lprnpnjln_tabellaporan.Columns["Nominal Extra"].DefaultCellStyle.Format = "N0";
+
+
+                    ////MessageBox.Show(dgv_lprnpnjln_tabellaporan.Columns.Count.ToString());
+                    ////for (int i = 0; i < dgv_lprnpnjln_tabellaporan.Columns.Count; i++)
+                    ////{
+                    ////    dgv_lprnpnjln_tabellaporan.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    ////    dgv_lprnpnjln_tabellaporan.Columns[i].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                    ////    dgv_lprnpnjln_tabellaporan.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    ////    dgv_lprnpnjln_tabellaporan.Columns[i].ReadOnly = true;
+                    ////}
+
+                    dgv_lprnpnjln_tabellaporan.Columns["Potongan Tamu Hotel"].DefaultCellStyle.Format = "N0";
+                    dgv_lprnpnjln_tabellaporan.Columns["Harga Paket"].DefaultCellStyle.Format = "N0";
+                    dgv_lprnpnjln_tabellaporan.Columns["Nominal Extra"].DefaultCellStyle.Format = "N0";
+                    dgv_lprnpnjln_tabellaporan.Columns["Diskon"].DefaultCellStyle.Format = "N0";
+                    dgv_lprnpnjln_tabellaporan.Columns["Subtotal"].DefaultCellStyle.Format = "N0";
+                    dgv_lprnpnjln_tabellaporan.Columns["Fee Terapis"].DefaultCellStyle.Format = "N0";
+
+                    dgv_lprnpnjln_tabellaporan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+                    dgv_lprnpnjln_tabellaporan.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                    dgv_lprnpnjln_tabellaporan.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    dgv_lprnpnjln_tabellaporan.ReadOnly = true;
+
+                    dgv_lprnpnjln_tabellaporan.Columns["Nama Paket"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    dgv_lprnpnjln_tabellaporan.Columns["Keterangan Diskon"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+                    #region(SUM Kolom berisi nominal harga)
+                    lprnpnjln_potonganhotel = 0;
+                    lprnpnjln_hargapaket = 0;
+                    lprnpnjln_extra = 0;
+                    lprnpnjln_diskon = 0;
+                    lprnpnjln_totalbayar = 0;
+                    lprnpnjln_totalbayarcash = 0;
+                    lprnpnjln_totalbayarcredit = 0;
+                    lprnpnjln_feeterapis = 0;
+                    for (int i = 0; i < dgv_lprnpnjln_tabellaporan.Rows.Count; i++)
+                    {
+                        if (dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Status"].Value.ToString() != "Terhapus")
+                        {
+                            lprnpnjln_potonganhotel += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Potongan Tamu Hotel"].Value.ToString());
+                            lprnpnjln_hargapaket += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Harga Paket"].Value.ToString());
+                            lprnpnjln_extra += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Nominal Extra"].Value.ToString());
+                            lprnpnjln_diskon += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Diskon"].Value.ToString());
+                            lprnpnjln_totalbayar += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Subtotal"].Value.ToString());
+                            lprnpnjln_feeterapis += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Fee Terapis"].Value.ToString());
+                            if (dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Jenis Bayar"].Value.ToString() == "Cash")
+                            {
+                                lprnpnjln_totalbayarcash += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Subtotal"].Value.ToString());
+                            }
+                            else if (dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Jenis Bayar"].Value.ToString() == "Credit")
+                            {
+                                lprnpnjln_totalbayarcredit += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Subtotal"].Value.ToString());
+                            }
+                        }
+                    }
+                    lbl_lprnpnjln_sumtotalhotel.Text = lprnpnjln_potonganhotel.ToString("#,##0");
+                    lbl_lprnpnjln_sumtotalhargapaket.Text = lprnpnjln_hargapaket.ToString("#,##0");
+                    lbl_lprnpnjln_sumtotalextra.Text = lprnpnjln_extra.ToString("#,##0");
+                    lbl_lprnpnjln_sumtotaldiskon.Text = lprnpnjln_diskon.ToString("#,##0");
+                    lbl_lprnpnjln_sumtotalsubtotal.Text = lprnpnjln_totalbayar.ToString("#,##0");
+                    lbl_lprnpnjln_sumtotalcash.Text = lprnpnjln_totalbayarcash.ToString("#,##0");
+                    lbl_lprnpnjln_sumtotalcredit.Text = lprnpnjln_totalbayarcredit.ToString("#,##0");
+                    lbl_lprnpnjln_sumfeeterapis.Text = lprnpnjln_feeterapis.ToString("#,##0");
+                    #endregion
+                    //dgv_ctknota_tabelhrgpkt.Columns["Extra"].ReadOnly = true;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Extra"].Width = 70;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Pilih"].Width = 70;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Nama Paket"].ReadOnly = true;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Nama Paket"].Width = 300;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].ReadOnly = true;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].Width = 175;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].ReadOnly = true;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].Width = 200;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].ReadOnly = true;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].Width = 175;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].ReadOnly = true;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].Width = 175;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].Visible = false;
+
+                    //dgv_ctknota_tabelhrgpkt.Columns["Nama Paket"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Harga Paket"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Durasi Paket"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Tamu Hotel"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    //dgv_ctknota_tabelhrgpkt.Columns["Nominal Extra"].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+                    //List<string> lstExtra = new List<string>();
+                    //for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
+                    //{
+                    //    //extra = (int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Nominal Extra"].Value.ToString()) / 100) * int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Harga Paket"].Value.ToString());
+                    //    //extra = Convert.ToString());
+                    //    double nominal = double.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Nominal Extra"].Value.ToString()) / 100;
+                    //    int harga = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Harga Paket"].Value.ToString());
+                    //    double hasil = nominal * Convert.ToDouble(harga);
+                    //    lstExtra.Add(hasil.ToString());
+                    //    //MessageBox.Show(hasilfinal.ToString());
+                    //    //foreach (char c in extra)
+                    //    //{
+                    //    //    if (char.IsDigit(c))
+                    //    //    {
+                    //    //        countdigitextra++;
+                    //    //    }
+                    //    //}
+                    //    //int digit = countdigitextra;
+                    //    //while (digit > 3)
+                    //    //{
+                    //    //    digit -= 3;
+                    //    //    extra = extra.Insert(digit, ".");
+                    //    //    dsCloned.Tables[0].Rows[i]["Nominal Extra"] = extra;
+                    //    //}
+
+                    //}
+
+                    //DataSet dsCloned = lprnpnjln_DS.Clone();
+
+                    //dsCloned.Tables[0].Columns["Harga Paket"].DataType = typeof(string);
+                    //dsCloned.Tables[0].Columns["Tamu Hotel"].DataType = typeof(string);
+                    //dsCloned.Tables[0].Columns["Nominal Extra"].DataType = typeof(string);
+                    //foreach (DataRow row in lprnpnjln_DS.Tables[0].Rows)
+                    //{
+                    //    dsCloned.Tables[0].ImportRow(row);
+                    //}
+
+                    //dgv_ctknota_tabelhrgpkt.DataSource = dsCloned.Tables[0];
+
+                    //int countdigitharga = 0;
+                    //string hargapaket;
+                    //for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
+                    //{
+                    //    countdigitharga = 0;
+                    //    hargapaket = dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Harga Paket"].Value.ToString();
+                    //    foreach (char c in hargapaket)
+                    //    {
+                    //        if (char.IsDigit(c))
+                    //        {
+                    //            countdigitharga++;
+                    //        }
+                    //    }
+                    //    int digit = countdigitharga;
+                    //    while (digit > 3)
+                    //    {
+                    //        digit -= 3;
+                    //        hargapaket = hargapaket.Insert(digit, ".");
+                    //        dsCloned.Tables[0].Rows[i]["Harga Paket"] = hargapaket;
+                    //    }
+
+                    //}
+
+                    //int countdigittamu = 0;
+                    //string tamuhotel;
+                    //for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
+                    //{
+                    //    countdigittamu = 0;
+                    //    tamuhotel = dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Tamu Hotel"].Value.ToString();
+                    //    foreach (char c in tamuhotel)
+                    //    {
+                    //        if (char.IsDigit(c))
+                    //        {
+                    //            countdigittamu++;
+                    //        }
+                    //    }
+                    //    int digit = countdigittamu;
+                    //    while (digit > 3)
+                    //    {
+                    //        digit -= 3;
+                    //        tamuhotel = tamuhotel.Insert(digit, ".");
+                    //        dsCloned.Tables[0].Rows[i]["Tamu Hotel"] = tamuhotel;
+                    //    }
+
+                    //}
+
+                    //int countdigitextra = 0;
+                    //for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
+                    //{
+                    //    countdigitextra = 0;
+                    //    //extra = (int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Nominal Extra"].Value.ToString()) / 100) * int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Harga Paket"].Value.ToString());
+                    //    //extra = Convert.ToString());
+                    //    //double nominal = double.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Nominal Extra"].Value.ToString()) / 100;
+                    //    //int harga = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Harga Paket"].Value.ToString());
+                    //    //double hasil = nominal * Convert.ToDouble(harga);
+                    //    //extra = hasil.ToString();
+                    //    //MessageBox.Show(hasilfinal.ToString());
+                    //    foreach (char c in lstExtra[i])
+                    //    {
+                    //        if (char.IsDigit(c))
+                    //        {
+                    //            countdigitextra++;
+                    //        }
+                    //    }
+                    //    int digit = countdigitextra;
+                    //    while (digit > 3)
+                    //    {
+                    //        digit -= 3;
+                    //        lstExtra[i] = lstExtra[i].Insert(digit, ".");
+                    //        dsCloned.Tables[0].Rows[i]["Nominal Extra"] = lstExtra[i];
+                    //    }
+
+                    //}
+
+
+                }
+                catch (Exception ex)
+                {
+                    string error = ex.ToString();
+                    MessageBox.Show("Error Occurred");
+                }
+                lprnpnjln_conn2.Close();
+                #endregion
+            }
+            
         }
 
         private void btn_lprnpnjln_batal_Click(object sender, EventArgs e)
         {
             pnl_lprnpnjln_isi.Visible = false;
             pnl_menu_isi.Visible = true;
+
+            pnl_login_isi.Enabled = false;
+            pnl_edttrps_isi.Enabled = false;
+            pnl_edtpkt_isi.Enabled = false;
+            pnl_ctknota_isi.Enabled = false;
+            pnl_lprnlayanan_isi.Enabled = false;
+            pnl_lprnpnjln_isi.Enabled = false;
+            pnl_menu_isi.Enabled = true;
+            pnl_tbhpkt_isi.Enabled = false;
+            pnl_tbhtrps_isi.Enabled = false;
+            pnl_variabel_isi.Enabled = false;
         }
         #endregion
 
@@ -6213,8 +6884,21 @@ namespace Green_Leaf
         {
             pnl_menu_isi.Visible = true;
             pnl_lprnlayanan_isi.Visible = false;
+
+            pnl_login_isi.Enabled = false;
+            pnl_edttrps_isi.Enabled = false;
+            pnl_edtpkt_isi.Enabled = false;
+            pnl_ctknota_isi.Enabled = false;
+            pnl_lprnlayanan_isi.Enabled = false;
+            pnl_lprnpnjln_isi.Enabled = false;
+            pnl_menu_isi.Enabled = true;
+            pnl_tbhpkt_isi.Enabled = false;
+            pnl_tbhtrps_isi.Enabled = false;
+            pnl_variabel_isi.Enabled = false;
         }
         #endregion
+
+        
 
         
 
