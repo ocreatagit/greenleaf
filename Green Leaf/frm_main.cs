@@ -1089,6 +1089,7 @@ namespace Green_Leaf
 
         #region(Panel Edit Terapis)
         string edttrps_lokasi_gambar;
+        string edttrps_namalama;
         int edttrps_idTerapis;
         int edttrps_kodeTerakhir;
         OpenFileDialog edttrps_open = new OpenFileDialog();
@@ -1103,7 +1104,7 @@ namespace Green_Leaf
                 // display image in picture box
 
                 // image file path
-                pict_edttrps_fotoKTP.Image = new Bitmap(edttrps_open.FileName);
+                pict_edttrps_fotoKTP.Image = Image.FromStream(new MemoryStream(File.ReadAllBytes(edttrps_open.FileName)));
             }
         }
 
@@ -1141,7 +1142,8 @@ namespace Green_Leaf
                         txt_edttrps_kodeterapis.Text = edttrps_rdr.GetInt32(1).ToString();
                         edttrps_kodeTerakhir = int.Parse(txt_edttrps_kodeterapis.Text);
                         txt_edttrps_namaterapis.Text = edttrps_rdr.GetString(2);
-                        pict_edttrps_fotoKTP.Image = new Bitmap(edttrps_rdr.GetString(3));
+                        edttrps_namalama = edttrps_rdr.GetString(2);
+                        pict_edttrps_fotoKTP.Image = Image.FromStream(new MemoryStream(File.ReadAllBytes(edttrps_rdr.GetString(3))));
                         edttrps_lokasi_gambar = edttrps_rdr.GetString(3);
                         if (edttrps_rdr.GetString(4) == "Aktif")
                         {
@@ -1178,7 +1180,7 @@ namespace Green_Leaf
             {
                 MessageBox.Show("Mohon lengkapi data Nama Terapis terlebih dahulu!");
             }
-            else if (edttrps_lokasi_gambar == "")
+            else if (pict_edttrps_fotoKTP.ImageLocation == "")
             {
                 MessageBox.Show("Mohon pilih foto KTP terlebih dahulu!");
             }
@@ -1195,9 +1197,16 @@ namespace Green_Leaf
                 {
                     if (rdo_edttrps_statusaktif.Checked)
                     {
-                        File.Copy(edttrps_open.FileName.ToString(), Application.StartupPath.ToString() + "\\img\\" + txt_edttrps_namaterapis.Text + ".jpg", true);
-                        edttrps_lokasi_gambar = Application.StartupPath.ToString() + "\\img\\" + txt_edttrps_namaterapis.Text + ".jpg";
-                        edttrps_lokasi_gambar = edttrps_lokasi_gambar.Replace("\\", "\\\\");
+                        if (edttrps_open.FileName != "")
+                        {
+                            File.Copy(edttrps_open.FileName.ToString(), Application.StartupPath.ToString() + "\\img\\" + txt_edttrps_namaterapis.Text + ".jpg", true);
+                            edttrps_lokasi_gambar = Application.StartupPath.ToString() + "\\img\\" + txt_edttrps_namaterapis.Text + ".jpg";
+                            edttrps_lokasi_gambar = edttrps_lokasi_gambar.Replace("\\", "\\\\");
+                            if (txt_edttrps_namaterapis.Text != edttrps_namalama)
+                            {
+                                File.Delete(Application.StartupPath.ToString() + "\\img\\" + edttrps_namalama + ".jpg");
+                            }
+                        }
                         #region(Update)
                         edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
                         edttrps_conn = new MySqlConnection(edttrps_connStr);
@@ -1234,9 +1243,16 @@ namespace Green_Leaf
                     }
                     else if (rdo_edttrps_statustdkaktif.Checked)
                     {
-                        File.Copy(edttrps_open.FileName.ToString(), Application.StartupPath.ToString() + "\\img\\" + txt_edttrps_namaterapis.Text + ".jpg", true);
-                        edttrps_lokasi_gambar = Application.StartupPath.ToString() + "\\img\\" + txt_edttrps_namaterapis.Text + ".jpg";
-                        edttrps_lokasi_gambar = edttrps_lokasi_gambar.Replace("\\", "\\\\");
+                        if (edttrps_open.FileName != "")
+                        {
+                            File.Copy(edttrps_open.FileName.ToString(), Application.StartupPath.ToString() + "\\img\\" + txt_edttrps_namaterapis.Text + ".jpg", true);
+                            edttrps_lokasi_gambar = Application.StartupPath.ToString() + "\\img\\" + txt_edttrps_namaterapis.Text + ".jpg";
+                            edttrps_lokasi_gambar = edttrps_lokasi_gambar.Replace("\\", "\\\\");
+                            if (txt_edttrps_namaterapis.Text != edttrps_namalama)
+                            {
+                                File.Delete(Application.StartupPath.ToString() + "\\img\\" + edttrps_namalama + ".jpg");
+                            }
+                        }
                         #region(Update)
                         edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
                         edttrps_conn = new MySqlConnection(edttrps_connStr);
