@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_ctknota_logo = new System.Windows.Forms.Panel();
             this.pict_ctknota_logo = new System.Windows.Forms.PictureBox();
             this.pnl_login_isi = new System.Windows.Forms.Panel();
@@ -51,17 +51,22 @@
             this.lbl_login_pass = new System.Windows.Forms.Label();
             this.lbl_login_user = new System.Windows.Forms.Label();
             this.pnl_menu_isi = new System.Windows.Forms.Panel();
-            this.lbllink_menu_logout = new System.Windows.Forms.LinkLabel();
-            this.lbl_menu_user = new System.Windows.Forms.Label();
-            this.btn_menu_variabel = new System.Windows.Forms.Button();
-            this.btn_menu_ctknota = new System.Windows.Forms.Button();
+            this.pnl_menu_user = new System.Windows.Forms.Panel();
+            this.btn_menu_tbhuser = new System.Windows.Forms.Button();
+            this.btn_menu_edituser = new System.Windows.Forms.Button();
+            this.pnl_menu_laporan = new System.Windows.Forms.Panel();
             this.btn_menu_laporangajiexcel = new System.Windows.Forms.Button();
             this.btn_menu_laporangajiterapis = new System.Windows.Forms.Button();
             this.btn_menu_laporanpenjualan = new System.Windows.Forms.Button();
+            this.pnl_menu_others = new System.Windows.Forms.Panel();
+            this.btn_menu_variabel = new System.Windows.Forms.Button();
+            this.btn_menu_ctknota = new System.Windows.Forms.Button();
             this.btn_menu_edtpkt = new System.Windows.Forms.Button();
             this.btn_menu_tbhpkt = new System.Windows.Forms.Button();
             this.btn_menu_edttrps = new System.Windows.Forms.Button();
             this.btn_menu_tbhtrps = new System.Windows.Forms.Button();
+            this.lbllink_menu_logout = new System.Windows.Forms.LinkLabel();
+            this.lbl_menu_user = new System.Windows.Forms.Label();
             this.pnl_tbhtrps_isi = new System.Windows.Forms.Panel();
             this.pict_tbhtrps_fotoKTP = new System.Windows.Forms.PictureBox();
             this.btn_tbhtrps_batal = new System.Windows.Forms.Button();
@@ -299,15 +304,13 @@
             this.txt_edtuser_user = new System.Windows.Forms.TextBox();
             this.btn_edtuser_batal = new System.Windows.Forms.Button();
             this.btn_edtuser_simpan = new System.Windows.Forms.Button();
-            this.btn_menu_tbhuser = new System.Windows.Forms.Button();
-            this.btn_menu_edituser = new System.Windows.Forms.Button();
-            this.pnl_menu_others = new System.Windows.Forms.Panel();
-            this.pnl_menu_laporan = new System.Windows.Forms.Panel();
-            this.pnl_menu_user = new System.Windows.Forms.Panel();
             this.pnl_ctknota_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict_ctknota_logo)).BeginInit();
             this.pnl_login_isi.SuspendLayout();
             this.pnl_menu_isi.SuspendLayout();
+            this.pnl_menu_user.SuspendLayout();
+            this.pnl_menu_laporan.SuspendLayout();
+            this.pnl_menu_others.SuspendLayout();
             this.pnl_tbhtrps_isi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict_tbhtrps_fotoKTP)).BeginInit();
             this.pnl_edttrps_isi.SuspendLayout();
@@ -328,9 +331,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lprnlayanan_tabellayanan)).BeginInit();
             this.pnl_tbhuser_isi.SuspendLayout();
             this.pnl_edtuser_isi.SuspendLayout();
-            this.pnl_menu_others.SuspendLayout();
-            this.pnl_menu_laporan.SuspendLayout();
-            this.pnl_menu_user.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_ctknota_logo
@@ -476,48 +476,46 @@
             this.pnl_menu_isi.TabIndex = 16;
             this.pnl_menu_isi.Visible = false;
             // 
-            // lbllink_menu_logout
+            // pnl_menu_user
             // 
-            this.lbllink_menu_logout.AutoSize = true;
-            this.lbllink_menu_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbllink_menu_logout.Location = new System.Drawing.Point(1136, 7);
-            this.lbllink_menu_logout.Name = "lbllink_menu_logout";
-            this.lbllink_menu_logout.Size = new System.Drawing.Size(103, 33);
-            this.lbllink_menu_logout.TabIndex = 12;
-            this.lbllink_menu_logout.TabStop = true;
-            this.lbllink_menu_logout.Text = "Logout";
-            this.lbllink_menu_logout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbllink_menu_logout_LinkClicked);
+            this.pnl_menu_user.Controls.Add(this.btn_menu_tbhuser);
+            this.pnl_menu_user.Controls.Add(this.btn_menu_edituser);
+            this.pnl_menu_user.Location = new System.Drawing.Point(1049, 124);
+            this.pnl_menu_user.Name = "pnl_menu_user";
+            this.pnl_menu_user.Size = new System.Drawing.Size(163, 279);
+            this.pnl_menu_user.TabIndex = 15;
             // 
-            // lbl_menu_user
+            // btn_menu_tbhuser
             // 
-            this.lbl_menu_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_menu_user.Location = new System.Drawing.Point(913, 1);
-            this.lbl_menu_user.Name = "lbl_menu_user";
-            this.lbl_menu_user.Size = new System.Drawing.Size(233, 44);
-            this.lbl_menu_user.TabIndex = 11;
-            this.lbl_menu_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_menu_tbhuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_menu_tbhuser.Location = new System.Drawing.Point(4, 3);
+            this.btn_menu_tbhuser.Name = "btn_menu_tbhuser";
+            this.btn_menu_tbhuser.Size = new System.Drawing.Size(155, 110);
+            this.btn_menu_tbhuser.TabIndex = 14;
+            this.btn_menu_tbhuser.Text = "Tambah User";
+            this.btn_menu_tbhuser.UseVisualStyleBackColor = true;
+            this.btn_menu_tbhuser.Click += new System.EventHandler(this.btn_menu_tbhuser_Click);
             // 
-            // btn_menu_variabel
+            // btn_menu_edituser
             // 
-            this.btn_menu_variabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menu_variabel.Location = new System.Drawing.Point(129, 188);
-            this.btn_menu_variabel.Name = "btn_menu_variabel";
-            this.btn_menu_variabel.Size = new System.Drawing.Size(155, 110);
-            this.btn_menu_variabel.TabIndex = 9;
-            this.btn_menu_variabel.Text = "Edit Variabel";
-            this.btn_menu_variabel.UseVisualStyleBackColor = true;
-            this.btn_menu_variabel.Click += new System.EventHandler(this.btn_menu_variabel_Click);
+            this.btn_menu_edituser.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_menu_edituser.Location = new System.Drawing.Point(4, 168);
+            this.btn_menu_edituser.Name = "btn_menu_edituser";
+            this.btn_menu_edituser.Size = new System.Drawing.Size(155, 110);
+            this.btn_menu_edituser.TabIndex = 13;
+            this.btn_menu_edituser.Text = "Edit User";
+            this.btn_menu_edituser.UseVisualStyleBackColor = true;
+            this.btn_menu_edituser.Click += new System.EventHandler(this.btn_menu_edituser_Click);
             // 
-            // btn_menu_ctknota
+            // pnl_menu_laporan
             // 
-            this.btn_menu_ctknota.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menu_ctknota.Location = new System.Drawing.Point(488, 160);
-            this.btn_menu_ctknota.Name = "btn_menu_ctknota";
-            this.btn_menu_ctknota.Size = new System.Drawing.Size(213, 171);
-            this.btn_menu_ctknota.TabIndex = 5;
-            this.btn_menu_ctknota.Text = "Cetak Nota";
-            this.btn_menu_ctknota.UseVisualStyleBackColor = true;
-            this.btn_menu_ctknota.Click += new System.EventHandler(this.btn_menu_ctknota_Click);
+            this.pnl_menu_laporan.Controls.Add(this.btn_menu_laporangajiexcel);
+            this.pnl_menu_laporan.Controls.Add(this.btn_menu_laporangajiterapis);
+            this.pnl_menu_laporan.Controls.Add(this.btn_menu_laporanpenjualan);
+            this.pnl_menu_laporan.Location = new System.Drawing.Point(873, 47);
+            this.pnl_menu_laporan.Name = "pnl_menu_laporan";
+            this.pnl_menu_laporan.Size = new System.Drawing.Size(227, 431);
+            this.pnl_menu_laporan.TabIndex = 14;
             // 
             // btn_menu_laporangajiexcel
             // 
@@ -551,6 +549,41 @@
             this.btn_menu_laporanpenjualan.Text = "Laporan Penjualan";
             this.btn_menu_laporanpenjualan.UseVisualStyleBackColor = true;
             this.btn_menu_laporanpenjualan.Click += new System.EventHandler(this.btn_menu_laporanpenjualan_Click);
+            // 
+            // pnl_menu_others
+            // 
+            this.pnl_menu_others.Controls.Add(this.btn_menu_variabel);
+            this.pnl_menu_others.Controls.Add(this.btn_menu_ctknota);
+            this.pnl_menu_others.Controls.Add(this.btn_menu_edtpkt);
+            this.pnl_menu_others.Controls.Add(this.btn_menu_tbhpkt);
+            this.pnl_menu_others.Controls.Add(this.btn_menu_edttrps);
+            this.pnl_menu_others.Controls.Add(this.btn_menu_tbhtrps);
+            this.pnl_menu_others.Location = new System.Drawing.Point(30, 26);
+            this.pnl_menu_others.Name = "pnl_menu_others";
+            this.pnl_menu_others.Size = new System.Drawing.Size(715, 487);
+            this.pnl_menu_others.TabIndex = 13;
+            // 
+            // btn_menu_variabel
+            // 
+            this.btn_menu_variabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_menu_variabel.Location = new System.Drawing.Point(129, 188);
+            this.btn_menu_variabel.Name = "btn_menu_variabel";
+            this.btn_menu_variabel.Size = new System.Drawing.Size(155, 110);
+            this.btn_menu_variabel.TabIndex = 9;
+            this.btn_menu_variabel.Text = "Edit Variabel";
+            this.btn_menu_variabel.UseVisualStyleBackColor = true;
+            this.btn_menu_variabel.Click += new System.EventHandler(this.btn_menu_variabel_Click);
+            // 
+            // btn_menu_ctknota
+            // 
+            this.btn_menu_ctknota.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_menu_ctknota.Location = new System.Drawing.Point(488, 160);
+            this.btn_menu_ctknota.Name = "btn_menu_ctknota";
+            this.btn_menu_ctknota.Size = new System.Drawing.Size(213, 171);
+            this.btn_menu_ctknota.TabIndex = 5;
+            this.btn_menu_ctknota.Text = "Cetak Nota";
+            this.btn_menu_ctknota.UseVisualStyleBackColor = true;
+            this.btn_menu_ctknota.Click += new System.EventHandler(this.btn_menu_ctknota_Click);
             // 
             // btn_menu_edtpkt
             // 
@@ -595,6 +628,27 @@
             this.btn_menu_tbhtrps.Text = "Tambah\r\nTerapis";
             this.btn_menu_tbhtrps.UseVisualStyleBackColor = true;
             this.btn_menu_tbhtrps.Click += new System.EventHandler(this.btn_menu_tbhtrps_Click);
+            // 
+            // lbllink_menu_logout
+            // 
+            this.lbllink_menu_logout.AutoSize = true;
+            this.lbllink_menu_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbllink_menu_logout.Location = new System.Drawing.Point(1136, 7);
+            this.lbllink_menu_logout.Name = "lbllink_menu_logout";
+            this.lbllink_menu_logout.Size = new System.Drawing.Size(103, 33);
+            this.lbllink_menu_logout.TabIndex = 12;
+            this.lbllink_menu_logout.TabStop = true;
+            this.lbllink_menu_logout.Text = "Logout";
+            this.lbllink_menu_logout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbllink_menu_logout_LinkClicked);
+            // 
+            // lbl_menu_user
+            // 
+            this.lbl_menu_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_menu_user.Location = new System.Drawing.Point(913, 1);
+            this.lbl_menu_user.Name = "lbl_menu_user";
+            this.lbl_menu_user.Size = new System.Drawing.Size(233, 44);
+            this.lbl_menu_user.TabIndex = 11;
+            this.lbl_menu_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pnl_tbhtrps_isi
             // 
@@ -1787,14 +1841,14 @@
             // 
             // txt_ctknota_nomorruangan
             // 
+            this.txt_ctknota_nomorruangan.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_ctknota_nomorruangan.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ctknota_nomorruangan.Location = new System.Drawing.Point(285, 4);
             this.txt_ctknota_nomorruangan.MaxLength = 3;
             this.txt_ctknota_nomorruangan.Name = "txt_ctknota_nomorruangan";
-            this.txt_ctknota_nomorruangan.Size = new System.Drawing.Size(55, 40);
+            this.txt_ctknota_nomorruangan.Size = new System.Drawing.Size(63, 40);
             this.txt_ctknota_nomorruangan.TabIndex = 1;
             this.txt_ctknota_nomorruangan.TextChanged += new System.EventHandler(this.txt_ctknota_nomorruangan_TextChanged);
-            this.txt_ctknota_nomorruangan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ctknota_nomorruangan_KeyPress);
             // 
             // pnl_ctknota_cashcredit
             // 
@@ -1930,19 +1984,19 @@
             this.dgv_ctknota_tabelhrgpkt.AllowUserToDeleteRows = false;
             this.dgv_ctknota_tabelhrgpkt.AllowUserToResizeColumns = false;
             this.dgv_ctknota_tabelhrgpkt.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_ctknota_tabelhrgpkt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_ctknota_tabelhrgpkt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_ctknota_tabelhrgpkt.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ctknota_tabelhrgpkt.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersHeight = 40;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_ctknota_tabelhrgpkt.Location = new System.Drawing.Point(32, 104);
@@ -2549,34 +2603,34 @@
             this.dgv_lprnpnjln_tabellaporan.AllowUserToDeleteRows = false;
             this.dgv_lprnpnjln_tabellaporan.AllowUserToResizeColumns = false;
             this.dgv_lprnpnjln_tabellaporan.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_lprnpnjln_tabellaporan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnpnjln_tabellaporan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgv_lprnpnjln_tabellaporan.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_lprnpnjln_tabellaporan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lprnpnjln_tabellaporan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgv_lprnpnjln_tabellaporan.ColumnHeadersHeight = 45;
             this.dgv_lprnpnjln_tabellaporan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_lprnpnjln_tabellaporan.Location = new System.Drawing.Point(13, 76);
             this.dgv_lprnpnjln_tabellaporan.Name = "dgv_lprnpnjln_tabellaporan";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_lprnpnjln_tabellaporan.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lprnpnjln_tabellaporan.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgv_lprnpnjln_tabellaporan.RowHeadersVisible = false;
             this.dgv_lprnpnjln_tabellaporan.RowHeadersWidth = 20;
             this.dgv_lprnpnjln_tabellaporan.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_lprnpnjln_tabellaporan.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnpnjln_tabellaporan.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.NullValue = null;
             this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -2944,35 +2998,35 @@
             this.dgv_lprnlayanan_tabellayanan.AllowUserToDeleteRows = false;
             this.dgv_lprnlayanan_tabellayanan.AllowUserToResizeColumns = false;
             this.dgv_lprnlayanan_tabellayanan.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_lprnlayanan_tabellayanan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnlayanan_tabellayanan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgv_lprnlayanan_tabellayanan.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_lprnlayanan_tabellayanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lprnlayanan_tabellayanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgv_lprnlayanan_tabellayanan.ColumnHeadersHeight = 200;
             this.dgv_lprnlayanan_tabellayanan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_lprnlayanan_tabellayanan.Location = new System.Drawing.Point(13, 72);
             this.dgv_lprnlayanan_tabellayanan.Name = "dgv_lprnlayanan_tabellayanan";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_lprnlayanan_tabellayanan.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lprnlayanan_tabellayanan.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgv_lprnlayanan_tabellayanan.RowHeadersVisible = false;
             this.dgv_lprnlayanan_tabellayanan.RowHeadersWidth = 20;
             this.dgv_lprnlayanan_tabellayanan.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_lprnlayanan_tabellayanan.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnlayanan_tabellayanan.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgv_lprnlayanan_tabellayanan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgv_lprnlayanan_tabellayanan.RowTemplate.DefaultCellStyle.NullValue = null;
             this.dgv_lprnlayanan_tabellayanan.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -3364,66 +3418,13 @@
             this.btn_edtuser_simpan.UseVisualStyleBackColor = true;
             this.btn_edtuser_simpan.Click += new System.EventHandler(this.btn_edtuser_simpan_Click);
             // 
-            // btn_menu_tbhuser
-            // 
-            this.btn_menu_tbhuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menu_tbhuser.Location = new System.Drawing.Point(4, 3);
-            this.btn_menu_tbhuser.Name = "btn_menu_tbhuser";
-            this.btn_menu_tbhuser.Size = new System.Drawing.Size(155, 110);
-            this.btn_menu_tbhuser.TabIndex = 14;
-            this.btn_menu_tbhuser.Text = "Tambah User";
-            this.btn_menu_tbhuser.UseVisualStyleBackColor = true;
-            this.btn_menu_tbhuser.Click += new System.EventHandler(this.btn_menu_tbhuser_Click);
-            // 
-            // btn_menu_edituser
-            // 
-            this.btn_menu_edituser.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menu_edituser.Location = new System.Drawing.Point(4, 168);
-            this.btn_menu_edituser.Name = "btn_menu_edituser";
-            this.btn_menu_edituser.Size = new System.Drawing.Size(155, 110);
-            this.btn_menu_edituser.TabIndex = 13;
-            this.btn_menu_edituser.Text = "Edit User";
-            this.btn_menu_edituser.UseVisualStyleBackColor = true;
-            this.btn_menu_edituser.Click += new System.EventHandler(this.btn_menu_edituser_Click);
-            // 
-            // pnl_menu_others
-            // 
-            this.pnl_menu_others.Controls.Add(this.btn_menu_variabel);
-            this.pnl_menu_others.Controls.Add(this.btn_menu_ctknota);
-            this.pnl_menu_others.Controls.Add(this.btn_menu_edtpkt);
-            this.pnl_menu_others.Controls.Add(this.btn_menu_tbhpkt);
-            this.pnl_menu_others.Controls.Add(this.btn_menu_edttrps);
-            this.pnl_menu_others.Controls.Add(this.btn_menu_tbhtrps);
-            this.pnl_menu_others.Location = new System.Drawing.Point(30, 26);
-            this.pnl_menu_others.Name = "pnl_menu_others";
-            this.pnl_menu_others.Size = new System.Drawing.Size(715, 487);
-            this.pnl_menu_others.TabIndex = 13;
-            // 
-            // pnl_menu_laporan
-            // 
-            this.pnl_menu_laporan.Controls.Add(this.btn_menu_laporangajiexcel);
-            this.pnl_menu_laporan.Controls.Add(this.btn_menu_laporangajiterapis);
-            this.pnl_menu_laporan.Controls.Add(this.btn_menu_laporanpenjualan);
-            this.pnl_menu_laporan.Location = new System.Drawing.Point(873, 47);
-            this.pnl_menu_laporan.Name = "pnl_menu_laporan";
-            this.pnl_menu_laporan.Size = new System.Drawing.Size(227, 431);
-            this.pnl_menu_laporan.TabIndex = 14;
-            // 
-            // pnl_menu_user
-            // 
-            this.pnl_menu_user.Controls.Add(this.btn_menu_tbhuser);
-            this.pnl_menu_user.Controls.Add(this.btn_menu_edituser);
-            this.pnl_menu_user.Location = new System.Drawing.Point(1049, 124);
-            this.pnl_menu_user.Name = "pnl_menu_user";
-            this.pnl_menu_user.Size = new System.Drawing.Size(163, 279);
-            this.pnl_menu_user.TabIndex = 15;
-            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.ClientSize = new System.Drawing.Size(1274, 652);
+            this.Controls.Add(this.pnl_ctknota_isi);
             this.Controls.Add(this.pnl_menu_isi);
             this.Controls.Add(this.pnl_edttrps_isi);
             this.Controls.Add(this.pnl_edtuser_isi);
@@ -3433,7 +3434,6 @@
             this.Controls.Add(this.pnl_edtpkt_isi);
             this.Controls.Add(this.pnl_lprnlayanan_isi);
             this.Controls.Add(this.pnl_variabel_isi);
-            this.Controls.Add(this.pnl_ctknota_isi);
             this.Controls.Add(this.pnl_tbhpkt_isi);
             this.Controls.Add(this.pnl_ctknota_logo);
             this.Controls.Add(this.pnl_tbhtrps_isi);
@@ -3453,6 +3453,9 @@
             this.pnl_login_isi.PerformLayout();
             this.pnl_menu_isi.ResumeLayout(false);
             this.pnl_menu_isi.PerformLayout();
+            this.pnl_menu_user.ResumeLayout(false);
+            this.pnl_menu_laporan.ResumeLayout(false);
+            this.pnl_menu_others.ResumeLayout(false);
             this.pnl_tbhtrps_isi.ResumeLayout(false);
             this.pnl_tbhtrps_isi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict_tbhtrps_fotoKTP)).EndInit();
@@ -3488,9 +3491,6 @@
             this.pnl_tbhuser_isi.PerformLayout();
             this.pnl_edtuser_isi.ResumeLayout(false);
             this.pnl_edtuser_isi.PerformLayout();
-            this.pnl_menu_others.ResumeLayout(false);
-            this.pnl_menu_laporan.ResumeLayout(false);
-            this.pnl_menu_user.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

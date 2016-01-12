@@ -55,7 +55,7 @@ namespace Green_Leaf
             pnl_tbhpkt_isi.Enabled = false;
             pnl_tbhtrps_isi.Enabled = false;
             pnl_variabel_isi.Enabled = false;
-            ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.jpg");
+            ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
             PrintDialog printDialog = new PrintDialog();
 
             PrintDocument printDocument = new PrintDocument();
@@ -4716,14 +4716,6 @@ namespace Green_Leaf
             
         }
 
-        private void txt_ctknota_nomorruangan_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
         private void txt_ctknota_fee_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -6922,8 +6914,9 @@ namespace Green_Leaf
             graphic.DrawString("---------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)fontHeight; //make the spacing consistent
 
+            //string nama = ;
             string top = (DateTime.Now.Day.ToString("00") + "-" + DateTime.Now.Month.ToString("00") + "-" + DateTime.Now.Year.ToString() + " "
-                            + DateTime.Now.Hour.ToString("00") + ":" + DateTime.Now.Minute.ToString("00")).PadRight(16,'#') + "999999/001/050".PadLeft(29);
+                            + DateTime.Now.Hour.ToString("00") + ":" + DateTime.Now.Minute.ToString("00")).PadRight(16) + ("999999/"+"WILLIAMRUMENGAN".Substring(0, 12)+"/"+1.ToString("000")+"/050").PadLeft(29);
             graphic.DrawString(top, font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)fontHeight; //make the spacing consistent
 
@@ -6935,7 +6928,7 @@ namespace Green_Leaf
 
             //graphic.DrawString("TAMU HOTEL", font, new SolidBrush(Color.Black), startX, startY + offset);
             //offset = offset + (int)fontHeight; //make the spacing consistent
-            graphic.DrawString("ROOM : VIP".PadRight(30) + "Tamu Hotel: -".PadLeft(15), font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString("ROOM : VIP".PadRight(15) + "    Cash".PadRight(15) + "Tamu Hotel: -".PadLeft(15), font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)fontHeight + 10; //make the spacing consistent
 
             float totalprice = 0.00f;
@@ -6956,7 +6949,7 @@ namespace Green_Leaf
             offset = offset + (int)fontHeight + 5; //make the spacing consistent
             //graphic.DrawString(productLine, new Font("Courier New", 12, FontStyle.Italic), new SolidBrush(Color.Red), startX, startY + offset);
 
-            graphic.DrawString("------------------".PadLeft(45), font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString("-----------------".PadLeft(45), font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)fontHeight+5; //make the spacing consistent
             //offset = offset + (int)fontHeight + 5; //make the spacing consistent
             //foreach (string item in listBox1.Items)
@@ -6995,16 +6988,19 @@ namespace Green_Leaf
             //when we have drawn all of the items add the total
 
             //offset = offset; //make some room so that the total stands out.
-
-            graphic.DrawString("                Sub Total :".PadRight(33) + String.Format("{0:c}", 1000000).PadLeft(12), font, new SolidBrush(Color.Black), startX, startY + offset);
+            //graphic.DrawString("          Jenis Pembayaran :".PadRight(28) + "Cash".PadLeft(17), font, new SolidBrush(Color.Black), startX, startY + offset);
+            //offset = offset + (int)fontHeight; //make the spacing consistent
+            graphic.DrawString("                 Sub Total :".PadRight(28) + String.Format("{0:c}", 1000000).PadLeft(17), font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)fontHeight; //make the spacing consistent
-            graphic.DrawString("           Potongan Hotel :".PadRight(33) + String.Format("{0:c}", 100000).PadLeft(12), font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString("            Potongan Hotel :".PadRight(28) + String.Format("{0:c}", 100000).PadLeft(17), font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)fontHeight; //make the spacing consistent
-            graphic.DrawString("                   Diskon :".PadRight(33) + String.Format("{0:c}", 150000).PadLeft(12), font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString("                    Diskon :".PadRight(28) + String.Format("{0:c}", 150000).PadLeft(17), font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)fontHeight+10; //make the spacing consistent
 
             graphic.DrawString("Grand Total ".PadRight(12, '#') + String.Format("{0:c}", 50000000).PadLeft(17), new Font("Courier New", 10), new SolidBrush(Color.Black), startX, startY + offset);
+            
 
+            
             offset = offset + 30; //make some room so that the total stands out.
 
             //graphic.DrawString("CASH ".PadRight(30) + String.Format("{0:c}", cash), font, new SolidBrush(Color.Black), startX, startY + offset);
