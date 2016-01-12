@@ -86,6 +86,12 @@
     <Compile Include="frm_editterapis.Designer.cs">
       <DependentUpon>frm_editterapis.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_edituser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_edituser.Designer.cs">
+      <DependentUpon>frm_edituser.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_gantivariabel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,12 @@
     <Compile Include="frm_tambahpaket.Designer.cs">
       <DependentUpon>frm_tambahpaket.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_tambahuser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_tambahuser.Designer.cs">
+      <DependentUpon>frm_tambahuser.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_tmbahterapis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +157,9 @@
     <EmbeddedResource Include="frm_editterapis.resx">
       <DependentUpon>frm_editterapis.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_edituser.resx">
+      <DependentUpon>frm_edituser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_gantivariabel.resx">
       <DependentUpon>frm_gantivariabel.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_tambahpaket.resx">
       <DependentUpon>frm_tambahpaket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_tambahuser.resx">
+      <DependentUpon>frm_tambahuser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_tmbahterapis.resx">
       <DependentUpon>frm_tmbahterapis.cs</DependentUpon>

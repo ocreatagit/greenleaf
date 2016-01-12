@@ -99,7 +99,7 @@
             // txt_tbhpkt_komisipaketmidnight
             // 
             this.txt_tbhpkt_komisipaketmidnight.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tbhpkt_komisipaketmidnight.Location = new System.Drawing.Point(602, 345);
+            this.txt_tbhpkt_komisipaketmidnight.Location = new System.Drawing.Point(580, 345);
             this.txt_tbhpkt_komisipaketmidnight.MaxLength = 35;
             this.txt_tbhpkt_komisipaketmidnight.Name = "txt_tbhpkt_komisipaketmidnight";
             this.txt_tbhpkt_komisipaketmidnight.Size = new System.Drawing.Size(215, 47);
@@ -110,7 +110,7 @@
             // 
             this.lbl_tbhpkt_rp3.AutoSize = true;
             this.lbl_tbhpkt_rp3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_rp3.Location = new System.Drawing.Point(537, 348);
+            this.lbl_tbhpkt_rp3.Location = new System.Drawing.Point(515, 348);
             this.lbl_tbhpkt_rp3.Name = "lbl_tbhpkt_rp3";
             this.lbl_tbhpkt_rp3.Size = new System.Drawing.Size(71, 39);
             this.lbl_tbhpkt_rp3.TabIndex = 33;
@@ -120,7 +120,7 @@
             // 
             this.lbl_tbhpkt_5.AutoSize = true;
             this.lbl_tbhpkt_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_5.Location = new System.Drawing.Point(511, 265);
+            this.lbl_tbhpkt_5.Location = new System.Drawing.Point(489, 265);
             this.lbl_tbhpkt_5.Name = "lbl_tbhpkt_5";
             this.lbl_tbhpkt_5.Size = new System.Drawing.Size(27, 39);
             this.lbl_tbhpkt_5.TabIndex = 31;
@@ -130,7 +130,7 @@
             // 
             this.lbl_tbhpkt_komisimidnight.AutoSize = true;
             this.lbl_tbhpkt_komisimidnight.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_komisimidnight.Location = new System.Drawing.Point(220, 348);
+            this.lbl_tbhpkt_komisimidnight.Location = new System.Drawing.Point(198, 348);
             this.lbl_tbhpkt_komisimidnight.Name = "lbl_tbhpkt_komisimidnight";
             this.lbl_tbhpkt_komisimidnight.Size = new System.Drawing.Size(293, 78);
             this.lbl_tbhpkt_komisimidnight.TabIndex = 30;
@@ -140,7 +140,7 @@
             // 
             this.lbl_tbhpkt_menit.AutoSize = true;
             this.lbl_tbhpkt_menit.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_menit.Location = new System.Drawing.Point(752, 144);
+            this.lbl_tbhpkt_menit.Location = new System.Drawing.Point(730, 144);
             this.lbl_tbhpkt_menit.Name = "lbl_tbhpkt_menit";
             this.lbl_tbhpkt_menit.Size = new System.Drawing.Size(102, 39);
             this.lbl_tbhpkt_menit.TabIndex = 29;
@@ -150,7 +150,7 @@
             // 
             this.lbl_tbhpkt_jam.AutoSize = true;
             this.lbl_tbhpkt_jam.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_jam.Location = new System.Drawing.Point(603, 144);
+            this.lbl_tbhpkt_jam.Location = new System.Drawing.Point(581, 144);
             this.lbl_tbhpkt_jam.Name = "lbl_tbhpkt_jam";
             this.lbl_tbhpkt_jam.Size = new System.Drawing.Size(84, 39);
             this.lbl_tbhpkt_jam.TabIndex = 28;
@@ -159,7 +159,7 @@
             // txt_tbhpkt_durasipaketmenit
             // 
             this.txt_tbhpkt_durasipaketmenit.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tbhpkt_durasipaketmenit.Location = new System.Drawing.Point(693, 141);
+            this.txt_tbhpkt_durasipaketmenit.Location = new System.Drawing.Point(671, 141);
             this.txt_tbhpkt_durasipaketmenit.MaxLength = 2;
             this.txt_tbhpkt_durasipaketmenit.Name = "txt_tbhpkt_durasipaketmenit";
             this.txt_tbhpkt_durasipaketmenit.Size = new System.Drawing.Size(53, 47);
@@ -176,7 +176,7 @@
             "Deluxe",
             "VIP",
             "VVIP"});
-            this.cbo_tbhpkt_jenispaket.Location = new System.Drawing.Point(544, 23);
+            this.cbo_tbhpkt_jenispaket.Location = new System.Drawing.Point(522, 23);
             this.cbo_tbhpkt_jenispaket.Name = "cbo_tbhpkt_jenispaket";
             this.cbo_tbhpkt_jenispaket.Size = new System.Drawing.Size(168, 47);
             this.cbo_tbhpkt_jenispaket.TabIndex = 1;
@@ -184,7 +184,7 @@
             // txt_tbhpkt_komisipaketnormal
             // 
             this.txt_tbhpkt_komisipaketnormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tbhpkt_komisipaketnormal.Location = new System.Drawing.Point(602, 262);
+            this.txt_tbhpkt_komisipaketnormal.Location = new System.Drawing.Point(580, 262);
             this.txt_tbhpkt_komisipaketnormal.MaxLength = 35;
             this.txt_tbhpkt_komisipaketnormal.Name = "txt_tbhpkt_komisipaketnormal";
             this.txt_tbhpkt_komisipaketnormal.Size = new System.Drawing.Size(215, 47);
@@ -195,7 +195,7 @@
             // 
             this.lbl_tbhpkt_rp2.AutoSize = true;
             this.lbl_tbhpkt_rp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_rp2.Location = new System.Drawing.Point(537, 265);
+            this.lbl_tbhpkt_rp2.Location = new System.Drawing.Point(515, 265);
             this.lbl_tbhpkt_rp2.Name = "lbl_tbhpkt_rp2";
             this.lbl_tbhpkt_rp2.Size = new System.Drawing.Size(71, 39);
             this.lbl_tbhpkt_rp2.TabIndex = 24;
@@ -204,7 +204,7 @@
             // txt_tbhpkt_hargapaket
             // 
             this.txt_tbhpkt_hargapaket.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tbhpkt_hargapaket.Location = new System.Drawing.Point(602, 202);
+            this.txt_tbhpkt_hargapaket.Location = new System.Drawing.Point(580, 202);
             this.txt_tbhpkt_hargapaket.MaxLength = 35;
             this.txt_tbhpkt_hargapaket.Name = "txt_tbhpkt_hargapaket";
             this.txt_tbhpkt_hargapaket.Size = new System.Drawing.Size(215, 47);
@@ -215,7 +215,7 @@
             // 
             this.lbl_tbhpkt_rp1.AutoSize = true;
             this.lbl_tbhpkt_rp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_rp1.Location = new System.Drawing.Point(537, 205);
+            this.lbl_tbhpkt_rp1.Location = new System.Drawing.Point(515, 205);
             this.lbl_tbhpkt_rp1.Name = "lbl_tbhpkt_rp1";
             this.lbl_tbhpkt_rp1.Size = new System.Drawing.Size(71, 39);
             this.lbl_tbhpkt_rp1.TabIndex = 22;
@@ -225,7 +225,7 @@
             // 
             this.lbl_tbhpkt_6.AutoSize = true;
             this.lbl_tbhpkt_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_6.Location = new System.Drawing.Point(511, 338);
+            this.lbl_tbhpkt_6.Location = new System.Drawing.Point(489, 338);
             this.lbl_tbhpkt_6.Name = "lbl_tbhpkt_6";
             this.lbl_tbhpkt_6.Size = new System.Drawing.Size(27, 39);
             this.lbl_tbhpkt_6.TabIndex = 20;
@@ -235,7 +235,7 @@
             // 
             this.lbl_tbhpkt_komisinormal.AutoSize = true;
             this.lbl_tbhpkt_komisinormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_komisinormal.Location = new System.Drawing.Point(220, 265);
+            this.lbl_tbhpkt_komisinormal.Location = new System.Drawing.Point(198, 265);
             this.lbl_tbhpkt_komisinormal.Name = "lbl_tbhpkt_komisinormal";
             this.lbl_tbhpkt_komisinormal.Size = new System.Drawing.Size(293, 78);
             this.lbl_tbhpkt_komisinormal.TabIndex = 19;
@@ -245,7 +245,7 @@
             // 
             this.lbl_tbhpkt_4.AutoSize = true;
             this.lbl_tbhpkt_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_4.Location = new System.Drawing.Point(511, 205);
+            this.lbl_tbhpkt_4.Location = new System.Drawing.Point(489, 205);
             this.lbl_tbhpkt_4.Name = "lbl_tbhpkt_4";
             this.lbl_tbhpkt_4.Size = new System.Drawing.Size(27, 39);
             this.lbl_tbhpkt_4.TabIndex = 17;
@@ -255,7 +255,7 @@
             // 
             this.lbl_tbhpkt_harga.AutoSize = true;
             this.lbl_tbhpkt_harga.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_harga.Location = new System.Drawing.Point(220, 205);
+            this.lbl_tbhpkt_harga.Location = new System.Drawing.Point(198, 205);
             this.lbl_tbhpkt_harga.Name = "lbl_tbhpkt_harga";
             this.lbl_tbhpkt_harga.Size = new System.Drawing.Size(209, 39);
             this.lbl_tbhpkt_harga.TabIndex = 16;
@@ -264,7 +264,7 @@
             // txt_tbhpkt_durasipaketjam
             // 
             this.txt_tbhpkt_durasipaketjam.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tbhpkt_durasipaketjam.Location = new System.Drawing.Point(544, 141);
+            this.txt_tbhpkt_durasipaketjam.Location = new System.Drawing.Point(522, 141);
             this.txt_tbhpkt_durasipaketjam.MaxLength = 2;
             this.txt_tbhpkt_durasipaketjam.Name = "txt_tbhpkt_durasipaketjam";
             this.txt_tbhpkt_durasipaketjam.Size = new System.Drawing.Size(53, 47);
@@ -297,17 +297,17 @@
             // txt_tbhpkt_namapaket
             // 
             this.txt_tbhpkt_namapaket.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tbhpkt_namapaket.Location = new System.Drawing.Point(544, 83);
+            this.txt_tbhpkt_namapaket.Location = new System.Drawing.Point(522, 83);
             this.txt_tbhpkt_namapaket.MaxLength = 40;
             this.txt_tbhpkt_namapaket.Name = "txt_tbhpkt_namapaket";
-            this.txt_tbhpkt_namapaket.Size = new System.Drawing.Size(484, 47);
+            this.txt_tbhpkt_namapaket.Size = new System.Drawing.Size(528, 47);
             this.txt_tbhpkt_namapaket.TabIndex = 2;
             // 
             // lbl_tbhpkt_3
             // 
             this.lbl_tbhpkt_3.AutoSize = true;
             this.lbl_tbhpkt_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_3.Location = new System.Drawing.Point(511, 144);
+            this.lbl_tbhpkt_3.Location = new System.Drawing.Point(489, 144);
             this.lbl_tbhpkt_3.Name = "lbl_tbhpkt_3";
             this.lbl_tbhpkt_3.Size = new System.Drawing.Size(27, 39);
             this.lbl_tbhpkt_3.TabIndex = 6;
@@ -317,7 +317,7 @@
             // 
             this.lbl_tbhpkt_2.AutoSize = true;
             this.lbl_tbhpkt_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_2.Location = new System.Drawing.Point(511, 86);
+            this.lbl_tbhpkt_2.Location = new System.Drawing.Point(489, 86);
             this.lbl_tbhpkt_2.Name = "lbl_tbhpkt_2";
             this.lbl_tbhpkt_2.Size = new System.Drawing.Size(27, 39);
             this.lbl_tbhpkt_2.TabIndex = 5;
@@ -327,7 +327,7 @@
             // 
             this.lbl_tbhpkt_1.AutoSize = true;
             this.lbl_tbhpkt_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_1.Location = new System.Drawing.Point(511, 26);
+            this.lbl_tbhpkt_1.Location = new System.Drawing.Point(489, 26);
             this.lbl_tbhpkt_1.Name = "lbl_tbhpkt_1";
             this.lbl_tbhpkt_1.Size = new System.Drawing.Size(27, 39);
             this.lbl_tbhpkt_1.TabIndex = 4;
@@ -337,7 +337,7 @@
             // 
             this.lbl_tbhpkt_upload.AutoSize = true;
             this.lbl_tbhpkt_upload.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_upload.Location = new System.Drawing.Point(220, 144);
+            this.lbl_tbhpkt_upload.Location = new System.Drawing.Point(198, 144);
             this.lbl_tbhpkt_upload.Name = "lbl_tbhpkt_upload";
             this.lbl_tbhpkt_upload.Size = new System.Drawing.Size(216, 39);
             this.lbl_tbhpkt_upload.TabIndex = 2;
@@ -347,7 +347,7 @@
             // 
             this.lbl_tbhpkt_namaterapis.AutoSize = true;
             this.lbl_tbhpkt_namaterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_namaterapis.Location = new System.Drawing.Point(220, 86);
+            this.lbl_tbhpkt_namaterapis.Location = new System.Drawing.Point(198, 86);
             this.lbl_tbhpkt_namaterapis.Name = "lbl_tbhpkt_namaterapis";
             this.lbl_tbhpkt_namaterapis.Size = new System.Drawing.Size(208, 39);
             this.lbl_tbhpkt_namaterapis.TabIndex = 1;
@@ -357,7 +357,7 @@
             // 
             this.lbl_tbhpkt_kodeterapis.AutoSize = true;
             this.lbl_tbhpkt_kodeterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tbhpkt_kodeterapis.Location = new System.Drawing.Point(220, 26);
+            this.lbl_tbhpkt_kodeterapis.Location = new System.Drawing.Point(198, 26);
             this.lbl_tbhpkt_kodeterapis.Name = "lbl_tbhpkt_kodeterapis";
             this.lbl_tbhpkt_kodeterapis.Size = new System.Drawing.Size(197, 39);
             this.lbl_tbhpkt_kodeterapis.TabIndex = 0;

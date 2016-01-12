@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_ctknota_logo = new System.Windows.Forms.Panel();
             this.pict_ctknota_logo = new System.Windows.Forms.PictureBox();
             this.pnl_login_isi = new System.Windows.Forms.Panel();
@@ -237,10 +237,10 @@
             this.lbl_lprnpnjln_5 = new System.Windows.Forms.Label();
             this.lbl_lprnpnjln_totalsubtotal = new System.Windows.Forms.Label();
             this.lbl_lprnpnjln_totalhotel = new System.Windows.Forms.Label();
-            this.lbl_lprnpnjln_sumtotalhargapaket = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_sumtotalgrandtotal = new System.Windows.Forms.Label();
             this.lbl_lprnpnjln_rp1 = new System.Windows.Forms.Label();
             this.lbl_lprnpnjln_2 = new System.Windows.Forms.Label();
-            this.lbl_lprnpnjln_totalhrgapaket = new System.Windows.Forms.Label();
+            this.lbl_lprnpnjln_totalgrandtotal = new System.Windows.Forms.Label();
             this.lbl_lprnpnjln_sumtotalextra = new System.Windows.Forms.Label();
             this.lbl_lprnpnjln_rp7 = new System.Windows.Forms.Label();
             this.lbl_lprnpnjln_8 = new System.Windows.Forms.Label();
@@ -265,6 +265,45 @@
             this.btn_lprnlayanan_excel = new System.Windows.Forms.Button();
             this.dgv_lprnlayanan_tabellayanan = new System.Windows.Forms.DataGridView();
             this.btn_lprnlayanan_batal = new System.Windows.Forms.Button();
+            this.printdoc_ctknota_printdokumen = new System.Drawing.Printing.PrintDocument();
+            this.pnl_tbhuser_isi = new System.Windows.Forms.Panel();
+            this.lbl_tbhuser_4 = new System.Windows.Forms.Label();
+            this.lbl_tbhuser_nama = new System.Windows.Forms.Label();
+            this.txt_tbhuser_nama = new System.Windows.Forms.TextBox();
+            this.cbo_tbhuser_jenisuser = new System.Windows.Forms.ComboBox();
+            this.lbl_tbhuser_3 = new System.Windows.Forms.Label();
+            this.lbl_tbhuser_jenis = new System.Windows.Forms.Label();
+            this.txt_tbhuser_pass = new System.Windows.Forms.TextBox();
+            this.lbl_tbhuser_2 = new System.Windows.Forms.Label();
+            this.lbl_tbhuser_pass = new System.Windows.Forms.Label();
+            this.lbl_tbhuser_1 = new System.Windows.Forms.Label();
+            this.lbl_tbhuser_username = new System.Windows.Forms.Label();
+            this.txt_tbhuser_user = new System.Windows.Forms.TextBox();
+            this.btn_tbhuser_batal = new System.Windows.Forms.Button();
+            this.btn_tbhuser_simpan = new System.Windows.Forms.Button();
+            this.pnl_edtuser_isi = new System.Windows.Forms.Panel();
+            this.btn_edtuser_hapus = new System.Windows.Forms.Button();
+            this.lsb_edtuser_user = new System.Windows.Forms.ListBox();
+            this.btn_edtuser_ok = new System.Windows.Forms.Button();
+            this.lbl_edtuser_4 = new System.Windows.Forms.Label();
+            this.lbl_edtuser_nama = new System.Windows.Forms.Label();
+            this.txt_edtuser_nama = new System.Windows.Forms.TextBox();
+            this.cbo_edtuser_jenisuser = new System.Windows.Forms.ComboBox();
+            this.lbl_edtuser_3 = new System.Windows.Forms.Label();
+            this.lbl_edtuser_jenis = new System.Windows.Forms.Label();
+            this.txt_edtuser_pass = new System.Windows.Forms.TextBox();
+            this.lbl_edtuser_2 = new System.Windows.Forms.Label();
+            this.lbl_edtuser_pass = new System.Windows.Forms.Label();
+            this.lbl_edtuser_1 = new System.Windows.Forms.Label();
+            this.lbl_edtuser_username = new System.Windows.Forms.Label();
+            this.txt_edtuser_user = new System.Windows.Forms.TextBox();
+            this.btn_edtuser_batal = new System.Windows.Forms.Button();
+            this.btn_edtuser_simpan = new System.Windows.Forms.Button();
+            this.btn_menu_tbhuser = new System.Windows.Forms.Button();
+            this.btn_menu_edituser = new System.Windows.Forms.Button();
+            this.pnl_menu_others = new System.Windows.Forms.Panel();
+            this.pnl_menu_laporan = new System.Windows.Forms.Panel();
+            this.pnl_menu_user = new System.Windows.Forms.Panel();
             this.pnl_ctknota_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pict_ctknota_logo)).BeginInit();
             this.pnl_login_isi.SuspendLayout();
@@ -287,6 +326,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lprnpnjln_tabellaporan)).BeginInit();
             this.pnl_lprnlayanan_isi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lprnlayanan_tabellayanan)).BeginInit();
+            this.pnl_tbhuser_isi.SuspendLayout();
+            this.pnl_edtuser_isi.SuspendLayout();
+            this.pnl_menu_others.SuspendLayout();
+            this.pnl_menu_laporan.SuspendLayout();
+            this.pnl_menu_user.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_ctknota_logo
@@ -421,17 +465,11 @@
             // pnl_menu_isi
             // 
             this.pnl_menu_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_menu_isi.Controls.Add(this.pnl_menu_user);
+            this.pnl_menu_isi.Controls.Add(this.pnl_menu_laporan);
+            this.pnl_menu_isi.Controls.Add(this.pnl_menu_others);
             this.pnl_menu_isi.Controls.Add(this.lbllink_menu_logout);
             this.pnl_menu_isi.Controls.Add(this.lbl_menu_user);
-            this.pnl_menu_isi.Controls.Add(this.btn_menu_variabel);
-            this.pnl_menu_isi.Controls.Add(this.btn_menu_ctknota);
-            this.pnl_menu_isi.Controls.Add(this.btn_menu_laporangajiexcel);
-            this.pnl_menu_isi.Controls.Add(this.btn_menu_laporangajiterapis);
-            this.pnl_menu_isi.Controls.Add(this.btn_menu_laporanpenjualan);
-            this.pnl_menu_isi.Controls.Add(this.btn_menu_edtpkt);
-            this.pnl_menu_isi.Controls.Add(this.btn_menu_tbhpkt);
-            this.pnl_menu_isi.Controls.Add(this.btn_menu_edttrps);
-            this.pnl_menu_isi.Controls.Add(this.btn_menu_tbhtrps);
             this.pnl_menu_isi.Location = new System.Drawing.Point(12, 112);
             this.pnl_menu_isi.Name = "pnl_menu_isi";
             this.pnl_menu_isi.Size = new System.Drawing.Size(1250, 528);
@@ -462,7 +500,7 @@
             // btn_menu_variabel
             // 
             this.btn_menu_variabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menu_variabel.Location = new System.Drawing.Point(172, 211);
+            this.btn_menu_variabel.Location = new System.Drawing.Point(129, 188);
             this.btn_menu_variabel.Name = "btn_menu_variabel";
             this.btn_menu_variabel.Size = new System.Drawing.Size(155, 110);
             this.btn_menu_variabel.TabIndex = 9;
@@ -473,7 +511,7 @@
             // btn_menu_ctknota
             // 
             this.btn_menu_ctknota.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menu_ctknota.Location = new System.Drawing.Point(518, 187);
+            this.btn_menu_ctknota.Location = new System.Drawing.Point(488, 160);
             this.btn_menu_ctknota.Name = "btn_menu_ctknota";
             this.btn_menu_ctknota.Size = new System.Drawing.Size(213, 171);
             this.btn_menu_ctknota.TabIndex = 5;
@@ -484,7 +522,7 @@
             // btn_menu_laporangajiexcel
             // 
             this.btn_menu_laporangajiexcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menu_laporangajiexcel.Location = new System.Drawing.Point(891, 371);
+            this.btn_menu_laporangajiexcel.Location = new System.Drawing.Point(8, 320);
             this.btn_menu_laporangajiexcel.Name = "btn_menu_laporangajiexcel";
             this.btn_menu_laporangajiexcel.Size = new System.Drawing.Size(215, 110);
             this.btn_menu_laporangajiexcel.TabIndex = 8;
@@ -495,7 +533,7 @@
             // btn_menu_laporangajiterapis
             // 
             this.btn_menu_laporangajiterapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menu_laporangajiterapis.Location = new System.Drawing.Point(891, 209);
+            this.btn_menu_laporangajiterapis.Location = new System.Drawing.Point(8, 158);
             this.btn_menu_laporangajiterapis.Name = "btn_menu_laporangajiterapis";
             this.btn_menu_laporangajiterapis.Size = new System.Drawing.Size(215, 107);
             this.btn_menu_laporangajiterapis.TabIndex = 7;
@@ -506,7 +544,7 @@
             // btn_menu_laporanpenjualan
             // 
             this.btn_menu_laporanpenjualan.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menu_laporanpenjualan.Location = new System.Drawing.Point(891, 53);
+            this.btn_menu_laporanpenjualan.Location = new System.Drawing.Point(8, 2);
             this.btn_menu_laporanpenjualan.Name = "btn_menu_laporanpenjualan";
             this.btn_menu_laporanpenjualan.Size = new System.Drawing.Size(215, 107);
             this.btn_menu_laporanpenjualan.TabIndex = 6;
@@ -517,7 +555,7 @@
             // btn_menu_edtpkt
             // 
             this.btn_menu_edtpkt.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menu_edtpkt.Location = new System.Drawing.Point(273, 49);
+            this.btn_menu_edtpkt.Location = new System.Drawing.Point(230, 26);
             this.btn_menu_edtpkt.Name = "btn_menu_edtpkt";
             this.btn_menu_edtpkt.Size = new System.Drawing.Size(155, 110);
             this.btn_menu_edtpkt.TabIndex = 4;
@@ -528,7 +566,7 @@
             // btn_menu_tbhpkt
             // 
             this.btn_menu_tbhpkt.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menu_tbhpkt.Location = new System.Drawing.Point(70, 49);
+            this.btn_menu_tbhpkt.Location = new System.Drawing.Point(27, 26);
             this.btn_menu_tbhpkt.Name = "btn_menu_tbhpkt";
             this.btn_menu_tbhpkt.Size = new System.Drawing.Size(155, 110);
             this.btn_menu_tbhpkt.TabIndex = 3;
@@ -539,7 +577,7 @@
             // btn_menu_edttrps
             // 
             this.btn_menu_edttrps.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menu_edttrps.Location = new System.Drawing.Point(273, 371);
+            this.btn_menu_edttrps.Location = new System.Drawing.Point(230, 348);
             this.btn_menu_edttrps.Name = "btn_menu_edttrps";
             this.btn_menu_edttrps.Size = new System.Drawing.Size(155, 110);
             this.btn_menu_edttrps.TabIndex = 2;
@@ -550,7 +588,7 @@
             // btn_menu_tbhtrps
             // 
             this.btn_menu_tbhtrps.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menu_tbhtrps.Location = new System.Drawing.Point(70, 370);
+            this.btn_menu_tbhtrps.Location = new System.Drawing.Point(27, 347);
             this.btn_menu_tbhtrps.Name = "btn_menu_tbhtrps";
             this.btn_menu_tbhtrps.Size = new System.Drawing.Size(155, 110);
             this.btn_menu_tbhtrps.TabIndex = 1;
@@ -1892,19 +1930,19 @@
             this.dgv_ctknota_tabelhrgpkt.AllowUserToDeleteRows = false;
             this.dgv_ctknota_tabelhrgpkt.AllowUserToResizeColumns = false;
             this.dgv_ctknota_tabelhrgpkt.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_ctknota_tabelhrgpkt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_ctknota_tabelhrgpkt.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ctknota_tabelhrgpkt.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ctknota_tabelhrgpkt.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ctknota_tabelhrgpkt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersHeight = 40;
             this.dgv_ctknota_tabelhrgpkt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_ctknota_tabelhrgpkt.Location = new System.Drawing.Point(32, 104);
@@ -2296,10 +2334,10 @@
             this.pnl_lprnpnjln_isi.Controls.Add(this.lbl_lprnpnjln_5);
             this.pnl_lprnpnjln_isi.Controls.Add(this.lbl_lprnpnjln_totalsubtotal);
             this.pnl_lprnpnjln_isi.Controls.Add(this.lbl_lprnpnjln_totalhotel);
-            this.pnl_lprnpnjln_isi.Controls.Add(this.lbl_lprnpnjln_sumtotalhargapaket);
+            this.pnl_lprnpnjln_isi.Controls.Add(this.lbl_lprnpnjln_sumtotalgrandtotal);
             this.pnl_lprnpnjln_isi.Controls.Add(this.lbl_lprnpnjln_rp1);
             this.pnl_lprnpnjln_isi.Controls.Add(this.lbl_lprnpnjln_2);
-            this.pnl_lprnpnjln_isi.Controls.Add(this.lbl_lprnpnjln_totalhrgapaket);
+            this.pnl_lprnpnjln_isi.Controls.Add(this.lbl_lprnpnjln_totalgrandtotal);
             this.pnl_lprnpnjln_isi.Controls.Add(this.lbl_lprnpnjln_sumtotalextra);
             this.pnl_lprnpnjln_isi.Controls.Add(this.lbl_lprnpnjln_rp7);
             this.pnl_lprnpnjln_isi.Controls.Add(this.lbl_lprnpnjln_8);
@@ -2366,7 +2404,7 @@
             this.pnl_lprnpnjln_totalcredit.Controls.Add(this.lbl_lprnpnjln_totalcredit);
             this.pnl_lprnpnjln_totalcredit.Controls.Add(this.lbl_lprnpnjln_3);
             this.pnl_lprnpnjln_totalcredit.Controls.Add(this.lbl_lprnpnjln_rp2);
-            this.pnl_lprnpnjln_totalcredit.Location = new System.Drawing.Point(747, 382);
+            this.pnl_lprnpnjln_totalcredit.Location = new System.Drawing.Point(752, 350);
             this.pnl_lprnpnjln_totalcredit.Name = "pnl_lprnpnjln_totalcredit";
             this.pnl_lprnpnjln_totalcredit.Size = new System.Drawing.Size(487, 36);
             this.pnl_lprnpnjln_totalcredit.TabIndex = 129;
@@ -2418,7 +2456,7 @@
             this.pnl_lprnpnjln_totalcash.Controls.Add(this.lbl_lprnpnjln_totalcash);
             this.pnl_lprnpnjln_totalcash.Controls.Add(this.lbl_lprnpnjln_4);
             this.pnl_lprnpnjln_totalcash.Controls.Add(this.lbl_lprnpnjln_rp3);
-            this.pnl_lprnpnjln_totalcash.Location = new System.Drawing.Point(747, 344);
+            this.pnl_lprnpnjln_totalcash.Location = new System.Drawing.Point(752, 312);
             this.pnl_lprnpnjln_totalcash.Name = "pnl_lprnpnjln_totalcash";
             this.pnl_lprnpnjln_totalcash.Size = new System.Drawing.Size(487, 36);
             this.pnl_lprnpnjln_totalcash.TabIndex = 128;
@@ -2511,34 +2549,34 @@
             this.dgv_lprnpnjln_tabellaporan.AllowUserToDeleteRows = false;
             this.dgv_lprnpnjln_tabellaporan.AllowUserToResizeColumns = false;
             this.dgv_lprnpnjln_tabellaporan.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_lprnpnjln_tabellaporan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnpnjln_tabellaporan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_lprnpnjln_tabellaporan.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_lprnpnjln_tabellaporan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lprnpnjln_tabellaporan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_lprnpnjln_tabellaporan.ColumnHeadersHeight = 45;
             this.dgv_lprnpnjln_tabellaporan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_lprnpnjln_tabellaporan.Location = new System.Drawing.Point(13, 76);
             this.dgv_lprnpnjln_tabellaporan.Name = "dgv_lprnpnjln_tabellaporan";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_lprnpnjln_tabellaporan.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lprnpnjln_tabellaporan.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_lprnpnjln_tabellaporan.RowHeadersVisible = false;
             this.dgv_lprnpnjln_tabellaporan.RowHeadersWidth = 20;
             this.dgv_lprnpnjln_tabellaporan.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_lprnpnjln_tabellaporan.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnpnjln_tabellaporan.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.NullValue = null;
             this.dgv_lprnpnjln_tabellaporan.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -2582,7 +2620,7 @@
             this.lbl_lprnpnjln_sumtotalsubtotal.BackColor = System.Drawing.Color.White;
             this.lbl_lprnpnjln_sumtotalsubtotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbl_lprnpnjln_sumtotalsubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lprnpnjln_sumtotalsubtotal.Location = new System.Drawing.Point(1037, 417);
+            this.lbl_lprnpnjln_sumtotalsubtotal.Location = new System.Drawing.Point(1042, 385);
             this.lbl_lprnpnjln_sumtotalsubtotal.Name = "lbl_lprnpnjln_sumtotalsubtotal";
             this.lbl_lprnpnjln_sumtotalsubtotal.Size = new System.Drawing.Size(197, 29);
             this.lbl_lprnpnjln_sumtotalsubtotal.TabIndex = 115;
@@ -2592,7 +2630,7 @@
             // 
             this.lbl_lprnpnjln_rp4.AutoSize = true;
             this.lbl_lprnpnjln_rp4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lprnpnjln_rp4.Location = new System.Drawing.Point(987, 417);
+            this.lbl_lprnpnjln_rp4.Location = new System.Drawing.Point(992, 385);
             this.lbl_lprnpnjln_rp4.Name = "lbl_lprnpnjln_rp4";
             this.lbl_lprnpnjln_rp4.Size = new System.Drawing.Size(53, 29);
             this.lbl_lprnpnjln_rp4.TabIndex = 113;
@@ -2602,7 +2640,7 @@
             // 
             this.lbl_lprnpnjln_5.AutoSize = true;
             this.lbl_lprnpnjln_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lprnpnjln_5.Location = new System.Drawing.Point(973, 417);
+            this.lbl_lprnpnjln_5.Location = new System.Drawing.Point(978, 385);
             this.lbl_lprnpnjln_5.Name = "lbl_lprnpnjln_5";
             this.lbl_lprnpnjln_5.Size = new System.Drawing.Size(20, 29);
             this.lbl_lprnpnjln_5.TabIndex = 114;
@@ -2612,7 +2650,7 @@
             // 
             this.lbl_lprnpnjln_totalsubtotal.AutoSize = true;
             this.lbl_lprnpnjln_totalsubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lprnpnjln_totalsubtotal.Location = new System.Drawing.Point(749, 417);
+            this.lbl_lprnpnjln_totalsubtotal.Location = new System.Drawing.Point(754, 385);
             this.lbl_lprnpnjln_totalsubtotal.Name = "lbl_lprnpnjln_totalsubtotal";
             this.lbl_lprnpnjln_totalsubtotal.Size = new System.Drawing.Size(176, 29);
             this.lbl_lprnpnjln_totalsubtotal.TabIndex = 112;
@@ -2628,22 +2666,22 @@
             this.lbl_lprnpnjln_totalhotel.TabIndex = 111;
             this.lbl_lprnpnjln_totalhotel.Text = "Total Potongan Hotel";
             // 
-            // lbl_lprnpnjln_sumtotalhargapaket
+            // lbl_lprnpnjln_sumtotalgrandtotal
             // 
-            this.lbl_lprnpnjln_sumtotalhargapaket.BackColor = System.Drawing.Color.White;
-            this.lbl_lprnpnjln_sumtotalhargapaket.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbl_lprnpnjln_sumtotalhargapaket.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lprnpnjln_sumtotalhargapaket.Location = new System.Drawing.Point(1037, 312);
-            this.lbl_lprnpnjln_sumtotalhargapaket.Name = "lbl_lprnpnjln_sumtotalhargapaket";
-            this.lbl_lprnpnjln_sumtotalhargapaket.Size = new System.Drawing.Size(197, 29);
-            this.lbl_lprnpnjln_sumtotalhargapaket.TabIndex = 102;
-            this.lbl_lprnpnjln_sumtotalhargapaket.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_lprnpnjln_sumtotalgrandtotal.BackColor = System.Drawing.Color.White;
+            this.lbl_lprnpnjln_sumtotalgrandtotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbl_lprnpnjln_sumtotalgrandtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_sumtotalgrandtotal.Location = new System.Drawing.Point(1042, 417);
+            this.lbl_lprnpnjln_sumtotalgrandtotal.Name = "lbl_lprnpnjln_sumtotalgrandtotal";
+            this.lbl_lprnpnjln_sumtotalgrandtotal.Size = new System.Drawing.Size(197, 29);
+            this.lbl_lprnpnjln_sumtotalgrandtotal.TabIndex = 102;
+            this.lbl_lprnpnjln_sumtotalgrandtotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbl_lprnpnjln_rp1
             // 
             this.lbl_lprnpnjln_rp1.AutoSize = true;
             this.lbl_lprnpnjln_rp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lprnpnjln_rp1.Location = new System.Drawing.Point(987, 312);
+            this.lbl_lprnpnjln_rp1.Location = new System.Drawing.Point(992, 417);
             this.lbl_lprnpnjln_rp1.Name = "lbl_lprnpnjln_rp1";
             this.lbl_lprnpnjln_rp1.Size = new System.Drawing.Size(53, 29);
             this.lbl_lprnpnjln_rp1.TabIndex = 100;
@@ -2653,21 +2691,21 @@
             // 
             this.lbl_lprnpnjln_2.AutoSize = true;
             this.lbl_lprnpnjln_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lprnpnjln_2.Location = new System.Drawing.Point(973, 312);
+            this.lbl_lprnpnjln_2.Location = new System.Drawing.Point(978, 417);
             this.lbl_lprnpnjln_2.Name = "lbl_lprnpnjln_2";
             this.lbl_lprnpnjln_2.Size = new System.Drawing.Size(20, 29);
             this.lbl_lprnpnjln_2.TabIndex = 101;
             this.lbl_lprnpnjln_2.Text = ":";
             // 
-            // lbl_lprnpnjln_totalhrgapaket
+            // lbl_lprnpnjln_totalgrandtotal
             // 
-            this.lbl_lprnpnjln_totalhrgapaket.AutoSize = true;
-            this.lbl_lprnpnjln_totalhrgapaket.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lprnpnjln_totalhrgapaket.Location = new System.Drawing.Point(749, 312);
-            this.lbl_lprnpnjln_totalhrgapaket.Name = "lbl_lprnpnjln_totalhrgapaket";
-            this.lbl_lprnpnjln_totalhrgapaket.Size = new System.Drawing.Size(223, 29);
-            this.lbl_lprnpnjln_totalhrgapaket.TabIndex = 99;
-            this.lbl_lprnpnjln_totalhrgapaket.Text = "Total Harga Paket";
+            this.lbl_lprnpnjln_totalgrandtotal.AutoSize = true;
+            this.lbl_lprnpnjln_totalgrandtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lprnpnjln_totalgrandtotal.Location = new System.Drawing.Point(754, 417);
+            this.lbl_lprnpnjln_totalgrandtotal.Name = "lbl_lprnpnjln_totalgrandtotal";
+            this.lbl_lprnpnjln_totalgrandtotal.Size = new System.Drawing.Size(218, 29);
+            this.lbl_lprnpnjln_totalgrandtotal.TabIndex = 99;
+            this.lbl_lprnpnjln_totalgrandtotal.Text = "Total Grand Total";
             // 
             // lbl_lprnpnjln_sumtotalextra
             // 
@@ -2906,35 +2944,35 @@
             this.dgv_lprnlayanan_tabellayanan.AllowUserToDeleteRows = false;
             this.dgv_lprnlayanan_tabellayanan.AllowUserToResizeColumns = false;
             this.dgv_lprnlayanan_tabellayanan.AllowUserToResizeRows = false;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_lprnlayanan_tabellayanan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnlayanan_tabellayanan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_lprnlayanan_tabellayanan.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_lprnlayanan_tabellayanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lprnlayanan_tabellayanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_lprnlayanan_tabellayanan.ColumnHeadersHeight = 200;
             this.dgv_lprnlayanan_tabellayanan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_lprnlayanan_tabellayanan.Location = new System.Drawing.Point(13, 72);
             this.dgv_lprnlayanan_tabellayanan.Name = "dgv_lprnlayanan_tabellayanan";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_lprnlayanan_tabellayanan.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lprnlayanan_tabellayanan.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_lprnlayanan_tabellayanan.RowHeadersVisible = false;
             this.dgv_lprnlayanan_tabellayanan.RowHeadersWidth = 20;
             this.dgv_lprnlayanan_tabellayanan.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_lprnlayanan_tabellayanan.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lprnlayanan_tabellayanan.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_lprnlayanan_tabellayanan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgv_lprnlayanan_tabellayanan.RowTemplate.DefaultCellStyle.NullValue = null;
             this.dgv_lprnlayanan_tabellayanan.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -2955,6 +2993,431 @@
             this.btn_lprnlayanan_batal.UseVisualStyleBackColor = true;
             this.btn_lprnlayanan_batal.Click += new System.EventHandler(this.btn_lprnlayanan_batal_Click);
             // 
+            // printdoc_ctknota_printdokumen
+            // 
+            this.printdoc_ctknota_printdokumen.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.printdoc_ctknota_printdokumen_BeginPrint);
+            this.printdoc_ctknota_printdokumen.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printdoc_ctknota_printdokumen_PrintPage);
+            // 
+            // pnl_tbhuser_isi
+            // 
+            this.pnl_tbhuser_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_tbhuser_isi.Controls.Add(this.lbl_tbhuser_4);
+            this.pnl_tbhuser_isi.Controls.Add(this.lbl_tbhuser_nama);
+            this.pnl_tbhuser_isi.Controls.Add(this.txt_tbhuser_nama);
+            this.pnl_tbhuser_isi.Controls.Add(this.cbo_tbhuser_jenisuser);
+            this.pnl_tbhuser_isi.Controls.Add(this.lbl_tbhuser_3);
+            this.pnl_tbhuser_isi.Controls.Add(this.lbl_tbhuser_jenis);
+            this.pnl_tbhuser_isi.Controls.Add(this.txt_tbhuser_pass);
+            this.pnl_tbhuser_isi.Controls.Add(this.lbl_tbhuser_2);
+            this.pnl_tbhuser_isi.Controls.Add(this.lbl_tbhuser_pass);
+            this.pnl_tbhuser_isi.Controls.Add(this.lbl_tbhuser_1);
+            this.pnl_tbhuser_isi.Controls.Add(this.lbl_tbhuser_username);
+            this.pnl_tbhuser_isi.Controls.Add(this.txt_tbhuser_user);
+            this.pnl_tbhuser_isi.Controls.Add(this.btn_tbhuser_batal);
+            this.pnl_tbhuser_isi.Controls.Add(this.btn_tbhuser_simpan);
+            this.pnl_tbhuser_isi.Location = new System.Drawing.Point(12, 112);
+            this.pnl_tbhuser_isi.Name = "pnl_tbhuser_isi";
+            this.pnl_tbhuser_isi.Size = new System.Drawing.Size(1250, 528);
+            this.pnl_tbhuser_isi.TabIndex = 136;
+            this.pnl_tbhuser_isi.Visible = false;
+            // 
+            // lbl_tbhuser_4
+            // 
+            this.lbl_tbhuser_4.AutoSize = true;
+            this.lbl_tbhuser_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhuser_4.Location = new System.Drawing.Point(598, 103);
+            this.lbl_tbhuser_4.Name = "lbl_tbhuser_4";
+            this.lbl_tbhuser_4.Size = new System.Drawing.Size(23, 33);
+            this.lbl_tbhuser_4.TabIndex = 87;
+            this.lbl_tbhuser_4.Text = ":";
+            // 
+            // lbl_tbhuser_nama
+            // 
+            this.lbl_tbhuser_nama.AutoSize = true;
+            this.lbl_tbhuser_nama.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhuser_nama.Location = new System.Drawing.Point(364, 103);
+            this.lbl_tbhuser_nama.Name = "lbl_tbhuser_nama";
+            this.lbl_tbhuser_nama.Size = new System.Drawing.Size(93, 33);
+            this.lbl_tbhuser_nama.TabIndex = 86;
+            this.lbl_tbhuser_nama.Text = "Nama";
+            // 
+            // txt_tbhuser_nama
+            // 
+            this.txt_tbhuser_nama.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tbhuser_nama.Location = new System.Drawing.Point(627, 100);
+            this.txt_tbhuser_nama.MaxLength = 50;
+            this.txt_tbhuser_nama.Name = "txt_tbhuser_nama";
+            this.txt_tbhuser_nama.Size = new System.Drawing.Size(258, 40);
+            this.txt_tbhuser_nama.TabIndex = 1;
+            // 
+            // cbo_tbhuser_jenisuser
+            // 
+            this.cbo_tbhuser_jenisuser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_tbhuser_jenisuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_tbhuser_jenisuser.FormattingEnabled = true;
+            this.cbo_tbhuser_jenisuser.Items.AddRange(new object[] {
+            "Superadmin",
+            "Sales"});
+            this.cbo_tbhuser_jenisuser.Location = new System.Drawing.Point(627, 284);
+            this.cbo_tbhuser_jenisuser.Name = "cbo_tbhuser_jenisuser";
+            this.cbo_tbhuser_jenisuser.Size = new System.Drawing.Size(258, 37);
+            this.cbo_tbhuser_jenisuser.TabIndex = 4;
+            // 
+            // lbl_tbhuser_3
+            // 
+            this.lbl_tbhuser_3.AutoSize = true;
+            this.lbl_tbhuser_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhuser_3.Location = new System.Drawing.Point(598, 283);
+            this.lbl_tbhuser_3.Name = "lbl_tbhuser_3";
+            this.lbl_tbhuser_3.Size = new System.Drawing.Size(23, 33);
+            this.lbl_tbhuser_3.TabIndex = 84;
+            this.lbl_tbhuser_3.Text = ":";
+            // 
+            // lbl_tbhuser_jenis
+            // 
+            this.lbl_tbhuser_jenis.AutoSize = true;
+            this.lbl_tbhuser_jenis.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhuser_jenis.Location = new System.Drawing.Point(364, 283);
+            this.lbl_tbhuser_jenis.Name = "lbl_tbhuser_jenis";
+            this.lbl_tbhuser_jenis.Size = new System.Drawing.Size(154, 33);
+            this.lbl_tbhuser_jenis.TabIndex = 83;
+            this.lbl_tbhuser_jenis.Text = "Jenis User";
+            // 
+            // txt_tbhuser_pass
+            // 
+            this.txt_tbhuser_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tbhuser_pass.Location = new System.Drawing.Point(627, 223);
+            this.txt_tbhuser_pass.MaxLength = 50;
+            this.txt_tbhuser_pass.Name = "txt_tbhuser_pass";
+            this.txt_tbhuser_pass.Size = new System.Drawing.Size(258, 40);
+            this.txt_tbhuser_pass.TabIndex = 3;
+            // 
+            // lbl_tbhuser_2
+            // 
+            this.lbl_tbhuser_2.AutoSize = true;
+            this.lbl_tbhuser_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhuser_2.Location = new System.Drawing.Point(598, 223);
+            this.lbl_tbhuser_2.Name = "lbl_tbhuser_2";
+            this.lbl_tbhuser_2.Size = new System.Drawing.Size(23, 33);
+            this.lbl_tbhuser_2.TabIndex = 82;
+            this.lbl_tbhuser_2.Text = ":";
+            // 
+            // lbl_tbhuser_pass
+            // 
+            this.lbl_tbhuser_pass.AutoSize = true;
+            this.lbl_tbhuser_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhuser_pass.Location = new System.Drawing.Point(364, 226);
+            this.lbl_tbhuser_pass.Name = "lbl_tbhuser_pass";
+            this.lbl_tbhuser_pass.Size = new System.Drawing.Size(143, 33);
+            this.lbl_tbhuser_pass.TabIndex = 81;
+            this.lbl_tbhuser_pass.Text = "Password";
+            // 
+            // lbl_tbhuser_1
+            // 
+            this.lbl_tbhuser_1.AutoSize = true;
+            this.lbl_tbhuser_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhuser_1.Location = new System.Drawing.Point(598, 164);
+            this.lbl_tbhuser_1.Name = "lbl_tbhuser_1";
+            this.lbl_tbhuser_1.Size = new System.Drawing.Size(23, 33);
+            this.lbl_tbhuser_1.TabIndex = 80;
+            this.lbl_tbhuser_1.Text = ":";
+            // 
+            // lbl_tbhuser_username
+            // 
+            this.lbl_tbhuser_username.AutoSize = true;
+            this.lbl_tbhuser_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbhuser_username.Location = new System.Drawing.Point(364, 164);
+            this.lbl_tbhuser_username.Name = "lbl_tbhuser_username";
+            this.lbl_tbhuser_username.Size = new System.Drawing.Size(150, 33);
+            this.lbl_tbhuser_username.TabIndex = 79;
+            this.lbl_tbhuser_username.Text = "Username";
+            // 
+            // txt_tbhuser_user
+            // 
+            this.txt_tbhuser_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tbhuser_user.Location = new System.Drawing.Point(627, 161);
+            this.txt_tbhuser_user.MaxLength = 50;
+            this.txt_tbhuser_user.Name = "txt_tbhuser_user";
+            this.txt_tbhuser_user.Size = new System.Drawing.Size(258, 40);
+            this.txt_tbhuser_user.TabIndex = 2;
+            // 
+            // btn_tbhuser_batal
+            // 
+            this.btn_tbhuser_batal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tbhuser_batal.Location = new System.Drawing.Point(660, 334);
+            this.btn_tbhuser_batal.Name = "btn_tbhuser_batal";
+            this.btn_tbhuser_batal.Size = new System.Drawing.Size(155, 98);
+            this.btn_tbhuser_batal.TabIndex = 6;
+            this.btn_tbhuser_batal.Text = "Batal";
+            this.btn_tbhuser_batal.UseVisualStyleBackColor = true;
+            this.btn_tbhuser_batal.Click += new System.EventHandler(this.btn_tbhuser_batal_Click);
+            // 
+            // btn_tbhuser_simpan
+            // 
+            this.btn_tbhuser_simpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tbhuser_simpan.Location = new System.Drawing.Point(433, 334);
+            this.btn_tbhuser_simpan.Name = "btn_tbhuser_simpan";
+            this.btn_tbhuser_simpan.Size = new System.Drawing.Size(155, 98);
+            this.btn_tbhuser_simpan.TabIndex = 5;
+            this.btn_tbhuser_simpan.Text = "Simpan";
+            this.btn_tbhuser_simpan.UseVisualStyleBackColor = true;
+            this.btn_tbhuser_simpan.Click += new System.EventHandler(this.btn_tbhuser_simpan_Click);
+            // 
+            // pnl_edtuser_isi
+            // 
+            this.pnl_edtuser_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_edtuser_isi.Controls.Add(this.btn_edtuser_hapus);
+            this.pnl_edtuser_isi.Controls.Add(this.lsb_edtuser_user);
+            this.pnl_edtuser_isi.Controls.Add(this.btn_edtuser_ok);
+            this.pnl_edtuser_isi.Controls.Add(this.lbl_edtuser_4);
+            this.pnl_edtuser_isi.Controls.Add(this.lbl_edtuser_nama);
+            this.pnl_edtuser_isi.Controls.Add(this.txt_edtuser_nama);
+            this.pnl_edtuser_isi.Controls.Add(this.cbo_edtuser_jenisuser);
+            this.pnl_edtuser_isi.Controls.Add(this.lbl_edtuser_3);
+            this.pnl_edtuser_isi.Controls.Add(this.lbl_edtuser_jenis);
+            this.pnl_edtuser_isi.Controls.Add(this.txt_edtuser_pass);
+            this.pnl_edtuser_isi.Controls.Add(this.lbl_edtuser_2);
+            this.pnl_edtuser_isi.Controls.Add(this.lbl_edtuser_pass);
+            this.pnl_edtuser_isi.Controls.Add(this.lbl_edtuser_1);
+            this.pnl_edtuser_isi.Controls.Add(this.lbl_edtuser_username);
+            this.pnl_edtuser_isi.Controls.Add(this.txt_edtuser_user);
+            this.pnl_edtuser_isi.Controls.Add(this.btn_edtuser_batal);
+            this.pnl_edtuser_isi.Controls.Add(this.btn_edtuser_simpan);
+            this.pnl_edtuser_isi.Location = new System.Drawing.Point(12, 112);
+            this.pnl_edtuser_isi.Name = "pnl_edtuser_isi";
+            this.pnl_edtuser_isi.Size = new System.Drawing.Size(1250, 528);
+            this.pnl_edtuser_isi.TabIndex = 88;
+            this.pnl_edtuser_isi.Visible = false;
+            // 
+            // btn_edtuser_hapus
+            // 
+            this.btn_edtuser_hapus.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edtuser_hapus.Location = new System.Drawing.Point(540, 338);
+            this.btn_edtuser_hapus.Name = "btn_edtuser_hapus";
+            this.btn_edtuser_hapus.Size = new System.Drawing.Size(155, 98);
+            this.btn_edtuser_hapus.TabIndex = 90;
+            this.btn_edtuser_hapus.Text = "Hapus";
+            this.btn_edtuser_hapus.UseVisualStyleBackColor = true;
+            this.btn_edtuser_hapus.Click += new System.EventHandler(this.btn_edtuser_hapus_Click);
+            // 
+            // lsb_edtuser_user
+            // 
+            this.lsb_edtuser_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsb_edtuser_user.FormattingEnabled = true;
+            this.lsb_edtuser_user.ItemHeight = 39;
+            this.lsb_edtuser_user.Location = new System.Drawing.Point(193, 95);
+            this.lsb_edtuser_user.Name = "lsb_edtuser_user";
+            this.lsb_edtuser_user.ScrollAlwaysVisible = true;
+            this.lsb_edtuser_user.Size = new System.Drawing.Size(216, 277);
+            this.lsb_edtuser_user.TabIndex = 88;
+            // 
+            // btn_edtuser_ok
+            // 
+            this.btn_edtuser_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edtuser_ok.Location = new System.Drawing.Point(193, 386);
+            this.btn_edtuser_ok.Name = "btn_edtuser_ok";
+            this.btn_edtuser_ok.Size = new System.Drawing.Size(216, 50);
+            this.btn_edtuser_ok.TabIndex = 89;
+            this.btn_edtuser_ok.Text = "Ok";
+            this.btn_edtuser_ok.UseVisualStyleBackColor = true;
+            this.btn_edtuser_ok.Click += new System.EventHandler(this.btn_edtuser_ok_Click);
+            // 
+            // lbl_edtuser_4
+            // 
+            this.lbl_edtuser_4.AutoSize = true;
+            this.lbl_edtuser_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edtuser_4.Location = new System.Drawing.Point(768, 98);
+            this.lbl_edtuser_4.Name = "lbl_edtuser_4";
+            this.lbl_edtuser_4.Size = new System.Drawing.Size(23, 33);
+            this.lbl_edtuser_4.TabIndex = 87;
+            this.lbl_edtuser_4.Text = ":";
+            // 
+            // lbl_edtuser_nama
+            // 
+            this.lbl_edtuser_nama.AutoSize = true;
+            this.lbl_edtuser_nama.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edtuser_nama.Location = new System.Drawing.Point(534, 98);
+            this.lbl_edtuser_nama.Name = "lbl_edtuser_nama";
+            this.lbl_edtuser_nama.Size = new System.Drawing.Size(93, 33);
+            this.lbl_edtuser_nama.TabIndex = 86;
+            this.lbl_edtuser_nama.Text = "Nama";
+            // 
+            // txt_edtuser_nama
+            // 
+            this.txt_edtuser_nama.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_edtuser_nama.Location = new System.Drawing.Point(797, 95);
+            this.txt_edtuser_nama.MaxLength = 50;
+            this.txt_edtuser_nama.Name = "txt_edtuser_nama";
+            this.txt_edtuser_nama.Size = new System.Drawing.Size(258, 40);
+            this.txt_edtuser_nama.TabIndex = 1;
+            // 
+            // cbo_edtuser_jenisuser
+            // 
+            this.cbo_edtuser_jenisuser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_edtuser_jenisuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_edtuser_jenisuser.FormattingEnabled = true;
+            this.cbo_edtuser_jenisuser.Items.AddRange(new object[] {
+            "Superadmin",
+            "Sales"});
+            this.cbo_edtuser_jenisuser.Location = new System.Drawing.Point(797, 279);
+            this.cbo_edtuser_jenisuser.Name = "cbo_edtuser_jenisuser";
+            this.cbo_edtuser_jenisuser.Size = new System.Drawing.Size(258, 37);
+            this.cbo_edtuser_jenisuser.TabIndex = 4;
+            // 
+            // lbl_edtuser_3
+            // 
+            this.lbl_edtuser_3.AutoSize = true;
+            this.lbl_edtuser_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edtuser_3.Location = new System.Drawing.Point(768, 278);
+            this.lbl_edtuser_3.Name = "lbl_edtuser_3";
+            this.lbl_edtuser_3.Size = new System.Drawing.Size(23, 33);
+            this.lbl_edtuser_3.TabIndex = 84;
+            this.lbl_edtuser_3.Text = ":";
+            // 
+            // lbl_edtuser_jenis
+            // 
+            this.lbl_edtuser_jenis.AutoSize = true;
+            this.lbl_edtuser_jenis.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edtuser_jenis.Location = new System.Drawing.Point(534, 278);
+            this.lbl_edtuser_jenis.Name = "lbl_edtuser_jenis";
+            this.lbl_edtuser_jenis.Size = new System.Drawing.Size(154, 33);
+            this.lbl_edtuser_jenis.TabIndex = 83;
+            this.lbl_edtuser_jenis.Text = "Jenis User";
+            // 
+            // txt_edtuser_pass
+            // 
+            this.txt_edtuser_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_edtuser_pass.Location = new System.Drawing.Point(797, 218);
+            this.txt_edtuser_pass.MaxLength = 50;
+            this.txt_edtuser_pass.Name = "txt_edtuser_pass";
+            this.txt_edtuser_pass.Size = new System.Drawing.Size(258, 40);
+            this.txt_edtuser_pass.TabIndex = 3;
+            // 
+            // lbl_edtuser_2
+            // 
+            this.lbl_edtuser_2.AutoSize = true;
+            this.lbl_edtuser_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edtuser_2.Location = new System.Drawing.Point(768, 218);
+            this.lbl_edtuser_2.Name = "lbl_edtuser_2";
+            this.lbl_edtuser_2.Size = new System.Drawing.Size(23, 33);
+            this.lbl_edtuser_2.TabIndex = 82;
+            this.lbl_edtuser_2.Text = ":";
+            // 
+            // lbl_edtuser_pass
+            // 
+            this.lbl_edtuser_pass.AutoSize = true;
+            this.lbl_edtuser_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edtuser_pass.Location = new System.Drawing.Point(534, 221);
+            this.lbl_edtuser_pass.Name = "lbl_edtuser_pass";
+            this.lbl_edtuser_pass.Size = new System.Drawing.Size(143, 33);
+            this.lbl_edtuser_pass.TabIndex = 81;
+            this.lbl_edtuser_pass.Text = "Password";
+            // 
+            // lbl_edtuser_1
+            // 
+            this.lbl_edtuser_1.AutoSize = true;
+            this.lbl_edtuser_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edtuser_1.Location = new System.Drawing.Point(768, 159);
+            this.lbl_edtuser_1.Name = "lbl_edtuser_1";
+            this.lbl_edtuser_1.Size = new System.Drawing.Size(23, 33);
+            this.lbl_edtuser_1.TabIndex = 80;
+            this.lbl_edtuser_1.Text = ":";
+            // 
+            // lbl_edtuser_username
+            // 
+            this.lbl_edtuser_username.AutoSize = true;
+            this.lbl_edtuser_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edtuser_username.Location = new System.Drawing.Point(534, 159);
+            this.lbl_edtuser_username.Name = "lbl_edtuser_username";
+            this.lbl_edtuser_username.Size = new System.Drawing.Size(150, 33);
+            this.lbl_edtuser_username.TabIndex = 79;
+            this.lbl_edtuser_username.Text = "Username";
+            // 
+            // txt_edtuser_user
+            // 
+            this.txt_edtuser_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_edtuser_user.Location = new System.Drawing.Point(797, 156);
+            this.txt_edtuser_user.MaxLength = 50;
+            this.txt_edtuser_user.Name = "txt_edtuser_user";
+            this.txt_edtuser_user.Size = new System.Drawing.Size(258, 40);
+            this.txt_edtuser_user.TabIndex = 2;
+            // 
+            // btn_edtuser_batal
+            // 
+            this.btn_edtuser_batal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edtuser_batal.Location = new System.Drawing.Point(900, 338);
+            this.btn_edtuser_batal.Name = "btn_edtuser_batal";
+            this.btn_edtuser_batal.Size = new System.Drawing.Size(155, 98);
+            this.btn_edtuser_batal.TabIndex = 6;
+            this.btn_edtuser_batal.Text = "Batal";
+            this.btn_edtuser_batal.UseVisualStyleBackColor = true;
+            this.btn_edtuser_batal.Click += new System.EventHandler(this.btn_edtuser_batal_Click);
+            // 
+            // btn_edtuser_simpan
+            // 
+            this.btn_edtuser_simpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edtuser_simpan.Location = new System.Drawing.Point(720, 338);
+            this.btn_edtuser_simpan.Name = "btn_edtuser_simpan";
+            this.btn_edtuser_simpan.Size = new System.Drawing.Size(155, 98);
+            this.btn_edtuser_simpan.TabIndex = 5;
+            this.btn_edtuser_simpan.Text = "Simpan";
+            this.btn_edtuser_simpan.UseVisualStyleBackColor = true;
+            this.btn_edtuser_simpan.Click += new System.EventHandler(this.btn_edtuser_simpan_Click);
+            // 
+            // btn_menu_tbhuser
+            // 
+            this.btn_menu_tbhuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_menu_tbhuser.Location = new System.Drawing.Point(4, 3);
+            this.btn_menu_tbhuser.Name = "btn_menu_tbhuser";
+            this.btn_menu_tbhuser.Size = new System.Drawing.Size(155, 110);
+            this.btn_menu_tbhuser.TabIndex = 14;
+            this.btn_menu_tbhuser.Text = "Tambah User";
+            this.btn_menu_tbhuser.UseVisualStyleBackColor = true;
+            this.btn_menu_tbhuser.Click += new System.EventHandler(this.btn_menu_tbhuser_Click);
+            // 
+            // btn_menu_edituser
+            // 
+            this.btn_menu_edituser.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_menu_edituser.Location = new System.Drawing.Point(4, 168);
+            this.btn_menu_edituser.Name = "btn_menu_edituser";
+            this.btn_menu_edituser.Size = new System.Drawing.Size(155, 110);
+            this.btn_menu_edituser.TabIndex = 13;
+            this.btn_menu_edituser.Text = "Edit User";
+            this.btn_menu_edituser.UseVisualStyleBackColor = true;
+            this.btn_menu_edituser.Click += new System.EventHandler(this.btn_menu_edituser_Click);
+            // 
+            // pnl_menu_others
+            // 
+            this.pnl_menu_others.Controls.Add(this.btn_menu_variabel);
+            this.pnl_menu_others.Controls.Add(this.btn_menu_ctknota);
+            this.pnl_menu_others.Controls.Add(this.btn_menu_edtpkt);
+            this.pnl_menu_others.Controls.Add(this.btn_menu_tbhpkt);
+            this.pnl_menu_others.Controls.Add(this.btn_menu_edttrps);
+            this.pnl_menu_others.Controls.Add(this.btn_menu_tbhtrps);
+            this.pnl_menu_others.Location = new System.Drawing.Point(30, 26);
+            this.pnl_menu_others.Name = "pnl_menu_others";
+            this.pnl_menu_others.Size = new System.Drawing.Size(715, 487);
+            this.pnl_menu_others.TabIndex = 13;
+            // 
+            // pnl_menu_laporan
+            // 
+            this.pnl_menu_laporan.Controls.Add(this.btn_menu_laporangajiexcel);
+            this.pnl_menu_laporan.Controls.Add(this.btn_menu_laporangajiterapis);
+            this.pnl_menu_laporan.Controls.Add(this.btn_menu_laporanpenjualan);
+            this.pnl_menu_laporan.Location = new System.Drawing.Point(873, 47);
+            this.pnl_menu_laporan.Name = "pnl_menu_laporan";
+            this.pnl_menu_laporan.Size = new System.Drawing.Size(227, 431);
+            this.pnl_menu_laporan.TabIndex = 14;
+            // 
+            // pnl_menu_user
+            // 
+            this.pnl_menu_user.Controls.Add(this.btn_menu_tbhuser);
+            this.pnl_menu_user.Controls.Add(this.btn_menu_edituser);
+            this.pnl_menu_user.Location = new System.Drawing.Point(1049, 124);
+            this.pnl_menu_user.Name = "pnl_menu_user";
+            this.pnl_menu_user.Size = new System.Drawing.Size(163, 279);
+            this.pnl_menu_user.TabIndex = 15;
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2962,12 +3425,14 @@
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.ClientSize = new System.Drawing.Size(1274, 652);
             this.Controls.Add(this.pnl_menu_isi);
+            this.Controls.Add(this.pnl_edttrps_isi);
+            this.Controls.Add(this.pnl_edtuser_isi);
+            this.Controls.Add(this.pnl_tbhuser_isi);
+            this.Controls.Add(this.pnl_lprnpnjln_isi);
             this.Controls.Add(this.pnl_login_isi);
             this.Controls.Add(this.pnl_edtpkt_isi);
-            this.Controls.Add(this.pnl_edttrps_isi);
             this.Controls.Add(this.pnl_lprnlayanan_isi);
             this.Controls.Add(this.pnl_variabel_isi);
-            this.Controls.Add(this.pnl_lprnpnjln_isi);
             this.Controls.Add(this.pnl_ctknota_isi);
             this.Controls.Add(this.pnl_tbhpkt_isi);
             this.Controls.Add(this.pnl_ctknota_logo);
@@ -3019,6 +3484,13 @@
             this.pnl_lprnlayanan_isi.ResumeLayout(false);
             this.pnl_lprnlayanan_isi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lprnlayanan_tabellayanan)).EndInit();
+            this.pnl_tbhuser_isi.ResumeLayout(false);
+            this.pnl_tbhuser_isi.PerformLayout();
+            this.pnl_edtuser_isi.ResumeLayout(false);
+            this.pnl_edtuser_isi.PerformLayout();
+            this.pnl_menu_others.ResumeLayout(false);
+            this.pnl_menu_laporan.ResumeLayout(false);
+            this.pnl_menu_user.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -3220,10 +3692,10 @@
         private System.Windows.Forms.Label lbl_lprnpnjln_5;
         private System.Windows.Forms.Label lbl_lprnpnjln_totalsubtotal;
         private System.Windows.Forms.Label lbl_lprnpnjln_totalhotel;
-        private System.Windows.Forms.Label lbl_lprnpnjln_sumtotalhargapaket;
+        private System.Windows.Forms.Label lbl_lprnpnjln_sumtotalgrandtotal;
         private System.Windows.Forms.Label lbl_lprnpnjln_rp1;
         private System.Windows.Forms.Label lbl_lprnpnjln_2;
-        private System.Windows.Forms.Label lbl_lprnpnjln_totalhrgapaket;
+        private System.Windows.Forms.Label lbl_lprnpnjln_totalgrandtotal;
         private System.Windows.Forms.Label lbl_lprnpnjln_sumtotalextra;
         private System.Windows.Forms.Label lbl_lprnpnjln_rp7;
         private System.Windows.Forms.Label lbl_lprnpnjln_8;
@@ -3252,5 +3724,44 @@
         private System.Windows.Forms.Button btn_edtpkt_hapus;
         private System.Windows.Forms.LinkLabel lbllink_menu_logout;
         private System.Windows.Forms.Label lbl_menu_user;
+        private System.Drawing.Printing.PrintDocument printdoc_ctknota_printdokumen;
+        private System.Windows.Forms.Panel pnl_tbhuser_isi;
+        private System.Windows.Forms.Label lbl_tbhuser_4;
+        private System.Windows.Forms.Label lbl_tbhuser_nama;
+        private System.Windows.Forms.TextBox txt_tbhuser_nama;
+        private System.Windows.Forms.ComboBox cbo_tbhuser_jenisuser;
+        private System.Windows.Forms.Label lbl_tbhuser_3;
+        private System.Windows.Forms.Label lbl_tbhuser_jenis;
+        private System.Windows.Forms.TextBox txt_tbhuser_pass;
+        private System.Windows.Forms.Label lbl_tbhuser_2;
+        private System.Windows.Forms.Label lbl_tbhuser_pass;
+        private System.Windows.Forms.Label lbl_tbhuser_1;
+        private System.Windows.Forms.Label lbl_tbhuser_username;
+        private System.Windows.Forms.TextBox txt_tbhuser_user;
+        private System.Windows.Forms.Button btn_tbhuser_batal;
+        private System.Windows.Forms.Button btn_tbhuser_simpan;
+        private System.Windows.Forms.Button btn_menu_tbhuser;
+        private System.Windows.Forms.Button btn_menu_edituser;
+        private System.Windows.Forms.Panel pnl_edtuser_isi;
+        private System.Windows.Forms.Button btn_edtuser_hapus;
+        private System.Windows.Forms.ListBox lsb_edtuser_user;
+        private System.Windows.Forms.Button btn_edtuser_ok;
+        private System.Windows.Forms.Label lbl_edtuser_4;
+        private System.Windows.Forms.Label lbl_edtuser_nama;
+        private System.Windows.Forms.TextBox txt_edtuser_nama;
+        private System.Windows.Forms.ComboBox cbo_edtuser_jenisuser;
+        private System.Windows.Forms.Label lbl_edtuser_3;
+        private System.Windows.Forms.Label lbl_edtuser_jenis;
+        private System.Windows.Forms.TextBox txt_edtuser_pass;
+        private System.Windows.Forms.Label lbl_edtuser_2;
+        private System.Windows.Forms.Label lbl_edtuser_pass;
+        private System.Windows.Forms.Label lbl_edtuser_1;
+        private System.Windows.Forms.Label lbl_edtuser_username;
+        private System.Windows.Forms.TextBox txt_edtuser_user;
+        private System.Windows.Forms.Button btn_edtuser_batal;
+        private System.Windows.Forms.Button btn_edtuser_simpan;
+        private System.Windows.Forms.Panel pnl_menu_user;
+        private System.Windows.Forms.Panel pnl_menu_laporan;
+        private System.Windows.Forms.Panel pnl_menu_others;
     }
 }

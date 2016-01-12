@@ -79,7 +79,6 @@ namespace Green_Leaf
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
             if (lsb_edttrps_kodeterapis.SelectedItem != null)
             {
                 btn_edttrps_simpan.Enabled = true;
