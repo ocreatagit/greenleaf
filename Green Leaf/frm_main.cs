@@ -20,6 +20,8 @@ namespace Green_Leaf
             InitializeComponent();
         }
 
+        string all_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
+
         #region(Buat Windows Form tidak bisa dirubah posisinya)
         protected override void WndProc(ref Message message)
         {
@@ -66,8 +68,8 @@ namespace Green_Leaf
 
             #region(Select Username dan Password)
             string query;
-            string connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection conn = new MySqlConnection(connStr);
+            
+            MySqlConnection conn = new MySqlConnection(all_connStr);
             List<string> lstUsers = new List<string>();
             List<string> lstPass = new List<string>();
             try
@@ -194,8 +196,7 @@ namespace Green_Leaf
 
                 #region(Select Username dan Password)
                 string query;
-                string connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                MySqlConnection conn = new MySqlConnection(connStr);
+                MySqlConnection conn = new MySqlConnection(all_connStr);
                 List<string> lstUsers = new List<string>();
                 List<string> lstPass = new List<string>();
                 try
@@ -315,8 +316,7 @@ namespace Green_Leaf
 
                 #region(Select Username dan Password)
                 string query;
-                string connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                MySqlConnection conn = new MySqlConnection(connStr);
+                MySqlConnection conn = new MySqlConnection(all_connStr);
                 List<string> lstUsers = new List<string>();
                 List<string> lstPass = new List<string>();
                 try
@@ -499,9 +499,8 @@ namespace Green_Leaf
             lsb_edttrps_kodeterapis.Items.Clear();
             #region(Select)
             MySqlConnection edttrps_conn = new MySqlConnection();
-            string edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
             string edttrps_query = "";
-            edttrps_conn = new MySqlConnection(edttrps_connStr);
+            edttrps_conn = new MySqlConnection(all_connStr);
             try
             {
                 edttrps_conn.Open();
@@ -601,8 +600,7 @@ namespace Green_Leaf
             #region(Isi listbox dengan Jenis dan Nama Paket per baris)
             string edtpkt_jenisnamapkt;
             string edtpkt_query2;
-            string edtpkt_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection edtpkt_conn2 = new MySqlConnection(edtpkt_connStr2);
+            MySqlConnection edtpkt_conn2 = new MySqlConnection(all_connStr);
             try
             {
                 edtpkt_conn2.Open();
@@ -706,8 +704,7 @@ namespace Green_Leaf
 
             #region(Ambil data Potongan dan Extra dari database)
             string ctknota_query2;
-            string ctknota_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection ctknota_conn2 = new MySqlConnection(ctknota_connStr2);
+            MySqlConnection ctknota_conn2 = new MySqlConnection(all_connStr);
             try
             {
                 ctknota_conn2.Open();
@@ -736,8 +733,7 @@ namespace Green_Leaf
             cbo_ctknota_kodeterapis.Items.Clear();
             #region(Select)
             string ctknota_query3;
-            string ctknota_connStr3 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection ctknota_conn3 = new MySqlConnection(ctknota_connStr3);
+            MySqlConnection ctknota_conn3 = new MySqlConnection(all_connStr);
             try
             {
                 ctknota_conn3.Open();
@@ -882,8 +878,7 @@ namespace Green_Leaf
 
             #region(Isi textbox)
             string edtpkt_query;
-            string edtpkt_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection edtpkt_conn = new MySqlConnection(edtpkt_connStr);
+            MySqlConnection edtpkt_conn = new MySqlConnection(all_connStr);
             try
             {
                 edtpkt_conn.Open();
@@ -961,8 +956,7 @@ namespace Green_Leaf
 
             #region(Select khusus kode terapis, disimpan ke dalam List lstkode)
             string tbhtrps_query;
-            string tbhtrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection tbhtrps_conn = new MySqlConnection(tbhtrps_connStr);
+            MySqlConnection tbhtrps_conn = new MySqlConnection(all_connStr);
             List<int> tbhtrps_lstKode = new List<int>();
             try
             {
@@ -1125,8 +1119,7 @@ namespace Green_Leaf
                 string edttrps_query;
 
                 #region(Select)
-                string edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                MySqlConnection edttrps_conn = new MySqlConnection(edttrps_connStr);
+                MySqlConnection edttrps_conn = new MySqlConnection(all_connStr);
                 List<string> edttrps_lstKode = new List<string>();
                 try
                 {
@@ -1186,7 +1179,6 @@ namespace Green_Leaf
             }
             else
             {
-                string edttrps_connStr;
                 MySqlConnection edttrps_conn;
                 DBConnect edttrps_sql = new DBConnect();
                 string edttrps_query;
@@ -1208,8 +1200,7 @@ namespace Green_Leaf
                             }
                         }
                         #region(Update)
-                        edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                        edttrps_conn = new MySqlConnection(edttrps_connStr);
+                        edttrps_conn = new MySqlConnection(all_connStr);
                         try
                         {
                             edttrps_conn.Open();
@@ -1254,8 +1245,7 @@ namespace Green_Leaf
                             }
                         }
                         #region(Update)
-                        edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                        edttrps_conn = new MySqlConnection(edttrps_connStr);
+                        edttrps_conn = new MySqlConnection(all_connStr);
                         try
                         {
                             edttrps_conn.Open();
@@ -1291,8 +1281,7 @@ namespace Green_Leaf
                 else
                 {
                     #region(Select)
-                    edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                    edttrps_conn = new MySqlConnection(edttrps_connStr);
+                    edttrps_conn = new MySqlConnection(all_connStr);
                     List<string> edttrps_lstKode = new List<string>();
                     try
                     {
@@ -1335,8 +1324,7 @@ namespace Green_Leaf
                         if (rdo_edttrps_statusaktif.Checked)
                         {
                             #region(Update)
-                            edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                            edttrps_conn = new MySqlConnection(edttrps_connStr);
+                            edttrps_conn = new MySqlConnection(all_connStr);
                             try
                             {
                                 edttrps_conn.Open();
@@ -1371,8 +1359,7 @@ namespace Green_Leaf
                         else if (rdo_edttrps_statustdkaktif.Checked)
                         {
                             #region(Update)
-                            edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                            edttrps_conn = new MySqlConnection(edttrps_connStr);
+                            edttrps_conn = new MySqlConnection(all_connStr);
                             try
                             {
                                 edttrps_conn.Open();
@@ -1410,9 +1397,8 @@ namespace Green_Leaf
                 lsb_edttrps_kodeterapis.Items.Clear();
                 #region(Select)
                 MySqlConnection edttrps_conn2 = new MySqlConnection();
-                string edttrps_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
                 string edttrps_query2 = "";
-                edttrps_conn2 = new MySqlConnection(edttrps_connStr2);
+                edttrps_conn2 = new MySqlConnection(all_connStr);
                 try
                 {
                     edttrps_conn2.Open();
@@ -1463,12 +1449,10 @@ namespace Green_Leaf
             if (dialogResult == DialogResult.Yes)
             {
                 #region(Update)
-                string edttrps_connStr;
                 MySqlConnection edttrps_conn;
                 DBConnect edttrps_sql = new DBConnect();
                 string edttrps_query;
-                edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                edttrps_conn = new MySqlConnection(edttrps_connStr);
+                edttrps_conn = new MySqlConnection(all_connStr);
                 try
                 {
                     edttrps_conn.Open();
@@ -1503,9 +1487,8 @@ namespace Green_Leaf
                 lsb_edttrps_kodeterapis.Items.Clear();
                 #region(Select)
                 MySqlConnection edttrps_conn2 = new MySqlConnection();
-                string edttrps_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
                 string edttrps_query2 = "";
-                edttrps_conn2 = new MySqlConnection(edttrps_connStr2);
+                edttrps_conn2 = new MySqlConnection(all_connStr);
                 try
                 {
                     edttrps_conn2.Open();
@@ -1579,8 +1562,7 @@ namespace Green_Leaf
             #endregion
                 #region(Cek Nama Paket yang sama berdasarkan Jenis Paket)
                 string tbhpkt_query;
-                string tbhpkt_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                MySqlConnection tbhpkt_conn = new MySqlConnection(tbhpkt_connStr);
+                MySqlConnection tbhpkt_conn = new MySqlConnection(all_connStr);
                 List<string> tbhpkt_lstHasil = new List<string>();
                 try
                 {
@@ -1715,8 +1697,7 @@ namespace Green_Leaf
                 edtpkt_idTerpilih = edtpkt_lstidpktTerpilih[lsb_edtpkt_jenisnamapkt.SelectedIndex];
                 namapakettersimpan = lsb_edtpkt_jenisnamapkt.SelectedItem.ToString();
                 #region(Select)
-                string edtpkt_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                MySqlConnection edtpkt_conn = new MySqlConnection(edtpkt_connStr);
+                MySqlConnection edtpkt_conn = new MySqlConnection(all_connStr);
                 List<string> edtpkt_lstKode = new List<string>();
                 try
                 {
@@ -1790,7 +1771,6 @@ namespace Green_Leaf
 
         private void btn_edtpkt_simpan_Click(object sender, EventArgs e)
         {
-            string edtpkt_connStr;
             MySqlConnection edtpkt_conn;
             DBConnect edtpkt_sql = new DBConnect();
             string edtpkt_query;
@@ -1868,8 +1848,7 @@ namespace Green_Leaf
                 {
 
                     #region(Update)
-                    edtpkt_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                    edtpkt_conn = new MySqlConnection(edtpkt_connStr);
+                    edtpkt_conn = new MySqlConnection(all_connStr);
                     try
                     {
                         edtpkt_conn.Open();
@@ -1914,8 +1893,7 @@ namespace Green_Leaf
                     #region(Isi listbox dengan Jenis dan Nama Paket per baris)
                     string edtpkt_jenisnamapkt;
                     string edtpkt_query2;
-                    string edtpkt_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                    MySqlConnection edtpkt_conn2 = new MySqlConnection(edtpkt_connStr2);
+                    MySqlConnection edtpkt_conn2 = new MySqlConnection(all_connStr);
                     try
                     {
                         edtpkt_conn2.Open();
@@ -1957,8 +1935,7 @@ namespace Green_Leaf
                     else
                     {
                         #region(Update)
-                        edtpkt_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                        edtpkt_conn = new MySqlConnection(edtpkt_connStr);
+                        edtpkt_conn = new MySqlConnection(all_connStr);
                         try
                         {
                             edtpkt_conn.Open();
@@ -2003,8 +1980,7 @@ namespace Green_Leaf
                         #region(Isi listbox dengan Jenis dan Nama Paket per baris)
                         string edtpkt_jenisnamapkt;
                         string edtpkt_query2;
-                        string edtpkt_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                        MySqlConnection edtpkt_conn2 = new MySqlConnection(edtpkt_connStr2);
+                        MySqlConnection edtpkt_conn2 = new MySqlConnection(all_connStr);
                         try
                         {
                             edtpkt_conn2.Open();
@@ -2112,12 +2088,10 @@ namespace Green_Leaf
             if (dialogResult == DialogResult.Yes)
             {
                 #region(Update)
-                string edttrps_connStr;
                 MySqlConnection edttrps_conn;
                 DBConnect edttrps_sql = new DBConnect();
                 string edttrps_query;
-                edttrps_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                edttrps_conn = new MySqlConnection(edttrps_connStr);
+                edttrps_conn = new MySqlConnection(all_connStr);
                 try
                 {
                     edttrps_conn.Open();
@@ -2159,8 +2133,7 @@ namespace Green_Leaf
                 #region(Isi listbox dengan Jenis dan Nama Paket per baris)
                 string edtpkt_jenisnamapkt;
                 string edtpkt_query2;
-                string edtpkt_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                MySqlConnection edtpkt_conn2 = new MySqlConnection(edtpkt_connStr2);
+                MySqlConnection edtpkt_conn2 = new MySqlConnection(all_connStr);
                 try
                 {
                     edtpkt_conn2.Open();
@@ -2221,8 +2194,7 @@ namespace Green_Leaf
             cbo_ctknota_jenispaket.Items.Clear();
             #region(Select)
             string ctknota_query;
-            string ctknota_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection ctknota_conn = new MySqlConnection(ctknota_connStr);
+            MySqlConnection ctknota_conn = new MySqlConnection(all_connStr);
             List<string> ctknota_lstKode = new List<string>();
             try
             {
@@ -2274,8 +2246,7 @@ namespace Green_Leaf
             cbo_ctknota_jenispaket.Items.Clear();
             #region(Select)
             string ctknota_query;
-            string ctknota_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection ctknota_conn = new MySqlConnection(ctknota_connStr);
+            MySqlConnection ctknota_conn = new MySqlConnection(all_connStr);
             List<string> ctknota_lstKode = new List<string>();
             try
             {
@@ -2364,8 +2335,7 @@ namespace Green_Leaf
                 {
                     #region(Select)
                     string ctknota_query;
-                    string ctknota_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                    MySqlConnection ctknota_conn = new MySqlConnection(ctknota_connStr);
+                    MySqlConnection ctknota_conn = new MySqlConnection(all_connStr);
                     List<string> ctknota_lstKode = new List<string>();
                     
                     try
@@ -2566,8 +2536,7 @@ namespace Green_Leaf
                 {
                     #region(Select)
                     string ctknota_query;
-                    string ctknota_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                    MySqlConnection ctknota_conn = new MySqlConnection(ctknota_connStr);
+                    MySqlConnection ctknota_conn = new MySqlConnection(all_connStr);
                     List<string> ctknota_lstKode = new List<string>();
                     try
                     {
@@ -2770,8 +2739,7 @@ namespace Green_Leaf
                 {
                     #region(Select)
                     string ctknota_query;
-                    string ctknota_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                    MySqlConnection ctknota_conn = new MySqlConnection(ctknota_connStr);
+                    MySqlConnection ctknota_conn = new MySqlConnection(all_connStr);
                     List<string> ctknota_lstKode = new List<string>();
                     try
                     {
@@ -2971,8 +2939,7 @@ namespace Green_Leaf
                 {
                     #region(Select)
                     string ctknota_query;
-                    string ctknota_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                    MySqlConnection ctknota_conn = new MySqlConnection(ctknota_connStr);
+                    MySqlConnection ctknota_conn = new MySqlConnection(all_connStr);
                     List<string> ctknota_lstKode = new List<string>();
                     try
                     {
@@ -3235,8 +3202,7 @@ namespace Green_Leaf
 
             #region(Select)
             string ctknota_query3;
-            string ctknota_connStr3 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection ctknota_conn3 = new MySqlConnection(ctknota_connStr3);
+            MySqlConnection ctknota_conn3 = new MySqlConnection(all_connStr);
             try
             {
                 ctknota_conn3.Open();
@@ -3506,8 +3472,7 @@ namespace Green_Leaf
                                 cbo_ctknota_kodeterapis.Items.Clear();
                                 #region(Select)
                                 string ctknota_query3;
-                                string ctknota_connStr3 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                                MySqlConnection ctknota_conn3 = new MySqlConnection(ctknota_connStr3);
+                                MySqlConnection ctknota_conn3 = new MySqlConnection(all_connStr);
                                 try
                                 {
                                     ctknota_conn3.Open();
@@ -3708,8 +3673,7 @@ namespace Green_Leaf
                                 cbo_ctknota_kodeterapis.Items.Clear();
                                 #region(Select)
                                 string ctknota_query3;
-                                string ctknota_connStr3 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                                MySqlConnection ctknota_conn3 = new MySqlConnection(ctknota_connStr3);
+                                MySqlConnection ctknota_conn3 = new MySqlConnection(all_connStr);
                                 try
                                 {
                                     ctknota_conn3.Open();
@@ -3919,8 +3883,7 @@ namespace Green_Leaf
                                     cbo_ctknota_kodeterapis.Items.Clear();
                                     #region(Select)
                                     string ctknota_query3;
-                                    string ctknota_connStr3 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                                    MySqlConnection ctknota_conn3 = new MySqlConnection(ctknota_connStr3);
+                                    MySqlConnection ctknota_conn3 = new MySqlConnection(all_connStr);
                                     try
                                     {
                                         ctknota_conn3.Open();
@@ -4121,8 +4084,7 @@ namespace Green_Leaf
                                     cbo_ctknota_kodeterapis.Items.Clear();
                                     #region(Select)
                                     string ctknota_query3;
-                                    string ctknota_connStr3 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                                    MySqlConnection ctknota_conn3 = new MySqlConnection(ctknota_connStr3);
+                                    MySqlConnection ctknota_conn3 = new MySqlConnection(all_connStr);
                                     try
                                     {
                                         ctknota_conn3.Open();
@@ -4273,12 +4235,10 @@ namespace Green_Leaf
             else
             {
                 #region(Update)
-                string edtpkt_connStr;
                 MySqlConnection edtpkt_conn;
                 DBConnect edtpkt_sql = new DBConnect();
                 string edtpkt_query;
-                edtpkt_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                edtpkt_conn = new MySqlConnection(edtpkt_connStr);
+                edtpkt_conn = new MySqlConnection(all_connStr);
                 try
                 {
                     edtpkt_conn.Open();
@@ -4368,8 +4328,7 @@ namespace Green_Leaf
             //dgv_lprnpnjln_tabellaporan.Refresh();
             lprnpnjln_DS.Tables.Clear();
             string lprnpnjln_query;
-            string lprnpnjln_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection lprnpnjln_conn = new MySqlConnection(lprnpnjln_connStr);
+            MySqlConnection lprnpnjln_conn = new MySqlConnection(all_connStr);
             try
             {
                 lprnpnjln_tanggalcetakdari = dtp_lprnpnjln_tgldari.Value.Year.ToString();
@@ -4719,8 +4678,7 @@ namespace Green_Leaf
             //dgv_lprnpnjln_tabellaporan.Refresh();
             lprnpnjln_DS.Tables.Clear();
             string lprnpnjln_query;
-            string lprnpnjln_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection lprnpnjln_conn = new MySqlConnection(lprnpnjln_connStr);
+            MySqlConnection lprnpnjln_conn = new MySqlConnection(all_connStr);
             try
             {
                 lprnpnjln_tanggalcetakdari = dtp_lprnpnjln_tgldari.Value.Year.ToString();
@@ -5054,8 +5012,7 @@ namespace Green_Leaf
                                 idnota = int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Nomor Nota"].Value.ToString());
                                 //UPDATE `nota` SET `status_nota` = 'Terhapus' WHERE `nota`.`id_nota` = 1;
                                 #region(Update)
-                                string edtpkt_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                                MySqlConnection edtpkt_conn = new MySqlConnection(edtpkt_connStr);
+                                MySqlConnection edtpkt_conn = new MySqlConnection(all_connStr);
                                 try
                                 {
                                     edtpkt_conn.Open();
@@ -5131,8 +5088,7 @@ namespace Green_Leaf
                                 idnota = int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Nomor Nota"].Value.ToString());
                                 //UPDATE `nota` SET `status_nota` = 'Terhapus' WHERE `nota`.`id_nota` = 1;
                                 #region(Update)
-                                string edtpkt_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                                MySqlConnection edtpkt_conn = new MySqlConnection(edtpkt_connStr);
+                                MySqlConnection edtpkt_conn = new MySqlConnection(all_connStr);
                                 try
                                 {
                                     edtpkt_conn.Open();
@@ -5208,8 +5164,7 @@ namespace Green_Leaf
             //dgv_lprnpnjln_tabellaporan.Refresh();
             lprnpnjln_DS.Tables.Clear();
             string lprnpnjln_query;
-            string lprnpnjln_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection lprnpnjln_conn = new MySqlConnection(lprnpnjln_connStr);
+            MySqlConnection lprnpnjln_conn = new MySqlConnection(all_connStr);
             try
             {
                 lprnpnjln_tanggalcetakdari = dtp_lprnpnjln_tgldari.Value.Year.ToString();
@@ -5532,8 +5487,7 @@ namespace Green_Leaf
             //dgv_lprnpnjln_tabellaporan.Refresh();
             lprnpnjln_DS.Tables.Clear();
             string lprnpnjln_query;
-            string lprnpnjln_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection lprnpnjln_conn = new MySqlConnection(lprnpnjln_connStr);
+            MySqlConnection lprnpnjln_conn = new MySqlConnection(all_connStr);
             try
             {
                 lprnpnjln_tanggalcetakdari = dtp_lprnpnjln_tgldari.Value.Year.ToString();
@@ -5856,8 +5810,7 @@ namespace Green_Leaf
             //dgv_lprnpnjln_tabellaporan.Refresh();
             lprnpnjln_DS.Tables.Clear();
             string lprnpnjln_query;
-            string lprnpnjln_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection lprnpnjln_conn = new MySqlConnection(lprnpnjln_connStr);
+            MySqlConnection lprnpnjln_conn = new MySqlConnection(all_connStr);
             try
             {
                 lprnpnjln_tanggalcetakdari = dtp_lprnpnjln_tgldari.Value.Year.ToString();
@@ -6190,8 +6143,7 @@ namespace Green_Leaf
             if (dialogResult == DialogResult.Yes)
             {
                 #region(Update)
-                string lprnpnjln_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                MySqlConnection lprnpnjln_conn = new MySqlConnection(lprnpnjln_connStr);
+                MySqlConnection lprnpnjln_conn = new MySqlConnection(all_connStr);
                 try
                 {
                     lprnpnjln_conn.Open();
@@ -6215,8 +6167,7 @@ namespace Green_Leaf
                 //dgv_lprnpnjln_tabellaporan.Refresh();
                 lprnpnjln_DS.Tables.Clear();
                 string lprnpnjln_query2;
-                string lprnpnjln_connStr2 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-                MySqlConnection lprnpnjln_conn2 = new MySqlConnection(lprnpnjln_connStr2);
+                MySqlConnection lprnpnjln_conn2 = new MySqlConnection(all_connStr);
                 try
                 {
                     lprnpnjln_tanggalcetakdari = dtp_lprnpnjln_tgldari.Value.Year.ToString();
@@ -6565,8 +6516,7 @@ namespace Green_Leaf
             dgv_lprnlayanan_tabellayanan.Columns.Clear();
             lprnlayanan_DS.Tables.Clear();
             string lprnlayanan_query;
-            string lprnlayanan_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection lprnlayanan_conn = new MySqlConnection(lprnlayanan_connStr);
+            MySqlConnection lprnlayanan_conn = new MySqlConnection(all_connStr);
             try
             {
                 // RRyner   
@@ -6648,8 +6598,7 @@ namespace Green_Leaf
 
             #region(Select)
             lprnlayanan_DS.Tables.Clear();
-            string lprnlayanan_connStr3 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection lprnlayanan_conn3 = new MySqlConnection(lprnlayanan_connStr3);
+            MySqlConnection lprnlayanan_conn3 = new MySqlConnection(all_connStr);
             try
             {
                 lprnlayanan_conn3.Open();
@@ -6734,8 +6683,7 @@ namespace Green_Leaf
             dgv_lprnlayanan_tabellayanan.Columns.Clear();
             lprnlayanan_DS.Tables.Clear();
             string lprnlayanan_query;
-            string lprnlayanan_connStr = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection lprnlayanan_conn = new MySqlConnection(lprnlayanan_connStr);
+            MySqlConnection lprnlayanan_conn = new MySqlConnection(all_connStr);
             try
             {
                 // RRyner   
@@ -6811,8 +6759,7 @@ namespace Green_Leaf
 
             #region(Select)
             lprnlayanan_DS.Tables.Clear();
-            string lprnlayanan_connStr3 = "server=localhost;user=root;database=greenleaf;port=3306;password=;";
-            MySqlConnection lprnlayanan_conn3 = new MySqlConnection(lprnlayanan_connStr3);
+            MySqlConnection lprnlayanan_conn3 = new MySqlConnection(all_connStr);
             try
             {
                 lprnlayanan_conn3.Open();
