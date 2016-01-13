@@ -55,24 +55,7 @@ namespace Green_Leaf
             pnl_tbhpkt_isi.Enabled = false;
             pnl_tbhtrps_isi.Enabled = false;
             pnl_variabel_isi.Enabled = false;
-            ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
-            PrintDialog printDialog = new PrintDialog();
-
-            PrintDocument printDocument = new PrintDocument();
-
-            printDialog.Document = printDocument; //add the document to the dialog box...        
-
-            printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing
-
-            //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
-
-            DialogResult result = printDialog.ShowDialog();
-
-            if (result == DialogResult.OK)
-            {
-                printDocument.Print();
-
-            }
+            
         }
 
         private void frm_main_FormClosing(object sender, FormClosingEventArgs e)
@@ -2924,6 +2907,7 @@ namespace Green_Leaf
         int ctknota_countExtraColumn;
         List<int> ctknota_listidpaket = new List<int>();
         Image ctknota_logo;
+        List<string> ctknota_lstcetak = new List<string>();
 
         private void rdo_ctknota_biasa_CheckedChanged(object sender, EventArgs e)
         {
@@ -3903,6 +3887,7 @@ namespace Green_Leaf
             txt_ctknota_diskon.Enabled = true;
             txt_ctknota_ket.Enabled = true;
             txt_ctknota_fee.Enabled = false;
+            txt_ctknota_fee.Text = "";
             txt_ctknota_nomorruangan.Enabled = true;
 
             btn_ctknota_cetak.Enabled = true;
@@ -3924,6 +3909,7 @@ namespace Green_Leaf
             txt_ctknota_diskon.Enabled = true;
             txt_ctknota_ket.Enabled = true;
             txt_ctknota_fee.Enabled = true;
+            txt_ctknota_fee.Text = "";
             txt_ctknota_nomorruangan.Enabled = true;
 
             btn_ctknota_cetak.Enabled = true;
@@ -3944,7 +3930,7 @@ namespace Green_Leaf
             txt_ctknota_namaterapis.Enabled = true;
             txt_ctknota_diskon.Enabled = true;
             txt_ctknota_ket.Enabled = true;
-            txt_ctknota_fee.Enabled = true;
+            //txt_ctknota_fee.Enabled = true;
             txt_ctknota_nomorruangan.Enabled = true;
             btn_ctknota_batal.Enabled = true;
 
@@ -3989,7 +3975,7 @@ namespace Green_Leaf
             txt_ctknota_namaterapis.Enabled = true;
             txt_ctknota_diskon.Enabled = true;
             txt_ctknota_ket.Enabled = true;
-            txt_ctknota_fee.Enabled = true;
+            //txt_ctknota_fee.Enabled = true;
             txt_ctknota_nomorruangan.Enabled = true;
             btn_ctknota_batal.Enabled = true;
         }
@@ -4010,99 +3996,170 @@ namespace Green_Leaf
 
         private void ctknota_insertnota(string kasus)
         {
+            ctknota_lstcetak.Clear();
+            int ctknota_idnota = 0;
+            #region(Select)
+                    string ctknota_query2;
+                    MySqlConnection ctknota_conn2 = new MySqlConnection(all_connStr);
+                    
+                    try
+                    {
+                        ctknota_conn2.Open();
+
+                        ctknota_query2 = "SELECT `id_nota` FROM `nota` ORDER BY `nota`.`id_nota` DESC LIMIT 1";
+                        //MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(ctknota_query, ctknota_conn);
+                        MySqlCommand ctknota_cmd2 = new MySqlCommand(ctknota_query2, ctknota_conn2);
+                        MySqlDataReader ctknota_rdr2 = ctknota_cmd2.ExecuteReader();
+                        while (ctknota_rdr2.Read())
+	                    {
+	                        ctknota_idnota = ctknota_rdr2.GetInt32(0);
+	                    }
+                        ctknota_conn2.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        string error = ex.ToString();
+                        MessageBox.Show("Error Occurred");
+                    }
+                    #endregion
             if (kasus == "diskon kosong, fee kosong")
             {
                 #region(Insert Nota)
-                                //string tanggalcetak = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString() + " " + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString();
-                                string jamkerja = "";
-                                string tamuhotel = "";
-                                int potonganhotel = 0; ;
-                                int nomorruangan = 0;
-                                string namapaket = "";
-                                int hargapaket = 0;
-                                string extra = "";
-                                int nominalextra = 0;
-                                int kodeterapis = 0;
-                                string namaterapis = "";
-                                int diskon = 0;
-                                string ket = "";
-                                int fee = 0;
-                                int totalbayar = 0;
-                                int grandtotal = 0;
-                                int idpaket = 0;
-                                string jenisbayar = "";
-                                //header.Trim(new Char[] { ' ', '*', '.' });
-                                for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
+                            //string tanggalcetak = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString() + " " + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString();
+                            string jamkerja = "";
+                            string tamuhotel = "";
+                            int potonganhotel = 0; ;
+                            string nomorruangan = "";
+                            string namapaket = "";
+                            int hargapaket = 0;
+                            string extra = "";
+                            int nominalextra = 0;
+                            int kodeterapis = 0;
+                            string namaterapis = "";
+                            int diskon = 0;
+                            string ket = "";
+                            int fee = 0;
+                            int totalbayar = 0;
+                            int grandtotal = 0;
+                            int idpaket = 0;
+                            string jenisbayar = "";
+                            //header.Trim(new Char[] { ' ', '*', '.' });
+                            for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
+                            {
+                                if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].Value.ToString() == "True")
                                 {
-                                    if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].Value.ToString() == "True")
+                                    if (rdo_ctknota_normal.Checked)
                                     {
-                                        if (rdo_ctknota_normal.Checked)
-                                        {
-                                            jamkerja = "Normal";
-                                        }
-                                        else if (rdo_ctknota_midnight.Checked)
-                                        {
-                                            jamkerja = "Midnight";
-                                        }
-                                        if (rdo_ctknota_biasa.Checked)
-                                        {
-                                            tamuhotel = "Tidak";
-                                            potonganhotel = 0;
-                                        }
-                                        else if (rdo_ctknota_hotel.Checked)
-                                        {
-                                            tamuhotel = "Ya";
-                                            potonganhotel = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Tamu Hotel"].Value.ToString().Replace(".", string.Empty));
-                                        }
-                                        idpaket = ctknota_listidpaket[i];
-                                        nomorruangan = int.Parse(txt_ctknota_nomorruangan.Text);
-                                        namapaket = cbo_ctknota_jenispaket.SelectedItem + " - " + dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Nama Paket"].Value.ToString();
-                                        hargapaket = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Harga Paket"].Value.ToString().Replace(".", string.Empty));
-                                        if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value.ToString() == "True")
-                                        {
-                                            extra = "Ya";
-                                            nominalextra = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Nominal Extra"].Value.ToString().Replace(".", string.Empty));
-                                        }
-                                        else if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value.ToString() == "False")
-                                        {
-                                            extra = "Tidak";
-                                            nominalextra = 0;
-                                        }
-                                        kodeterapis = int.Parse(cbo_ctknota_kodeterapis.SelectedItem.ToString());
-                                        namaterapis = txt_ctknota_namaterapis.Text;
-                                        diskon = 0;
-                                        ket = "";
-                                        fee = 0;
-                                        totalbayar = hargapaket - potonganhotel + nominalextra;
-                                        grandtotal = totalbayar + fee;
-                                        if (rdo_ctknota_cash.Checked)
-                                        {
-                                            jenisbayar = "Cash";
-                                        }
-                                        else if (rdo_ctknota_credit.Checked)
-                                        {
-                                            jenisbayar = "Credit";
-                                        }
+                                        jamkerja = "Normal";
+                                    }
+                                    else if (rdo_ctknota_midnight.Checked)
+                                    {
+                                        jamkerja = "Midnight";
+                                    }
+                                    if (rdo_ctknota_biasa.Checked)
+                                    {
+                                        tamuhotel = "Tidak";
+                                        potonganhotel = 0;
+                                    }
+                                    else if (rdo_ctknota_hotel.Checked)
+                                    {
+                                        tamuhotel = "Ya";
+                                        potonganhotel = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Tamu Hotel"].Value.ToString().Replace(".", string.Empty));
+                                    }
+                                    idpaket = ctknota_listidpaket[i];
+                                    nomorruangan = txt_ctknota_nomorruangan.Text;
+                                    namapaket = cbo_ctknota_jenispaket.SelectedItem + " - " + dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Nama Paket"].Value.ToString();
+                                    hargapaket = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Harga Paket"].Value.ToString().Replace(".", string.Empty));
+                                    if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value.ToString() == "True")
+                                    {
+                                        extra = "Ya";
+                                        nominalextra = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Nominal Extra"].Value.ToString().Replace(".", string.Empty));
+                                    }
+                                    else if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value.ToString() == "False")
+                                    {
+                                        extra = "Tidak";
+                                        nominalextra = 0;
+                                    }
+                                    kodeterapis = int.Parse(cbo_ctknota_kodeterapis.SelectedItem.ToString());
+                                    namaterapis = txt_ctknota_namaterapis.Text;
+                                    diskon = 0;
+                                    ket = "";
+                                    fee = 0;
+                                    totalbayar = hargapaket - potonganhotel + nominalextra;
+                                    grandtotal = totalbayar + fee;
+                                    if (rdo_ctknota_cash.Checked)
+                                    {
+                                        jenisbayar = "Cash";
+                                    }
+                                    else if (rdo_ctknota_credit.Checked)
+                                    {
+                                        jenisbayar = "Credit";
                                     }
                                 }
+                            }
 
-                                DBConnect ctknota_sql = new DBConnect();
-                                string ctknota_query = "INSERT INTO `nota` (`id_nota`, `tanggalcetak_nota`, `nomorruangan_nota`, `jamkerja_nota`, `tamuhotel_nota`, `potonganhotel_nota`, "
-                                                            + "`namapaket_nota`, `hargapaket_nota`, `extra_nota`, `nominalextra_nota`, `kodeterapis_nota`, `namaterapis_nota`,"
-                                                                + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`, `id_paket`, `grandtotal_nota`) "
-                                                                    + "VALUES (NULL, (now()), '" + nomorruangan + "', '" + jamkerja + "', '" + tamuhotel + "', '" + potonganhotel + "',"
-                                                                        + " '" + namapaket + "', '" + hargapaket + "', '" + extra + "', '" + nominalextra + "', '" + kodeterapis + "', '" + namaterapis + "', "
-                                                                            + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '"+idpaket+"', '"+grandtotal+"');";
-                                ctknota_sql.Insert(ctknota_query);
+                            DBConnect ctknota_sql = new DBConnect();
+                            string ctknota_query = "INSERT INTO `nota` (`id_nota`, `tanggalcetak_nota`, `nomorruangan_nota`, `jamkerja_nota`, `tamuhotel_nota`, `potonganhotel_nota`, "
+                                                        + "`namapaket_nota`, `hargapaket_nota`, `extra_nota`, `nominalextra_nota`, `kodeterapis_nota`, `namaterapis_nota`,"
+                                                            + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`, `id_paket`, `grandtotal_nota`) "
+                                                                + "VALUES (NULL, (now()), '" + nomorruangan + "', '" + jamkerja + "', '" + tamuhotel + "', '" + potonganhotel + "',"
+                                                                    + " '" + namapaket + "', '" + hargapaket + "', '" + extra + "', '" + nominalextra + "', '" + kodeterapis + "', '" + namaterapis + "', "
+                                                                        + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '"+idpaket+"', '"+grandtotal+"');";
+                            ctknota_sql.Insert(ctknota_query);
+
+                            #region(Simpan Data Buat Cetak)
+                            string value = namapaket;
+                            Char splitter = '-';
+                            string[] namajenispaket = value.Split(splitter);
+
+                            ctknota_lstcetak.Add(ctknota_idnota.ToString());
+                            if (login_namauser.Length > 12)
+                            {
+                                ctknota_lstcetak.Add(login_namauser.ToUpper().Substring(0, 12));
+                            }
+                            else
+                            {
+                                ctknota_lstcetak.Add(login_namauser.ToUpper());
+                            }
+                            ctknota_lstcetak.Add(nomorruangan.ToString());
+                            ctknota_lstcetak.Add(kodeterapis.ToString());
+                            ctknota_lstcetak.Add(namajenispaket[0].Substring(0, namajenispaket[0].Length-1));
+                            ctknota_lstcetak.Add(jenisbayar);
+                            ctknota_lstcetak.Add(tamuhotel);
+                            ctknota_lstcetak.Add(namajenispaket[1].Substring(1));
+                            ctknota_lstcetak.Add(hargapaket.ToString());
+                            ctknota_lstcetak.Add(extra);
+                            ctknota_lstcetak.Add(nominalextra.ToString());
+                            ctknota_lstcetak.Add(fee.ToString());
+                            ctknota_lstcetak.Add((hargapaket+nominalextra+fee).ToString());
+                            ctknota_lstcetak.Add(potonganhotel.ToString());
+                            ctknota_lstcetak.Add(diskon.ToString());
+                            ctknota_lstcetak.Add(grandtotal.ToString());
+                            #endregion
+                #endregion
 
 
-                                #endregion
-
-
-                                string totalbayarFinal = grandtotal.ToString(String.Format("0,0", totalbayar));
+                            string totalbayarFinal = grandtotal.ToString(String.Format("0,0", totalbayar));
                                    
-                                lbl_ctknota_totalbyr.Text = totalbayarFinal;
+                            lbl_ctknota_totalbyr.Text = totalbayarFinal;
                             MessageBox.Show("Nota telah berhasil dibuat");
+                            ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
+                            PrintDialog printDialog = new PrintDialog();
+
+                            PrintDocument printDocument = new PrintDocument();
+
+                            printDialog.Document = printDocument; //add the document to the dialog box...        
+
+                            printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing
+
+                            //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+
+                            //DialogResult result = printDialog.ShowDialog();
+
+                            //if (result == DialogResult.OK)
+                            //{
+                            printDocument.Print();
+                            //}
             }
             else if (kasus == "diskon kosong, fee ada")
             {
@@ -4111,7 +4168,7 @@ namespace Green_Leaf
                 string jamkerja = "";
                 string tamuhotel = "";
                 int potonganhotel = 0; ;
-                int nomorruangan = 0;
+                string nomorruangan = "";
                 string namapaket = "";
                 int hargapaket = 0;
                 string extra = "";
@@ -4148,7 +4205,7 @@ namespace Green_Leaf
                             tamuhotel = "Ya";
                             potonganhotel = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Tamu Hotel"].Value.ToString().Replace(".", string.Empty));
                         }
-                        nomorruangan = int.Parse(txt_ctknota_nomorruangan.Text);
+                        nomorruangan = txt_ctknota_nomorruangan.Text;
                         namapaket = cbo_ctknota_jenispaket.SelectedItem + " - " + dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Nama Paket"].Value.ToString();
                         hargapaket = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Harga Paket"].Value.ToString().Replace(".", string.Empty));
                         if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value.ToString() == "True")
@@ -4189,11 +4246,57 @@ namespace Green_Leaf
                                                             + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '" + idpaket + "', '" + grandtotal + "');";
                 ctknota_sql.Insert(ctknota_query);
 
+                #region(Simpan Data Buat Cetak)
+                string value = namapaket;
+                Char splitter = '-';
+                string[] namajenispaket = value.Split(splitter);
+
+                ctknota_lstcetak.Add(ctknota_idnota.ToString());
+                if (login_namauser.Length > 12)
+                {
+                    ctknota_lstcetak.Add(login_namauser.ToUpper().Substring(0, 12));
+                }
+                else
+                {
+                    ctknota_lstcetak.Add(login_namauser.ToUpper());
+                }
+                ctknota_lstcetak.Add(nomorruangan.ToString());
+                ctknota_lstcetak.Add(kodeterapis.ToString());
+                ctknota_lstcetak.Add(namajenispaket[0].Substring(0, namajenispaket[0].Length - 1));
+                ctknota_lstcetak.Add(jenisbayar);
+                ctknota_lstcetak.Add(tamuhotel);
+                ctknota_lstcetak.Add(namajenispaket[1].Substring(1));
+                ctknota_lstcetak.Add(hargapaket.ToString());
+                ctknota_lstcetak.Add(extra);
+                ctknota_lstcetak.Add(nominalextra.ToString());
+                ctknota_lstcetak.Add(fee.ToString());
+                ctknota_lstcetak.Add((hargapaket + nominalextra + fee).ToString());
+                ctknota_lstcetak.Add(potonganhotel.ToString());
+                ctknota_lstcetak.Add(diskon.ToString());
+                ctknota_lstcetak.Add(grandtotal.ToString());
+                #endregion
 
                 #endregion
                 string totalbayarFinal = grandtotal.ToString(String.Format("0,0", totalbayar));
                 lbl_ctknota_totalbyr.Text = totalbayarFinal;
                 MessageBox.Show("Nota telah berhasil ditambahkan");
+                ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
+                PrintDialog printDialog = new PrintDialog();
+
+                PrintDocument printDocument = new PrintDocument();
+
+                printDialog.Document = printDocument; //add the document to the dialog box...        
+
+                printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing
+
+                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+
+                //DialogResult result = printDialog.ShowDialog();
+
+                //if (result == DialogResult.OK)
+                //{
+                printDocument.Print();
+                //}
             }
             else if (kasus == "diskon ada, fee kosong")
             {
@@ -4202,7 +4305,7 @@ namespace Green_Leaf
                                 string jamkerja = "";
                                 string tamuhotel = "";
                                 int potonganhotel = 0; ;
-                                int nomorruangan = 0;
+                                string nomorruangan = "";
                                 string namapaket = "";
                                 int hargapaket = 0;
                                 string extra = "";
@@ -4239,7 +4342,7 @@ namespace Green_Leaf
                                             tamuhotel = "Ya";
                                             potonganhotel = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Tamu Hotel"].Value.ToString().Replace(".", string.Empty));
                                         }
-                                        nomorruangan = int.Parse(txt_ctknota_nomorruangan.Text);
+                                        nomorruangan = txt_ctknota_nomorruangan.Text;
                                         namapaket = cbo_ctknota_jenispaket.SelectedItem + " - " + dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Nama Paket"].Value.ToString();
                                         hargapaket = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Harga Paket"].Value.ToString().Replace(".", string.Empty));
                                         if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value.ToString() == "True")
@@ -4280,6 +4383,36 @@ namespace Green_Leaf
                                                                             + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '"+idpaket+"', '"+grandtotal+"');";
                                 ctknota_sql.Insert(ctknota_query);
 
+                                #region(Simpan Data Buat Cetak)
+                                string value = namapaket;
+                                Char splitter = '-';
+                                string[] namajenispaket = value.Split(splitter);
+
+                                ctknota_lstcetak.Add(ctknota_idnota.ToString());
+                                if (login_namauser.Length > 12)
+                                {
+                                    ctknota_lstcetak.Add(login_namauser.ToUpper().Substring(0, 12));
+                                }
+                                else
+                                {
+                                    ctknota_lstcetak.Add(login_namauser.ToUpper());
+                                }
+                                ctknota_lstcetak.Add(nomorruangan.ToString());
+                                ctknota_lstcetak.Add(kodeterapis.ToString());
+                                ctknota_lstcetak.Add(namajenispaket[0].Substring(0, namajenispaket[0].Length - 1));
+                                ctknota_lstcetak.Add(jenisbayar);
+                                ctknota_lstcetak.Add(tamuhotel);
+                                ctknota_lstcetak.Add(namajenispaket[1].Substring(1));
+                                ctknota_lstcetak.Add(hargapaket.ToString());
+                                ctknota_lstcetak.Add(extra);
+                                ctknota_lstcetak.Add(nominalextra.ToString());
+                                ctknota_lstcetak.Add(fee.ToString());
+                                ctknota_lstcetak.Add((hargapaket + nominalextra + fee).ToString());
+                                ctknota_lstcetak.Add(potonganhotel.ToString());
+                                ctknota_lstcetak.Add(diskon.ToString());
+                                ctknota_lstcetak.Add(grandtotal.ToString());
+                                #endregion
+
 
                                 #endregion
                                 string totalbayarFinal = grandtotal.ToString(String.Format("0,0", totalbayar));
@@ -4302,6 +4435,23 @@ namespace Green_Leaf
                                 //totalbayarFinal = totalbayarFinal.Insert(countdigittotal + countdigitend, ",-");
                                 lbl_ctknota_totalbyr.Text = totalbayarFinal;
                                 MessageBox.Show("Nota telah berhasil ditambahkan");
+                                ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
+                                PrintDialog printDialog = new PrintDialog();
+
+                                PrintDocument printDocument = new PrintDocument();
+
+                                printDialog.Document = printDocument; //add the document to the dialog box...        
+
+                                printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing
+
+                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+
+                                //DialogResult result = printDialog.ShowDialog();
+
+                                //if (result == DialogResult.OK)
+                                //{
+                                printDocument.Print();
+                //}
             }
             else if (kasus == "diskon ada, fee ada")
             {
@@ -4310,7 +4460,7 @@ namespace Green_Leaf
                                 string jamkerja = "";
                                 string tamuhotel = "";
                                 int potonganhotel = 0; ;
-                                int nomorruangan = 0;
+                                string nomorruangan = "";
                                 string namapaket = "";
                                 int hargapaket = 0;
                                 string extra = "";
@@ -4348,7 +4498,7 @@ namespace Green_Leaf
                                             potonganhotel = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Tamu Hotel"].Value.ToString().Replace(".", string.Empty));
                                         }
                                         idpaket = ctknota_listidpaket[i];
-                                        nomorruangan = int.Parse(txt_ctknota_nomorruangan.Text);
+                                        nomorruangan = txt_ctknota_nomorruangan.Text;
                                         namapaket = cbo_ctknota_jenispaket.SelectedItem + " - " + dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Nama Paket"].Value.ToString();
                                         hargapaket = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Harga Paket"].Value.ToString().Replace(".", string.Empty));
                                         if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value.ToString() == "True")
@@ -4388,6 +4538,36 @@ namespace Green_Leaf
                                                                             + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '"+idpaket+"', '"+grandtotal+"');";
                                 ctknota_sql.Insert(ctknota_query);
 
+                                #region(Simpan Data Buat Cetak)
+                                string value = namapaket;
+                                Char splitter = '-';
+                                string[] namajenispaket = value.Split(splitter);
+
+                                ctknota_lstcetak.Add(ctknota_idnota.ToString());
+                                if (login_namauser.Length > 12)
+                                {
+                                    ctknota_lstcetak.Add(login_namauser.ToUpper().Substring(0, 12));
+                                }
+                                else
+                                {
+                                    ctknota_lstcetak.Add(login_namauser.ToUpper());
+                                }
+                                ctknota_lstcetak.Add(nomorruangan.ToString());
+                                ctknota_lstcetak.Add(kodeterapis.ToString());
+                                ctknota_lstcetak.Add(namajenispaket[0].Substring(0, namajenispaket[0].Length - 1));
+                                ctknota_lstcetak.Add(jenisbayar);
+                                ctknota_lstcetak.Add(tamuhotel);
+                                ctknota_lstcetak.Add(namajenispaket[1].Substring(1));
+                                ctknota_lstcetak.Add(hargapaket.ToString());
+                                ctknota_lstcetak.Add(extra);
+                                ctknota_lstcetak.Add(nominalextra.ToString());
+                                ctknota_lstcetak.Add(fee.ToString());
+                                ctknota_lstcetak.Add((hargapaket + nominalextra + fee).ToString());
+                                ctknota_lstcetak.Add(potonganhotel.ToString());
+                                ctknota_lstcetak.Add(diskon.ToString());
+                                ctknota_lstcetak.Add(grandtotal.ToString());
+                                #endregion
+
 
                                 #endregion
                                 string totalbayarFinal = grandtotal.ToString(String.Format("0,0", totalbayar));
@@ -4410,6 +4590,23 @@ namespace Green_Leaf
                                 //totalbayarFinal = totalbayarFinal.Insert(countdigittotal + countdigitend, ",-");
                                 lbl_ctknota_totalbyr.Text = totalbayarFinal;
                                 MessageBox.Show("Nota telah berhasil ditambahkan");
+                                ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
+                                PrintDialog printDialog = new PrintDialog();
+
+                                PrintDocument printDocument = new PrintDocument();
+
+                                printDialog.Document = printDocument; //add the document to the dialog box...        
+
+                                printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing
+
+                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+
+                                //DialogResult result = printDialog.ShowDialog();
+
+                                //if (result == DialogResult.OK)
+                                //{
+                                printDocument.Print();
+                //}
             }
             
         }
@@ -6872,13 +7069,12 @@ namespace Green_Leaf
         }
         #endregion
 
-
-        string ctknota_contentprint = "Lucu";
+        //string ctknota_contentprint = "Lucu";
         private void printdoc_ctknota_printdokumen_PrintPage(object sender, PrintPageEventArgs e)
         {
-            Point ulCorner = new Point(60, 100);
-            e.Graphics.DrawImage(ctknota_logo, ulCorner);
-            e.Graphics.DrawString(ctknota_contentprint, new Font("Monospaced Sans Serif", 10), new SolidBrush(Color.Black), new RectangleF(50, 0, printdoc_ctknota_printdokumen.DefaultPageSettings.PrintableArea.Width, printdoc_ctknota_printdokumen.DefaultPageSettings.PrintableArea.Height));
+            //Point ulCorner = new Point(60, 100);
+            //e.Graphics.DrawImage(ctknota_logo, ulCorner);
+            //e.Graphics.DrawString(ctknota_contentprint, new Font("Monospaced Sans Serif", 10), new SolidBrush(Color.Black), new RectangleF(50, 0, printdoc_ctknota_printdokumen.DefaultPageSettings.PrintableArea.Width, printdoc_ctknota_printdokumen.DefaultPageSettings.PrintableArea.Height));
         }
         private void printdoc_ctknota_printdokumen_BeginPrint(object sender, PrintEventArgs e)
         {
@@ -6887,12 +7083,7 @@ namespace Green_Leaf
         public void CreateReceipt(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             printdoc_ctknota_printdokumen.OriginAtMargins = true;
-            //int total = 0;
-            float cash = 0 ;
-            float change = 0.00f;
-
-            //this prints the reciept
-
+            
             Graphics graphic = e.Graphics;
 
             Font font = new Font("Consolas", 7); //must use a mono spaced font as the spaces need to line up
@@ -6905,33 +7096,101 @@ namespace Green_Leaf
 
             Point ulCorner = new Point(45, 0);
             graphic.DrawImage(ctknota_logo, ulCorner);
+            
+            graphic.DrawString("---------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight; //make the spacing consistent
+            
+            string top = (DateTime.Now.Day.ToString("00") + "-" + DateTime.Now.Month.ToString("00") + "-" + DateTime.Now.Year.ToString() + " "
+                            + DateTime.Now.Hour.ToString("00") + ":" + DateTime.Now.Minute.ToString("00")).PadRight(16) + ("" + ctknota_lstcetak[0] + "/" + ctknota_lstcetak[1] + "/" + ctknota_lstcetak[2] + "/" + ctknota_lstcetak[3] + "").PadLeft(29);
+            graphic.DrawString(top, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight; //make the spacing consistent
+
+            graphic.DrawString("---------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight; //make the spacing consistent
+
+            if (ctknota_lstcetak[6] == "Ya")
+            {
+                if (ctknota_lstcetak[5] == "Credit")
+                {
+                    graphic.DrawString(("ROOM : " + ctknota_lstcetak[4] + "").PadRight(15) + ("   " + ctknota_lstcetak[5].ToUpper() + "").PadRight(15) + ("Tamu Hotel: " + ctknota_lstcetak[6] + "").PadLeft(15), font, new SolidBrush(Color.Black), startX, startY + offset);
+                    offset = offset + (int)fontHeight + 10; //make the spacing consistent 
+                }
+                else if (ctknota_lstcetak[5] == "Cash")
+                {
+                    graphic.DrawString(("ROOM : " + ctknota_lstcetak[4] + "").PadRight(15) + ("    " + ctknota_lstcetak[5].ToUpper() + "").PadRight(15) + ("Tamu Hotel: " + ctknota_lstcetak[6] + "").PadLeft(15), font, new SolidBrush(Color.Black), startX, startY + offset);
+                    offset = offset + (int)fontHeight + 10; //make the spacing consistent
+                }
+                
+            }
+            else
+            {
+                graphic.DrawString(("ROOM : " + ctknota_lstcetak[4] + "").PadRight(15) + ("     " + ctknota_lstcetak[5].ToUpper() + "").PadRight(15) + ("Tamu Hotel: -").PadLeft(15), font, new SolidBrush(Color.Black), startX, startY + offset);
+                offset = offset + (int)fontHeight + 10; //make the spacing consistent
+            }
+
+            string hargapaket = String.Format("{0:n0}", int.Parse(ctknota_lstcetak[8]));
+            graphic.DrawString(("1 " + ctknota_lstcetak[7].ToUpper() + "").PadRight(27) + hargapaket.PadLeft(18), font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight+5; //make the spacing consistent
+
+            string nominalextra = String.Format("{0:n0}", int.Parse(ctknota_lstcetak[10]));
+            string tips = String.Format("{0:n0}", int.Parse(ctknota_lstcetak[11]));
+            if (ctknota_lstcetak[9] == "Ya")
+            {
+                graphic.DrawString("  - EXTRA SESSION".PadRight(27) + nominalextra.PadLeft(18), font, new SolidBrush(Color.Black), startX, startY + offset);
+                offset = offset + (int)fontHeight; //make the spacing consistent
+            }
+            if (ctknota_lstcetak[5] == "Credit")
+            {
+                graphic.DrawString("  - TIPS".PadRight(27) + tips.PadLeft(18), font, new SolidBrush(Color.Black), startX, startY + offset);
+                offset = offset + (int)fontHeight + 5; //make the spacing consistent
+            }
+
+            graphic.DrawString("---------------".PadLeft(45), font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight+5; //make the spacing consistent
+
+            string subtotal = String.Format("{0:n0}", int.Parse(ctknota_lstcetak[12]));
+            string potonganhotel = String.Format("{0:n0}", int.Parse(ctknota_lstcetak[13]));
+            string diskon = String.Format("{0:n0}", int.Parse(ctknota_lstcetak[14]));
+            graphic.DrawString("                   Sub Total :".PadRight(30) + subtotal.PadLeft(15), font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight; //make the spacing consistent
+            graphic.DrawString("              Potongan Hotel :".PadRight(30) + potonganhotel.PadLeft(15), font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight; //make the spacing consistent
+            graphic.DrawString("                      Diskon :".PadRight(30) + diskon.PadLeft(15), font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight+10; //make the spacing consistent
+
+            string grandtotal = String.Format("{0:c}", int.Parse(ctknota_lstcetak[15]));
+            grandtotal =  grandtotal.Insert(2, ". ");
+            grandtotal =  grandtotal.Insert(grandtotal.Length, ",-");
+            graphic.DrawString("Grand Total ".PadRight(12, '#') + grandtotal.PadLeft(17), new Font("Courier New", 10), new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + 30; //make some room so that the total stands out.
+
+            graphic.DrawString("                TERIMA KASIH", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + 15;
+
+            graphic.DrawString("           SELAMAT DATANG KEMBALI", font, new SolidBrush(Color.Black), startX, startY + offset);
+
+            #region(Comment)
+            //int total = 0;
+            //float cash = 0 ;
+            //float change = 0.00f;
+
+            //this prints the reciept
 
             //graphic.DrawString("  Green Leaf Spa", new Font("Courier New", 15), new SolidBrush(Color.Black), startX, startY);
             //Graha Simatupang
             //Tower 2 Unit C, 7th - 11th Floor
             //Jalan Letjen T.B. Simatupang
             //Jakarta - 12540
-            graphic.DrawString("---------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset = offset + (int)fontHeight; //make the spacing consistent
 
             //string nama = ;
-            string top = (DateTime.Now.Day.ToString("00") + "-" + DateTime.Now.Month.ToString("00") + "-" + DateTime.Now.Year.ToString() + " "
-                            + DateTime.Now.Hour.ToString("00") + ":" + DateTime.Now.Minute.ToString("00")).PadRight(16) + ("999999/"+"WILLIAMRUMENGAN".Substring(0, 12)+"/"+1.ToString("000")+"/050").PadLeft(29);
-            graphic.DrawString(top, font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset = offset + (int)fontHeight; //make the spacing consistent
 
             //graphic.DrawString("No. Ruangan : 1".PadRight(25)+"No. Terapis : 50".PadLeft(20), font, new SolidBrush(Color.Black), startX, startY + offset);
             //offset = offset + (int)fontHeight; //make the spacing consistent
 
-            graphic.DrawString("---------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset = offset + (int)fontHeight; //make the spacing consistent
-
             //graphic.DrawString("TAMU HOTEL", font, new SolidBrush(Color.Black), startX, startY + offset);
             //offset = offset + (int)fontHeight; //make the spacing consistent
-            graphic.DrawString("ROOM : VIP".PadRight(15) + "    Cash".PadRight(15) + "Tamu Hotel: -".PadLeft(15), font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset = offset + (int)fontHeight + 10; //make the spacing consistent
 
-            float totalprice = 0.00f;
+            //float totalprice = 0.00f;
 
             //graphic.DrawString("1 TRADITIONAL MASSAGE".PadRight(27) + String.Format("{0:c}", 500000).PadLeft(18), font, new SolidBrush(Color.Black), startX, startY + offset);
             //offset = offset + (int)fontHeight; //make the spacing consistent
@@ -6939,18 +7198,8 @@ namespace Green_Leaf
             //graphic.DrawString("1 FULL BODY MASSAGE".PadRight(27) + String.Format("{0:c}", 500000).PadLeft(18), font, new SolidBrush(Color.Black), startX, startY + offset);
             //offset = offset + (int)fontHeight; //make the spacing consistent
 
-            graphic.DrawString("1 CHRISTMAS SPECIAL MASSAGE".PadRight(27) + String.Format("{0:c}", 500000).PadLeft(18), font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset = offset + (int)fontHeight; //make the spacing consistent
-
-            graphic.DrawString("  - EXTRA SESSION".PadRight(27) + String.Format("{0:c}", 250000).PadLeft(18), font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset = offset + (int)fontHeight + 5; //make the spacing consistent
-
-            graphic.DrawString("  - Tips".PadRight(27) + String.Format("{0:c}", 150000).PadLeft(18), font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset = offset + (int)fontHeight + 5; //make the spacing consistent
             //graphic.DrawString(productLine, new Font("Courier New", 12, FontStyle.Italic), new SolidBrush(Color.Red), startX, startY + offset);
 
-            graphic.DrawString("-----------------".PadLeft(45), font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset = offset + (int)fontHeight+5; //make the spacing consistent
             //offset = offset + (int)fontHeight + 5; //make the spacing consistent
             //foreach (string item in listBox1.Items)
             //{
@@ -6983,35 +7232,19 @@ namespace Green_Leaf
 
             //}
 
-            change = (cash - totalprice);
+            //change = (cash - totalprice);
 
             //when we have drawn all of the items add the total
 
             //offset = offset; //make some room so that the total stands out.
             //graphic.DrawString("          Jenis Pembayaran :".PadRight(28) + "Cash".PadLeft(17), font, new SolidBrush(Color.Black), startX, startY + offset);
             //offset = offset + (int)fontHeight; //make the spacing consistent
-            graphic.DrawString("                 Sub Total :".PadRight(28) + String.Format("{0:c}", 1000000).PadLeft(17), font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset = offset + (int)fontHeight; //make the spacing consistent
-            graphic.DrawString("            Potongan Hotel :".PadRight(28) + String.Format("{0:c}", 100000).PadLeft(17), font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset = offset + (int)fontHeight; //make the spacing consistent
-            graphic.DrawString("                    Diskon :".PadRight(28) + String.Format("{0:c}", 150000).PadLeft(17), font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset = offset + (int)fontHeight+10; //make the spacing consistent
-
-            graphic.DrawString("Grand Total ".PadRight(12, '#') + String.Format("{0:c}", 50000000).PadLeft(17), new Font("Courier New", 10), new SolidBrush(Color.Black), startX, startY + offset);
-            
-
-            
-            offset = offset + 30; //make some room so that the total stands out.
 
             //graphic.DrawString("CASH ".PadRight(30) + String.Format("{0:c}", cash), font, new SolidBrush(Color.Black), startX, startY + offset);
             //offset = offset + 15;
             //graphic.DrawString("CHANGE ".PadRight(30) + String.Format("{0:c}", change), font, new SolidBrush(Color.Black), startX, startY + offset);
             //offset = offset + 30; //make some room so that the total stands out.
-
-            graphic.DrawString("                TERIMA KASIH", font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset = offset + 15;
-            graphic.DrawString("           SELAMAT DATANG KEMBALI", font, new SolidBrush(Color.Black), startX, startY + offset);
-
+            #endregion
         }
 
         
