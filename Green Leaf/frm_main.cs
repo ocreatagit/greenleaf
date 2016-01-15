@@ -7107,121 +7107,136 @@ namespace Green_Leaf
                 lprnlayanan_wb.Worksheet("Slip Gaji").PageSetup.Margins.Header = 0.8;
                 lprnlayanan_wb.Worksheet("Slip Gaji").PageSetup.CenterHorizontally = true;
                 int rowoffset = 0;
+                int pagecount = 1;
+                for (int i = 0; i < listrowcetak_jenispaket.Count; i++)
+                {
+                    if (listrowcetak_jenispaket.Count - (pagecount * 22) > 0)
+                    {
+                        pagecount++;
+                    }
+                    else if (listrowcetak_jenispaket.Count - (pagecount * 22) < 0)
+                    {
+                        break;
+                    }
+                }
                 for (int i = 0; i < listrowcetak_komisi.Length; i++)
                 {
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(1 + rowoffset, 1).Value = "SLIP GAJI";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(1 + rowoffset, 1).Style.Font.FontSize = 24;
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Range(1 + rowoffset, 1, 1 + rowoffset, 14).Merge();
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(1 + rowoffset, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
-
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(3 + rowoffset, 2).Value = "BULAN";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(3 + rowoffset, 2).Style.Font.SetBold();
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(3 + rowoffset, 3).Value = dtp_lprnlayanan_tgldari.Value.ToLongDateString() + " - " + dtp_lprnlayanan_tglsampai.Value.ToLongDateString();
-
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(5 + rowoffset, 2).Value = "NO ID";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(5 + rowoffset, 2).Style.Font.SetBold();
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(5 + rowoffset, 3).Value = lprnlayanan_DS.Tables[0].Rows[i][0];
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(5 + rowoffset, 3).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Left;
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(6 + rowoffset, 2).Value = "NAMA";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(6 + rowoffset, 2).Style.Font.SetBold();
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(6 + rowoffset, 3).Value = lprnlayanan_DS.Tables[0].Rows[i][1];
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(7 + rowoffset, 2).Value = "POSISI";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(7 + rowoffset, 2).Style.Font.SetBold();
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(7 + rowoffset, 3).Value = lprnlayanan_DS.Tables[0].Rows[i][2];
-
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 2).Value = "Jenis Paket";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 2).Style.Font.SetBold();
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, 9 + rowoffset, 11).Merge();
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 2).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 12).Value = "Jumlah";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 12).Style.Font.SetBold();
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 12).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 13).Value = "Komisi";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 13).Style.Font.SetBold();
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 13).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
-
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + rowoffset, 2).InsertData(listrowcetak_jenispaket);
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + rowoffset, 12).InsertData(listrowcetak_counterjasa[i]);
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + rowoffset, 13).InsertData(listrowcetak_komisi[i]);
-                    //lprnlayanan_wb.Worksheet("Slip Gaji").Column(2).AdjustToContents();
-                    for (int ii = 0; ii < listrowcetak_jenispaket.Count; ii++)
+                    for (int p = 1; p <= pagecount; p++)
                     {
-                        if (listrowcetak_jenispaket[ii] == "Normal")
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(1 + rowoffset, 1).Value = "SLIP GAJI";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(1 + rowoffset, 1).Style.Font.FontSize = 24;
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Range(1 + rowoffset, 1, 1 + rowoffset, 14).Merge();
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(1 + rowoffset, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(3 + rowoffset, 2).Value = "BULAN";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(3 + rowoffset, 2).Style.Font.SetBold();
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(3 + rowoffset, 3).Value = dtp_lprnlayanan_tgldari.Value.ToLongDateString() + " - " + dtp_lprnlayanan_tglsampai.Value.ToLongDateString();
+
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(5 + rowoffset, 2).Value = "NO ID";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(5 + rowoffset, 2).Style.Font.SetBold();
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(5 + rowoffset, 3).Value = lprnlayanan_DS.Tables[0].Rows[i][0];
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(5 + rowoffset, 3).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Left;
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(6 + rowoffset, 2).Value = "NAMA";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(6 + rowoffset, 2).Style.Font.SetBold();
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(6 + rowoffset, 3).Value = lprnlayanan_DS.Tables[0].Rows[i][1];
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(7 + rowoffset, 2).Value = "POSISI";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(7 + rowoffset, 2).Style.Font.SetBold();
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(7 + rowoffset, 3).Value = lprnlayanan_DS.Tables[0].Rows[i][2];
+
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 2).Value = "Jenis Paket";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 2).Style.Font.SetBold();
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, 9 + rowoffset, 11).Merge();
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 2).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 12).Value = "Jumlah";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 12).Style.Font.SetBold();
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 12).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 13).Value = "Komisi";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 13).Style.Font.SetBold();
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(9 + rowoffset, 13).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + rowoffset, 2).InsertData(listrowcetak_jenispaket);
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + rowoffset, 12).InsertData(listrowcetak_counterjasa[i]);
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + rowoffset, 13).InsertData(listrowcetak_komisi[i]);
+                        //lprnlayanan_wb.Worksheet("Slip Gaji").Column(2).AdjustToContents();
+                        for (int ii = 0; ii < listrowcetak_jenispaket.Count; ii++)
                         {
-                            lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + ii + rowoffset, 13).Value = "";
-                            lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + ii + rowoffset, 12).Value = "";
-                            lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + ii + rowoffset, 2).Style.Font.SetBold();
-                            lprnlayanan_wb.Worksheet("Slip Gaji").Range(10 + ii + rowoffset, 2, 10 + ii + rowoffset, 11).Merge();
+                            if (listrowcetak_jenispaket[ii] == "Normal")
+                            {
+                                lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + ii + rowoffset, 13).Value = "";
+                                lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + ii + rowoffset, 12).Value = "";
+                                lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + ii + rowoffset, 2).Style.Font.SetBold();
+                                lprnlayanan_wb.Worksheet("Slip Gaji").Range(10 + ii + rowoffset, 2, 10 + ii + rowoffset, 11).Merge();
+                            }
+                            else if (listrowcetak_jenispaket[ii] == "Midnight")
+                            {
+                                lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + ii + rowoffset, 13).Value = "";
+                                lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + ii + rowoffset, 12).Value = "";
+                                lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + ii + rowoffset, 2).Style.Font.SetBold();
+                                lprnlayanan_wb.Worksheet("Slip Gaji").Range(10 + ii + rowoffset, 2, 10 + ii + rowoffset, 11).Merge();
+                            }
+                            else
+                            {
+                                lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + ii + rowoffset, 13).Style.NumberFormat.Format = "#,##0";
+                                lprnlayanan_wb.Worksheet("Slip Gaji").Range(10 + ii + rowoffset, 2, 10 + ii + rowoffset, 11).Merge();
+                            }
                         }
-                        else if (listrowcetak_jenispaket[ii] == "Midnight")
-                        {
-                            lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + ii + rowoffset, 13).Value = "";
-                            lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + ii + rowoffset, 12).Value = "";
-                            lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + ii + rowoffset, 2).Style.Font.SetBold();
-                            lprnlayanan_wb.Worksheet("Slip Gaji").Range(10 + ii + rowoffset, 2, 10 + ii + rowoffset, 11).Merge();
-                        }
-                        else
-                        {
-                            lprnlayanan_wb.Worksheet("Slip Gaji").Cell(10 + ii + rowoffset, 13).Style.NumberFormat.Format = "#,##0";
-                            lprnlayanan_wb.Worksheet("Slip Gaji").Range(10 + ii + rowoffset, 2, 10 + ii + rowoffset, 11).Merge();
-                        }
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 10 + rowoffset, 2).Value = "Total";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 10 + rowoffset, 2).Style.Font.SetBold();
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Range(listrowcetak_jenispaket.Count + 10 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 12).Merge();
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 10 + rowoffset, 2).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 10 + rowoffset, 13).FormulaA1 = "SUM(M" + (10 + rowoffset).ToString() + ":M" + (listrowcetak_jenispaket.Count + 9 + rowoffset).ToString() + ")";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 10 + rowoffset, 13).Style.NumberFormat.Format = "#,##0";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 13).Style.Border.SetOutsideBorder(XLBorderStyleValues.Thin);
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 13).Style.Border.SetOutsideBorderColor(XLColor.Black);
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 11).Style.Border.SetOutsideBorder(XLBorderStyleValues.Thin);
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 11).Style.Border.SetOutsideBorderColor(XLColor.Black);
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 12).Style.Border.SetInsideBorder(XLBorderStyleValues.Thin);
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 12).Style.Border.SetOutsideBorderColor(XLColor.Black);
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 13).Style.Border.SetInsideBorder(XLBorderStyleValues.Thin);
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 13).Style.Border.SetOutsideBorderColor(XLColor.Black);
+
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 12 + rowoffset, 2).Value = "+ Bonus Target";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 12 + rowoffset, 5).Value = ":";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 12 + rowoffset, 6).Style.NumberFormat.Format = "#,##0";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 13 + rowoffset, 2).Value = "+ Bonus Tahunan";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 13 + rowoffset, 5).Value = ":";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 13 + rowoffset, 6).Style.NumberFormat.Format = "#,##0";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 14 + rowoffset, 2).Value = "+ Bonus Lain-lain";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 14 + rowoffset, 5).Value = ":";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 14 + rowoffset, 6).Style.NumberFormat.Format = "#,##0";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 15 + rowoffset, 2).Value = "- Potongan Biaya Masuk";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 15 + rowoffset, 5).Value = ":";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 15 + rowoffset, 6).Style.NumberFormat.Format = "#,##0";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 16 + rowoffset, 2).Value = "- Potongan Absensi";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 16 + rowoffset, 5).Value = ":";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 16 + rowoffset, 6).Style.NumberFormat.Format = "#,##0";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 17 + rowoffset, 2).Value = "- Potong Tabungan";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 17 + rowoffset, 5).Value = ":";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 17 + rowoffset, 6).Style.NumberFormat.Format = "#,##0";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 18 + rowoffset, 2).Value = "- Potong Hutang";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 18 + rowoffset, 5).Value = ":";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 18 + rowoffset, 6).Style.NumberFormat.Format = "#,##0";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 19 + rowoffset, 2).Value = "Gaji Total";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 19 + rowoffset, 2).Style.Font.SetBold();
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 19 + rowoffset, 5).Value = ":";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 19 + rowoffset, 5).Style.Font.SetBold();
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 19 + rowoffset, 6).Style.NumberFormat.Format = "#,##0";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 19 + rowoffset, 6).FormulaA1 = "M" + (listrowcetak_jenispaket.Count + 10 + rowoffset).ToString() + "+SUM(F" + (listrowcetak_jenispaket.Count + 12 + rowoffset).ToString() + ":F" + (listrowcetak_jenispaket.Count + 14 + rowoffset).ToString() +
+                                                                                                                    ")-SUM(F" + (listrowcetak_jenispaket.Count + 15 + rowoffset).ToString() + ":F" + (listrowcetak_jenispaket.Count + 18 + rowoffset).ToString() + ")";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 19 + rowoffset, 6).Style.Font.SetBold();
+
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 12 + rowoffset, 8).Value = "Sisa Hutang";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 12 + rowoffset, 11).Value = ":";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 12 + rowoffset, 12).Style.NumberFormat.Format = "#,##0";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 13 + rowoffset, 8).Value = "Total Tabungan";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 13 + rowoffset, 11).Value = ":";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 13 + rowoffset, 12).Style.NumberFormat.Format = "#,##0";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 14 + rowoffset, 8).Value = "Sisa Biaya Masuk Kembali";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 14 + rowoffset, 11).Value = ":";
+                        lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 14 + rowoffset, 12).Style.NumberFormat.Format = "#,##0";
+
+                        rowoffset += 43;
                     }
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 10 + rowoffset, 2).Value = "Total";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 10 + rowoffset, 2).Style.Font.SetBold();
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Range(listrowcetak_jenispaket.Count + 10 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 12).Merge();
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 10 + rowoffset, 2).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 10 + rowoffset, 13).FormulaA1 = "SUM(M" + (10 + rowoffset).ToString() + ":M" + (listrowcetak_jenispaket.Count + 9 + rowoffset).ToString() + ")";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 10 + rowoffset, 13).Style.NumberFormat.Format = "#,##0";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 13).Style.Border.SetOutsideBorder(XLBorderStyleValues.Thin);
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 13).Style.Border.SetOutsideBorderColor(XLColor.Black);
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 11).Style.Border.SetOutsideBorder(XLBorderStyleValues.Thin);
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 11).Style.Border.SetOutsideBorderColor(XLColor.Black);
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 12).Style.Border.SetInsideBorder(XLBorderStyleValues.Thin);
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 12).Style.Border.SetOutsideBorderColor(XLColor.Black);
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 13).Style.Border.SetInsideBorder(XLBorderStyleValues.Thin);
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Range(9 + rowoffset, 2, listrowcetak_jenispaket.Count + 10 + rowoffset, 13).Style.Border.SetOutsideBorderColor(XLColor.Black);
-
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 12 + rowoffset, 2).Value = "+ Bonus Target";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 12 + rowoffset, 5).Value = ":";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 12 + rowoffset, 6).Style.NumberFormat.Format = "#,##0";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 13 + rowoffset, 2).Value = "+ Bonus Tahunan";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 13 + rowoffset, 5).Value = ":";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 13 + rowoffset, 6).Style.NumberFormat.Format = "#,##0";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 14 + rowoffset, 2).Value = "+ Bonus Lain-lain";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 14 + rowoffset, 5).Value = ":";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 14 + rowoffset, 6).Style.NumberFormat.Format = "#,##0";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 15 + rowoffset, 2).Value = "- Potongan Biaya Masuk";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 15 + rowoffset, 5).Value = ":";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 15 + rowoffset, 6).Style.NumberFormat.Format = "#,##0";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 16 + rowoffset, 2).Value = "- Potongan Absensi";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 16 + rowoffset, 5).Value = ":";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 16 + rowoffset, 6).Style.NumberFormat.Format = "#,##0";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 17 + rowoffset, 2).Value = "- Potong Tabungan";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 17 + rowoffset, 5).Value = ":";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 17 + rowoffset, 6).Style.NumberFormat.Format = "#,##0";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 18 + rowoffset, 2).Value = "- Potong Hutang";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 18 + rowoffset, 5).Value = ":";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 18 + rowoffset, 6).Style.NumberFormat.Format = "#,##0";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 19 + rowoffset, 2).Value = "Gaji Total";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 19 + rowoffset, 2).Style.Font.SetBold();
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 19 + rowoffset, 5).Value = ":";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 19 + rowoffset, 5).Style.Font.SetBold();
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 19 + rowoffset, 6).Style.NumberFormat.Format = "#,##0";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 19 + rowoffset, 6).FormulaA1 = "M"+(listrowcetak_jenispaket.Count + 10 + rowoffset).ToString()+"+SUM(F" + (listrowcetak_jenispaket.Count + 12 + rowoffset).ToString() + ":F" + (listrowcetak_jenispaket.Count + 14 + rowoffset).ToString() +
-                                                                                                                ")-SUM(F" + (listrowcetak_jenispaket.Count + 15 + rowoffset).ToString() + ":F" + (listrowcetak_jenispaket.Count + 18 + rowoffset).ToString() + ")";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 19 + rowoffset, 6).Style.Font.SetBold();
-
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 12 + rowoffset, 8).Value = "Sisa Hutang";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 12 + rowoffset, 11).Value = ":";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 12 + rowoffset, 12).Style.NumberFormat.Format = "#,##0";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 13 + rowoffset, 8).Value = "Total Tabungan";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 13 + rowoffset, 11).Value = ":";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 13 + rowoffset, 12).Style.NumberFormat.Format = "#,##0";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 14 + rowoffset, 8).Value = "Sisa Biaya Masuk Kembali";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 14 + rowoffset, 11).Value = ":";
-                    lprnlayanan_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket.Count + 14 + rowoffset, 12).Style.NumberFormat.Format = "#,##0";
-
-                    rowoffset += 43;
                 }
                 
 
