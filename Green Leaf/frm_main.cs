@@ -111,7 +111,7 @@ namespace Green_Leaf
         {
             this.Dispose();
         }
-
+        
         #region(Method Buatan Sendiri)
         int privatemethod_countkoma = 0;
         private void cekinputankomisi(TextBox txt ,KeyPressEventArgs e)
@@ -217,7 +217,7 @@ namespace Green_Leaf
                     }
                     if (login_passSama == true)
                     {
-                        MessageBox.Show("Login berhasil");
+                        MessageBox.Show("Login berhasil", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         pnl_login_isi.Visible = false;
                         pnl_menu_isi.Visible = true;
                         lbl_menu_user.Text = txt_login_username.Text + ",";
@@ -251,17 +251,17 @@ namespace Green_Leaf
                     }
                     else
                     {
-                        MessageBox.Show("Login gagal, Password yang anda masukan salah");
+                        MessageBox.Show("Login gagal, Password yang anda masukan salah", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Login gagal, Username yang anda masukan tidak terdaftar");
+                    MessageBox.Show("Login gagal, Username yang anda masukan tidak terdaftar", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("Mohon isi kolom Username terlebih dahulu");
+                MessageBox.Show("Mohon isi kolom Username terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -348,7 +348,7 @@ namespace Green_Leaf
                         }
                         if (login_passSama == true)
                         {
-                            MessageBox.Show("Login berhasil");
+                            MessageBox.Show("Login berhasil", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             pnl_login_isi.Visible = false;
                             pnl_menu_isi.Visible = true;
                             lbl_menu_user.Text = txt_login_username.Text + ",";
@@ -382,17 +382,17 @@ namespace Green_Leaf
                         }
                         else
                         {
-                            MessageBox.Show("Login gagal, Password yang anda masukan salah");
+                            MessageBox.Show("Login gagal, Password yang anda masukan salah", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Login gagal, Username yang anda masukan tidak terdaftar");
+                        MessageBox.Show("Login gagal, Username yang anda masukan tidak terdaftar", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Mohon isi kolom Username terlebih dahulu");
+                    MessageBox.Show("Mohon isi kolom Username terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -474,7 +474,7 @@ namespace Green_Leaf
                         }
                         if (login_passSama == true)
                         {
-                            MessageBox.Show("Login berhasil");
+                            MessageBox.Show("Login berhasil", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             pnl_login_isi.Visible = false;
                             pnl_menu_isi.Visible = true;
                             lbl_menu_user.Text = txt_login_username.Text + ",";
@@ -508,17 +508,17 @@ namespace Green_Leaf
                         }
                         else
                         {
-                            MessageBox.Show("Login gagal, Password yang anda masukan salah");
+                            MessageBox.Show("Login gagal, Password yang anda masukan salah", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Login gagal, Username yang anda masukan tidak terdaftar");
+                        MessageBox.Show("Login gagal, Username yang anda masukan tidak terdaftar", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Mohon isi kolom Username terlebih dahulu");
+                    MessageBox.Show("Mohon isi kolom Username terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -1429,7 +1429,7 @@ namespace Green_Leaf
             {
                 if (tbhtrps_kode.ToString() == txt_tbhtrps_kodeterapis.Text)
                 {
-                    MessageBox.Show("Maaf, Kode Terapis yang anda masukkan sudah terdaftar, silahkan ganti dengan Kode Terapis yang berbeda!");
+                    MessageBox.Show("Maaf, Kode Terapis yang anda masukkan sudah terdaftar, silahkan ganti dengan Kode Terapis yang berbeda!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     tbhtrps_kodeSama = true;
                     break;
                 }
@@ -1444,21 +1444,21 @@ namespace Green_Leaf
             {
                 if (txt_tbhtrps_kodeterapis.Text == "")
                 {
-                    MessageBox.Show("Mohon lengkapi data Kode Terapis terlebih dahulu!");
+                    MessageBox.Show("Mohon lengkapi data Kode Terapis terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (txt_tbhtrps_namaterapis.Text == "")
                 {
-                    MessageBox.Show("Mohon lengkapi data Nama Terapis terlebih dahulu!");
+                    MessageBox.Show("Mohon lengkapi data Nama Terapis terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (pict_tbhtrps_fotoKTP.Image == null)
                 {
-                    MessageBox.Show("Mohon pilih foto KTP terlebih dahulu!");
+                    MessageBox.Show("Mohon pilih foto KTP terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     if (rdo_tbhtrps_statusaktif.Checked == false && rdo_tbhtrps_statustdkaktif.Checked == false)
                     {
-                        MessageBox.Show("Mohon pilih Status terlebih dahulu!");
+                        MessageBox.Show("Mohon pilih Status terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else if (rdo_tbhtrps_statusaktif.Checked)
                     {
@@ -1466,13 +1466,13 @@ namespace Green_Leaf
                         tbhtrps_lokasi_gambar = Application.StartupPath.ToString() + "\\img\\" + txt_tbhtrps_namaterapis.Text + ".jpg";
                         tbhtrps_lokasi_gambar = tbhtrps_lokasi_gambar.Replace("\\", "\\\\");
 
-                        for (int i = 2; i < 7; i++)
+                        for (int i = 1; i <= 20; i++)
                         {
-                            tbhtrps_query = "INSERT INTO `terapis` (`kode_terapis`, `nama_terapis`, `lokasi_gambar`, `status_terapis`) VALUES ('" + i + "', '" + txt_tbhtrps_namaterapis.Text + "', '" + tbhtrps_lokasi_gambar + "', 'Aktif');";
+                            tbhtrps_query = "INSERT INTO `terapis` (`kode_terapis`, `nama_terapis`, `lokasi_gambar`, `status_terapis`) VALUES ('" + i + "', '" + txt_tbhtrps_namaterapis.Text+i + "', '" + tbhtrps_lokasi_gambar + "', 'Aktif');";
                             tbhtrps_sql.Insert(tbhtrps_query); 
                         }
-                        
-                        MessageBox.Show("Terapis telah berhasil ditambahkan");
+
+                        MessageBox.Show("Terapis telah berhasil ditambahkan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txt_tbhtrps_kodeterapis.Clear();
                         txt_tbhtrps_namaterapis.Clear();
                         tbhtrps_lokasi_gambar = "";
@@ -1491,7 +1491,7 @@ namespace Green_Leaf
 
                         tbhtrps_query = "INSERT INTO `terapis` (`kode_terapis`, `nama_terapis`, `lokasi_gambar`, `status_terapis`) VALUES ('" + txt_tbhtrps_kodeterapis.Text + "', '" + txt_tbhtrps_namaterapis.Text + "', '" + tbhtrps_lokasi_gambar + "', 'Tidak Aktif');";
                         tbhtrps_sql.Insert(tbhtrps_query);
-                        MessageBox.Show("Terapis telah berhasil ditambahkan");
+                        MessageBox.Show("Terapis telah berhasil ditambahkan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txt_tbhtrps_kodeterapis.Clear();
                         txt_tbhtrps_namaterapis.Clear();
                         tbhtrps_lokasi_gambar = "";
@@ -1617,7 +1617,7 @@ namespace Green_Leaf
             }
             else
             {
-                MessageBox.Show("Mohon pilih Kode Terapis terlebih dahulu!");
+                MessageBox.Show("Mohon pilih Kode Terapis terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -1625,15 +1625,15 @@ namespace Green_Leaf
         {
             if (txt_edttrps_kodeterapis.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi data Kode Terapis terlebih dahulu!");
+                MessageBox.Show("Mohon lengkapi data Kode Terapis terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_edttrps_namaterapis.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi data Nama Terapis terlebih dahulu!");
+                MessageBox.Show("Mohon lengkapi data Nama Terapis terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (pict_edttrps_fotoKTP.ImageLocation == "")
             {
-                MessageBox.Show("Mohon pilih foto KTP terlebih dahulu!");
+                MessageBox.Show("Mohon pilih foto KTP terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -1674,7 +1674,7 @@ namespace Green_Leaf
                         }
                         edttrps_conn.Close();
                         #endregion
-                        MessageBox.Show("Data terapis telah berhasil disimpan");
+                        MessageBox.Show("Data terapis telah berhasil disimpan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txt_edttrps_kodeterapis.Clear();
                         txt_edttrps_namaterapis.Clear();
                         edttrps_lokasi_gambar = "";
@@ -1719,7 +1719,7 @@ namespace Green_Leaf
                         }
                         edttrps_conn.Close();
                         #endregion
-                        MessageBox.Show("Data terapis telah berhasil disimpan");
+                        MessageBox.Show("Data terapis telah berhasil disimpan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txt_edttrps_kodeterapis.Clear();
                         txt_edttrps_namaterapis.Clear();
                         edttrps_lokasi_gambar = "";
@@ -1767,7 +1767,7 @@ namespace Green_Leaf
                     {
                         if (edttrps_kode == txt_edttrps_kodeterapis.Text)
                         {
-                            MessageBox.Show("Maaf, Kode Terapis yang anda masukkan sudah terdaftar, silahkan ganti dengan Kode Terapis yang berbeda!");
+                            MessageBox.Show("Maaf, Kode Terapis yang anda masukkan sudah terdaftar, silahkan ganti dengan Kode Terapis yang berbeda!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             edttrps_kodeSama = true;
                             break;
                         }
@@ -1808,7 +1808,7 @@ namespace Green_Leaf
                             }
                             edttrps_conn.Close();
                             #endregion
-                            MessageBox.Show("Data terapis telah berhasil disimpan");
+                            MessageBox.Show("Data terapis telah berhasil disimpan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             txt_edttrps_kodeterapis.Clear();
                             txt_edttrps_namaterapis.Clear();
                             edttrps_lokasi_gambar = "";
@@ -1853,7 +1853,7 @@ namespace Green_Leaf
                             }
                             edttrps_conn.Close();
                             #endregion
-                            MessageBox.Show("Data terapis telah berhasil disimpan");
+                            MessageBox.Show("Data terapis telah berhasil disimpan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             txt_edttrps_kodeterapis.Clear();
                             txt_edttrps_namaterapis.Clear();
                             edttrps_lokasi_gambar = "";
@@ -1955,7 +1955,7 @@ namespace Green_Leaf
                     MySqlCommand cmd = new MySqlCommand(edttrps_query, edttrps_conn);
                     cmd.ExecuteNonQuery();
                     File.Delete(Application.StartupPath.ToString() + "\\img\\" + edttrps_namalama + ".jpg");
-                    MessageBox.Show("Data terapis telah berhasil dihapus");
+                    MessageBox.Show("Data terapis telah berhasil dihapus", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txt_edttrps_kodeterapis.Clear();
                     txt_edttrps_namaterapis.Clear();
                     edttrps_lokasi_gambar = "";
@@ -2025,39 +2025,39 @@ namespace Green_Leaf
             #region(Cek inputan kosong)
             if (cbo_tbhpkt_jenispaket.SelectedItem == null)
             {
-                MessageBox.Show("Mohon pilih Jenis Paket terlebih dahulu");
+                MessageBox.Show("Mohon pilih Jenis Paket terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_tbhpkt_namapaket.Text == "")
             {
-                MessageBox.Show("Mohon isi kolom Nama Paket terlebih dahulu");
+                MessageBox.Show("Mohon isi kolom Nama Paket terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_tbhpkt_durasipaketjam.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi kolom Durasi Paket terlebih dahulu");
+                MessageBox.Show("Mohon lengkapi kolom Durasi Paket terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_tbhpkt_durasipaketmenit.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi kolom Durasi Paket terlebih dahulu");
+                MessageBox.Show("Mohon lengkapi kolom Durasi Paket terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_tbhpkt_hargapaket.Text == "")
             {
-                MessageBox.Show("Mohon isi kolom Harga Paket terlebih dahulu");
+                MessageBox.Show("Mohon isi kolom Harga Paket terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_tbhpkt_komisipaketnormal.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi kolom Komisi Paket terlebih dahulu");
+                MessageBox.Show("Mohon lengkapi kolom Komisi Paket terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_tbhpkt_komisipaketmidnight.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi kolom Komisi Paket terlebih dahulu");
+                MessageBox.Show("Mohon lengkapi kolom Komisi Paket terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (double.Parse(txt_tbhpkt_komisipaketnormal.Text) > 100)
             {
-                MessageBox.Show("Inputan Tidak Valid, Maksimal Komisi adalah 100%");
+                MessageBox.Show("Inputan Tidak Valid, Maksimal Komisi adalah 100%", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (double.Parse(txt_tbhpkt_komisipaketmidnight.Text) > 100)
             {
-                MessageBox.Show("Inputan Tidak Valid, Maksimal Komisi adalah 100%");
+                MessageBox.Show("Inputan Tidak Valid, Maksimal Komisi adalah 100%", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             else
@@ -2090,7 +2090,7 @@ namespace Green_Leaf
                 tbhpkt_conn.Close();
                 if (tbhpkt_lstHasil.Count != 0)
                 {
-                    MessageBox.Show("Maaf, Nama Paket: " + txt_tbhpkt_namapaket.Text + ", dengan Jenis Paket: " + cbo_tbhpkt_jenispaket.SelectedItem + ", sudah ada di dalam database");
+                    MessageBox.Show("Maaf, Nama Paket: " + txt_tbhpkt_namapaket.Text + ", dengan Jenis Paket: " + cbo_tbhpkt_jenispaket.SelectedItem + ", sudah ada di dalam database", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 #endregion
                 #region(Insert paket ke databse)
@@ -2108,16 +2108,17 @@ namespace Green_Leaf
                     //tbhpkt_query = "INSERT INTO `paket` (`id_paket`, `jenis_paket`, `nama_paket`, `durasi_paket`, `harga_paket`, `jam_kerja`, `komisi_per_paket`) "
                     //        + "VALUES (NULL, '" +  + "', '" +  + "', '" +  + "', '" +  + "', 'Normal', '');";
 
-                    for (int i = 0; i < 5; i++)
+                    for (int i = 1; i <= 20; i++)
                     {
                         tbhpkt_query = "INSERT INTO `paket` (`id_paket`, `jenis_paket`, `nama_paket`, `durasi_paket`, `harga_paket`, "
-                        + "`komisi_normal_paket`, `komisi_midnight_paket`) VALUES (NULL, '" + cbo_tbhpkt_jenispaket.SelectedItem + "', '" + txt_tbhpkt_namapaket.Text + "', '" +
-                        durasi + "', '" + txt_tbhpkt_hargapaket.Text + "', '" + txt_tbhpkt_komisipaketnormal.Text.Replace(',', '.') + "', '" + txt_tbhpkt_komisipaketmidnight.Text.Replace(',', '.') + "');";
+                    + "`komisi_normal_paket`, `komisi_midnight_paket`) VALUES (NULL, '" + cbo_tbhpkt_jenispaket.SelectedItem + "', '" + txt_tbhpkt_namapaket.Text+i + "', '" +
+                    durasi + "', '" + txt_tbhpkt_hargapaket.Text + "', '" + txt_tbhpkt_komisipaketnormal.Text.Replace(',', '.') + "', '" + txt_tbhpkt_komisipaketmidnight.Text.Replace(',', '.') + "');";
                         tbhpkt_sql.Insert(tbhpkt_query);
                     }
-                    
 
-                    MessageBox.Show("Paket telah berhasil ditambahkan");
+
+
+                    MessageBox.Show("Paket telah berhasil ditambahkan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cbo_tbhpkt_jenispaket.SelectedItem = null;
                     txt_tbhpkt_namapaket.Clear();
                     txt_tbhpkt_durasipaketjam.Clear();
@@ -2274,7 +2275,7 @@ namespace Green_Leaf
             }
             else
             {
-                MessageBox.Show("Mohon pilih Jenis dan Nama Paket terlebih dahulu!");
+                MessageBox.Show("Mohon pilih Jenis dan Nama Paket terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -2287,35 +2288,35 @@ namespace Green_Leaf
             #region(Update ke database)
             if (txt_edtpkt_namapaket.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi data Nama Paket terlebih dahulu!");
+                MessageBox.Show("Mohon lengkapi data Nama Paket terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_edtpkt_komisipaketnormal.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi data Komisi Paket terlebih dahulu!");
+                MessageBox.Show("Mohon lengkapi data Komisi Paket terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_edtpkt_komisipaketmidnight.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi data Komisi Paket terlebih dahulu!");
+                MessageBox.Show("Mohon lengkapi data Komisi Paket terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_edtpkt_hargapaket.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi data Harga Paket terlebih dahulu!");
+                MessageBox.Show("Mohon lengkapi data Harga Paket terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_edtpkt_durasipaketjam.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi data Durasi Paket terlebih dahulu!");
+                MessageBox.Show("Mohon lengkapi data Durasi Paket terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_edtpkt_durasipaketmenit.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi data Durasi Paket terlebih dahulu!");
+                MessageBox.Show("Mohon lengkapi data Durasi Paket terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (double.Parse(txt_edtpkt_komisipaketnormal.Text) > 100)
             {
-                MessageBox.Show("Inputan Tidak Valid, Maksimal Komisi adalah 100%");
+                MessageBox.Show("Inputan Tidak Valid, Maksimal Komisi adalah 100%", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (double.Parse(txt_edtpkt_komisipaketmidnight.Text) > 100)
             {
-                MessageBox.Show("Inputan Tidak Valid, Maksimal Komisi adalah 100%");
+                MessageBox.Show("Inputan Tidak Valid, Maksimal Komisi adalah 100%", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -2442,13 +2443,13 @@ namespace Green_Leaf
 
 
 
-                    MessageBox.Show("Data Paket telah berhasil disimpan");
+                    MessageBox.Show("Data Paket telah berhasil disimpan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     if (namapaketsamadatabase == true)
                     {
-                        MessageBox.Show("Maaf Nama Paket: " + txt_edtpkt_namapaket.Text + ", sudah ada di dalam daftar Paket: " + cbo_edtpkt_jenispaket.SelectedItem.ToString() + ", silahkan ganti nama paket");
+                        MessageBox.Show("Maaf Nama Paket: " + txt_edtpkt_namapaket.Text + ", sudah ada di dalam daftar Paket: " + cbo_edtpkt_jenispaket.SelectedItem.ToString() + ", silahkan ganti nama paket", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -2530,7 +2531,7 @@ namespace Green_Leaf
 
 
 
-                        MessageBox.Show("Data Paket telah berhasil disimpan");
+                        MessageBox.Show("Data Paket telah berhasil disimpan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 //#region(Buat huruf besar untuk Jam dan Menit)
@@ -2700,7 +2701,7 @@ namespace Green_Leaf
 
 
 
-                MessageBox.Show("Data Paket telah berhasil dihapus");
+                MessageBox.Show("Data Paket telah berhasil dihapus", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
@@ -2712,19 +2713,19 @@ namespace Green_Leaf
             #region(Cek inputan kosong)
             if (txt_tbhuser_nama.Text == "")
             {
-                MessageBox.Show("Mohon isi kolom Nama terlebih dahulu");
+                MessageBox.Show("Mohon isi kolom Nama terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_tbhuser_user.Text == "")
             {
-                MessageBox.Show("Mohon isi kolom Username terlebih dahulu");
+                MessageBox.Show("Mohon isi kolom Username terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_tbhuser_user.Text == "")
             {
-                MessageBox.Show("Mohon isi kolom Password terlebih dahulu");
+                MessageBox.Show("Mohon isi kolom Password terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (cbo_tbhuser_jenisuser.SelectedItem == null)
             {
-                MessageBox.Show("Mohon pilih Jenis User terlebih dahulu");
+                MessageBox.Show("Mohon pilih Jenis User terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             else
@@ -2756,7 +2757,7 @@ namespace Green_Leaf
                 tbhuser_conn.Close();
                 if (countuser != 0)
                 {
-                    MessageBox.Show("Maaf, Nama User: " + txt_tbhuser_user.Text + ", sudah terdaftar");
+                    MessageBox.Show("Maaf, Nama User: " + txt_tbhuser_user.Text + ", sudah terdaftar", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 #endregion
                 #region(Insert paket ke databse)
@@ -2777,7 +2778,7 @@ namespace Green_Leaf
                         + "VALUES (NULL, '" + txt_tbhuser_nama.Text + "', '" + txt_tbhuser_user.Text + "', '" + txt_tbhuser_pass.Text + "', '" + cbo_tbhuser_jenisuser.SelectedItem + "');";
                     tbhuser_sql.Insert(tbhuser_query);
 
-                    MessageBox.Show("User telah berhasil ditambahkan");
+                    MessageBox.Show("User telah berhasil ditambahkan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cbo_tbhuser_jenisuser.SelectedItem = null;
                     txt_tbhuser_pass.Clear();
                     txt_tbhuser_user.Clear();
@@ -2863,7 +2864,7 @@ namespace Green_Leaf
             }
             else
             {
-                MessageBox.Show("Mohon pilih User terlebih dahulu!");
+                MessageBox.Show("Mohon pilih User terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -2937,19 +2938,19 @@ namespace Green_Leaf
         {
             if (txt_edtuser_nama.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi data Nama terlebih dahulu!");
+                MessageBox.Show("Mohon lengkapi data Nama terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_edtuser_pass.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi data Password terlebih dahulu!");
+                MessageBox.Show("Mohon lengkapi data Password terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_edtuser_user.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi data Username terlebih dahulu!");
+                MessageBox.Show("Mohon lengkapi data Username terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (cbo_edtuser_jenisuser.SelectedItem == null)
             {
-                MessageBox.Show("Mohon pilih Jenis User terlebih dahulu!");
+                MessageBox.Show("Mohon pilih Jenis User terlebih dahulu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -2991,7 +2992,7 @@ namespace Green_Leaf
                     {
                         if (edtuser_pengguna == txt_edtuser_user.Text)
                         {
-                            MessageBox.Show("Maaf, Nama Pengguna yang anda masukkan sudah terdaftar, silahkan ganti dengan Nama Pengguna yang berbeda!");
+                            MessageBox.Show("Maaf, Nama Pengguna yang anda masukkan sudah terdaftar, silahkan ganti dengan Nama Pengguna yang berbeda!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             edtuser_namasama = true;
                             break;
                         }
@@ -3023,7 +3024,7 @@ namespace Green_Leaf
                     }
                     edtuser_conn.Close();
                     #endregion
-                    MessageBox.Show("Data user telah berhasil disimpan");
+                    MessageBox.Show("Data user telah berhasil disimpan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txt_edtuser_nama.Clear();
                     txt_edtuser_pass.Clear();
                     txt_edtuser_user.Clear();
@@ -4349,7 +4350,7 @@ namespace Green_Leaf
                             string totalbayarFinal = grandtotal.ToString(String.Format("0,0", totalbayar));
                                    
                             lbl_ctknota_totalbyr.Text = totalbayarFinal;
-                            MessageBox.Show("Nota telah berhasil dibuat");
+                            MessageBox.Show("Nota telah berhasil dibuat", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
                             PrintDialog printDialog = new PrintDialog();
 
@@ -4486,7 +4487,7 @@ namespace Green_Leaf
                 #endregion
                 string totalbayarFinal = grandtotal.ToString(String.Format("0,0", totalbayar));
                 lbl_ctknota_totalbyr.Text = totalbayarFinal;
-                MessageBox.Show("Nota telah berhasil ditambahkan");
+                MessageBox.Show("Nota telah berhasil ditambahkan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
                 PrintDialog printDialog = new PrintDialog();
 
@@ -4641,7 +4642,7 @@ namespace Green_Leaf
                                 //}
                                 //totalbayarFinal = totalbayarFinal.Insert(countdigittotal + countdigitend, ",-");
                                 lbl_ctknota_totalbyr.Text = totalbayarFinal;
-                                MessageBox.Show("Nota telah berhasil ditambahkan");
+                                MessageBox.Show("Nota telah berhasil ditambahkan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
                                 PrintDialog printDialog = new PrintDialog();
 
@@ -4796,7 +4797,7 @@ namespace Green_Leaf
                                 //}
                                 //totalbayarFinal = totalbayarFinal.Insert(countdigittotal + countdigitend, ",-");
                                 lbl_ctknota_totalbyr.Text = totalbayarFinal;
-                                MessageBox.Show("Nota telah berhasil ditambahkan");
+                                MessageBox.Show("Nota telah berhasil ditambahkan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
                                 PrintDialog printDialog = new PrintDialog();
 
@@ -4920,11 +4921,11 @@ namespace Green_Leaf
         {
             if (cbo_ctknota_kodeterapis.SelectedItem == null)
             {
-                MessageBox.Show("Mohon pilih kode terapis terlebih dahulu terlebih dahulu");
+                MessageBox.Show("Mohon pilih kode terapis terlebih dahulu terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_ctknota_nomorruangan.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi kolom nomor ruangan terlebih dahulu");
+                MessageBox.Show("Mohon lengkapi kolom nomor ruangan terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -5022,7 +5023,7 @@ namespace Green_Leaf
                     {
                         if (txt_ctknota_ket.Text == "")
                         {
-                            MessageBox.Show("Mohon lengkapi keterangan diskon terlebih dahulu");
+                            MessageBox.Show("Mohon lengkapi keterangan diskon terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
@@ -5053,7 +5054,7 @@ namespace Green_Leaf
                 }
                 else
                 {
-                    MessageBox.Show("Mohon pilih paket terlebih dahulu");
+                    MessageBox.Show("Mohon pilih paket terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -5154,11 +5155,11 @@ namespace Green_Leaf
         {
             if (txt_variabel_extra.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi kolom Extra terlebih dahulu");
+                MessageBox.Show("Mohon lengkapi kolom Extra terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txt_variabel_potonganhotel.Text == "")
             {
-                MessageBox.Show("Mohon lengkapi kolom Potongan Hotel terlebih dahulu");
+                MessageBox.Show("Mohon lengkapi kolom Potongan Hotel terlebih dahulu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -5176,7 +5177,7 @@ namespace Green_Leaf
                                         + "WHERE `variabel`.`id_variabel` = 1;";
                     MySqlCommand cmd = new MySqlCommand(edtpkt_query, edtpkt_conn);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Data variabel telah tersimpan");
+                    MessageBox.Show("Data variabel telah tersimpan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
@@ -6554,7 +6555,7 @@ namespace Green_Leaf
                 //wb.Cell().DataType = XLCellValues.Number;
                 wb.Worksheets.Add(lprnpnjln_DS.Tables[0], "Laporan Penjualan");
                 wb.SaveAs(folderPath + "Laporan Penjualan (" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + " " + DateTime.Now.Hour + ";" + DateTime.Now.Minute.ToString() + ";" + DateTime.Now.Second.ToString() + ").xlsx");
-                MessageBox.Show("File Excel telah disimpan");
+                MessageBox.Show("File Excel telah disimpan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             DialogResult dialogResult = MessageBox.Show("Apakah anda ingin menghapus Data Laporan Penjualan?", "Alert", MessageBoxButtons.YesNo);
@@ -7520,7 +7521,7 @@ namespace Green_Leaf
                 //wb.Cell().DataType = XLCellValues.Number;
                 wb.Worksheets.Add(lprnlayanan_DS.Tables[0], "Laporan Layanan");
                 wb.SaveAs(folderPath + "Laporan Layanan (" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + " " + DateTime.Now.Hour + ";" + DateTime.Now.Minute.ToString() + ";" + DateTime.Now.Second.ToString() + ").xlsx");
-                MessageBox.Show("File Excel telah disimpan");
+                MessageBox.Show("File Excel telah disimpan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             #region(Slip Gaji)
             //lprnlayanan_wb = new XLWorkbook();
@@ -8701,7 +8702,7 @@ namespace Green_Leaf
             int pageoffset = 0;
             int pagecount = 1;
             pagecount = Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(listrowcetak_jenispaket[0].Count) / 30));
-            if (listrowcetak_jenispaket[0].Count - (30 * (pagecount - 1)) > 22)
+            if (listrowcetak_jenispaket[0].Count - (30 * (pagecount - 1)) >= 22)
             {
                 pagecount++;
             }
@@ -9125,8 +9126,12 @@ namespace Green_Leaf
 
 
             lprngaji_wb.SaveAs(folderPath + "Slip Gaji (" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + " " + DateTime.Now.Hour + ";" + DateTime.Now.Minute.ToString() + ";" + DateTime.Now.Second.ToString() + ").xlsx");
-            MessageBox.Show("File Excel telah disimpan");
+            MessageBox.Show("File Excel telah disimpan","Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
             btn_lprngaji_excel.Enabled = false;
+            //lprngaji_wb.Dispose();
+            //lprngaji_wb = new XLWorkbook();
+            //lprngaji_wb.Worksheets.Add("Slip Gaji");
+
             //}
             #endregion
         }
