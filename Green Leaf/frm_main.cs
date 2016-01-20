@@ -217,6 +217,22 @@ namespace Green_Leaf
                     }
                     if (login_passSama == true)
                     {
+                        if (login_jenisuser == "Superadmin")
+                        {
+                            pnl_menu_laporan.Location = new Point(791, 47);
+                            pnl_menu_others.Location = new Point(30, 26);
+                            pnl_menu_user.Location = new Point(1049, 124);
+                            pnl_menu_user.Visible = true;
+                            pnl_menu_user.Enabled = true;
+                        }
+                        else if (login_jenisuser == "Sales")
+                        {
+                            pnl_menu_laporan.Location = new Point(873, 47);
+                            pnl_menu_others.Location = new Point(30, 26);
+                            pnl_menu_user.Location = new Point(1049, 124);
+                            pnl_menu_user.Visible = false;
+                            pnl_menu_user.Enabled = false;
+                        }
                         MessageBox.Show("Login berhasil", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         pnl_login_isi.Visible = false;
                         pnl_menu_isi.Visible = true;
@@ -231,22 +247,7 @@ namespace Green_Leaf
                         pnl_tbhpkt_isi.Enabled = false;
                         pnl_tbhtrps_isi.Enabled = false;
                         pnl_variabel_isi.Enabled = false;
-                        if (login_jenisuser == "Superadmin")
-                        {
-                            pnl_menu_laporan.Location = new Point(791, 47);
-                            pnl_menu_others.Location = new Point(30,26);
-                            pnl_menu_user.Location = new Point(1049, 124);
-                            pnl_menu_user.Visible = true;
-                            pnl_menu_user.Enabled = true;
-                        }
-                        else if (login_jenisuser == "Sales")
-                        {
-                            pnl_menu_laporan.Location = new Point(873, 47);
-                            pnl_menu_others.Location = new Point(30, 26);
-                            pnl_menu_user.Location = new Point(1049, 124);
-                            pnl_menu_user.Visible = false;
-                            pnl_menu_user.Enabled = false;
-                        }
+                        
 
                     }
                     else
@@ -348,20 +349,6 @@ namespace Green_Leaf
                         }
                         if (login_passSama == true)
                         {
-                            MessageBox.Show("Login berhasil", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            pnl_login_isi.Visible = false;
-                            pnl_menu_isi.Visible = true;
-                            lbl_menu_user.Text = txt_login_username.Text + ",";
-                            pnl_login_isi.Enabled = false;
-                            pnl_edttrps_isi.Enabled = false;
-                            pnl_edtpkt_isi.Enabled = false;
-                            pnl_ctknota_isi.Enabled = false;
-                            pnl_lprnlayanan_isi.Enabled = false;
-                            pnl_lprnpnjln_isi.Enabled = false;
-                            pnl_menu_isi.Enabled = true;
-                            pnl_tbhpkt_isi.Enabled = false;
-                            pnl_tbhtrps_isi.Enabled = false;
-                            pnl_variabel_isi.Enabled = false;
                             if (login_jenisuser == "Superadmin")
                             {
                                 pnl_menu_laporan.Location = new Point(791, 47);
@@ -378,6 +365,21 @@ namespace Green_Leaf
                                 pnl_menu_user.Visible = false;
                                 pnl_menu_user.Enabled = false;
                             }
+                            MessageBox.Show("Login berhasil", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            pnl_login_isi.Visible = false;
+                            pnl_menu_isi.Visible = true;
+                            lbl_menu_user.Text = txt_login_username.Text + ",";
+                            pnl_login_isi.Enabled = false;
+                            pnl_edttrps_isi.Enabled = false;
+                            pnl_edtpkt_isi.Enabled = false;
+                            pnl_ctknota_isi.Enabled = false;
+                            pnl_lprnlayanan_isi.Enabled = false;
+                            pnl_lprnpnjln_isi.Enabled = false;
+                            pnl_menu_isi.Enabled = true;
+                            pnl_tbhpkt_isi.Enabled = false;
+                            pnl_tbhtrps_isi.Enabled = false;
+                            pnl_variabel_isi.Enabled = false;
+                            
 
                         }
                         else
@@ -474,20 +476,6 @@ namespace Green_Leaf
                         }
                         if (login_passSama == true)
                         {
-                            MessageBox.Show("Login berhasil", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            pnl_login_isi.Visible = false;
-                            pnl_menu_isi.Visible = true;
-                            lbl_menu_user.Text = txt_login_username.Text + ",";
-                            pnl_login_isi.Enabled = false;
-                            pnl_edttrps_isi.Enabled = false;
-                            pnl_edtpkt_isi.Enabled = false;
-                            pnl_ctknota_isi.Enabled = false;
-                            pnl_lprnlayanan_isi.Enabled = false;
-                            pnl_lprnpnjln_isi.Enabled = false;
-                            pnl_menu_isi.Enabled = true;
-                            pnl_tbhpkt_isi.Enabled = false;
-                            pnl_tbhtrps_isi.Enabled = false;
-                            pnl_variabel_isi.Enabled = false;
                             if (login_jenisuser == "Superadmin")
                             {
                                 pnl_menu_laporan.Location = new Point(791, 47);
@@ -504,6 +492,21 @@ namespace Green_Leaf
                                 pnl_menu_user.Visible = false;
                                 pnl_menu_user.Enabled = false;
                             }
+                            MessageBox.Show("Login berhasil", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            pnl_login_isi.Visible = false;
+                            pnl_menu_isi.Visible = true;
+                            lbl_menu_user.Text = txt_login_username.Text + ",";
+                            pnl_login_isi.Enabled = false;
+                            pnl_edttrps_isi.Enabled = false;
+                            pnl_edtpkt_isi.Enabled = false;
+                            pnl_ctknota_isi.Enabled = false;
+                            pnl_lprnlayanan_isi.Enabled = false;
+                            pnl_lprnpnjln_isi.Enabled = false;
+                            pnl_menu_isi.Enabled = true;
+                            pnl_tbhpkt_isi.Enabled = false;
+                            pnl_tbhtrps_isi.Enabled = false;
+                            pnl_variabel_isi.Enabled = false;
+                            
 
                         }
                         else
@@ -5374,26 +5377,7 @@ namespace Green_Leaf
                 lbl_lprnpnjln_sumtotalcredit.Text = lprnpnjln_totalbayarcredit.ToString("#,##0");
                 lbl_lprnpnjln_sumfeeterapis.Text = lprnpnjln_feeterapis.ToString("#,##0");
 
-                //DataRow row = lprnpnjln_DS.Tables[0].NewRow();
-                //row[0] = "0";
-                //row[1] = "2016-01-08 15:42:16";
-                //row[2] = "0";
-                //row[3] = "";
-                //row[4] = "";
-                //row[5] = lbl_lprnpnjln_sumtotalhotel.Text;
-                //row[6] = "";
-                //row[7] = lprnpnjln_hargapaket.ToString("#,##0"); ;
-                //row[8] = "";
-                //row[9] = lbl_lprnpnjln_sumtotalextra.Text;
-                //row[10] = "0";
-                //row[11] = "";
-                //row[12] = lbl_lprnpnjln_sumtotaldiskon.Text;
-                //row[13] = "";
-                //row[14] = lbl_lprnpnjln_sumtotalsubtotal.Text;
-                //row[15] = lbl_lprnpnjln_sumfeeterapis.Text;
-                //row[16] = "";
-                //row[17] = "";
-                //lprnpnjln_DS.Tables[0].Rows.Add(row);
+                
                 #endregion
 
 
@@ -6487,6 +6471,32 @@ namespace Green_Leaf
 
         private void btn_lprnpnjln_excel_Click(object sender, EventArgs e)
         {
+            lprnpnjln_DS.Tables[0].Columns["Grand Total"].SetOrdinal(16);
+            lprnpnjln_DS.Tables[0].Columns["Fee Terapis"].SetOrdinal(14);
+            lprnpnjln_DS.Tables[0].Columns["Subtotal"].SetOrdinal(15);
+
+            DataRow row = lprnpnjln_DS.Tables[0].NewRow();
+            row[0] = "0";
+            row[1] = "2200-01-08 15:42:16";
+            row[2] = "0";
+            row[3] = "";
+            row[4] = "";
+            row[5] = lbl_lprnpnjln_sumtotalhotel.Text;
+            row[6] = "";
+            row[7] = lprnpnjln_hargapaket.ToString("#,##0"); ;
+            row[8] = "";
+            row[9] = lbl_lprnpnjln_sumtotalextra.Text;
+            row[10] = "0";
+            row[11] = "";
+            row[12] = lbl_lprnpnjln_sumtotaldiskon.Text;
+            row[13] = "";
+            row[14] = lbl_lprnpnjln_sumfeeterapis.Text;
+            row[15] = lbl_lprnpnjln_sumtotalsubtotal.Text;
+            row[16] = lbl_lprnpnjln_sumtotalgrandtotal.Text;
+            row[17] = "";
+            row[18] = "";
+            lprnpnjln_DS.Tables[0].Rows.Add(row);
+
             string folderPath = "C:\\Excel\\";
             if (!Directory.Exists(folderPath))
             {
@@ -6519,6 +6529,8 @@ namespace Green_Leaf
             pnl_tbhpkt_isi.Enabled = false;
             pnl_tbhtrps_isi.Enabled = false;
             pnl_variabel_isi.Enabled = false;
+
+            dgv_lprnpnjln_tabellaporan.DataSource = null;
         }
         #endregion
 
