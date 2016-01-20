@@ -268,7 +268,11 @@ namespace Green_Leaf
 
         private void btn_login_batal_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("Apakah anda ingin keluar?", "Alert", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void txt_login_pass_KeyDown(object sender, KeyEventArgs e)
@@ -1197,9 +1201,11 @@ namespace Green_Leaf
             //pnl_tbhuser_isi.Enabled = false;
             //pnl_lprngaji_isi.Enabled = true;
             //btn_lprngaji_batal.Enabled = true;
-
+            
             frm_laporangaji laporangaji = new frm_laporangaji();
             laporangaji.Show();
+            laporangaji.FormClosing += Frmgaji_Closing;
+            this.Hide();
 
             //dtp_lprngaji_tgldari.ResetText();
             //dtp_lprngaji_tglsampai.ResetText();
@@ -1232,6 +1238,11 @@ namespace Green_Leaf
 
             //btn_lprngaji_excel.Enabled = false;
             
+        }
+
+        private void Frmgaji_Closing(object sender, FormClosingEventArgs e)
+        {
+            this.Show();
         }
 
         private void btn_menu_variabel_Click(object sender, EventArgs e)

@@ -763,7 +763,7 @@ namespace Green_Leaf
             lprngaji_wb.Worksheet("Slip Gaji").PageSetup.PaperSize = XLPaperSize.A4Paper;
             lprngaji_wb.Worksheet("Slip Gaji").PageSetup.Margins.Top = 1;
             lprngaji_wb.Worksheet("Slip Gaji").PageSetup.Margins.Bottom = 1;
-            lprngaji_wb.Worksheet("Slip Gaji").PageSetup.Margins.Left = 0.4;
+            lprngaji_wb.Worksheet("Slip Gaji").PageSetup.Margins.Left = 0.5;
             lprngaji_wb.Worksheet("Slip Gaji").PageSetup.Margins.Right = 0.6;
             lprngaji_wb.Worksheet("Slip Gaji").PageSetup.Margins.Footer = 0.8;
             lprngaji_wb.Worksheet("Slip Gaji").PageSetup.Margins.Header = 0.8;
@@ -771,7 +771,7 @@ namespace Green_Leaf
             int pageoffset = 0;
             int pagecount = 1;
             pagecount = Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(listrowcetak_jenispaket[0].Count) / 34));
-            if (listrowcetak_jenispaket[0].Count - (34 * (pagecount - 1)) >= 26)
+            if (listrowcetak_jenispaket[0].Count - (34 * (pagecount - 1)) > 26)
             {
                 pagecount++;
             }
@@ -847,8 +847,10 @@ namespace Green_Leaf
                     lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[0].Count + 10 + pageoffset, 2).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
                     lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[0].Count + 10 + pageoffset, 12).FormulaA1 = "SUM(L" + (10 + pageoffset).ToString() + ":L" + (listrowcetak_jenispaket[0].Count + 9 + pageoffset).ToString() + ")";
                     lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[0].Count + 10 + pageoffset, 12).Style.NumberFormat.Format = "#,##0";
+                    lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[0].Count + 10 + pageoffset, 12).Style.Font.SetBold();
                     lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[0].Count + 10 + pageoffset, 13).FormulaA1 = "SUM(M" + (10 + pageoffset).ToString() + ":M" + (listrowcetak_jenispaket[0].Count + 9 + pageoffset).ToString() + ")";
                     lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[0].Count + 10 + pageoffset, 13).Style.NumberFormat.Format = "#,##0";
+                    lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[0].Count + 10 + pageoffset, 13).Style.Font.SetBold();
                     lprngaji_wb.Worksheet("Slip Gaji").Range(9 + pageoffset, 2, listrowcetak_jenispaket[0].Count + 10 + pageoffset, 13).Style.Border.SetOutsideBorder(XLBorderStyleValues.Thin);
                     lprngaji_wb.Worksheet("Slip Gaji").Range(9 + pageoffset, 2, listrowcetak_jenispaket[0].Count + 10 + pageoffset, 13).Style.Border.SetOutsideBorderColor(XLColor.Black);
                     lprngaji_wb.Worksheet("Slip Gaji").Range(9 + pageoffset, 2, listrowcetak_jenispaket[0].Count + 10 + pageoffset, 11).Style.Border.SetOutsideBorder(XLBorderStyleValues.Thin);
@@ -1117,7 +1119,9 @@ namespace Green_Leaf
                             lprngaji_wb.Worksheet("Slip Gaji").Range(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 2, listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 11).Merge();
                             lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 2).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
                             lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 12).FormulaA1 = "0";
+                            lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 12).Style.Font.SetBold();
                             lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 13).FormulaA1 = "0";
+                            lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 13).Style.Font.SetBold();
                             //lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 13).Style.NumberFormat.Format = "#,##0";
                             lprngaji_wb.Worksheet("Slip Gaji").Range(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 2, listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 13).Style.Border.SetOutsideBorder(XLBorderStyleValues.Thin);
                             lprngaji_wb.Worksheet("Slip Gaji").Range(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 2, listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 13).Style.Border.SetInsideBorder(XLBorderStyleValues.Thin);
@@ -1130,8 +1134,10 @@ namespace Green_Leaf
                             lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 2).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
                             lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 12).FormulaA1 = "SUM(L" + (10 + pageoffset).ToString() + ":L" + (listrowcetak_jenispaket[p - 1].Count + 9 + pageoffset).ToString() + ")";
                             lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 12).Style.NumberFormat.Format = "#,##0";
+                            lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 12).Style.Font.SetBold();
                             lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 13).FormulaA1 = "SUM(M" + (10 + pageoffset).ToString() + ":M" + (listrowcetak_jenispaket[p - 1].Count + 9 + pageoffset).ToString() + ")";
                             lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 13).Style.NumberFormat.Format = "#,##0";
+                            lprngaji_wb.Worksheet("Slip Gaji").Cell(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 13).Style.Font.SetBold();
                             lprngaji_wb.Worksheet("Slip Gaji").Range(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 2, listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 13).Style.Border.SetOutsideBorder(XLBorderStyleValues.Thin);
                             lprngaji_wb.Worksheet("Slip Gaji").Range(listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 2, listrowcetak_jenispaket[p - 1].Count + 10 + pageoffset, 13).Style.Border.SetInsideBorder(XLBorderStyleValues.Thin);
 
