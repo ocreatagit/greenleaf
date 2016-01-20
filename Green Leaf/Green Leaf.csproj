@@ -111,6 +111,12 @@
     <Compile Include="frm_gantivariabel.Designer.cs">
       <DependentUpon>frm_gantivariabel.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_laporangaji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_laporangaji.Designer.cs">
+      <DependentUpon>frm_laporangaji.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_laporanlayanan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_gantivariabel.resx">
       <DependentUpon>frm_gantivariabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_laporangaji.resx">
+      <DependentUpon>frm_laporangaji.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_laporanlayanan.resx">
       <DependentUpon>frm_laporanlayanan.cs</DependentUpon>

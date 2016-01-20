@@ -32,3 +32,4 @@ C:\Users\William\Documents\Visual Studio 2010\Projects\Green Leaf\Green Leaf\bin
 C:\Users\William\Documents\Visual Studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Debug\Green_Leaf.frm_laporanlayanan.resources
 C:\Users\William\Documents\Visual Studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Debug\Green_Leaf.frm_tambahuser.resources
 C:\Users\William\Documents\Visual Studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Debug\Green_Leaf.frm_edituser.resources
+C:\Users\William\Documents\Visual Studio 2010\Projects\Green Leaf\Green Leaf\obj\x86\Debug\Green_Leaf.frm_laporangaji.resources
