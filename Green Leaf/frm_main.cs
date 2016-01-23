@@ -747,6 +747,7 @@ namespace Green_Leaf
             pnl_edtuser_isi.Enabled = false;
             pnl_tbhuser_isi.Enabled = false;
 
+            lbl_ctknota_warningjenispaket.Visible = false;
             txt_ctknota_nomorruangan.Enabled = true;
             rdo_ctknota_normal.Enabled = false;
             rdo_ctknota_midnight.Enabled = false;
@@ -879,35 +880,6 @@ namespace Green_Leaf
             pnl_edtuser_isi.Enabled = false;
             pnl_tbhuser_isi.Enabled = false;
 
-            dtp_lprnpnjln_tgldari.ResetText();
-            dtp_lprnpnjln_tglsampai.ResetText();
-
-            lprnpnjln_tanggalcetakdari = dtp_lprnpnjln_tgldari.Value.Year.ToString();
-            lprnpnjln_tanggalcetakdari += "-" + dtp_lprnpnjln_tgldari.Value.Month.ToString();
-            lprnpnjln_tanggalcetakdari += "-" + dtp_lprnpnjln_tgldari.Value.Day.ToString();
-            //tanggalcetakdari += " " + dtp_lprnpnjln_tgldari.Value.TimeOfDay.ToString();
-
-            lprnpnjln_tanggalcetaksampai = dtp_lprnpnjln_tglsampai.Value.Year.ToString();
-            lprnpnjln_tanggalcetaksampai += "-" + dtp_lprnpnjln_tglsampai.Value.Month.ToString();
-            lprnpnjln_tanggalcetaksampai += "-" + dtp_lprnpnjln_tglsampai.Value.Day.ToString();
-            //tanggalcetaksampai += " " + dtp_lprnpnjln_tglsampai.Value.TimeOfDay.ToString();
-
-            //rdo_lprnpnjln_all.Enabled = false;
-            //rdo_lprnpnjln_cash.Enabled = false;
-            //rdo_lprnpnjln_credit.Enabled = false;
-            
-            rdo_lprnpnjln_cash.Enabled = true;
-            rdo_lprnpnjln_credit.Enabled = true;
-            rdo_lprnpnjln_all.Enabled = true;
-            btn_lprnpnjln_excel.Enabled = true;
-            
-
-            dtp_lprnpnjln_tgldari.Format = DateTimePickerFormat.Custom;
-            dtp_lprnpnjln_tgldari.CustomFormat = "dddd, dd MMMM yyyy";
-
-            dtp_lprnpnjln_tglsampai.Format = DateTimePickerFormat.Custom;
-            dtp_lprnpnjln_tglsampai.CustomFormat = "dddd, dd MMMM yyyy";
-
             lprnpnjln_hapusNota.Name = "Hapus Nota";
             lprnpnjln_hapusNota.Text = "Hapus";
             lprnpnjln_hapusNota.UseColumnTextForButtonValue = true;
@@ -918,197 +890,19 @@ namespace Green_Leaf
 
             dgv_lprnpnjln_tabellaporan.RowTemplate.Height = 22;
 
-            dgv_lprnpnjln_tabellaporan.DataSource = null;
-            dgv_lprnpnjln_tabellaporan.Rows.Clear();
-            dgv_lprnpnjln_tabellaporan.Columns.Clear();
-            dgv_lprnpnjln_tabellaporan.Refresh();
-            lprnpnjln_DS.Tables.Clear();
-            lbl_lprnpnjln_sumfeeterapis.Text = "";
-            lbl_lprnpnjln_sumtotalcash.Text = "";
-            lbl_lprnpnjln_sumtotalcredit.Text = "";
-            lbl_lprnpnjln_sumtotaldiskon.Text = "";
-            lbl_lprnpnjln_sumtotalextra.Text = "";
-            lbl_lprnpnjln_sumtotalgrandtotal.Text = "";
-            lbl_lprnpnjln_sumtotalhotel.Text = "";
-            lbl_lprnpnjln_sumtotalsubtotal.Text = "";
-            //dtp_lprnpnjln_tgldari.ResetText();
-            //dtp_lprnpnjln_tglsampai.ResetText();
-            //rdo_lprnpnjln_all.Checked = false;
-            //rdo_lprnpnjln_cash.Checked = false;
-            //rdo_lprnpnjln_credit.Checked = false;
+            dtp_lprnpnjln_tgldari.Format = DateTimePickerFormat.Custom;
+            dtp_lprnpnjln_tgldari.CustomFormat = "dddd, dd MMMM yyyy";
 
-            #region(Select)
-            dgv_lprnpnjln_tabellaporan.DataSource = null;
-            dgv_lprnpnjln_tabellaporan.Rows.Clear();
-            dgv_lprnpnjln_tabellaporan.Columns.Clear();
-            //dgv_lprnpnjln_tabellaporan.Refresh();
-            lprnpnjln_DS.Tables.Clear();
-            string lprnpnjln_query;
-            MySqlConnection lprnpnjln_conn = new MySqlConnection(all_connStr);
-            try
-            {
-                lprnpnjln_tanggalcetakdari = dtp_lprnpnjln_tgldari.Value.Year.ToString();
-                lprnpnjln_tanggalcetakdari += "-" + dtp_lprnpnjln_tgldari.Value.Month.ToString();
-                lprnpnjln_tanggalcetakdari += "-" + dtp_lprnpnjln_tgldari.Value.Day.ToString();
+            dtp_lprnpnjln_tglsampai.Format = DateTimePickerFormat.Custom;
+            dtp_lprnpnjln_tglsampai.CustomFormat = "dddd, dd MMMM yyyy";
 
-                lprnpnjln_tanggalcetaksampai = dtp_lprnpnjln_tglsampai.Value.Year.ToString();
-                lprnpnjln_tanggalcetaksampai += "-" + dtp_lprnpnjln_tglsampai.Value.Month.ToString();
-                lprnpnjln_tanggalcetaksampai += "-" + dtp_lprnpnjln_tglsampai.Value.Day.ToString();
+            dtp_lprnpnjln_tgldari.ResetText();
+            dtp_lprnpnjln_tglsampai.ResetText();
 
-                lprnpnjln_conn.Open();
-                lprnpnjln_query = "SELECT * FROM `nota` WHERE DATE(`tanggalcetak_nota`) >= '" + lprnpnjln_tanggalcetakdari + "' and DATE(tanggalcetak_nota) <= '" + lprnpnjln_tanggalcetaksampai + "'";
-                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(lprnpnjln_query, lprnpnjln_conn);
-                MySqlCommand ctknota_cmd = new MySqlCommand(lprnpnjln_query, lprnpnjln_conn);
-
-                mySqlDataAdapter.Fill(lprnpnjln_DS);
-                lprnpnjln_DS.Tables[0].Columns.Remove("id_paket");
-                //lprnpnjln_DS.Tables[0].Columns.Remove("jenis_paket");
-                //lprnpnjln_DS.Tables[0].Columns.Remove("komisi_normal_paket");
-                //lprnpnjln_DS.Tables[0].Columns.Remove("komisi_midnight_paket");
-
-                lprnpnjln_DS.Tables[0].Columns["id_nota"].ColumnName = "Nomor Nota";
-                lprnpnjln_DS.Tables[0].Columns["tanggalcetak_nota"].ColumnName = "Tanggal Cetak Nota";
-                lprnpnjln_DS.Tables[0].Columns["nomorruangan_nota"].ColumnName = "Nomor Ruangan";
-                lprnpnjln_DS.Tables[0].Columns["jamkerja_nota"].ColumnName = "Jam Kerja";
-                lprnpnjln_DS.Tables[0].Columns["tamuhotel_nota"].ColumnName = "Tamu Hotel";
-                lprnpnjln_DS.Tables[0].Columns["potonganhotel_nota"].ColumnName = "Potongan Tamu Hotel";
-                lprnpnjln_DS.Tables[0].Columns["namapaket_nota"].ColumnName = "Nama Paket";
-                lprnpnjln_DS.Tables[0].Columns["hargapaket_nota"].ColumnName = "Harga Paket";
-                lprnpnjln_DS.Tables[0].Columns["extra_nota"].ColumnName = "Extra";
-                lprnpnjln_DS.Tables[0].Columns["nominalextra_nota"].ColumnName = "Nominal Extra";
-                lprnpnjln_DS.Tables[0].Columns["kodeterapis_nota"].ColumnName = "Kode Terapis";
-                lprnpnjln_DS.Tables[0].Columns["namaterapis_nota"].ColumnName = "Nama Terapis";
-                lprnpnjln_DS.Tables[0].Columns["diskon_nota"].ColumnName = "Diskon";
-                lprnpnjln_DS.Tables[0].Columns["keterangan_nota"].ColumnName = "Keterangan Diskon";
-                lprnpnjln_DS.Tables[0].Columns["totalbayar_nota"].ColumnName = "Subtotal";
-                lprnpnjln_DS.Tables[0].Columns["feeterapis_nota"].ColumnName = "Fee Terapis";
-                lprnpnjln_DS.Tables[0].Columns["jenisbayar_nota"].ColumnName = "Jenis Bayar";
-                lprnpnjln_DS.Tables[0].Columns["status_nota"].ColumnName = "Status";
-                lprnpnjln_DS.Tables[0].Columns["grandtotal_nota"].ColumnName = "Grand Total";
-                //lprnpnjln_DS.Tables[0].Columns["grandtotal_nota"].SetOrdinal(16);
-                //lprnpnjln_DS.Tables[0].Columns["harga_paket"].ColumnName = "Harga Paket";
-                //lprnpnjln_DS.Tables[0].Columns["durasi_paket"].ColumnName = "Durasi Paket";
-
-                //lprnpnjln_DS.Tables[0].Columns.Add(new DataColumn("Tamu Hotel", typeof(int)));
-                //for (int i = 0; i < lprnpnjln_DS.Tables[0].Rows.Count; i++)
-                //{
-                //    lprnpnjln_DS.Tables[0].Rows[i]["Tamu Hotel"] = ctknota_tamuhotel;
-                //}
-
-                //lprnpnjln_DS.Tables[0].Columns.Add(new DataColumn("Extra", typeof(bool)));
-                //lprnpnjln_DS.Tables[0].Columns.Add(new DataColumn("Pilih", typeof(bool)));
-                //lprnpnjln_DS.Tables[0].Columns["Pilih"].SetOrdinal(0);
-
-                //lprnpnjln_DS.Tables[0].Columns.Add(new DataColumn("Nominal Extra", typeof(int)));
-                //for (int ii = 0; ii < lprnpnjln_DS.Tables[0].Rows.Count; ii++)
-                //{
-                //    lprnpnjln_DS.Tables[0].Rows[ii]["Nominal Extra"] = ctknota_extra;
-                //}
-
-                dgv_lprnpnjln_tabellaporan.DataSource = lprnpnjln_DS.Tables[0];
-
-                if (lprnpnjln_DS.Tables[0].Rows.Count > 0)
-                {
-                    dgv_lprnpnjln_tabellaporan.Columns["Grand Total"].DisplayIndex = 16;
-                    dgv_lprnpnjln_tabellaporan.Columns["Fee Terapis"].DisplayIndex = 14;
-
-                    dgv_lprnpnjln_tabellaporan.Columns["Potongan Tamu Hotel"].DefaultCellStyle.Format = "N0";
-                    dgv_lprnpnjln_tabellaporan.Columns["Harga Paket"].DefaultCellStyle.Format = "N0";
-                    dgv_lprnpnjln_tabellaporan.Columns["Nominal Extra"].DefaultCellStyle.Format = "N0";
-                    dgv_lprnpnjln_tabellaporan.Columns["Diskon"].DefaultCellStyle.Format = "N0";
-                    dgv_lprnpnjln_tabellaporan.Columns["Subtotal"].DefaultCellStyle.Format = "N0";
-                    dgv_lprnpnjln_tabellaporan.Columns["Fee Terapis"].DefaultCellStyle.Format = "N0";
-                    dgv_lprnpnjln_tabellaporan.Columns["Grand Total"].DefaultCellStyle.Format = "N0";
-
-                    dgv_lprnpnjln_tabellaporan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-                    dgv_lprnpnjln_tabellaporan.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-                    dgv_lprnpnjln_tabellaporan.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                    dgv_lprnpnjln_tabellaporan.ReadOnly = true;
-
-                    dgv_lprnpnjln_tabellaporan.Columns["Nama Paket"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                    dgv_lprnpnjln_tabellaporan.Columns["Keterangan Diskon"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-                    #region(SUM Kolom berisi nominal harga)
-                    lprnpnjln_potonganhotel = 0;
-                    lprnpnjln_hargapaket = 0;
-                    lprnpnjln_extra = 0;
-                    lprnpnjln_diskon = 0;
-                    lprnpnjln_totalbayar = 0;
-                    lprnpnjln_totalbayarcash = 0;
-                    lprnpnjln_totalbayarcredit = 0;
-                    lprnpnjln_feeterapis = 0;
-                    lprnpnjln_grandtotal = 0;
-                    for (int i = 0; i < dgv_lprnpnjln_tabellaporan.Rows.Count; i++)
-                    {
-                        if (dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Status"].Value.ToString() != "Terhapus")
-                        {
-                            lprnpnjln_potonganhotel += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Potongan Tamu Hotel"].Value.ToString());
-                            lprnpnjln_hargapaket += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Harga Paket"].Value.ToString());
-                            lprnpnjln_extra += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Nominal Extra"].Value.ToString());
-                            lprnpnjln_diskon += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Diskon"].Value.ToString());
-                            lprnpnjln_totalbayar += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Subtotal"].Value.ToString());
-                            lprnpnjln_feeterapis += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Fee Terapis"].Value.ToString());
-                            lprnpnjln_grandtotal += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Grand Total"].Value.ToString());
-                            if (dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Jenis Bayar"].Value.ToString() == "Cash")
-                            {
-                                lprnpnjln_totalbayarcash += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Grand Total"].Value.ToString());
-                            }
-                            else if (dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Jenis Bayar"].Value.ToString() == "Credit")
-                            {
-                                lprnpnjln_totalbayarcredit += int.Parse(dgv_lprnpnjln_tabellaporan.Rows[i].Cells["Grand Total"].Value.ToString());
-                            }
-                        }
-                    }
-                    lbl_lprnpnjln_sumtotalhotel.Text = lprnpnjln_potonganhotel.ToString("#,##0");
-                    lbl_lprnpnjln_sumtotalgrandtotal.Text = lprnpnjln_grandtotal.ToString("#,##0");
-                    lbl_lprnpnjln_sumtotalextra.Text = lprnpnjln_extra.ToString("#,##0");
-                    lbl_lprnpnjln_sumtotaldiskon.Text = lprnpnjln_diskon.ToString("#,##0");
-                    lbl_lprnpnjln_sumtotalsubtotal.Text = lprnpnjln_totalbayar.ToString("#,##0");
-                    lbl_lprnpnjln_sumtotalcash.Text = lprnpnjln_totalbayarcash.ToString("#,##0");
-                    lbl_lprnpnjln_sumtotalcredit.Text = lprnpnjln_totalbayarcredit.ToString("#,##0");
-                    lbl_lprnpnjln_sumfeeterapis.Text = lprnpnjln_feeterapis.ToString("#,##0");
-
-                    //DataRow row = lprnpnjln_DS.Tables[0].NewRow();
-                    //row[0] = "0";
-                    //row[1] = "2016-01-08 15:42:16";
-                    //row[2] = "0";
-                    //row[3] = "";
-                    //row[4] = "";
-                    //row[5] = lbl_lprnpnjln_sumtotalhotel.Text;
-                    //row[6] = "";
-                    //row[7] = lprnpnjln_hargapaket.ToString("#,##0"); ;
-                    //row[8] = "";
-                    //row[9] = lbl_lprnpnjln_sumtotalextra.Text;
-                    //row[10] = "0";
-                    //row[11] = "";
-                    //row[12] = lbl_lprnpnjln_sumtotaldiskon.Text;
-                    //row[13] = "";
-                    //row[14] = lbl_lprnpnjln_sumtotalsubtotal.Text;
-                    //row[15] = lbl_lprnpnjln_sumfeeterapis.Text;
-                    //row[16] = "";
-                    //row[17] = "";
-                    //lprnpnjln_DS.Tables[0].Rows.Add(row);
-                    #endregion
-
-                    if (login_jenisuser == "Superadmin")
-                    {
-
-                        dgv_lprnpnjln_tabellaporan.Columns.Add(lprnpnjln_hapusNota);
-                        dgv_lprnpnjln_tabellaporan.Columns["Hapus Nota"].DisplayIndex = 19;
-                        dgv_lprnpnjln_tabellaporan.Columns.Add(lprnpnjln_batalhapusNota);
-                        dgv_lprnpnjln_tabellaporan.Columns["Batal Hapus"].DisplayIndex = 20;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                string error = ex.ToString();
-                MessageBox.Show("Error Occurred");
-            }
-            lprnpnjln_conn.Close();
-            #endregion
-
-            rdo_lprnpnjln_all.Checked = true;
+            rdo_lprnpnjln_cash.Enabled = true;
+            rdo_lprnpnjln_credit.Enabled = true;
+            rdo_lprnpnjln_all.Enabled = true;
+            btn_lprnpnjln_excel.Enabled = true;
         }
 
         private void btn_menu_laporanlayanan_Click(object sender, EventArgs e)
@@ -1305,7 +1099,7 @@ namespace Green_Leaf
             {
                 edttrps_conn.Open();
 
-                edttrps_query = "SELECT * FROM `pengguna` order by id_pengguna DESC";
+                edttrps_query = "SELECT * FROM `pengguna` where `pengguna`.nama_pengguna != '"+lbl_menu_user.Text.Remove(lbl_menu_user.Text.Length-1,1)+"' order by `pengguna`.`id_pengguna` DESC";
                 MySqlCommand edttrps_cmd = new MySqlCommand(edttrps_query, edttrps_conn);
                 MySqlDataReader edttrps_rdr = edttrps_cmd.ExecuteReader();
 
@@ -2166,7 +1960,7 @@ namespace Green_Leaf
         #region(Panel Edit Paket)
         List<string>[] edtpkt_lstnamapaket = new List<string>[2];
         List<int> edtpkt_lstidpktTerpilih = new List<int>();
-        int edtpkt_idTerpilih = new int();
+        int edtpkt_idTerpilih = 0;
         string namapakettersimpan;
         private void btn_edtpkt_ok_Click(object sender, EventArgs e)
         {
@@ -2595,70 +2389,29 @@ namespace Green_Leaf
             DialogResult dialogResult = MessageBox.Show("Apakah anda ingin menghapus data paket ini?", "Alert", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                #region(Update)
-                MySqlConnection edttrps_conn;
-                DBConnect edttrps_sql = new DBConnect();
-                string edttrps_query;
-                edttrps_conn = new MySqlConnection(all_connStr);
-                try
-                {
-                    edttrps_conn.Open();
-
-                    edttrps_query = "DELETE FROM `paket` WHERE `paket`.`nama_paket` = '" + txt_edtpkt_namapaket.Text + "' AND `paket`.`jenis_paket` = '" + cbo_edtpkt_jenispaket.SelectedItem.ToString() + "'";
-                    MySqlCommand cmd = new MySqlCommand(edttrps_query, edttrps_conn);
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                    MessageBox.Show("Error Occured");
-                }
-                edttrps_conn.Close();
-                #endregion
-
-                cbo_edtpkt_jenispaket.Enabled = false;
-                txt_edtpkt_namapaket.Enabled = false;
-                txt_edtpkt_komisipaketnormal.Enabled = false;
-                txt_edtpkt_komisipaketmidnight.Enabled = false;
-                txt_edtpkt_durasipaketjam.Enabled = false;
-                txt_edtpkt_durasipaketmenit.Enabled = false;
-                txt_edtpkt_hargapaket.Enabled = false;
-                btn_edtpkt_simpan.Enabled = false;
-                lsb_edtpkt_jenisnamapkt.Items.Clear();
-                btn_edtpkt_hapus.Enabled = false;
-
-                cbo_edtpkt_jenispaket.SelectedItem = null;
-                txt_edtpkt_namapaket.Clear();
-                txt_edtpkt_komisipaketnormal.Clear();
-                txt_edtpkt_komisipaketmidnight.Clear();
-                txt_edtpkt_durasipaketjam.Clear();
-                txt_edtpkt_durasipaketmenit.Clear();
-                txt_edtpkt_hargapaket.Clear();
-                btn_edtpkt_simpan.Enabled = false;
-                lsb_edtpkt_jenisnamapkt.Items.Clear();
-
-                edtpkt_lstidpktTerpilih.Clear();
-                #region(Isi listbox dengan Jenis dan Nama Paket per baris)
-                string edtpkt_jenisnamapkt;
+                bool sdhadatransaksi = false;
+                #region(Cek Transaksi)
                 string edtpkt_query2;
                 MySqlConnection edtpkt_conn2 = new MySqlConnection(all_connStr);
                 try
                 {
                     edtpkt_conn2.Open();
 
-                    edtpkt_query2 = "SELECT * FROM `paket` ORDER BY `id_paket` DESC";
+                    edtpkt_query2 = "SELECT COUNT(nota.id_paket) FROM nota WHERE nota.id_paket = "+edtpkt_idTerpilih+"";
                     MySqlCommand edtpkt_cmd2 = new MySqlCommand(edtpkt_query2, edtpkt_conn2);
                     MySqlDataReader edtpkt_rdr2 = edtpkt_cmd2.ExecuteReader();
 
                     while (edtpkt_rdr2.Read())
                     {
                         //cbo_kodeterapis.Items.Add(edtpkt_rdr.GetString(1));
-                        edtpkt_lstidpktTerpilih.Add(edtpkt_rdr2.GetInt16(0));
-                        edtpkt_jenisnamapkt = edtpkt_rdr2.GetString(1);
-                        edtpkt_jenisnamapkt += " - " + edtpkt_rdr2.GetString(2);
-                        lsb_edtpkt_jenisnamapkt.Items.Add(edtpkt_jenisnamapkt);
-                        edtpkt_lstnamapaket[0].Add(edtpkt_rdr2.GetString(1));
-                        edtpkt_lstnamapaket[1].Add(edtpkt_rdr2.GetString(2));
+                        if (edtpkt_rdr2.GetInt32(0) == 0)
+                        {
+                            sdhadatransaksi = false;
+                        }
+                        else
+                        {
+                            sdhadatransaksi = true;
+                        }
                     }
                     edtpkt_rdr2.Close();
                 }
@@ -2670,9 +2423,91 @@ namespace Green_Leaf
                 edtpkt_conn2.Close();
                 #endregion
 
+                if (sdhadatransaksi == true)
+                {
+                    MessageBox.Show("Tidak bisa menghapus, paket ini sudah digunakan pada nota", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    #region(Update)
+                    MySqlConnection edttrps_conn;
+                    DBConnect edttrps_sql = new DBConnect();
+                    string edttrps_query;
+                    edttrps_conn = new MySqlConnection(all_connStr);
+                    try
+                    {
+                        edttrps_conn.Open();
+
+                        edttrps_query = "DELETE FROM `paket` WHERE `paket`.`nama_paket` = '" + txt_edtpkt_namapaket.Text + "' AND `paket`.`jenis_paket` = '" + cbo_edtpkt_jenispaket.SelectedItem.ToString() + "'";
+                        MySqlCommand cmd = new MySqlCommand(edttrps_query, edttrps_conn);
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                        MessageBox.Show("Error Occured");
+                    }
+                    edttrps_conn.Close();
+                    #endregion
+
+                    cbo_edtpkt_jenispaket.Enabled = false;
+                    txt_edtpkt_namapaket.Enabled = false;
+                    txt_edtpkt_komisipaketnormal.Enabled = false;
+                    txt_edtpkt_komisipaketmidnight.Enabled = false;
+                    txt_edtpkt_durasipaketjam.Enabled = false;
+                    txt_edtpkt_durasipaketmenit.Enabled = false;
+                    txt_edtpkt_hargapaket.Enabled = false;
+                    btn_edtpkt_simpan.Enabled = false;
+                    lsb_edtpkt_jenisnamapkt.Items.Clear();
+                    btn_edtpkt_hapus.Enabled = false;
+
+                    cbo_edtpkt_jenispaket.SelectedItem = null;
+                    txt_edtpkt_namapaket.Clear();
+                    txt_edtpkt_komisipaketnormal.Clear();
+                    txt_edtpkt_komisipaketmidnight.Clear();
+                    txt_edtpkt_durasipaketjam.Clear();
+                    txt_edtpkt_durasipaketmenit.Clear();
+                    txt_edtpkt_hargapaket.Clear();
+                    btn_edtpkt_simpan.Enabled = false;
+                    lsb_edtpkt_jenisnamapkt.Items.Clear();
+
+                    edtpkt_lstidpktTerpilih.Clear();
+                    #region(Isi listbox dengan Jenis dan Nama Paket per baris)
+                    string edtpkt_jenisnamapkt3;
+                    string edtpkt_query3;
+                    MySqlConnection edtpkt_conn3 = new MySqlConnection(all_connStr);
+                    try
+                    {
+                        edtpkt_conn3.Open();
+
+                        edtpkt_query3 = "SELECT * FROM `paket` ORDER BY `id_paket` DESC";
+                        MySqlCommand edtpkt_cmd3 = new MySqlCommand(edtpkt_query3, edtpkt_conn3);
+                        MySqlDataReader edtpkt_rdr3 = edtpkt_cmd3.ExecuteReader();
+
+                        while (edtpkt_rdr3.Read())
+                        {
+                            //cbo_kodeterapis.Items.Add(edtpkt_rdr.GetString(1));
+                            edtpkt_lstidpktTerpilih.Add(edtpkt_rdr3.GetInt16(0));
+                            edtpkt_jenisnamapkt3 = edtpkt_rdr3.GetString(1);
+                            edtpkt_jenisnamapkt3 += " - " + edtpkt_rdr3.GetString(2);
+                            lsb_edtpkt_jenisnamapkt.Items.Add(edtpkt_jenisnamapkt3);
+                            edtpkt_lstnamapaket[0].Add(edtpkt_rdr3.GetString(1));
+                            edtpkt_lstnamapaket[1].Add(edtpkt_rdr3.GetString(2));
+                        }
+                        edtpkt_rdr3.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                        MessageBox.Show("Error Occured");
+                    }
+                    edtpkt_conn3.Close();
+                    #endregion
 
 
-                MessageBox.Show("Data Paket telah berhasil dihapus", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MessageBox.Show("Data Paket telah berhasil dihapus", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
 
         }
@@ -3082,9 +2917,11 @@ namespace Green_Leaf
         List<int> ctknota_listidpaket = new List<int>();
         Image ctknota_logo;
         List<string> ctknota_lstcetak = new List<string>();
+        int ctknota_tempdiskon;
 
         private void rdo_ctknota_biasa_CheckedChanged(object sender, EventArgs e)
         {
+            lbl_ctknota_warningjenispaket.Visible = false;
             txt_ctknota_nomorruangan.Enabled = true;
             rdo_ctknota_normal.Enabled = true;
             rdo_ctknota_midnight.Enabled = true;
@@ -3137,6 +2974,7 @@ namespace Green_Leaf
 
         private void rdo_ctknota_hotel_CheckedChanged(object sender, EventArgs e)
         {
+            lbl_ctknota_warningjenispaket.Visible = false;
             txt_ctknota_nomorruangan.Enabled = true;
             rdo_ctknota_normal.Enabled = true;
             rdo_ctknota_midnight.Enabled = true;
@@ -3211,7 +3049,6 @@ namespace Green_Leaf
 
         private void cbo_ctknota_jenispaket_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             txt_ctknota_nomorruangan.Enabled = true;
             rdo_ctknota_normal.Enabled = true;
             rdo_ctknota_midnight.Enabled = true;
@@ -3243,7 +3080,7 @@ namespace Green_Leaf
                     string ctknota_query;
                     MySqlConnection ctknota_conn = new MySqlConnection(all_connStr);
                     List<string> ctknota_lstKode = new List<string>();
-                    
+
                     try
                     {
                         ctknota_conn.Open();
@@ -4048,7 +3885,14 @@ namespace Green_Leaf
                 }
             }
 
+        }
 
+        private void cbo_ctknota_jenispaket_Click(object sender, EventArgs e)
+        {
+            if (!rdo_ctknota_biasa.Checked && !rdo_ctknota_hotel.Checked)
+            {
+                lbl_ctknota_warningjenispaket.Visible = true;
+            }
         }
 
         private void rdo_ctknota_cash_CheckedChanged(object sender, EventArgs e)
@@ -4161,9 +4005,84 @@ namespace Green_Leaf
 
         private void txt_ctknota_diskon_KeyPress(object sender, KeyPressEventArgs e)
         {
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+            }
+            else
+            {
+            }
+        }
+
+        private void txt_ctknota_diskon_KeyUp(object sender, KeyEventArgs e)
+        {
+            int potonganhotel = 0;
+            int hargapaket = 0;
+            int nominalextra = 0;
+            int kodeterapis = 0;
+            int ctknota_diskon = 0;
+            if (txt_ctknota_diskon.Text == "")
+            {
+                ctknota_diskon = 0;
+            }
+            else
+            {
+                ctknota_diskon = int.Parse(txt_ctknota_diskon.Text);
+            }
+            //int fee = 0;
+            int totalbayar = 0;
+            int grandtotal = 0;
+            //int idpaket = 0;
+            //header.Trim(new Char[] { ' ', '*', '.' });
+            for (int i = 0; i < dgv_ctknota_tabelhrgpkt.Rows.Count; i++)
+            {
+                if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Pilih"].Value.ToString() == "True")
+                {
+                    if (rdo_ctknota_normal.Checked)
+                    {
+                        //jamkerja = "Normal";
+                    }
+                    else if (rdo_ctknota_midnight.Checked)
+                    {
+                        //jamkerja = "Midnight";
+                    }
+                    if (rdo_ctknota_biasa.Checked)
+                    {
+                        //tamuhotel = "Tidak";
+                        potonganhotel = 0;
+                    }
+                    else if (rdo_ctknota_hotel.Checked)
+                    {
+                        //tamuhotel = "Ya";
+                        potonganhotel = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Tamu Hotel"].Value.ToString().Replace(".", string.Empty));
+                    }
+                    //idpaket = ctknota_listidpaket[i];
+                    //nomorruangan = txt_ctknota_nomorruangan.Text;
+                    //namapaket = cbo_ctknota_jenispaket.SelectedItem + " - " + dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Nama Paket"].Value.ToString();
+                    hargapaket = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Harga Paket"].Value.ToString().Replace(".", string.Empty));
+                    if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value.ToString() == "True")
+                    {
+                        //extra = "Ya";
+                        nominalextra = int.Parse(dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Nominal Extra"].Value.ToString().Replace(".", string.Empty));
+                    }
+                    else if (dgv_ctknota_tabelhrgpkt.Rows[i].Cells["Extra"].Value.ToString() == "False")
+                    {
+                        //extra = "Tidak";
+                        nominalextra = 0;
+                    }
+                    kodeterapis = int.Parse(cbo_ctknota_kodeterapis.SelectedItem.ToString());
+                    //namaterapis = txt_ctknota_namaterapis.Text;
+                    //ket = "";
+                    totalbayar = hargapaket + nominalextra;
+                    grandtotal = totalbayar - potonganhotel - ctknota_diskon;
+                }
+            }
+
+            if (ctknota_diskon >= grandtotal)
+            {
+                MessageBox.Show("Nominal Diskon tidak boleh melebihi Total Bayar");
+                txt_ctknota_diskon.Text = ctknota_tempdiskon.ToString();
             }
 
             // only allow one decimal point
@@ -4171,6 +4090,15 @@ namespace Green_Leaf
             //{
             //    e.Handled = true;
             //}
+        }
+
+        private void txt_ctknota_diskon_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (txt_ctknota_diskon.Text != "")
+            {
+                ctknota_tempdiskon = int.Parse(txt_ctknota_diskon.Text);
+            }
+
         }
 
         private void ctknota_insertnota(string kasus)
@@ -4276,69 +4204,82 @@ namespace Green_Leaf
                                     }
                                 }
                             }
-
-                            DBConnect ctknota_sql = new DBConnect();
-                            string ctknota_query = "INSERT INTO `nota` (`id_nota`, `tanggalcetak_nota`, `nomorruangan_nota`, `jamkerja_nota`, `tamuhotel_nota`, `potonganhotel_nota`, "
-                                                        + "`namapaket_nota`, `hargapaket_nota`, `extra_nota`, `nominalextra_nota`, `kodeterapis_nota`, `namaterapis_nota`,"
-                                                            + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`, `id_paket`, `grandtotal_nota`) "
-                                                                + "VALUES (NULL, (now()), '" + nomorruangan + "', '" + jamkerja + "', '" + tamuhotel + "', '" + potonganhotel + "',"
-                                                                    + " '" + namapaket + "', '" + hargapaket + "', '" + extra + "', '" + nominalextra + "', '" + kodeterapis + "', '" + namaterapis + "', "
-                                                                        + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '"+idpaket+"', '"+grandtotal+"');";
-                            ctknota_sql.Insert(ctknota_query);
-
-                            #region(Simpan Data Buat Cetak)
-                            string value = namapaket;
-                            Char splitter = '-';
-                            string[] namajenispaket = value.Split(splitter);
-
-                            ctknota_lstcetak.Add(ctknota_idnota.ToString());
-                            if (login_namauser.Length > 12)
+                            string totalbayarFinal = grandtotal.ToString(String.Format("0,0", totalbayar));
+                            lbl_ctknota_totalbyr.Text = totalbayarFinal;
+                            
+                            DialogResult dialogResult = MessageBox.Show("Apakah anda sudah yakin?", "Alert", MessageBoxButtons.YesNo);
+                            if (dialogResult == DialogResult.Yes)
                             {
-                                ctknota_lstcetak.Add(login_namauser.ToUpper().Substring(0, 12));
+                                DBConnect ctknota_sql = new DBConnect();
+                                string ctknota_query = "INSERT INTO `nota` (`id_nota`, `tanggalcetak_nota`, `nomorruangan_nota`, `jamkerja_nota`, `tamuhotel_nota`, `potonganhotel_nota`, "
+                                                            + "`namapaket_nota`, `hargapaket_nota`, `extra_nota`, `nominalextra_nota`, `kodeterapis_nota`, `namaterapis_nota`,"
+                                                                + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`, `id_paket`, `grandtotal_nota`) "
+                                                                    + "VALUES (NULL, (now()), '" + nomorruangan + "', '" + jamkerja + "', '" + tamuhotel + "', '" + potonganhotel + "',"
+                                                                        + " '" + namapaket + "', '" + hargapaket + "', '" + extra + "', '" + nominalextra + "', '" + kodeterapis + "', '" + namaterapis + "', "
+                                                                            + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '" + idpaket + "', '" + grandtotal + "');";
+                                ctknota_sql.Insert(ctknota_query);
+
+                                #region(Simpan Data Buat Cetak)
+                                string value = namapaket;
+                                Char splitter = '-';
+                                string[] namajenispaket = value.Split(splitter);
+
+                                ctknota_lstcetak.Add(ctknota_idnota.ToString());
+                                if (login_namauser.Length > 12)
+                                {
+                                    ctknota_lstcetak.Add(login_namauser.ToUpper().Substring(0, 12));
+                                }
+                                else
+                                {
+                                    ctknota_lstcetak.Add(login_namauser.ToUpper());
+                                }
+                                ctknota_lstcetak.Add(nomorruangan.ToString());
+                                ctknota_lstcetak.Add(kodeterapis.ToString());
+                                ctknota_lstcetak.Add(namajenispaket[0].Substring(0, namajenispaket[0].Length - 1));
+                                ctknota_lstcetak.Add(jenisbayar);
+                                ctknota_lstcetak.Add(tamuhotel);
+                                ctknota_lstcetak.Add(namajenispaket[1].Substring(1));
+                                ctknota_lstcetak.Add(hargapaket.ToString());
+                                ctknota_lstcetak.Add(extra);
+                                ctknota_lstcetak.Add(nominalextra.ToString());
+                                ctknota_lstcetak.Add(fee.ToString());
+                                ctknota_lstcetak.Add((hargapaket + nominalextra + fee).ToString());
+                                ctknota_lstcetak.Add(potonganhotel.ToString());
+                                ctknota_lstcetak.Add(diskon.ToString());
+                                ctknota_lstcetak.Add(grandtotal.ToString());
+                                #endregion
+
+                                MessageBox.Show("Nota telah berhasil dibuat", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
+                                PrintDialog printDialog = new PrintDialog();
+
+                                PrintDocument printDocument = new PrintDocument();
+
+                                printDialog.Document = printDocument; //add the document to the dialog box...        
+
+                                printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing
+
+                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+
+                                //DialogResult result = printDialog.ShowDialog();
+
+                                //if (result == DialogResult.OK)
+                                //{
+                                printDocument.Print();
+                                //}
+                                ctknota_clearform();
                             }
-                            else
-                            {
-                                ctknota_lstcetak.Add(login_namauser.ToUpper());
-                            }
-                            ctknota_lstcetak.Add(nomorruangan.ToString());
-                            ctknota_lstcetak.Add(kodeterapis.ToString());
-                            ctknota_lstcetak.Add(namajenispaket[0].Substring(0, namajenispaket[0].Length-1));
-                            ctknota_lstcetak.Add(jenisbayar);
-                            ctknota_lstcetak.Add(tamuhotel);
-                            ctknota_lstcetak.Add(namajenispaket[1].Substring(1));
-                            ctknota_lstcetak.Add(hargapaket.ToString());
-                            ctknota_lstcetak.Add(extra);
-                            ctknota_lstcetak.Add(nominalextra.ToString());
-                            ctknota_lstcetak.Add(fee.ToString());
-                            ctknota_lstcetak.Add((hargapaket+nominalextra+fee).ToString());
-                            ctknota_lstcetak.Add(potonganhotel.ToString());
-                            ctknota_lstcetak.Add(diskon.ToString());
-                            ctknota_lstcetak.Add(grandtotal.ToString());
-                            #endregion
+                            
+                            
+
+                            
                 #endregion
 
 
-                            string totalbayarFinal = grandtotal.ToString(String.Format("0,0", totalbayar));
+                            
                                    
-                            lbl_ctknota_totalbyr.Text = totalbayarFinal;
-                            MessageBox.Show("Nota telah berhasil dibuat", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
-                            PrintDialog printDialog = new PrintDialog();
-
-                            PrintDocument printDocument = new PrintDocument();
-
-                            printDialog.Document = printDocument; //add the document to the dialog box...        
-
-                            printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing
-
-                            //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
-
-                            //DialogResult result = printDialog.ShowDialog();
-
-                            //if (result == DialogResult.OK)
-                            //{
-                            printDocument.Print();
-                            //}
+                            
+                            
             }
             else if (kasus == "diskon kosong, fee ada")
             {
@@ -4415,67 +4356,71 @@ namespace Green_Leaf
                         }
                     }
                 }
-
-                DBConnect ctknota_sql = new DBConnect();
-                string ctknota_query = "INSERT INTO `nota` (`id_nota`, `tanggalcetak_nota`, `nomorruangan_nota`, `jamkerja_nota`, `tamuhotel_nota`, `potonganhotel_nota`, "
-                                            + "`namapaket_nota`, `hargapaket_nota`, `extra_nota`, `nominalextra_nota`, `kodeterapis_nota`, `namaterapis_nota`,"
-                                                + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`, `id_paket` , `grandtotal_nota`) "
-                                                    + "VALUES (NULL, (now()), '" + nomorruangan + "', '" + jamkerja + "', '" + tamuhotel + "', '" + potonganhotel + "',"
-                                                        + " '" + namapaket + "', '" + hargapaket + "', '" + extra + "', '" + nominalextra + "', '" + kodeterapis + "', '" + namaterapis + "', "
-                                                            + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '" + idpaket + "', '" + grandtotal + "');";
-                ctknota_sql.Insert(ctknota_query);
-
-                #region(Simpan Data Buat Cetak)
-                string value = namapaket;
-                Char splitter = '-';
-                string[] namajenispaket = value.Split(splitter);
-
-                ctknota_lstcetak.Add(ctknota_idnota.ToString());
-                if (login_namauser.Length > 12)
-                {
-                    ctknota_lstcetak.Add(login_namauser.ToUpper().Substring(0, 12));
-                }
-                else
-                {
-                    ctknota_lstcetak.Add(login_namauser.ToUpper());
-                }
-                ctknota_lstcetak.Add(nomorruangan.ToString());
-                ctknota_lstcetak.Add(kodeterapis.ToString());
-                ctknota_lstcetak.Add(namajenispaket[0].Substring(0, namajenispaket[0].Length - 1));
-                ctknota_lstcetak.Add(jenisbayar);
-                ctknota_lstcetak.Add(tamuhotel);
-                ctknota_lstcetak.Add(namajenispaket[1].Substring(1));
-                ctknota_lstcetak.Add(hargapaket.ToString());
-                ctknota_lstcetak.Add(extra);
-                ctknota_lstcetak.Add(nominalextra.ToString());
-                ctknota_lstcetak.Add(fee.ToString());
-                ctknota_lstcetak.Add((hargapaket + nominalextra + fee).ToString());
-                ctknota_lstcetak.Add(potonganhotel.ToString());
-                ctknota_lstcetak.Add(diskon.ToString());
-                ctknota_lstcetak.Add(grandtotal.ToString());
-                #endregion
-
-                #endregion
                 string totalbayarFinal = grandtotal.ToString(String.Format("0,0", totalbayar));
                 lbl_ctknota_totalbyr.Text = totalbayarFinal;
-                MessageBox.Show("Nota telah berhasil ditambahkan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
-                PrintDialog printDialog = new PrintDialog();
+                DialogResult dialogResult = MessageBox.Show("Apakah anda sudah yakin?", "Alert", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    DBConnect ctknota_sql = new DBConnect();
+                    string ctknota_query = "INSERT INTO `nota` (`id_nota`, `tanggalcetak_nota`, `nomorruangan_nota`, `jamkerja_nota`, `tamuhotel_nota`, `potonganhotel_nota`, "
+                                                + "`namapaket_nota`, `hargapaket_nota`, `extra_nota`, `nominalextra_nota`, `kodeterapis_nota`, `namaterapis_nota`,"
+                                                    + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`, `id_paket`, `grandtotal_nota`) "
+                                                        + "VALUES (NULL, (now()), '" + nomorruangan + "', '" + jamkerja + "', '" + tamuhotel + "', '" + potonganhotel + "',"
+                                                            + " '" + namapaket + "', '" + hargapaket + "', '" + extra + "', '" + nominalextra + "', '" + kodeterapis + "', '" + namaterapis + "', "
+                                                                + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '" + idpaket + "', '" + grandtotal + "');";
+                    ctknota_sql.Insert(ctknota_query);
 
-                PrintDocument printDocument = new PrintDocument();
+                    #region(Simpan Data Buat Cetak)
+                    string value = namapaket;
+                    Char splitter = '-';
+                    string[] namajenispaket = value.Split(splitter);
 
-                printDialog.Document = printDocument; //add the document to the dialog box...        
+                    ctknota_lstcetak.Add(ctknota_idnota.ToString());
+                    if (login_namauser.Length > 12)
+                    {
+                        ctknota_lstcetak.Add(login_namauser.ToUpper().Substring(0, 12));
+                    }
+                    else
+                    {
+                        ctknota_lstcetak.Add(login_namauser.ToUpper());
+                    }
+                    ctknota_lstcetak.Add(nomorruangan.ToString());
+                    ctknota_lstcetak.Add(kodeterapis.ToString());
+                    ctknota_lstcetak.Add(namajenispaket[0].Substring(0, namajenispaket[0].Length - 1));
+                    ctknota_lstcetak.Add(jenisbayar);
+                    ctknota_lstcetak.Add(tamuhotel);
+                    ctknota_lstcetak.Add(namajenispaket[1].Substring(1));
+                    ctknota_lstcetak.Add(hargapaket.ToString());
+                    ctknota_lstcetak.Add(extra);
+                    ctknota_lstcetak.Add(nominalextra.ToString());
+                    ctknota_lstcetak.Add(fee.ToString());
+                    ctknota_lstcetak.Add((hargapaket + nominalextra + fee).ToString());
+                    ctknota_lstcetak.Add(potonganhotel.ToString());
+                    ctknota_lstcetak.Add(diskon.ToString());
+                    ctknota_lstcetak.Add(grandtotal.ToString());
+                    #endregion
 
-                printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing
+                    MessageBox.Show("Nota telah berhasil dibuat", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
+                    PrintDialog printDialog = new PrintDialog();
 
-                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+                    PrintDocument printDocument = new PrintDocument();
 
-                //DialogResult result = printDialog.ShowDialog();
+                    printDialog.Document = printDocument; //add the document to the dialog box...        
 
-                //if (result == DialogResult.OK)
-                //{
-                printDocument.Print();
-                //}
+                    printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing
+
+                    //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+
+                    //DialogResult result = printDialog.ShowDialog();
+
+                    //if (result == DialogResult.OK)
+                    //{
+                    printDocument.Print();
+                    //}
+                    ctknota_clearform();
+                }
+                #endregion
             }
             else if (kasus == "diskon ada, fee kosong")
             {
@@ -4552,85 +4497,71 @@ namespace Green_Leaf
                                         }
                                     }
                                 }
-
-                                DBConnect ctknota_sql = new DBConnect();
-                                string ctknota_query = "INSERT INTO `nota` (`id_nota`, `tanggalcetak_nota`, `nomorruangan_nota`, `jamkerja_nota`, `tamuhotel_nota`, `potonganhotel_nota`, "
-                                                            + "`namapaket_nota`, `hargapaket_nota`, `extra_nota`, `nominalextra_nota`, `kodeterapis_nota`, `namaterapis_nota`,"
-                                                                + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`, `id_paket`, `grandtotal_nota`) "
-                                                                    + "VALUES (NULL, (now()), '" + nomorruangan + "', '" + jamkerja + "', '" + tamuhotel + "', '" + potonganhotel + "',"
-                                                                        + " '" + namapaket + "', '" + hargapaket + "', '" + extra + "', '" + nominalextra + "', '" + kodeterapis + "', '" + namaterapis + "', "
-                                                                            + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '"+idpaket+"', '"+grandtotal+"');";
-                                ctknota_sql.Insert(ctknota_query);
-
-                                #region(Simpan Data Buat Cetak)
-                                string value = namapaket;
-                                Char splitter = '-';
-                                string[] namajenispaket = value.Split(splitter);
-
-                                ctknota_lstcetak.Add(ctknota_idnota.ToString());
-                                if (login_namauser.Length > 12)
-                                {
-                                    ctknota_lstcetak.Add(login_namauser.ToUpper().Substring(0, 12));
-                                }
-                                else
-                                {
-                                    ctknota_lstcetak.Add(login_namauser.ToUpper());
-                                }
-                                ctknota_lstcetak.Add(nomorruangan.ToString());
-                                ctknota_lstcetak.Add(kodeterapis.ToString());
-                                ctknota_lstcetak.Add(namajenispaket[0].Substring(0, namajenispaket[0].Length - 1));
-                                ctknota_lstcetak.Add(jenisbayar);
-                                ctknota_lstcetak.Add(tamuhotel);
-                                ctknota_lstcetak.Add(namajenispaket[1].Substring(1));
-                                ctknota_lstcetak.Add(hargapaket.ToString());
-                                ctknota_lstcetak.Add(extra);
-                                ctknota_lstcetak.Add(nominalextra.ToString());
-                                ctknota_lstcetak.Add(fee.ToString());
-                                ctknota_lstcetak.Add((hargapaket + nominalextra + fee).ToString());
-                                ctknota_lstcetak.Add(potonganhotel.ToString());
-                                ctknota_lstcetak.Add(diskon.ToString());
-                                ctknota_lstcetak.Add(grandtotal.ToString());
-                                #endregion
-
-
-                                #endregion
                                 string totalbayarFinal = grandtotal.ToString(String.Format("0,0", totalbayar));
-                                //int countdigittotal = 0;
-                                //foreach (char c in totalbayar.ToString())
-                                //{
-                                //    if (char.IsDigit(c))
-                                //    {
-                                //        countdigittotal++;
-                                //    }
-                                //}
-                                //int digit = countdigittotal;
-                                //int countdigitend = 0;
-                                //while (digit > 3)
-                                //{
-                                //    countdigitend++;
-                                //    digit -= 3;
-                                //    totalbayarFinal = totalbayar.ToString().Insert(digit, ".");
-                                //}
-                                //totalbayarFinal = totalbayarFinal.Insert(countdigittotal + countdigitend, ",-");
                                 lbl_ctknota_totalbyr.Text = totalbayarFinal;
-                                MessageBox.Show("Nota telah berhasil ditambahkan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
-                                PrintDialog printDialog = new PrintDialog();
+                                DialogResult dialogResult = MessageBox.Show("Apakah anda sudah yakin?", "Alert", MessageBoxButtons.YesNo);
+                                if (dialogResult == DialogResult.Yes)
+                                {
+                                    DBConnect ctknota_sql = new DBConnect();
+                                    string ctknota_query = "INSERT INTO `nota` (`id_nota`, `tanggalcetak_nota`, `nomorruangan_nota`, `jamkerja_nota`, `tamuhotel_nota`, `potonganhotel_nota`, "
+                                                                + "`namapaket_nota`, `hargapaket_nota`, `extra_nota`, `nominalextra_nota`, `kodeterapis_nota`, `namaterapis_nota`,"
+                                                                    + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`, `id_paket`, `grandtotal_nota`) "
+                                                                        + "VALUES (NULL, (now()), '" + nomorruangan + "', '" + jamkerja + "', '" + tamuhotel + "', '" + potonganhotel + "',"
+                                                                            + " '" + namapaket + "', '" + hargapaket + "', '" + extra + "', '" + nominalextra + "', '" + kodeterapis + "', '" + namaterapis + "', "
+                                                                                + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '" + idpaket + "', '" + grandtotal + "');";
+                                    ctknota_sql.Insert(ctknota_query);
 
-                                PrintDocument printDocument = new PrintDocument();
+                                    #region(Simpan Data Buat Cetak)
+                                    string value = namapaket;
+                                    Char splitter = '-';
+                                    string[] namajenispaket = value.Split(splitter);
 
-                                printDialog.Document = printDocument; //add the document to the dialog box...        
+                                    ctknota_lstcetak.Add(ctknota_idnota.ToString());
+                                    if (login_namauser.Length > 12)
+                                    {
+                                        ctknota_lstcetak.Add(login_namauser.ToUpper().Substring(0, 12));
+                                    }
+                                    else
+                                    {
+                                        ctknota_lstcetak.Add(login_namauser.ToUpper());
+                                    }
+                                    ctknota_lstcetak.Add(nomorruangan.ToString());
+                                    ctknota_lstcetak.Add(kodeterapis.ToString());
+                                    ctknota_lstcetak.Add(namajenispaket[0].Substring(0, namajenispaket[0].Length - 1));
+                                    ctknota_lstcetak.Add(jenisbayar);
+                                    ctknota_lstcetak.Add(tamuhotel);
+                                    ctknota_lstcetak.Add(namajenispaket[1].Substring(1));
+                                    ctknota_lstcetak.Add(hargapaket.ToString());
+                                    ctknota_lstcetak.Add(extra);
+                                    ctknota_lstcetak.Add(nominalextra.ToString());
+                                    ctknota_lstcetak.Add(fee.ToString());
+                                    ctknota_lstcetak.Add((hargapaket + nominalextra + fee).ToString());
+                                    ctknota_lstcetak.Add(potonganhotel.ToString());
+                                    ctknota_lstcetak.Add(diskon.ToString());
+                                    ctknota_lstcetak.Add(grandtotal.ToString());
+                                    #endregion
 
-                                printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing
+                                    MessageBox.Show("Nota telah berhasil dibuat", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
+                                    PrintDialog printDialog = new PrintDialog();
 
-                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+                                    PrintDocument printDocument = new PrintDocument();
 
-                                //DialogResult result = printDialog.ShowDialog();
+                                    printDialog.Document = printDocument; //add the document to the dialog box...        
 
-                                //if (result == DialogResult.OK)
-                                //{
-                                printDocument.Print();
-                //}
+                                    printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing
+
+                                    //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+
+                                    //DialogResult result = printDialog.ShowDialog();
+
+                                    //if (result == DialogResult.OK)
+                                    //{
+                                    printDocument.Print();
+                                    //}
+                                    ctknota_clearform();
+                                }
+                    #endregion
             }
             else if (kasus == "diskon ada, fee ada")
             {
@@ -4707,85 +4638,71 @@ namespace Green_Leaf
                                         }
                                     }
                                 }
-
-                                DBConnect ctknota_sql = new DBConnect();
-                                string ctknota_query = "INSERT INTO `nota` (`id_nota`, `tanggalcetak_nota`, `nomorruangan_nota`, `jamkerja_nota`, `tamuhotel_nota`, `potonganhotel_nota`, "
-                                                            + "`namapaket_nota`, `hargapaket_nota`, `extra_nota`, `nominalextra_nota`, `kodeterapis_nota`, `namaterapis_nota`,"
-                                                                + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`, `id_paket`, `grandtotal_nota`) "
-                                                                    + "VALUES (NULL, (now()), '" + nomorruangan + "', '" + jamkerja + "', '" + tamuhotel + "', '" + potonganhotel + "',"
-                                                                        + " '" + namapaket + "', '" + hargapaket + "', '" + extra + "', '" + nominalextra + "', '" + kodeterapis + "', '" + namaterapis + "', "
-                                                                            + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '"+idpaket+"', '"+grandtotal+"');";
-                                ctknota_sql.Insert(ctknota_query);
-
-                                #region(Simpan Data Buat Cetak)
-                                string value = namapaket;
-                                Char splitter = '-';
-                                string[] namajenispaket = value.Split(splitter);
-
-                                ctknota_lstcetak.Add(ctknota_idnota.ToString());
-                                if (login_namauser.Length > 12)
-                                {
-                                    ctknota_lstcetak.Add(login_namauser.ToUpper().Substring(0, 12));
-                                }
-                                else
-                                {
-                                    ctknota_lstcetak.Add(login_namauser.ToUpper());
-                                }
-                                ctknota_lstcetak.Add(nomorruangan.ToString());
-                                ctknota_lstcetak.Add(kodeterapis.ToString());
-                                ctknota_lstcetak.Add(namajenispaket[0].Substring(0, namajenispaket[0].Length - 1));
-                                ctknota_lstcetak.Add(jenisbayar);
-                                ctknota_lstcetak.Add(tamuhotel);
-                                ctknota_lstcetak.Add(namajenispaket[1].Substring(1));
-                                ctknota_lstcetak.Add(hargapaket.ToString());
-                                ctknota_lstcetak.Add(extra);
-                                ctknota_lstcetak.Add(nominalextra.ToString());
-                                ctknota_lstcetak.Add(fee.ToString());
-                                ctknota_lstcetak.Add((hargapaket + nominalextra + fee).ToString());
-                                ctknota_lstcetak.Add(potonganhotel.ToString());
-                                ctknota_lstcetak.Add(diskon.ToString());
-                                ctknota_lstcetak.Add(grandtotal.ToString());
-                                #endregion
-
-
-                                #endregion
                                 string totalbayarFinal = grandtotal.ToString(String.Format("0,0", totalbayar));
-                                //int countdigittotal = 0;
-                                //foreach (char c in totalbayar.ToString())
-                                //{
-                                //    if (char.IsDigit(c))
-                                //    {
-                                //        countdigittotal++;
-                                //    }
-                                //}
-                                //int digit = countdigittotal;
-                                //int countdigitend = 0;
-                                //while (digit > 3)
-                                //{
-                                //    countdigitend++;
-                                //    digit -= 3;
-                                //    totalbayarFinal = totalbayar.ToString().Insert(digit, ".");
-                                //}
-                                //totalbayarFinal = totalbayarFinal.Insert(countdigittotal + countdigitend, ",-");
                                 lbl_ctknota_totalbyr.Text = totalbayarFinal;
-                                MessageBox.Show("Nota telah berhasil ditambahkan", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
-                                PrintDialog printDialog = new PrintDialog();
+                                DialogResult dialogResult = MessageBox.Show("Apakah anda sudah yakin?", "Alert", MessageBoxButtons.YesNo);
+                                if (dialogResult == DialogResult.Yes)
+                                {
+                                    DBConnect ctknota_sql = new DBConnect();
+                                    string ctknota_query = "INSERT INTO `nota` (`id_nota`, `tanggalcetak_nota`, `nomorruangan_nota`, `jamkerja_nota`, `tamuhotel_nota`, `potonganhotel_nota`, "
+                                                                + "`namapaket_nota`, `hargapaket_nota`, `extra_nota`, `nominalextra_nota`, `kodeterapis_nota`, `namaterapis_nota`,"
+                                                                    + " `diskon_nota`, `keterangan_nota`, `totalbayar_nota`, `feeterapis_nota`, `jenisbayar_nota`, `status_nota`, `id_paket`, `grandtotal_nota`) "
+                                                                        + "VALUES (NULL, (now()), '" + nomorruangan + "', '" + jamkerja + "', '" + tamuhotel + "', '" + potonganhotel + "',"
+                                                                            + " '" + namapaket + "', '" + hargapaket + "', '" + extra + "', '" + nominalextra + "', '" + kodeterapis + "', '" + namaterapis + "', "
+                                                                                + "'" + diskon + "', '" + ket + "', '" + totalbayar + "', '" + fee + "', '" + jenisbayar + "', '-', '" + idpaket + "', '" + grandtotal + "');";
+                                    ctknota_sql.Insert(ctknota_query);
 
-                                PrintDocument printDocument = new PrintDocument();
+                                    #region(Simpan Data Buat Cetak)
+                                    string value = namapaket;
+                                    Char splitter = '-';
+                                    string[] namajenispaket = value.Split(splitter);
 
-                                printDialog.Document = printDocument; //add the document to the dialog box...        
+                                    ctknota_lstcetak.Add(ctknota_idnota.ToString());
+                                    if (login_namauser.Length > 12)
+                                    {
+                                        ctknota_lstcetak.Add(login_namauser.ToUpper().Substring(0, 12));
+                                    }
+                                    else
+                                    {
+                                        ctknota_lstcetak.Add(login_namauser.ToUpper());
+                                    }
+                                    ctknota_lstcetak.Add(nomorruangan.ToString());
+                                    ctknota_lstcetak.Add(kodeterapis.ToString());
+                                    ctknota_lstcetak.Add(namajenispaket[0].Substring(0, namajenispaket[0].Length - 1));
+                                    ctknota_lstcetak.Add(jenisbayar);
+                                    ctknota_lstcetak.Add(tamuhotel);
+                                    ctknota_lstcetak.Add(namajenispaket[1].Substring(1));
+                                    ctknota_lstcetak.Add(hargapaket.ToString());
+                                    ctknota_lstcetak.Add(extra);
+                                    ctknota_lstcetak.Add(nominalextra.ToString());
+                                    ctknota_lstcetak.Add(fee.ToString());
+                                    ctknota_lstcetak.Add((hargapaket + nominalextra + fee).ToString());
+                                    ctknota_lstcetak.Add(potonganhotel.ToString());
+                                    ctknota_lstcetak.Add(diskon.ToString());
+                                    ctknota_lstcetak.Add(grandtotal.ToString());
+                                    #endregion
 
-                                printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing
+                                    MessageBox.Show("Nota telah berhasil dibuat", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    ctknota_logo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.png");
+                                    PrintDialog printDialog = new PrintDialog();
 
-                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+                                    PrintDocument printDocument = new PrintDocument();
 
-                                //DialogResult result = printDialog.ShowDialog();
+                                    printDialog.Document = printDocument; //add the document to the dialog box...        
 
-                                //if (result == DialogResult.OK)
-                                //{
-                                printDocument.Print();
-                //}
+                                    printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing
+
+                                    //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+
+                                    //DialogResult result = printDialog.ShowDialog();
+
+                                    //if (result == DialogResult.OK)
+                                    //{
+                                    printDocument.Print();
+                                    //}
+                                    ctknota_clearform();
+                                }
+                #endregion
             }
             
         }
@@ -4922,72 +4839,63 @@ namespace Green_Leaf
                         
                         if (txt_ctknota_fee.Text == "")
                         {
-                            DialogResult dialogResult = MessageBox.Show("Apakah anda sudah yakin?", "Alert", MessageBoxButtons.YesNo);
-                            if (dialogResult == DialogResult.Yes)
-                            {
-                                #region(tes print)
-                                //photo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.jpg");
-                                //PrintDocument printDoc = new PrintDocument();
+                            #region(tes print)
+                            //photo = Image.FromFile("C:\\Users\\William\\Documents\\Visual Studio 2010\\Projects\\Green Leaf\\Green Leaf\\bin\\Debug\\img\\logo_small.jpg");
+                            //PrintDocument printDoc = new PrintDocument();
 
-                                //Margins margins = new Margins(1, 10, 10, 10);
-                                //printdoc_ctknota_printdokumen.DefaultPageSettings.Margins = margins;
-                                //printDoc.PrintPage += new PrintPageEventHandler(printdoc_ctknota_printdokumen_PrintPage);
-                                //printDoc.Print();
-                                //PrintPreviewDialog dlg = new PrintPreviewDialog();
-                                //dlg.Document = printDoc;
-                                //dlg.ShowDialog();
+                            //Margins margins = new Margins(1, 10, 10, 10);
+                            //printdoc_ctknota_printdokumen.DefaultPageSettings.Margins = margins;
+                            //printDoc.PrintPage += new PrintPageEventHandler(printdoc_ctknota_printdokumen_PrintPage);
+                            //printDoc.Print();
+                            //PrintPreviewDialog dlg = new PrintPreviewDialog();
+                            //dlg.Document = printDoc;
+                            //dlg.ShowDialog();
 
 
-                                //string s = "Ini Budi\n"+
-                                //                "Ini Bapak Budi";
+                            //string s = "Ini Budi\n"+
+                            //                "Ini Bapak Budi";
 
-                                //PrintDocument p = new PrintDocument();
-                                //p.PrintPage += delegate(object sender1, PrintPageEventArgs e1)
-                                //{
-                                //    e1.Graphics.DrawString(s, new Font("Monospaced Sans Serif", 10), new SolidBrush(Color.Black), new RectangleF(0, 0, p.DefaultPageSettings.PrintableArea.Width, p.DefaultPageSettings.PrintableArea.Height));
+                            //PrintDocument p = new PrintDocument();
+                            //p.PrintPage += delegate(object sender1, PrintPageEventArgs e1)
+                            //{
+                            //    e1.Graphics.DrawString(s, new Font("Monospaced Sans Serif", 10), new SolidBrush(Color.Black), new RectangleF(0, 0, p.DefaultPageSettings.PrintableArea.Width, p.DefaultPageSettings.PrintableArea.Height));
 
-                                //};
-                                //try
-                                //{
-                                //    p.Print();
-                                //}
-                                //catch (Exception ex)
-                                //{
-                                //    throw new Exception("Exception Occured While Printing", ex);
-                                //}
+                            //};
+                            //try
+                            //{
+                            //    p.Print();
+                            //}
+                            //catch (Exception ex)
+                            //{
+                            //    throw new Exception("Exception Occured While Printing", ex);
+                            //}
 
-                                //PrintDialog printDialog = new PrintDialog();
+                            //PrintDialog printDialog = new PrintDialog();
 
-                                //PrintDocument printDocument = new PrintDocument();
+                            //PrintDocument printDocument = new PrintDocument();
 
-                                //printDialog.Document = printDocument; //add the document to the dialog box...        
+                            //printDialog.Document = printDocument; //add the document to the dialog box...        
 
-                                //printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing
+                            //printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing
 
-                                ////on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+                            ////on a till you will not want to ask the user where to print but this is fine for the test envoironment.
 
-                                //DialogResult result = printDialog.ShowDialog();
+                            //DialogResult result = printDialog.ShowDialog();
 
-                                //if (result == DialogResult.OK)
-                                //{
-                                //    printDocument.Print();
+                            //if (result == DialogResult.OK)
+                            //{
+                            //    printDocument.Print();
 
-                                //}
-                                #endregion
-                                ctknota_insertnota("diskon kosong, fee kosong");
-                                ctknota_clearform();
-                                //MessageBox.Show("diskon kosong, fee kosong");
-                            }
+                            //}
+                            #endregion
+                            ctknota_insertnota("diskon kosong, fee kosong");
+                            
+                            //MessageBox.Show("diskon kosong, fee kosong");
                         }
                         else
                         {
-                            DialogResult dialogResult = MessageBox.Show("Apakah anda sudah yakin?", "Alert", MessageBoxButtons.YesNo);
-                            if (dialogResult == DialogResult.Yes)
-                            {
-                                ctknota_insertnota("diskon kosong, fee ada");
-                                ctknota_clearform();
-                                //MessageBox.Show("diskon kosong, fee ada");
-                            }
+                            ctknota_insertnota("diskon kosong, fee ada");
+                            //MessageBox.Show("diskon kosong, fee ada");
                         }
                     }
                     else
@@ -5000,23 +4908,13 @@ namespace Green_Leaf
                         {
                             if (txt_ctknota_fee.Text == "")
                             {
-                                DialogResult dialogResult = MessageBox.Show("Apakah anda sudah yakin?", "Alert", MessageBoxButtons.YesNo);
-                                if (dialogResult == DialogResult.Yes)
-                                {
-                                    ctknota_insertnota("diskon ada, fee kosong");
-                                    ctknota_clearform();
-                                    //MessageBox.Show("diskon ada, fee kosong");
-                                }
+                                ctknota_insertnota("diskon ada, fee kosong");
+                                //MessageBox.Show("diskon ada, fee kosong");
                             }
                             else
                             {
-                                DialogResult dialogResult = MessageBox.Show("Apakah anda sudah yakin?", "Alert", MessageBoxButtons.YesNo);
-                                if (dialogResult == DialogResult.Yes)
-                                {
-                                    ctknota_insertnota("diskon ada, fee ada");
-                                    ctknota_clearform();
-                                    //MessageBox.Show("diskon ada, fee ada");
-                                }
+                                ctknota_insertnota("diskon ada, fee ada");
+                                //MessageBox.Show("diskon ada, fee ada");
                             }
                         }
 
@@ -5276,12 +5174,12 @@ namespace Green_Leaf
 
                 #endregion
 
-                if (login_jenisuser == "Superadmin")
+                if (login_jenisuser == "Superadmin" && dgv_lprnpnjln_tabellaporan.Columns.Count > 0)
                 {
                     dgv_lprnpnjln_tabellaporan.Columns.Add(lprnpnjln_hapusNota);
-                    //dgv_lprnpnjln_tabellaporan.Columns["Hapus Nota"].DisplayIndex = 19;
+                    dgv_lprnpnjln_tabellaporan.Columns["Hapus Nota"].DisplayIndex = 19;
                     dgv_lprnpnjln_tabellaporan.Columns.Add(lprnpnjln_batalhapusNota);
-                    //dgv_lprnpnjln_tabellaporan.Columns["Batal Hapus"].DisplayIndex = 20;
+                    dgv_lprnpnjln_tabellaporan.Columns["Batal Hapus"].DisplayIndex = 20;
                 }
             }
         }
@@ -5790,6 +5688,15 @@ namespace Green_Leaf
             pnl_variabel_isi.Enabled = false;
 
             dgv_lprnpnjln_tabellaporan.DataSource = null;
+
+            lbl_lprnpnjln_sumfeeterapis.Text = "";
+            lbl_lprnpnjln_sumtotalcash.Text = "";
+            lbl_lprnpnjln_sumtotalcredit.Text = "";
+            lbl_lprnpnjln_sumtotaldiskon.Text = "";
+            lbl_lprnpnjln_sumtotalextra.Text = "";
+            lbl_lprnpnjln_sumtotalgrandtotal.Text = "";
+            lbl_lprnpnjln_sumtotalhotel.Text = "";
+            lbl_lprnpnjln_sumtotalsubtotal.Text = "";
         }
         #endregion
 
@@ -8112,6 +8019,8 @@ namespace Green_Leaf
             }
         }
         #endregion
+
+        
 
         
 

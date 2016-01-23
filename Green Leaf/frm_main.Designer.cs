@@ -163,6 +163,7 @@
             this.lbl_edtpkt_namaterapis = new System.Windows.Forms.Label();
             this.lbl_edtpkt_jenispaket = new System.Windows.Forms.Label();
             this.pnl_ctknota_isi = new System.Windows.Forms.Panel();
+            this.lbl_ctknota_warningjenispaket = new System.Windows.Forms.Label();
             this.lbl_ctknota_rp3 = new System.Windows.Forms.Label();
             this.lbl_ctknota_5 = new System.Windows.Forms.Label();
             this.txt_ctknota_fee = new System.Windows.Forms.TextBox();
@@ -1732,6 +1733,7 @@
             // pnl_ctknota_isi
             // 
             this.pnl_ctknota_isi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_ctknota_isi.Controls.Add(this.lbl_ctknota_warningjenispaket);
             this.pnl_ctknota_isi.Controls.Add(this.lbl_ctknota_rp3);
             this.pnl_ctknota_isi.Controls.Add(this.lbl_ctknota_5);
             this.pnl_ctknota_isi.Controls.Add(this.txt_ctknota_fee);
@@ -1773,6 +1775,18 @@
             this.pnl_ctknota_isi.Size = new System.Drawing.Size(1250, 528);
             this.pnl_ctknota_isi.TabIndex = 48;
             this.pnl_ctknota_isi.Visible = false;
+            // 
+            // lbl_ctknota_warningjenispaket
+            // 
+            this.lbl_ctknota_warningjenispaket.AutoSize = true;
+            this.lbl_ctknota_warningjenispaket.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ctknota_warningjenispaket.ForeColor = System.Drawing.Color.Red;
+            this.lbl_ctknota_warningjenispaket.Location = new System.Drawing.Point(973, 55);
+            this.lbl_ctknota_warningjenispaket.Name = "lbl_ctknota_warningjenispaket";
+            this.lbl_ctknota_warningjenispaket.Size = new System.Drawing.Size(221, 33);
+            this.lbl_ctknota_warningjenispaket.TabIndex = 76;
+            this.lbl_ctknota_warningjenispaket.Text = "*pilih jenis tamu";
+            this.lbl_ctknota_warningjenispaket.Visible = false;
             // 
             // lbl_ctknota_rp3
             // 
@@ -1993,6 +2007,7 @@
             this.cbo_ctknota_jenispaket.Size = new System.Drawing.Size(144, 41);
             this.cbo_ctknota_jenispaket.TabIndex = 6;
             this.cbo_ctknota_jenispaket.SelectedIndexChanged += new System.EventHandler(this.cbo_ctknota_jenispaket_SelectedIndexChanged);
+            this.cbo_ctknota_jenispaket.Click += new System.EventHandler(this.cbo_ctknota_jenispaket_Click);
             // 
             // dgv_ctknota_tabelhrgpkt
             // 
@@ -2078,8 +2093,9 @@
             this.txt_ctknota_diskon.Name = "txt_ctknota_diskon";
             this.txt_ctknota_diskon.Size = new System.Drawing.Size(116, 40);
             this.txt_ctknota_diskon.TabIndex = 12;
-            this.txt_ctknota_diskon.TextChanged += new System.EventHandler(this.txt_ctknota_diskon_TextChanged);
+            this.txt_ctknota_diskon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_ctknota_diskon_KeyDown);
             this.txt_ctknota_diskon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ctknota_diskon_KeyPress);
+            this.txt_ctknota_diskon.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_ctknota_diskon_KeyUp);
             // 
             // lbl_ctknota_rp2
             // 
@@ -3534,12 +3550,12 @@
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.ClientSize = new System.Drawing.Size(1280, 680);
             this.ControlBox = false;
+            this.Controls.Add(this.pnl_ctknota_isi);
             this.Controls.Add(this.pnl_lprnpnjln_isi);
             this.Controls.Add(this.pnl_menu_isi);
             this.Controls.Add(this.pnl_lprngaji_isi);
             this.Controls.Add(this.pnl_lprnlayanan_isi);
             this.Controls.Add(this.pnl_tbhpkt_isi);
-            this.Controls.Add(this.pnl_ctknota_isi);
             this.Controls.Add(this.pnl_edtpkt_isi);
             this.Controls.Add(this.pnl_edttrps_isi);
             this.Controls.Add(this.pnl_edtuser_isi);
@@ -3886,5 +3902,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_lprngaji_excel;
         private System.Windows.Forms.Button btn_lprngaji_batal;
+        private System.Windows.Forms.Label lbl_ctknota_warningjenispaket;
     }
 }
